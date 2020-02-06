@@ -1,0 +1,90 @@
+# Extended Udon Assembly by Toocanzs
+#.INIT_START
+#PUSH  SystemInt32 1
+#SETHEAP "ONE"
+#PUSH  SystemInt32 0
+#SETHEAP "ZERO"
+#PUSH  SystemInt32 0
+#SETHEAP "index"
+#PUSH SystemType VRCUdonUdonBehaviour
+#SETHEAP "TypeUdonBehaviour"
+#.INIT_END
+
+.data_start
+
+    # THIS
+    thisBehaviour: %VRCUdonUdonBehaviour, this
+    thisGameObject: %UnityEngineGameObject, this
+    thisTransform: %UnityEngineTransform, this
+    
+    # PRIVATE VARIABLES
+    FALSE: %SystemBoolean, null
+    ONE: %SystemInt32, null
+    ZERO: %SystemInt32, null
+    # loop stuff
+    index: %SystemInt32, null
+    condition: %SystemBoolean, null
+    #
+    arrayLength: %SystemInt32, null
+    TypeUdonBehaviour: %SystemType, null
+    currentSubscriberGameObject: %UnityEngineGameObject, null
+    currentSubscriberUdonBehaviour: %VRCUdonUdonBehaviour, null
+    eventName: %SystemString, null
+    
+    # PUBLIC VARIABLES
+    SUBSCRIBERS: %UnityEngineGameObjectArray, null
+    EVENT_NAME: %SystemString, null
+    
+    .export SUBSCRIBERS
+    .export EVENT_NAME
+    
+.data_end
+
+.code_start
+
+    PUBLISH:
+        # INITIALISE INDEX
+        PUSH, ZERO
+        PUSH, index
+        COPY
+        # get array length
+        PUSH, SUBSCRIBERS
+        PUSH, arrayLength
+        EXTERN, "UnityEngineGameObjectArray.__get_Length__SystemInt32"
+        # CONDITION CHECK
+        loopCheck_1:
+        PUSH, index
+        PUSH, arrayLength
+        PUSH, condition
+        EXTERN, "SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean"
+        PUSH, condition
+        JUMP_IF_FALSE, 0xFFFFFF
+        # CONDITION PASSED
+        #{
+            # get current subscriber from subscribers array
+            PUSH, SUBSCRIBERS
+            PUSH, index
+            PUSH, currentSubscriberGameObject
+            EXTERN, "UnityEngineGameObjectArray.__Get__SystemInt32__UnityEngineGameObject"
+            # get UdonBehaviour from currentSubscriberGameObject
+            PUSH, currentSubscriberGameObject
+            PUSH, TypeUdonBehaviour
+            PUSH, currentSubscriberUdonBehaviour
+            EXTERN, "UnityEngineGameObject.__GetComponent__SystemType__UnityEngineComponent"
+            # send custom event to currentSubscriberUdonBehaviour
+            PUSH, currentSubscriberUdonBehaviour
+            PUSH, EVENT_NAME
+            EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid" 
+            PUSH, currentSubscriberUdonBehaviour
+            EXTERN, "UnityEngineDebug.__Log__SystemObject__SystemVoid"
+            # INCREMENT INDEX
+            PUSH, index
+            PUSH, ONE
+            PUSH, index
+            EXTERN, "SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32"
+            # JUMP BACK TO CONDITION CHECK
+            JUMP, loopCheck_1
+        #}
+        JUMP, 0xFFFFFF
+    .export PUBLISH
+.code_end

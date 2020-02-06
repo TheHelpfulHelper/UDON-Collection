@@ -1,0 +1,130 @@
+# Extended Udon Assembly by Toocanzs
+#.INIT_START
+#PUSH SystemBoolean false
+#SETHEAP "FALSE"
+#PUSH  SystemSingle 0.0
+#SETHEAP "ZEROF"
+#PUSH  SystemInt32 1
+#SETHEAP "ONE"
+#PUSH  SystemInt32 0
+#SETHEAP "ZERO"
+#PUSH  SystemInt32 0
+#SETHEAP "index"
+#PUSH SystemType VRCUdonUdonBehaviour
+#SETHEAP "TypeUdonBehaviour"
+#PUSH SystemString "IS_VR"
+#SETHEAP variableName
+#PUSH SystemString "UPDATE_VR"
+#SETHEAP eventName
+#.INIT_END
+
+# DATA
+.data_start
+    # THIS
+    thisBehaviour: %VRCUdonUdonBehaviour, this
+    thisGameObject: %UnityEngineGameObject, this
+    thisTransform: %UnityEngineTransform, this
+    
+    # PRIVATE VARIABLES
+    stereoSeperation: %SystemSingle, null
+    FALSE: %SystemBoolean, null
+    ZEROF: %SystemSingle, null
+    ONE: %SystemInt32, null
+    ZERO: %SystemInt32, null
+    # loop stuff
+    index: %SystemInt32, null
+    condition: %SystemBoolean, null
+    #
+    arrayLength: %SystemInt32, null
+    TypeUdonBehaviour: %SystemType, null
+    currentSubscriberGameObject: %UnityEngineGameObject, null
+    currentSubscriberUdonBehaviour: %VRCUdonUdonBehaviour, null
+    variableName: %SystemString, null
+    eventName: %SystemString, null
+    
+    # PUBLIC VARIABLES
+    testerCamera: %UnityEngineCamera, null
+    cameraContainer: %UnityEngineGameObject, null
+    IS_VR: %SystemBoolean, null
+    SUBSCRIBERS: %UnityEngineGameObjectArray, null    
+    
+    .export testerCamera
+    .export cameraContainer
+    .export IS_VR
+    .export SUBSCRIBERS
+    
+.data_end
+
+# CODE
+.code_start
+
+    _start:
+    #{
+        #MAIN CALLS
+        PUSH, testerCamera
+        PUSH, stereoSeperation
+        EXTERN, "UnityEngineCamera.__get_stereoSeparation__SystemSingle"
+        PUSH, stereoSeperation
+        PUSH, ZEROF
+        PUSH, IS_VR
+        EXTERN, "SystemSingle.__op_GreaterThan__SystemSingle_SystemSingle__SystemBoolean"
+        PUSH, cameraContainer
+        PUSH, FALSE
+        EXTERN, "UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid"
+        PUSH, thisBehaviour
+        PUSH, "UPDATE_VR"
+        EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid"
+        #RETURN TO START
+        JUMP, 0xFFFFFF
+    #}
+    .export _start
+    
+    UPDATE_VR:
+        # INITIALISE INDEX
+        PUSH, ZERO
+        PUSH, index
+        COPY
+        # get array length
+        PUSH, SUBSCRIBERS
+        PUSH, arrayLength
+        EXTERN, "UnityEngineGameObjectArray.__get_Length__SystemInt32"
+        # CONDITION CHECK
+        loopCheck_1:
+        PUSH, index
+        PUSH, arrayLength
+        PUSH, condition
+        EXTERN, "SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean"
+        PUSH, condition
+        JUMP_IF_FALSE, 0xFFFFFF
+        # CONDITION PASSED
+        #{
+            # get current subscriber from subscribers array
+            PUSH, SUBSCRIBERS
+            PUSH, index
+            PUSH, currentSubscriberGameObject
+            EXTERN, "UnityEngineGameObjectArray.__Get__SystemInt32__UnityEngineGameObject"
+            # get UdonBehaviour from currentSubscriberGameObject
+            PUSH, currentSubscriberGameObject
+            PUSH, TypeUdonBehaviour
+            PUSH, currentSubscriberUdonBehaviour
+            EXTERN, "UnityEngineGameObject.__GetComponent__SystemType__UnityEngineComponent"
+            # set program variable of currentSubscriberUdonBehaviour
+            PUSH, currentSubscriberUdonBehaviour
+            PUSH, variableName
+            PUSH, IS_VR
+            EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid"
+            # send custom event to currentSubscriberUdonBehaviour
+            PUSH, currentSubscriberUdonBehaviour
+            PUSH, eventName
+            EXTERN, "VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid"
+            # INCREMENT INDEX
+            PUSH, index
+            PUSH, ONE
+            PUSH, index
+            EXTERN, "SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32"
+            # JUMP BACK TO CONDITION CHECK
+            JUMP, loopCheck_1
+        #}
+        JUMP, 0xFFFFFF
+    .export UPDATE_VR
+.code_end
