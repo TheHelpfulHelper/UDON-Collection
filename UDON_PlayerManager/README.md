@@ -11,6 +11,6 @@ This adds default variable setting and advanced labels to the serialiser which i
 
 Drag and drop the PlayerManger .euasm file into the program source slot of a UdonBehaviour on a GameObject. This will now act as your PlayerManager.
 
-The PlayerManager has two public variables: PLAYERS and playersLength. PLAYERS is the array that keeps track of all Player APIs. playersLength is the variable that keeps track of how many Players are in the instance.
+The PlayerManager has two public variables: PLAYERS and PLAYERS_AMOUNT. PLAYERS is the array that keeps track of all Player APIs. PLAYERS_AMOUNT is the variable that keeps track of how many players are in the instance.
 
-To loop through all of the APIs set up a simple for-loop that has 0 as the start, 1 as the step and playersLength as the end. You can then access each element in the array by that index.
+To loop through all of the APIs set up a simple for-loop that has 0 as the start, 1 as the step and PLAYERS_AMOUNT as the end. You can then access each element in the array by that index. An example graph is provided.
