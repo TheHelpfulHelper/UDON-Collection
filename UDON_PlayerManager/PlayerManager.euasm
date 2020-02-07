@@ -42,11 +42,11 @@
     continue_1_ADDRESS: %SystemUInt32, null
     
     # PUBLIC VARIABLES
-    PLAYERMANAGER: %VRCSDKBaseVRCPlayerApiArray, null
-    playersLength: %SystemInt32, null
+    PLAYERS: %VRCSDKBaseVRCPlayerApiArray, null
+    PLAYERS_AMOUNT: %SystemInt32, null
     
-    .export PLAYERMANAGER
-    .export playersLength
+    .export PLAYERS
+    .export PLAYERS_AMOUNT
 .data_end
 
 .code_start
@@ -59,7 +59,7 @@
     #{
         #INITIALISE ARRAY
         PUSH, maxArraySize
-        PUSH, PLAYERMANAGER
+        PUSH, PLAYERS
         EXTERN, "VRCSDKBaseVRCPlayerApiArray.__ctor__SystemInt32__VRCSDKBaseVRCPlayerApiArray"
         # Set localPlayerAPI
         #PUSH, localPlayerAPI
@@ -72,16 +72,14 @@
     _onPlayerJoined:
     #{
         # Add player to the array
-        PUSH, PLAYERMANAGER
-        EXTERN, "UnityEngineDebug.__Log__SystemObject__SystemVoid"
-        PUSH, PLAYERMANAGER
+        PUSH, PLAYERS
         PUSH, onPlayerJoinedPlayer
-        PUSH, playersLength
+        PUSH, PLAYERS_AMOUNT
         EXTERN, "VRCSDKBaseVRCPlayerApiArray.__SetValue__SystemObject_SystemInt32__SystemVoid"
-        # increment playersLength
-        PUSH, playersLength
+        # increment PLAYERS_AMOUNT
+        PUSH, PLAYERS_AMOUNT
         PUSH, ONE
-        PUSH, playersLength
+        PUSH, PLAYERS_AMOUNT
         EXTERN, "SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32"
         # LOG
         PUSH, thisBehaviour
@@ -101,10 +99,8 @@
         COPY
         loop_1:
         #{
-            PUSH, index
-            EXTERN, "UnityEngineDebug.__Log__SystemObject__SystemVoid"
-            # get current player from PLAYERMANAGER array
-            PUSH, PLAYERMANAGER
+            # get current player from PLAYERS array
+            PUSH, PLAYERS
             PUSH, index
             PUSH, currentPlayer
             EXTERN, "VRCSDKBaseVRCPlayerApiArray.__GetValue__SystemInt32__SystemObject"
@@ -128,8 +124,6 @@
             # if the player is found continue, else go back
             PUSH, foundLeftPlayer
             JUMP_IF_FALSE, loop_1
-            PUSH, foundLeftPlayer
-            EXTERN, "UnityEngineDebug.__Log__SystemObject__SystemVoid"
             # PLAYER FOUND
             loop_2:
             #{
@@ -143,18 +137,18 @@
                 EXTERN, "SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32"
                 # check if index is at last pos
                 PUSH, nextIndex
-                PUSH, playersLength
+                PUSH, PLAYERS_AMOUNT
                 PUSH, condition
                 EXTERN, "SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean"
                 PUSH, condition
                 JUMP_IF_FALSE, continue_1
                 # NOT AT LAST POSITION
                 # copy element at index to nextIndex
-                PUSH, PLAYERMANAGER
+                PUSH, PLAYERS
                 PUSH, nextIndex
                 PUSH, nextPlayer
                 EXTERN, "VRCSDKBaseVRCPlayerApiArray.__GetValue__SystemInt32__SystemObject"
-                PUSH, PLAYERMANAGER
+                PUSH, PLAYERS
                 PUSH, nextPlayer
                 PUSH, index
                 EXTERN, "VRCSDKBaseVRCPlayerApiArray.__SetValue__SystemObject_SystemInt32__SystemVoid"
@@ -165,7 +159,7 @@
                 EXTERN, "SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32"
                 # check if index is at last pos
                 PUSH, index
-                PUSH, playersLength
+                PUSH, PLAYERS_AMOUNT
                 PUSH, condition
                 EXTERN, "SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean"
                 PUSH, condition
@@ -173,15 +167,15 @@
             #}
         #}
         continue_1_EXIT:
-        # decrement playersLength
-        PUSH, playersLength
+        # decrement PLAYERS_AMOUNT
+        PUSH, PLAYERS_AMOUNT
         PUSH, ONE
-        PUSH, playersLength
+        PUSH, PLAYERS_AMOUNT
         EXTERN, "SystemInt32.__op_Subtraction__SystemInt32_SystemInt32__SystemInt32"
         # REMOVE LAST ELEMENT
-        PUSH, PLAYERMANAGER
+        PUSH, PLAYERS
         PUSH, NULL
-        PUSH, playersLength
+        PUSH, PLAYERS_AMOUNT
         EXTERN, "VRCSDKBaseVRCPlayerApiArray.__SetValue__SystemObject_SystemInt32__SystemVoid"
         # LOG
         PUSH, thisBehaviour
@@ -204,8 +198,8 @@
         COPY
         loop_3:
         #{
-            # get current player from PLAYERMANAGER array
-            PUSH, PLAYERMANAGER
+            # get current player from PLAYERS array
+            PUSH, PLAYERS
             PUSH, index
             PUSH, currentPlayer
             EXTERN, "VRCSDKBaseVRCPlayerApiArray.__GetValue__SystemInt32__SystemObject"
@@ -218,14 +212,14 @@
             EXTERN, "SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32"
             # check if index is at last pos
             PUSH, index
-            PUSH, playersLength
+            PUSH, PLAYERS_AMOUNT
             PUSH, condition
             EXTERN, "SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean"
             # if the player is found continue, else go back
             PUSH, condition
             JUMP_IF_FALSE, loop_3
         #}
-        PUSH, playersLength
+        PUSH, PLAYERS_AMOUNT
         EXTERN, "UnityEngineDebug.__Log__SystemObject__SystemVoid"
         PUSH, "============================================="
         EXTERN, "UnityEngineDebug.__Log__SystemObject__SystemVoid"
