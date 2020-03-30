@@ -1,3 +1,6 @@
+# IMPORTANT 
+This system was made before IsUserVR was implemented, it is thereby considered deprecated!
+
 # VR Detection System
 This system allows you to detect if a User is in VR or Desktop Mode.
 
