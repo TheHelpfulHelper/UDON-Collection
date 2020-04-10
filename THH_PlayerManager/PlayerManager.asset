@@ -1,0 +1,1307 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
+  m_Name: PlayerManager
+  m_EditorClassIdentifier: 
+  serializedUdonProgramAsset: {fileID: 11400000, guid: cf3ae2759a82376439ac3f21fca6be19,
+    type: 2}
+  udonAssembly: ".data_start\r\n\r\n    .export MaxTrackedPlayers\r\n    .export NUMBER_OF_PLAYERS\r\n
+    \   .export PLAYERAPIS\r\n\r\n    __refl_const_intnl_udonTypeID: %SystemInt64,
+    null\r\n    __refl_const_intnl_udonTypeName: %SystemString, null\r\n    MaxTrackedPlayers:
+    %SystemInt32, null\r\n    NUMBER_OF_PLAYERS: %SystemInt32, null\r\n    PLAYERAPIS:
+    %VRCSDKBaseVRCPlayerApiArray, null\r\n    onPlayerJoinedPlayer: %VRCSDKBaseVRCPlayerApi,
+    null\r\n    onPlayerLeftPlayer: %VRCSDKBaseVRCPlayerApi, null\r\n    __0_leftPlayerFound_Boolean:
+    %SystemBoolean, null\r\n    __0_i_Int32: %SystemInt32, null\r\n    __1_i_Int32:
+    %SystemInt32, null\r\n    __0_inspectedPlayerApi_VRCPlayerApi: %VRCSDKBaseVRCPlayerApi,
+    null\r\n    __0_joinedPlayerApi_VRCPlayerApi: %VRCSDKBaseVRCPlayerApi, null\r\n
+    \   __0_leftPlayerApi_VRCPlayerApi: %VRCSDKBaseVRCPlayerApi, null\r\n    __0_player_VRCPlayerApi:
+    %VRCSDKBaseVRCPlayerApi, null\r\n    __0_const_intnl_SystemBoolean: %SystemBoolean,
+    null\r\n    __1_const_intnl_SystemBoolean: %SystemBoolean, null\r\n    __0_const_intnl_SystemInt32:
+    %SystemInt32, null\r\n    __1_const_intnl_SystemInt32: %SystemInt32, null\r\n
+    \   __0_const_intnl_SystemObject: %SystemObject, null\r\n    __0_const_intnl_SystemString:
+    %SystemString, null\r\n    __1_const_intnl_SystemString: %SystemString, null\r\n
+    \   __0_const_intnl_SystemUInt32: %SystemUInt32, null\r\n    __0_intnl_SystemBoolean:
+    %SystemBoolean, null\r\n    __1_intnl_SystemBoolean: %SystemBoolean, null\r\n
+    \   __2_intnl_SystemBoolean: %SystemBoolean, null\r\n    __3_intnl_SystemBoolean:
+    %SystemBoolean, null\r\n    __0_intnl_SystemInt32: %SystemInt32, null\r\n    __1_intnl_SystemInt32:
+    %SystemInt32, null\r\n    __2_intnl_SystemInt32: %SystemInt32, null\r\n    __3_intnl_SystemInt32:
+    %SystemInt32, null\r\n    __4_intnl_SystemInt32: %SystemInt32, null\r\n    __5_intnl_SystemInt32:
+    %SystemInt32, null\r\n    __6_intnl_SystemInt32: %SystemInt32, null\r\n    __0_intnl_SystemInt64:
+    %SystemInt64, null\r\n    __0_intnl_SystemObject: %SystemObject, null\r\n    __1_intnl_SystemObject:
+    %SystemObject, null\r\n    __0_intnl_SystemString: %SystemString, null\r\n    __1_intnl_SystemString:
+    %SystemString, null\r\n    __2_intnl_SystemString: %SystemString, null\r\n    __0_intnl_returnTarget_UInt32:
+    %SystemUInt32, null\r\n    __0_intnl_VRCSDKBaseVRCPlayerApi: %VRCSDKBaseVRCPlayerApi,
+    null\r\n    __1_intnl_VRCSDKBaseVRCPlayerApi: %VRCSDKBaseVRCPlayerApi, null\r\n
+    \   __0_intnl_VRCSDKBaseVRCPlayerApiArray: %VRCSDKBaseVRCPlayerApiArray, null\r\n
+    \   __1_intnl_VRCSDKBaseVRCPlayerApiArray: %VRCSDKBaseVRCPlayerApiArray, null\r\n\r\n.data_end\r\n\r\n
+    \       \r\n         # using UdonSharp;\r\n        \r\n         # using UnityEngine;\r\n
+    \       \r\n         # using VRC.SDKBase;\r\n        \r\n         # using VRC.Udon;\r\n
+    \       \r\n         # public class PlayerManager : UdonSharpBehaviour\r\n.code_start\r\n
+    \       \r\n         # public int MaxTrackedPlayers = 80;\r\n        \r\n         #
+    public int NUMBER_OF_PLAYERS;\r\n        \r\n         # public VRCPlayerApi[]
+    PLAYERAPIS;\r\n        \r\n         # void Start()\r\n    .export _start\r\n        \r\n
+    \   _start:\r\n        \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n        PUSH,
+    __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        \r\n         # {\r\n
+    \       \r\n         # PLAYERAPIS = new VRCPlayerApi[MaxTrackedPlayers];\r\n        PUSH,
+    MaxTrackedPlayers\r\n        PUSH, __1_intnl_VRCSDKBaseVRCPlayerApiArray\r\n        EXTERN,
+    \"VRCSDKBaseVRCPlayerApiArray.__ctor__SystemInt32__VRCSDKBaseVRCPlayerApiArray\"\r\n
+    \       PUSH, __1_intnl_VRCSDKBaseVRCPlayerApiArray\r\n        PUSH, __0_intnl_VRCSDKBaseVRCPlayerApiArray\r\n
+    \       COPY\r\n        PUSH, __0_intnl_VRCSDKBaseVRCPlayerApiArray\r\n        PUSH,
+    PLAYERAPIS\r\n        COPY\r\n        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n
+    \       \r\n        \r\n         # void OnPlayerJoined(VRCPlayerApi joinedPlayerApi)\r\n
+    \   .export _onPlayerJoined\r\n        \r\n    _onPlayerJoined:\r\n        \r\n
+    \       PUSH, __0_const_intnl_SystemUInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
+    \       COPY\r\n        PUSH, onPlayerJoinedPlayer\r\n        PUSH, __0_joinedPlayerApi_VRCPlayerApi\r\n
+    \       COPY\r\n        \r\n         # {\r\n        \r\n         # PLAYERAPIS.SetValue(joinedPlayerApi,
+    NUMBER_OF_PLAYERS);\r\n        PUSH, PLAYERAPIS\r\n        PUSH, __0_joinedPlayerApi_VRCPlayerApi\r\n
+    \       PUSH, NUMBER_OF_PLAYERS\r\n        EXTERN, \"VRCSDKBaseVRCPlayerApiArray.__SetValue__SystemObject_SystemInt32__SystemVoid\"\r\n
+    \       \r\n         # NUMBER_OF_PLAYERS++;\r\n        PUSH, NUMBER_OF_PLAYERS\r\n
+    \       PUSH, __0_intnl_SystemInt32\r\n        COPY\r\n        PUSH, NUMBER_OF_PLAYERS\r\n
+    \       PUSH, __0_const_intnl_SystemInt32\r\n        PUSH, __1_intnl_SystemInt32\r\n
+    \       EXTERN, \"SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32\"\r\n
+    \       PUSH, __1_intnl_SystemInt32\r\n        PUSH, NUMBER_OF_PLAYERS\r\n        COPY\r\n
+    \       JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n        \r\n        \r\n
+    \        # void OnPlayerLeft(VRCPlayerApi leftPlayerApi)\r\n    .export _onPlayerLeft\r\n
+    \       \r\n    _onPlayerLeft:\r\n        \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n
+    \       PUSH, __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        PUSH, onPlayerLeftPlayer\r\n
+    \       PUSH, __0_leftPlayerApi_VRCPlayerApi\r\n        COPY\r\n        \r\n         #
+    {\r\n        \r\n         # bool leftPlayerFound = false;\r\n        PUSH, __0_const_intnl_SystemBoolean\r\n
+    \       PUSH, __0_leftPlayerFound_Boolean\r\n        COPY\r\n        \r\n         #
+    for (int i = 0; i < NUMBER_OF_PLAYERS; i++)\r\n        PUSH, __1_const_intnl_SystemInt32\r\n
+    \       PUSH, __0_i_Int32\r\n        COPY\r\n        PUSH, __0_i_Int32\r\n        PUSH,
+    NUMBER_OF_PLAYERS\r\n        PUSH, __0_intnl_SystemBoolean\r\n        EXTERN,
+    \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\r\n        PUSH,
+    __0_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000300\r\n        \r\n         #
+    {\r\n        \r\n         # if (!leftPlayerFound)\r\n        PUSH, __0_leftPlayerFound_Boolean\r\n
+    \       PUSH, __1_intnl_SystemBoolean\r\n        EXTERN, \"SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean\"\r\n
+    \       PUSH, __1_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000238\r\n
+    \       \r\n         # {\r\n        \r\n         # VRCPlayerApi inspectedPlayerApi
+    = (VRCPlayerApi)PLAYERAPIS.GetValue(i);\r\n        PUSH, PLAYERAPIS\r\n        PUSH,
+    __0_i_Int32\r\n        PUSH, __0_intnl_SystemObject\r\n        EXTERN, \"VRCSDKBaseVRCPlayerApiArray.__GetValue__SystemInt32__SystemObject\"\r\n
+    \       PUSH, __0_intnl_SystemObject\r\n        PUSH, __0_intnl_VRCSDKBaseVRCPlayerApi\r\n
+    \       COPY\r\n        PUSH, __0_intnl_VRCSDKBaseVRCPlayerApi\r\n        PUSH,
+    __0_inspectedPlayerApi_VRCPlayerApi\r\n        COPY\r\n        \r\n         #
+    if (inspectedPlayerApi == leftPlayerApi)\r\n        PUSH, __0_inspectedPlayerApi_VRCPlayerApi\r\n
+    \       PUSH, __0_leftPlayerApi_VRCPlayerApi\r\n        PUSH, __2_intnl_SystemBoolean\r\n
+    \       EXTERN, \"SystemObject.__op_Equality__SystemObject_SystemObject__SystemBoolean\"\r\n
+    \       PUSH, __2_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000230\r\n
+    \       \r\n         # {\r\n        \r\n         # leftPlayerFound = true;\r\n
+    \       PUSH, __1_const_intnl_SystemBoolean\r\n        PUSH, __0_leftPlayerFound_Boolean\r\n
+    \       COPY\r\n        \r\n         # continue;\r\n        JUMP, 0x000002B0\r\n
+    \       JUMP, 0x000002B0\r\n        \r\n         # else\r\n        \r\n         #
+    {\r\n        \r\n         # PLAYERAPIS.SetValue(PLAYERAPIS.GetValue(i), i - 1);\r\n
+    \       PUSH, PLAYERAPIS\r\n        PUSH, __0_i_Int32\r\n        PUSH, __0_intnl_SystemObject\r\n
+    \       EXTERN, \"VRCSDKBaseVRCPlayerApiArray.__GetValue__SystemInt32__SystemObject\"\r\n
+    \       PUSH, __0_i_Int32\r\n        PUSH, __0_const_intnl_SystemInt32\r\n        PUSH,
+    __2_intnl_SystemInt32\r\n        EXTERN, \"SystemInt32.__op_Subtraction__SystemInt32_SystemInt32__SystemInt32\"\r\n
+    \       PUSH, __2_intnl_SystemInt32\r\n        PUSH, __0_intnl_SystemInt64\r\n
+    \       EXTERN, \"SystemConvert.__ToInt64__SystemInt32__SystemInt64\"\r\n        PUSH,
+    PLAYERAPIS\r\n        PUSH, __0_intnl_SystemObject\r\n        PUSH, __0_intnl_SystemInt64\r\n
+    \       EXTERN, \"VRCSDKBaseVRCPlayerApiArray.__SetValue__SystemObject_SystemInt64__SystemVoid\"\r\n
+    \       PUSH, __0_i_Int32\r\n        PUSH, __2_intnl_SystemInt32\r\n        COPY\r\n
+    \       PUSH, __0_i_Int32\r\n        PUSH, __0_const_intnl_SystemInt32\r\n        PUSH,
+    __3_intnl_SystemInt32\r\n        EXTERN, \"SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32\"\r\n
+    \       PUSH, __3_intnl_SystemInt32\r\n        PUSH, __0_i_Int32\r\n        COPY\r\n
+    \       JUMP, 0x00000144\r\n        \r\n         # PLAYERAPIS.SetValue(null, MaxTrackedPlayers
+    - 1);\r\n        PUSH, MaxTrackedPlayers\r\n        PUSH, __0_const_intnl_SystemInt32\r\n
+    \       PUSH, __2_intnl_SystemInt32\r\n        EXTERN, \"SystemInt32.__op_Subtraction__SystemInt32_SystemInt32__SystemInt32\"\r\n
+    \       PUSH, __2_intnl_SystemInt32\r\n        PUSH, __0_intnl_SystemInt64\r\n
+    \       EXTERN, \"SystemConvert.__ToInt64__SystemInt32__SystemInt64\"\r\n        PUSH,
+    PLAYERAPIS\r\n        PUSH, __0_const_intnl_SystemObject\r\n        PUSH, __0_intnl_SystemInt64\r\n
+    \       EXTERN, \"VRCSDKBaseVRCPlayerApiArray.__SetValue__SystemObject_SystemInt64__SystemVoid\"\r\n
+    \       \r\n         # NUMBER_OF_PLAYERS--;\r\n        PUSH, NUMBER_OF_PLAYERS\r\n
+    \       PUSH, __3_intnl_SystemInt32\r\n        COPY\r\n        PUSH, NUMBER_OF_PLAYERS\r\n
+    \       PUSH, __0_const_intnl_SystemInt32\r\n        PUSH, __4_intnl_SystemInt32\r\n
+    \       EXTERN, \"SystemInt32.__op_Subtraction__SystemInt32_SystemInt32__SystemInt32\"\r\n
+    \       PUSH, __4_intnl_SystemInt32\r\n        PUSH, NUMBER_OF_PLAYERS\r\n        COPY\r\n
+    \       JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n        \r\n        \r\n
+    \        # void Log()\r\n    Log:\r\n        \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n
+    \       PUSH, __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        \r\n         #
+    {\r\n        \r\n         # Debug.Log(\"=================================================\");\r\n
+    \       PUSH, __0_const_intnl_SystemString\r\n        EXTERN, \"UnityEngineDebug.__Log__SystemObject__SystemVoid\"\r\n
+    \       \r\n         # Debug.Log(\"Number of Players:\" + NUMBER_OF_PLAYERS);\r\n
+    \       PUSH, NUMBER_OF_PLAYERS\r\n        PUSH, __0_intnl_SystemString\r\n        EXTERN,
+    \"SystemInt32.__ToString__SystemString\"\r\n        PUSH, __1_const_intnl_SystemString\r\n
+    \       PUSH, __0_intnl_SystemString\r\n        PUSH, __1_intnl_SystemString\r\n
+    \       EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n
+    \       PUSH, __1_intnl_SystemString\r\n        EXTERN, \"UnityEngineDebug.__Log__SystemObject__SystemVoid\"\r\n
+    \       \r\n         # for (int i = 0; i < NUMBER_OF_PLAYERS; i++)\r\n        PUSH,
+    __1_const_intnl_SystemInt32\r\n        PUSH, __1_i_Int32\r\n        COPY\r\n        PUSH,
+    __1_i_Int32\r\n        PUSH, NUMBER_OF_PLAYERS\r\n        PUSH, __3_intnl_SystemBoolean\r\n
+    \       EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\r\n
+    \       PUSH, __3_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000518\r\n
+    \       \r\n         # {\r\n        \r\n         # VRCPlayerApi player = (VRCPlayerApi)PLAYERAPIS.GetValue(i);\r\n
+    \       PUSH, PLAYERAPIS\r\n        PUSH, __1_i_Int32\r\n        PUSH, __1_intnl_SystemObject\r\n
+    \       EXTERN, \"VRCSDKBaseVRCPlayerApiArray.__GetValue__SystemInt32__SystemObject\"\r\n
+    \       PUSH, __1_intnl_SystemObject\r\n        PUSH, __1_intnl_VRCSDKBaseVRCPlayerApi\r\n
+    \       COPY\r\n        PUSH, __1_intnl_VRCSDKBaseVRCPlayerApi\r\n        PUSH,
+    __0_player_VRCPlayerApi\r\n        COPY\r\n        \r\n         # Debug.Log(player.displayName);\r\n
+    \       PUSH, __0_player_VRCPlayerApi\r\n        PUSH, __2_intnl_SystemString\r\n
+    \       EXTERN, \"VRCSDKBaseVRCPlayerApi.__get_displayName__SystemString\"\r\n
+    \       PUSH, __2_intnl_SystemString\r\n        EXTERN, \"UnityEngineDebug.__Log__SystemObject__SystemVoid\"\r\n
+    \       PUSH, __1_i_Int32\r\n        PUSH, __5_intnl_SystemInt32\r\n        COPY\r\n
+    \       PUSH, __1_i_Int32\r\n        PUSH, __0_const_intnl_SystemInt32\r\n        PUSH,
+    __6_intnl_SystemInt32\r\n        EXTERN, \"SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32\"\r\n
+    \       PUSH, __6_intnl_SystemInt32\r\n        PUSH, __1_i_Int32\r\n        COPY\r\n
+    \       JUMP, 0x00000428\r\n        \r\n         # Debug.Log(\"=================================================\");\r\n
+    \       PUSH, __0_const_intnl_SystemString\r\n        EXTERN, \"UnityEngineDebug.__Log__SystemObject__SystemVoid\"\r\n
+    \       JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n        \r\n.code_end\r\n"
+  assemblyError: 
+  sourceCsScript: {fileID: 11500000, guid: e8f5197499abad84ca76d28a282a569d, type: 3}
+  behaviourIDHeapVarName: __refl_const_intnl_udonTypeID
+  compileErrors: []
+  debugInfo:
+    serializedDebugSpans:
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 0
+      endSourceChar: 2
+      line: 0
+      lineChar: 0
+      spanCodeSection: "\r\n"
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 2
+      endSourceChar: 2
+      line: 1
+      lineChar: 0
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 2
+      endSourceChar: 8
+      line: 1
+      lineChar: 0
+      spanCodeSection: 'using '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 8
+      endSourceChar: 20
+      line: 1
+      lineChar: 6
+      spanCodeSection: "UdonSharp;\r\n"
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 20
+      endSourceChar: 26
+      line: 2
+      lineChar: 0
+      spanCodeSection: 'using '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 26
+      endSourceChar: 40
+      line: 2
+      lineChar: 6
+      spanCodeSection: "UnityEngine;\r\n"
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 40
+      endSourceChar: 46
+      line: 3
+      lineChar: 0
+      spanCodeSection: 'using '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 46
+      endSourceChar: 46
+      line: 3
+      lineChar: 6
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 46
+      endSourceChar: 50
+      line: 3
+      lineChar: 6
+      spanCodeSection: VRC.
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 50
+      endSourceChar: 60
+      line: 3
+      lineChar: 10
+      spanCodeSection: "SDKBase;\r\n"
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 60
+      endSourceChar: 66
+      line: 4
+      lineChar: 0
+      spanCodeSection: 'using '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 66
+      endSourceChar: 66
+      line: 4
+      lineChar: 6
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 66
+      endSourceChar: 70
+      line: 4
+      lineChar: 6
+      spanCodeSection: VRC.
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 70
+      endSourceChar: 79
+      line: 4
+      lineChar: 10
+      spanCodeSection: "Udon;\r\n\r\n"
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 79
+      endSourceChar: 106
+      line: 6
+      lineChar: 0
+      spanCodeSection: 'public class PlayerManager '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 106
+      endSourceChar: 108
+      line: 6
+      lineChar: 27
+      spanCodeSection: ': '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 108
+      endSourceChar: 108
+      line: 6
+      lineChar: 29
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 108
+      endSourceChar: 135
+      line: 6
+      lineChar: 29
+      spanCodeSection: "UdonSharpBehaviour\r\n{\r\n    "
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 135
+      endSourceChar: 142
+      line: 8
+      lineChar: 4
+      spanCodeSection: 'public '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 142
+      endSourceChar: 142
+      line: 8
+      lineChar: 11
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 142
+      endSourceChar: 175
+      line: 8
+      lineChar: 11
+      spanCodeSection: "int MaxTrackedPlayers = 80;\r\n    "
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 175
+      endSourceChar: 182
+      line: 9
+      lineChar: 4
+      spanCodeSection: 'public '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 182
+      endSourceChar: 182
+      line: 9
+      lineChar: 11
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 182
+      endSourceChar: 210
+      line: 9
+      lineChar: 11
+      spanCodeSection: "int NUMBER_OF_PLAYERS;\r\n    "
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 210
+      endSourceChar: 217
+      line: 10
+      lineChar: 4
+      spanCodeSection: 'public '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 217
+      endSourceChar: 217
+      line: 10
+      lineChar: 11
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 217
+      endSourceChar: 217
+      line: 10
+      lineChar: 11
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 217
+      endSourceChar: 251
+      line: 10
+      lineChar: 11
+      spanCodeSection: "VRCPlayerApi[] PLAYERAPIS;\r\n\r\n    "
+    - startInstruction: 0
+      endInstruction: 19
+      startSourceChar: 251
+      endSourceChar: 269
+      line: 12
+      lineChar: 4
+      spanCodeSection: "void Start()\r\n    "
+    - startInstruction: 20
+      endInstruction: 19
+      startSourceChar: 269
+      endSourceChar: 280
+      line: 13
+      lineChar: 4
+      spanCodeSection: "{\r\n        "
+    - startInstruction: 20
+      endInstruction: 19
+      startSourceChar: 280
+      endSourceChar: 280
+      line: 14
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 20
+      endInstruction: 19
+      startSourceChar: 280
+      endSourceChar: 293
+      line: 14
+      lineChar: 8
+      spanCodeSection: 'PLAYERAPIS = '
+    - startInstruction: 20
+      endInstruction: 19
+      startSourceChar: 293
+      endSourceChar: 297
+      line: 14
+      lineChar: 21
+      spanCodeSection: 'new '
+    - startInstruction: 20
+      endInstruction: 19
+      startSourceChar: 297
+      endSourceChar: 297
+      line: 14
+      lineChar: 25
+      spanCodeSection: 
+    - startInstruction: 20
+      endInstruction: 19
+      startSourceChar: 297
+      endSourceChar: 309
+      line: 14
+      lineChar: 25
+      spanCodeSection: VRCPlayerApi
+    - startInstruction: 20
+      endInstruction: 19
+      startSourceChar: 309
+      endSourceChar: 310
+      line: 14
+      lineChar: 37
+      spanCodeSection: '['
+    - startInstruction: 20
+      endInstruction: 91
+      startSourceChar: 310
+      endSourceChar: 344
+      line: 14
+      lineChar: 38
+      spanCodeSection: "MaxTrackedPlayers];\r\n    }\r\n\r\n    "
+    - startInstruction: 92
+      endInstruction: 131
+      startSourceChar: 344
+      endSourceChar: 399
+      line: 17
+      lineChar: 4
+      spanCodeSection: "void OnPlayerJoined(VRCPlayerApi joinedPlayerApi)\r\n    "
+    - startInstruction: 132
+      endInstruction: 131
+      startSourceChar: 399
+      endSourceChar: 410
+      line: 18
+      lineChar: 4
+      spanCodeSection: "{\r\n        "
+    - startInstruction: 132
+      endInstruction: 131
+      startSourceChar: 410
+      endSourceChar: 410
+      line: 19
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 132
+      endInstruction: 131
+      startSourceChar: 410
+      endSourceChar: 430
+      line: 19
+      lineChar: 8
+      spanCodeSection: PLAYERAPIS.SetValue(
+    - startInstruction: 132
+      endInstruction: 131
+      startSourceChar: 430
+      endSourceChar: 447
+      line: 19
+      lineChar: 28
+      spanCodeSection: 'joinedPlayerApi, '
+    - startInstruction: 132
+      endInstruction: 163
+      startSourceChar: 447
+      endSourceChar: 476
+      line: 19
+      lineChar: 45
+      spanCodeSection: "NUMBER_OF_PLAYERS);\r\n        "
+    - startInstruction: 164
+      endInstruction: 163
+      startSourceChar: 476
+      endSourceChar: 476
+      line: 20
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 164
+      endInstruction: 163
+      startSourceChar: 476
+      endSourceChar: 476
+      line: 20
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 164
+      endInstruction: 243
+      startSourceChar: 476
+      endSourceChar: 511
+      line: 20
+      lineChar: 8
+      spanCodeSection: "NUMBER_OF_PLAYERS++;\r\n    }\r\n\r\n    "
+    - startInstruction: 244
+      endInstruction: 283
+      startSourceChar: 511
+      endSourceChar: 562
+      line: 23
+      lineChar: 4
+      spanCodeSection: "void OnPlayerLeft(VRCPlayerApi leftPlayerApi)\r\n    "
+    - startInstruction: 284
+      endInstruction: 283
+      startSourceChar: 562
+      endSourceChar: 573
+      line: 24
+      lineChar: 4
+      spanCodeSection: "{\r\n        "
+    - startInstruction: 284
+      endInstruction: 283
+      startSourceChar: 573
+      endSourceChar: 573
+      line: 25
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 284
+      endInstruction: 283
+      startSourceChar: 573
+      endSourceChar: 573
+      line: 25
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 284
+      endInstruction: 283
+      startSourceChar: 573
+      endSourceChar: 573
+      line: 25
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 284
+      endInstruction: 283
+      startSourceChar: 573
+      endSourceChar: 594
+      line: 25
+      lineChar: 8
+      spanCodeSection: 'bool leftPlayerFound '
+    - startInstruction: 284
+      endInstruction: 283
+      startSourceChar: 594
+      endSourceChar: 596
+      line: 25
+      lineChar: 29
+      spanCodeSection: '= '
+    - startInstruction: 284
+      endInstruction: 303
+      startSourceChar: 596
+      endSourceChar: 612
+      line: 25
+      lineChar: 31
+      spanCodeSection: "false;\r\n        "
+    - startInstruction: 304
+      endInstruction: 303
+      startSourceChar: 612
+      endSourceChar: 617
+      line: 26
+      lineChar: 8
+      spanCodeSection: for (
+    - startInstruction: 304
+      endInstruction: 303
+      startSourceChar: 617
+      endSourceChar: 617
+      line: 26
+      lineChar: 13
+      spanCodeSection: 
+    - startInstruction: 304
+      endInstruction: 303
+      startSourceChar: 617
+      endSourceChar: 617
+      line: 26
+      lineChar: 13
+      spanCodeSection: 
+    - startInstruction: 304
+      endInstruction: 303
+      startSourceChar: 617
+      endSourceChar: 623
+      line: 26
+      lineChar: 13
+      spanCodeSection: 'int i '
+    - startInstruction: 304
+      endInstruction: 303
+      startSourceChar: 623
+      endSourceChar: 625
+      line: 26
+      lineChar: 19
+      spanCodeSection: '= '
+    - startInstruction: 304
+      endInstruction: 323
+      startSourceChar: 625
+      endSourceChar: 628
+      line: 26
+      lineChar: 21
+      spanCodeSection: '0; '
+    - startInstruction: 324
+      endInstruction: 323
+      startSourceChar: 628
+      endSourceChar: 632
+      line: 26
+      lineChar: 24
+      spanCodeSection: 'i < '
+    - startInstruction: 324
+      endInstruction: 371
+      startSourceChar: 632
+      endSourceChar: 665
+      line: 26
+      lineChar: 28
+      spanCodeSection: "NUMBER_OF_PLAYERS; i++)\r\n        "
+    - startInstruction: 372
+      endInstruction: 371
+      startSourceChar: 665
+      endSourceChar: 680
+      line: 27
+      lineChar: 8
+      spanCodeSection: "{\r\n            "
+    - startInstruction: 372
+      endInstruction: 371
+      startSourceChar: 680
+      endSourceChar: 684
+      line: 28
+      lineChar: 12
+      spanCodeSection: if (
+    - startInstruction: 372
+      endInstruction: 371
+      startSourceChar: 684
+      endSourceChar: 685
+      line: 28
+      lineChar: 16
+      spanCodeSection: '!'
+    - startInstruction: 372
+      endInstruction: 411
+      startSourceChar: 685
+      endSourceChar: 715
+      line: 28
+      lineChar: 17
+      spanCodeSection: "leftPlayerFound)\r\n            "
+    - startInstruction: 412
+      endInstruction: 411
+      startSourceChar: 715
+      endSourceChar: 734
+      line: 29
+      lineChar: 12
+      spanCodeSection: "{\r\n                "
+    - startInstruction: 412
+      endInstruction: 411
+      startSourceChar: 734
+      endSourceChar: 734
+      line: 30
+      lineChar: 16
+      spanCodeSection: 
+    - startInstruction: 412
+      endInstruction: 411
+      startSourceChar: 734
+      endSourceChar: 734
+      line: 30
+      lineChar: 16
+      spanCodeSection: 
+    - startInstruction: 412
+      endInstruction: 411
+      startSourceChar: 734
+      endSourceChar: 734
+      line: 30
+      lineChar: 16
+      spanCodeSection: 
+    - startInstruction: 412
+      endInstruction: 411
+      startSourceChar: 734
+      endSourceChar: 766
+      line: 30
+      lineChar: 16
+      spanCodeSection: 'VRCPlayerApi inspectedPlayerApi '
+    - startInstruction: 412
+      endInstruction: 411
+      startSourceChar: 766
+      endSourceChar: 768
+      line: 30
+      lineChar: 48
+      spanCodeSection: '= '
+    - startInstruction: 412
+      endInstruction: 411
+      startSourceChar: 768
+      endSourceChar: 782
+      line: 30
+      lineChar: 50
+      spanCodeSection: (VRCPlayerApi)
+    - startInstruction: 412
+      endInstruction: 411
+      startSourceChar: 782
+      endSourceChar: 802
+      line: 30
+      lineChar: 64
+      spanCodeSection: PLAYERAPIS.GetValue(
+    - startInstruction: 412
+      endInstruction: 483
+      startSourceChar: 802
+      endSourceChar: 823
+      line: 30
+      lineChar: 84
+      spanCodeSection: "i);\r\n                "
+    - startInstruction: 484
+      endInstruction: 483
+      startSourceChar: 823
+      endSourceChar: 827
+      line: 31
+      lineChar: 16
+      spanCodeSection: if (
+    - startInstruction: 484
+      endInstruction: 483
+      startSourceChar: 827
+      endSourceChar: 849
+      line: 31
+      lineChar: 20
+      spanCodeSection: 'inspectedPlayerApi == '
+    - startInstruction: 484
+      endInstruction: 531
+      startSourceChar: 849
+      endSourceChar: 881
+      line: 31
+      lineChar: 42
+      spanCodeSection: "leftPlayerApi)\r\n                "
+    - startInstruction: 532
+      endInstruction: 531
+      startSourceChar: 881
+      endSourceChar: 904
+      line: 32
+      lineChar: 16
+      spanCodeSection: "{\r\n                    "
+    - startInstruction: 532
+      endInstruction: 531
+      startSourceChar: 904
+      endSourceChar: 904
+      line: 33
+      lineChar: 20
+      spanCodeSection: 
+    - startInstruction: 532
+      endInstruction: 531
+      startSourceChar: 904
+      endSourceChar: 922
+      line: 33
+      lineChar: 20
+      spanCodeSection: 'leftPlayerFound = '
+    - startInstruction: 532
+      endInstruction: 551
+      startSourceChar: 922
+      endSourceChar: 949
+      line: 33
+      lineChar: 38
+      spanCodeSection: "true;\r\n                    "
+    - startInstruction: 552
+      endInstruction: 567
+      startSourceChar: 949
+      endSourceChar: 1006
+      line: 34
+      lineChar: 20
+      spanCodeSection: "continue;\r\n                }\r\n            }\r\n            "
+    - startInstruction: 568
+      endInstruction: 567
+      startSourceChar: 1006
+      endSourceChar: 1024
+      line: 37
+      lineChar: 12
+      spanCodeSection: "else\r\n            "
+    - startInstruction: 568
+      endInstruction: 567
+      startSourceChar: 1024
+      endSourceChar: 1043
+      line: 38
+      lineChar: 12
+      spanCodeSection: "{\r\n                "
+    - startInstruction: 568
+      endInstruction: 567
+      startSourceChar: 1043
+      endSourceChar: 1043
+      line: 39
+      lineChar: 16
+      spanCodeSection: 
+    - startInstruction: 568
+      endInstruction: 567
+      startSourceChar: 1043
+      endSourceChar: 1063
+      line: 39
+      lineChar: 16
+      spanCodeSection: PLAYERAPIS.SetValue(
+    - startInstruction: 568
+      endInstruction: 567
+      startSourceChar: 1063
+      endSourceChar: 1083
+      line: 39
+      lineChar: 36
+      spanCodeSection: PLAYERAPIS.GetValue(
+    - startInstruction: 568
+      endInstruction: 599
+      startSourceChar: 1083
+      endSourceChar: 1087
+      line: 39
+      lineChar: 56
+      spanCodeSection: 'i), '
+    - startInstruction: 600
+      endInstruction: 599
+      startSourceChar: 1087
+      endSourceChar: 1091
+      line: 39
+      lineChar: 60
+      spanCodeSection: 'i - '
+    - startInstruction: 600
+      endInstruction: 767
+      startSourceChar: 1091
+      endSourceChar: 1130
+      line: 39
+      lineChar: 64
+      spanCodeSection: "1);\r\n            }\r\n        }\r\n        "
+    - startInstruction: 768
+      endInstruction: 767
+      startSourceChar: 1130
+      endSourceChar: 1130
+      line: 42
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 768
+      endInstruction: 767
+      startSourceChar: 1130
+      endSourceChar: 1150
+      line: 42
+      lineChar: 8
+      spanCodeSection: PLAYERAPIS.SetValue(
+    - startInstruction: 768
+      endInstruction: 767
+      startSourceChar: 1150
+      endSourceChar: 1156
+      line: 42
+      lineChar: 28
+      spanCodeSection: 'null, '
+    - startInstruction: 768
+      endInstruction: 767
+      startSourceChar: 1156
+      endSourceChar: 1176
+      line: 42
+      lineChar: 34
+      spanCodeSection: 'MaxTrackedPlayers - '
+    - startInstruction: 768
+      endInstruction: 855
+      startSourceChar: 1176
+      endSourceChar: 1189
+      line: 42
+      lineChar: 54
+      spanCodeSection: "1);\r\n        "
+    - startInstruction: 856
+      endInstruction: 855
+      startSourceChar: 1189
+      endSourceChar: 1189
+      line: 43
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 856
+      endInstruction: 855
+      startSourceChar: 1189
+      endSourceChar: 1189
+      line: 43
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 856
+      endInstruction: 935
+      startSourceChar: 1189
+      endSourceChar: 1224
+      line: 43
+      lineChar: 8
+      spanCodeSection: "NUMBER_OF_PLAYERS--;\r\n    }\r\n\r\n    "
+    - startInstruction: 936
+      endInstruction: 955
+      startSourceChar: 1224
+      endSourceChar: 1240
+      line: 46
+      lineChar: 4
+      spanCodeSection: "void Log()\r\n    "
+    - startInstruction: 956
+      endInstruction: 955
+      startSourceChar: 1240
+      endSourceChar: 1251
+      line: 47
+      lineChar: 4
+      spanCodeSection: "{\r\n        "
+    - startInstruction: 956
+      endInstruction: 955
+      startSourceChar: 1251
+      endSourceChar: 1251
+      line: 48
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 956
+      endInstruction: 955
+      startSourceChar: 1251
+      endSourceChar: 1261
+      line: 48
+      lineChar: 8
+      spanCodeSection: Debug.Log(
+    - startInstruction: 956
+      endInstruction: 971
+      startSourceChar: 1261
+      endSourceChar: 1324
+      line: 48
+      lineChar: 18
+      spanCodeSection: "\"=================================================\");\r\n
+        \       "
+    - startInstruction: 972
+      endInstruction: 971
+      startSourceChar: 1324
+      endSourceChar: 1324
+      line: 49
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 972
+      endInstruction: 971
+      startSourceChar: 1324
+      endSourceChar: 1334
+      line: 49
+      lineChar: 8
+      spanCodeSection: Debug.Log(
+    - startInstruction: 972
+      endInstruction: 971
+      startSourceChar: 1334
+      endSourceChar: 1357
+      line: 49
+      lineChar: 18
+      spanCodeSection: '"Number of Players:" + '
+    - startInstruction: 972
+      endInstruction: 1043
+      startSourceChar: 1357
+      endSourceChar: 1386
+      line: 49
+      lineChar: 41
+      spanCodeSection: "NUMBER_OF_PLAYERS);\r\n        "
+    - startInstruction: 1044
+      endInstruction: 1043
+      startSourceChar: 1386
+      endSourceChar: 1391
+      line: 50
+      lineChar: 8
+      spanCodeSection: for (
+    - startInstruction: 1044
+      endInstruction: 1043
+      startSourceChar: 1391
+      endSourceChar: 1391
+      line: 50
+      lineChar: 13
+      spanCodeSection: 
+    - startInstruction: 1044
+      endInstruction: 1043
+      startSourceChar: 1391
+      endSourceChar: 1391
+      line: 50
+      lineChar: 13
+      spanCodeSection: 
+    - startInstruction: 1044
+      endInstruction: 1043
+      startSourceChar: 1391
+      endSourceChar: 1397
+      line: 50
+      lineChar: 13
+      spanCodeSection: 'int i '
+    - startInstruction: 1044
+      endInstruction: 1043
+      startSourceChar: 1397
+      endSourceChar: 1399
+      line: 50
+      lineChar: 19
+      spanCodeSection: '= '
+    - startInstruction: 1044
+      endInstruction: 1063
+      startSourceChar: 1399
+      endSourceChar: 1402
+      line: 50
+      lineChar: 21
+      spanCodeSection: '0; '
+    - startInstruction: 1064
+      endInstruction: 1063
+      startSourceChar: 1402
+      endSourceChar: 1406
+      line: 50
+      lineChar: 24
+      spanCodeSection: 'i < '
+    - startInstruction: 1064
+      endInstruction: 1111
+      startSourceChar: 1406
+      endSourceChar: 1439
+      line: 50
+      lineChar: 28
+      spanCodeSection: "NUMBER_OF_PLAYERS; i++)\r\n        "
+    - startInstruction: 1112
+      endInstruction: 1111
+      startSourceChar: 1439
+      endSourceChar: 1454
+      line: 51
+      lineChar: 8
+      spanCodeSection: "{\r\n            "
+    - startInstruction: 1112
+      endInstruction: 1111
+      startSourceChar: 1454
+      endSourceChar: 1454
+      line: 52
+      lineChar: 12
+      spanCodeSection: 
+    - startInstruction: 1112
+      endInstruction: 1111
+      startSourceChar: 1454
+      endSourceChar: 1454
+      line: 52
+      lineChar: 12
+      spanCodeSection: 
+    - startInstruction: 1112
+      endInstruction: 1111
+      startSourceChar: 1454
+      endSourceChar: 1454
+      line: 52
+      lineChar: 12
+      spanCodeSection: 
+    - startInstruction: 1112
+      endInstruction: 1111
+      startSourceChar: 1454
+      endSourceChar: 1474
+      line: 52
+      lineChar: 12
+      spanCodeSection: 'VRCPlayerApi player '
+    - startInstruction: 1112
+      endInstruction: 1111
+      startSourceChar: 1474
+      endSourceChar: 1476
+      line: 52
+      lineChar: 32
+      spanCodeSection: '= '
+    - startInstruction: 1112
+      endInstruction: 1111
+      startSourceChar: 1476
+      endSourceChar: 1490
+      line: 52
+      lineChar: 34
+      spanCodeSection: (VRCPlayerApi)
+    - startInstruction: 1112
+      endInstruction: 1111
+      startSourceChar: 1490
+      endSourceChar: 1510
+      line: 52
+      lineChar: 48
+      spanCodeSection: PLAYERAPIS.GetValue(
+    - startInstruction: 1112
+      endInstruction: 1183
+      startSourceChar: 1510
+      endSourceChar: 1527
+      line: 52
+      lineChar: 68
+      spanCodeSection: "i);\r\n            "
+    - startInstruction: 1184
+      endInstruction: 1183
+      startSourceChar: 1527
+      endSourceChar: 1527
+      line: 53
+      lineChar: 12
+      spanCodeSection: 
+    - startInstruction: 1184
+      endInstruction: 1183
+      startSourceChar: 1527
+      endSourceChar: 1537
+      line: 53
+      lineChar: 12
+      spanCodeSection: Debug.Log(
+    - startInstruction: 1184
+      endInstruction: 1183
+      startSourceChar: 1537
+      endSourceChar: 1537
+      line: 53
+      lineChar: 22
+      spanCodeSection: 
+    - startInstruction: 1184
+      endInstruction: 1183
+      startSourceChar: 1537
+      endSourceChar: 1544
+      line: 53
+      lineChar: 22
+      spanCodeSection: player.
+    - startInstruction: 1184
+      endInstruction: 1303
+      startSourceChar: 1544
+      endSourceChar: 1578
+      line: 53
+      lineChar: 29
+      spanCodeSection: "displayName);\r\n        }\r\n        "
+    - startInstruction: 1304
+      endInstruction: 1303
+      startSourceChar: 1578
+      endSourceChar: 1578
+      line: 55
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 1304
+      endInstruction: 1303
+      startSourceChar: 1578
+      endSourceChar: 1588
+      line: 55
+      lineChar: 8
+      spanCodeSection: Debug.Log(
+    - startInstruction: 1304
+      endInstruction: 1304
+      startSourceChar: 1588
+      endSourceChar: 1588
+      line: 55
+      lineChar: 18
+      spanCodeSection: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: fieldDefinitions
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[UdonSharp.FieldDefinition,
+        UdonSharp.Editor]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: MaxTrackedPlayers
+    - Name: $v
+      Entry: 7
+      Data: 2|UdonSharp.FieldDefinition, UdonSharp.Editor
+    - Name: fieldSymbol
+      Entry: 7
+      Data: 3|UdonSharp.SymbolDefinition, UdonSharp.Editor
+    - Name: internalType
+      Entry: 7
+      Data: 4|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: System.Int32, mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: declarationType
+      Entry: 3
+      Data: 1
+    - Name: syncMode
+      Entry: 3
+      Data: 0
+    - Name: symbolResolvedTypeName
+      Entry: 1
+      Data: SystemInt32
+    - Name: symbolOriginalName
+      Entry: 1
+      Data: MaxTrackedPlayers
+    - Name: symbolUniqueName
+      Entry: 1
+      Data: MaxTrackedPlayers
+    - Name: symbolDefaultValue
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: fieldAttributes
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: userBehaviourSource
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: NUMBER_OF_PLAYERS
+    - Name: $v
+      Entry: 7
+      Data: 6|UdonSharp.FieldDefinition, UdonSharp.Editor
+    - Name: fieldSymbol
+      Entry: 7
+      Data: 7|UdonSharp.SymbolDefinition, UdonSharp.Editor
+    - Name: internalType
+      Entry: 9
+      Data: 4
+    - Name: declarationType
+      Entry: 3
+      Data: 1
+    - Name: syncMode
+      Entry: 3
+      Data: 0
+    - Name: symbolResolvedTypeName
+      Entry: 1
+      Data: SystemInt32
+    - Name: symbolOriginalName
+      Entry: 1
+      Data: NUMBER_OF_PLAYERS
+    - Name: symbolUniqueName
+      Entry: 1
+      Data: NUMBER_OF_PLAYERS
+    - Name: symbolDefaultValue
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: fieldAttributes
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: userBehaviourSource
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: PLAYERAPIS
+    - Name: $v
+      Entry: 7
+      Data: 9|UdonSharp.FieldDefinition, UdonSharp.Editor
+    - Name: fieldSymbol
+      Entry: 7
+      Data: 10|UdonSharp.SymbolDefinition, UdonSharp.Editor
+    - Name: internalType
+      Entry: 7
+      Data: 11|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: VRC.SDKBase.VRCPlayerApi[], VRCSDKBase
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: declarationType
+      Entry: 3
+      Data: 1
+    - Name: syncMode
+      Entry: 3
+      Data: 0
+    - Name: symbolResolvedTypeName
+      Entry: 1
+      Data: VRCSDKBaseVRCPlayerApiArray
+    - Name: symbolOriginalName
+      Entry: 1
+      Data: PLAYERAPIS
+    - Name: symbolUniqueName
+      Entry: 1
+      Data: PLAYERAPIS
+    - Name: symbolDefaultValue
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: fieldAttributes
+      Entry: 7
+      Data: 12|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: userBehaviourSource
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
