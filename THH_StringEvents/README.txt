@@ -1,3 +1,6 @@
+Explanation Video available at: 
+https://youtu.be/DkyhF5d9st8
+
 Objects named with [] may not be renamed!
 
 StringEvent format:
