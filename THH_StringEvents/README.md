@@ -14,3 +14,6 @@ StringEvent format:
 Receiver GameObject Name, UdonBehaviour component to target (0 is first, 1 is second etc.), Target: A(ll) or O(wner) OF THE RECEIVER, Event Name, Parameters (divided by vertical seperators | )
 
 Parameters can only be literals. (You can get a reference to a GameObject via its name)
+
+Important Note:
+Due to variable sync updates being unreliable, it is not recommended to use this for frequent updates. There should be at least a second of delay between events.
