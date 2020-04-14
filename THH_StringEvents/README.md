@@ -1,3 +1,6 @@
+Explanatory Video available at: https://youtu.be/DkyhF5d9st8
+(Some things have changed since the Video was made, this README overules anything said in the video!)
+
 *SETUP:*
 Drag and drop the 'THH_StringEvents' prefab from the Prefabs folder into your scene.
 
