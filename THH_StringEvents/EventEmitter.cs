@@ -24,7 +24,7 @@ public class EventEmitter : UdonSharpBehaviour
     void Start()
     {
         LocalPlayerApi = Networking.LocalPlayer;
-        _EventManger = (UdonBehaviour)GameObject.Find("[EventManager]").GetComponent(typeof(UdonBehaviour));
+        _EventManger = (UdonBehaviour)GameObject.Find("[SE_Manager]").GetComponent(typeof(UdonBehaviour));
     }
 
     void Update()
@@ -56,7 +56,7 @@ public class EventEmitter : UdonSharpBehaviour
         EVENT_ARRAY = EVENT.Split(';');
         if (EVENT_ARRAY.Length < 5 || EVENT_ARRAY.Length > 6)
         {
-            Debug.Log("[EventEmitter] Error: invalid event format");
+            Debug.Log("[SE_Emitter] Error: invalid event format");
             return;
         }
         ProcessReceiver();
@@ -66,15 +66,16 @@ public class EventEmitter : UdonSharpBehaviour
     {
         string receiverName = (string)EVENT_ARRAY.GetValue(1);
         GameObject receiverObject = GameObject.Find(receiverName);
+        UdonBehaviour receiverUdon = (UdonBehaviour)receiverObject.GetComponent(typeof(UdonBehaviour));
         if (receiverObject == null)
         {
-            Debug.Log("[EventEmitter] Error: No Receiver found called " + receiverName);
+            Debug.Log("[SE_Emitter] Error: No Receiver found called " + receiverName);
             return;
         }
-        UdonBehaviour eventReceiverHandler = (UdonBehaviour)receiverObject.transform.Find("[EventHandler]").GetComponent(typeof(UdonBehaviour));
+        UdonBehaviour eventReceiverHandler = (UdonBehaviour)receiverUdon.GetProgramVariable("EventHandler");
         if (eventReceiverHandler == null)
         {
-            Debug.Log("[EventEmitter] Error: No EventHandler found on target " + receiverObject.name);
+            Debug.Log("[SE_Emitter] Error: No EventHandler found on target " + receiverObject.name);
             return;
         }
         eventReceiverHandler.SetProgramVariable("EventInbox", EVENT);

@@ -6,7 +6,6 @@ using VRC.Udon;
 
 public class EventHandler : UdonSharpBehaviour
 {
-    public string identifier = "EventHandler";
     public string EventOutbox;
     public string EventInbox;
 
@@ -15,7 +14,7 @@ public class EventHandler : UdonSharpBehaviour
 
     void Start()
     {
-        _EventManger = (UdonBehaviour)GameObject.Find("[EventManager]").GetComponent(typeof(UdonBehaviour));
+        _EventManger = (UdonBehaviour)GameObject.Find("[SE_Manager]").GetComponent(typeof(UdonBehaviour));
         UdonBehaviour master = (UdonBehaviour)transform.parent.GetComponent(typeof(UdonBehaviour));
         master.SetProgramVariable("EventHandler", this);
     }
@@ -70,7 +69,7 @@ public class EventHandler : UdonSharpBehaviour
             ProcessPayload();
             return;
         }
-        Debug.Log("[EventHandler] Error: invalid target; Must be 'O'(wner) or 'A'(ll)");
+        Debug.Log("[SE_Handler] Error: invalid target; Must be 'O'(wner) or 'A'(ll)");
     }
 
     void ProcessPayload()
@@ -79,13 +78,13 @@ public class EventHandler : UdonSharpBehaviour
         int componentIndex = System.Int32.Parse((string)EVENT_ARRAY.GetValue(2));
         if (componentIndex < receiverComponents.GetLowerBound(0) || componentIndex > receiverComponents.GetUpperBound(0))
         {
-            Debug.Log("[EventHandler] Component index " + componentIndex + " is out of bounds");
+            Debug.Log("[SE_Handler] Error: Component index " + componentIndex + " is out of bounds");
             return;
         }
         UdonBehaviour receiverUdon = (UdonBehaviour)receiverComponents.GetValue(componentIndex);
         if (receiverUdon == null)
         {
-            Debug.Log("[EventHandler] Could not access UdonBehaviour at index " + componentIndex);
+            Debug.Log("[SE_Handler] Error: Could not access UdonBehaviour at index " + componentIndex);
             return;
         }
         if (EVENT_ARRAY.Length == 6)

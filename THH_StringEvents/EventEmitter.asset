@@ -25,20 +25,21 @@ MonoBehaviour:
     %UnityEngineGameObject, this\r\n    __0_this_intnl_EventEmitter: %VRCUdonUdonBehaviour,
     this\r\n    __0_receiverObject_GameObject: %UnityEngineGameObject, null\r\n    __0_receiverName_String:
     %SystemString, null\r\n    __0_eventReceiverHandler_UdonBehaviour: %VRCUdonUdonBehaviour,
-    null\r\n    __0_const_intnl_SystemBoolean: %SystemBoolean, null\r\n    __1_const_intnl_SystemBoolean:
-    %SystemBoolean, null\r\n    __0_const_intnl_SystemChar: %SystemChar, null\r\n
-    \   __0_const_intnl_SystemCharArray: %SystemCharArray, null\r\n    __0_const_intnl_UnityEngineGameObject:
-    %UnityEngineGameObject, null\r\n    __0_const_intnl_SystemInt32: %SystemInt32,
-    null\r\n    __1_const_intnl_SystemInt32: %SystemInt32, null\r\n    __2_const_intnl_SystemInt32:
-    %SystemInt32, null\r\n    __3_const_intnl_SystemInt32: %SystemInt32, null\r\n
-    \   __0_const_intnl_SystemObject: %SystemObject, null\r\n    __0_const_intnl_SystemString:
-    %SystemString, null\r\n    __1_const_intnl_SystemString: %SystemString, null\r\n
-    \   __2_const_intnl_SystemString: %SystemString, null\r\n    __3_const_intnl_SystemString:
-    %SystemString, null\r\n    __4_const_intnl_SystemString: %SystemString, null\r\n
-    \   __5_const_intnl_SystemString: %SystemString, null\r\n    __6_const_intnl_SystemString:
-    %SystemString, null\r\n    __7_const_intnl_SystemString: %SystemString, null\r\n
-    \   __8_const_intnl_SystemString: %SystemString, null\r\n    __9_const_intnl_SystemString:
-    %SystemString, null\r\n    __0_const_intnl_SystemType: %SystemType, null\r\n    __0_const_intnl_VRCUdonCommonInterfacesIUdonEventReceiver:
+    null\r\n    __0_receiverUdon_UdonBehaviour: %VRCUdonUdonBehaviour, null\r\n    __0_const_intnl_SystemBoolean:
+    %SystemBoolean, null\r\n    __1_const_intnl_SystemBoolean: %SystemBoolean, null\r\n
+    \   __0_const_intnl_SystemChar: %SystemChar, null\r\n    __0_const_intnl_SystemCharArray:
+    %SystemCharArray, null\r\n    __0_const_intnl_UnityEngineGameObject: %UnityEngineGameObject,
+    null\r\n    __0_const_intnl_SystemInt32: %SystemInt32, null\r\n    __1_const_intnl_SystemInt32:
+    %SystemInt32, null\r\n    __2_const_intnl_SystemInt32: %SystemInt32, null\r\n
+    \   __3_const_intnl_SystemInt32: %SystemInt32, null\r\n    __0_const_intnl_SystemObject:
+    %SystemObject, null\r\n    __0_const_intnl_SystemString: %SystemString, null\r\n
+    \   __1_const_intnl_SystemString: %SystemString, null\r\n    __2_const_intnl_SystemString:
+    %SystemString, null\r\n    __3_const_intnl_SystemString: %SystemString, null\r\n
+    \   __4_const_intnl_SystemString: %SystemString, null\r\n    __5_const_intnl_SystemString:
+    %SystemString, null\r\n    __6_const_intnl_SystemString: %SystemString, null\r\n
+    \   __7_const_intnl_SystemString: %SystemString, null\r\n    __8_const_intnl_SystemString:
+    %SystemString, null\r\n    __9_const_intnl_SystemString: %SystemString, null\r\n
+    \   __0_const_intnl_SystemType: %SystemType, null\r\n    __0_const_intnl_VRCUdonCommonInterfacesIUdonEventReceiver:
     %VRCUdonUdonBehaviour, null\r\n    __0_const_intnl_exitJumpLoc_UInt32: %SystemUInt32,
     null\r\n    __0_const_intnl_SystemUInt32: %SystemUInt32, null\r\n    __1_const_intnl_exitJumpLoc_UInt32:
     %SystemUInt32, null\r\n    __0_const_intnl_VRCSDKBaseVRCPlayerApi: %VRCSDKBaseVRCPlayerApi,
@@ -59,32 +60,32 @@ MonoBehaviour:
     null\r\n    __0_intnl_UnityEngineGameObject: %UnityEngineGameObject, null\r\n
     \   __1_intnl_UnityEngineGameObject: %UnityEngineGameObject, null\r\n    __0_intnl_SystemInt32:
     %SystemInt32, null\r\n    __1_intnl_SystemInt32: %SystemInt32, null\r\n    __0_intnl_SystemObject:
-    %SystemObject, null\r\n    __0_intnl_SystemString: %SystemString, null\r\n    __1_intnl_SystemString:
-    %SystemString, null\r\n    __2_intnl_SystemString: %SystemString, null\r\n    __3_intnl_SystemString:
-    %SystemString, null\r\n    __4_intnl_SystemString: %SystemString, null\r\n    __0_intnl_SystemStringArray:
-    %SystemStringArray, null\r\n    __0_intnl_UnityEngineTransform: %UnityEngineTransform,
-    null\r\n    __1_intnl_UnityEngineTransform: %UnityEngineTransform, null\r\n    __0_intnl_VRCUdonCommonInterfacesIUdonEventReceiver:
-    %VRCUdonUdonBehaviour, null\r\n    __1_intnl_VRCUdonCommonInterfacesIUdonEventReceiver:
-    %VRCUdonUdonBehaviour, null\r\n    __0_intnl_oldReturnLoc_UInt32: %SystemUInt32,
-    null\r\n    __0_intnl_returnTarget_UInt32: %SystemUInt32, null\r\n    __1_intnl_oldReturnLoc_UInt32:
-    %SystemUInt32, null\r\n    __0_intnl_VRCSDKBaseVRCPlayerApi: %VRCSDKBaseVRCPlayerApi,
-    null\r\n\r\n.data_end\r\n\r\n        \r\n         # using UdonSharp;\r\n        \r\n
-    \        # using UnityEngine;\r\n        \r\n         # using VRC.SDKBase;\r\n
-    \       \r\n         # using VRC.Udon;\r\n        \r\n         # public class
-    EventEmitter : UdonSharpBehaviour\r\n.code_start\r\n        \r\n         # [UdonSynced]\r\n
-    \       \r\n         # public string EVENT;\r\n        \r\n         # public string[]
-    EVENT_ARRAY;\r\n        \r\n         # [UdonSynced]\r\n        \r\n         #
-    public string Owner = \"UNOWNED\";\r\n        \r\n         # [UdonSynced]\r\n
-    \       \r\n         # public bool hasBeenClaimed = false;\r\n        \r\n         #
-    private string last_event = \"null\";\r\n        \r\n         # private VRCPlayerApi
-    LocalPlayerApi;\r\n        \r\n         # private UdonBehaviour _EventManger;\r\n
-    \       \r\n         # void Start()\r\n    .export _start\r\n        \r\n    _start:\r\n
-    \       \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
-    \       COPY\r\n        \r\n         # {\r\n        \r\n         # LocalPlayerApi
-    = Networking.LocalPlayer;\r\n        PUSH, __0_intnl_VRCSDKBaseVRCPlayerApi\r\n
-    \       EXTERN, \"VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi\"\r\n
+    %SystemObject, null\r\n    __1_intnl_SystemObject: %SystemObject, null\r\n    __0_intnl_SystemString:
+    %SystemString, null\r\n    __1_intnl_SystemString: %SystemString, null\r\n    __2_intnl_SystemString:
+    %SystemString, null\r\n    __3_intnl_SystemString: %SystemString, null\r\n    __4_intnl_SystemString:
+    %SystemString, null\r\n    __0_intnl_SystemStringArray: %SystemStringArray, null\r\n
+    \   __0_intnl_VRCUdonCommonInterfacesIUdonEventReceiver: %VRCUdonUdonBehaviour,
+    null\r\n    __1_intnl_VRCUdonCommonInterfacesIUdonEventReceiver: %VRCUdonUdonBehaviour,
+    null\r\n    __2_intnl_VRCUdonCommonInterfacesIUdonEventReceiver: %VRCUdonUdonBehaviour,
+    null\r\n    __0_intnl_oldReturnLoc_UInt32: %SystemUInt32, null\r\n    __0_intnl_returnTarget_UInt32:
+    %SystemUInt32, null\r\n    __1_intnl_oldReturnLoc_UInt32: %SystemUInt32, null\r\n
+    \   __0_intnl_VRCSDKBaseVRCPlayerApi: %VRCSDKBaseVRCPlayerApi, null\r\n\r\n.data_end\r\n\r\n
+    \       \r\n         # using UdonSharp;\r\n        \r\n         # using UnityEngine;\r\n
+    \       \r\n         # using VRC.SDKBase;\r\n        \r\n         # using VRC.Udon;\r\n
+    \       \r\n         # public class EventEmitter : UdonSharpBehaviour\r\n.code_start\r\n
+    \       \r\n         # [UdonSynced]\r\n        \r\n         # public string EVENT;\r\n
+    \       \r\n         # public string[] EVENT_ARRAY;\r\n        \r\n         #
+    [UdonSynced]\r\n        \r\n         # public string Owner = \"UNOWNED\";\r\n
+    \       \r\n         # [UdonSynced]\r\n        \r\n         # public bool hasBeenClaimed
+    = false;\r\n        \r\n         # private string last_event = \"null\";\r\n        \r\n
+    \        # private VRCPlayerApi LocalPlayerApi;\r\n        \r\n         # private
+    UdonBehaviour _EventManger;\r\n        \r\n         # void Start()\r\n    .export
+    _start\r\n        \r\n    _start:\r\n        \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n
+    \       PUSH, __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        \r\n         #
+    {\r\n        \r\n         # LocalPlayerApi = Networking.LocalPlayer;\r\n        PUSH,
+    __0_intnl_VRCSDKBaseVRCPlayerApi\r\n        EXTERN, \"VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi\"\r\n
     \       PUSH, __0_intnl_VRCSDKBaseVRCPlayerApi\r\n        PUSH, LocalPlayerApi\r\n
-    \       COPY\r\n        \r\n         # _EventManger = (UdonBehaviour)GameObject.Find(\"[EventManager]\").GetComponent(typeof(UdonBehaviour));\r\n
+    \       COPY\r\n        \r\n         # _EventManger = (UdonBehaviour)GameObject.Find(\"[SE_Manager]\").GetComponent(typeof(UdonBehaviour));\r\n
     \       PUSH, __0_const_intnl_SystemString\r\n        PUSH, __0_intnl_UnityEngineGameObject\r\n
     \       EXTERN, \"UnityEngineGameObject.__Find__SystemString__UnityEngineGameObject\"\r\n
     \       PUSH, __0_intnl_UnityEngineGameObject\r\n        PUSH, __0_const_intnl_SystemType\r\n
@@ -192,7 +193,7 @@ MonoBehaviour:
     \       PUSH, __16_intnl_SystemBoolean\r\n        EXTERN, \"SystemBoolean.__op_ConditionalOr__SystemBoolean_SystemBoolean__SystemBoolean\"\r\n
     \       PUSH, __16_intnl_SystemBoolean\r\n        PUSH, __12_intnl_SystemBoolean\r\n
     \       COPY\r\n        PUSH, __12_intnl_SystemBoolean\r\n        JUMP_IF_FALSE,
-    0x000005E0\r\n        \r\n         # {\r\n        \r\n         # Debug.Log(\"[EventEmitter]
+    0x000005E0\r\n        \r\n         # {\r\n        \r\n         # Debug.Log(\"[SE_Emitter]
     Error: invalid event format\");\r\n        PUSH, __5_const_intnl_SystemString\r\n
     \       EXTERN, \"UnityEngineDebug.__Log__SystemObject__SystemVoid\"\r\n        \r\n
     \        # return;\r\n        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n
@@ -212,36 +213,37 @@ MonoBehaviour:
     GameObject receiverObject = GameObject.Find(receiverName);\r\n        PUSH, __0_receiverName_String\r\n
     \       PUSH, __1_intnl_UnityEngineGameObject\r\n        EXTERN, \"UnityEngineGameObject.__Find__SystemString__UnityEngineGameObject\"\r\n
     \       PUSH, __1_intnl_UnityEngineGameObject\r\n        PUSH, __0_receiverObject_GameObject\r\n
-    \       COPY\r\n        \r\n         # if (receiverObject == null)\r\n        PUSH,
-    __0_receiverObject_GameObject\r\n        PUSH, __0_const_intnl_UnityEngineGameObject\r\n
-    \       PUSH, __17_intnl_SystemBoolean\r\n        EXTERN, \"UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean\"\r\n
-    \       PUSH, __17_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x0000071C\r\n
-    \       \r\n         # {\r\n        \r\n         # Debug.Log(\"[EventEmitter]
-    Error: No Receiver found called \" + receiverName);\r\n        PUSH, __6_const_intnl_SystemString\r\n
+    \       COPY\r\n        \r\n         # UdonBehaviour receiverUdon = (UdonBehaviour)receiverObject.GetComponent(typeof(UdonBehaviour));\r\n
+    \       PUSH, __0_receiverObject_GameObject\r\n        PUSH, __0_const_intnl_SystemType\r\n
+    \       PUSH, __1_intnl_UnityEngineComponent\r\n        EXTERN, \"UnityEngineGameObject.__GetComponent__SystemType__UnityEngineComponent\"\r\n
+    \       PUSH, __1_intnl_UnityEngineComponent\r\n        PUSH, __1_intnl_VRCUdonCommonInterfacesIUdonEventReceiver\r\n
+    \       COPY\r\n        PUSH, __1_intnl_VRCUdonCommonInterfacesIUdonEventReceiver\r\n
+    \       PUSH, __0_receiverUdon_UdonBehaviour\r\n        COPY\r\n        \r\n         #
+    if (receiverObject == null)\r\n        PUSH, __0_receiverObject_GameObject\r\n
+    \       PUSH, __0_const_intnl_UnityEngineGameObject\r\n        PUSH, __17_intnl_SystemBoolean\r\n
+    \       EXTERN, \"UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean\"\r\n
+    \       PUSH, __17_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000764\r\n
+    \       \r\n         # {\r\n        \r\n         # Debug.Log(\"[SE_Emitter] Error:
+    No Receiver found called \" + receiverName);\r\n        PUSH, __6_const_intnl_SystemString\r\n
     \       PUSH, __0_receiverName_String\r\n        PUSH, __3_intnl_SystemString\r\n
     \       EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n
     \       PUSH, __3_intnl_SystemString\r\n        EXTERN, \"UnityEngineDebug.__Log__SystemObject__SystemVoid\"\r\n
     \       \r\n         # return;\r\n        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n
-    \       \r\n         # UdonBehaviour eventReceiverHandler = (UdonBehaviour)receiverObject.transform.Find(\"[EventHandler]\").GetComponent(typeof(UdonBehaviour));\r\n
-    \       PUSH, __0_receiverObject_GameObject\r\n        PUSH, __0_intnl_UnityEngineTransform\r\n
-    \       EXTERN, \"UnityEngineGameObject.__get_transform__UnityEngineTransform\"\r\n
-    \       PUSH, __0_intnl_UnityEngineTransform\r\n        PUSH, __7_const_intnl_SystemString\r\n
-    \       PUSH, __1_intnl_UnityEngineTransform\r\n        EXTERN, \"UnityEngineTransform.__Find__SystemString__UnityEngineTransform\"\r\n
-    \       PUSH, __1_intnl_UnityEngineTransform\r\n        PUSH, __0_const_intnl_SystemType\r\n
-    \       PUSH, __1_intnl_UnityEngineComponent\r\n        EXTERN, \"UnityEngineTransform.__GetComponent__SystemType__UnityEngineComponent\"\r\n
-    \       PUSH, __1_intnl_UnityEngineComponent\r\n        PUSH, __1_intnl_VRCUdonCommonInterfacesIUdonEventReceiver\r\n
-    \       COPY\r\n        PUSH, __1_intnl_VRCUdonCommonInterfacesIUdonEventReceiver\r\n
+    \       \r\n         # UdonBehaviour eventReceiverHandler = (UdonBehaviour)receiverUdon.GetProgramVariable(\"EventHandler\");\r\n
+    \       PUSH, __0_receiverUdon_UdonBehaviour\r\n        PUSH, __7_const_intnl_SystemString\r\n
+    \       PUSH, __1_intnl_SystemObject\r\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject\"\r\n
+    \       PUSH, __1_intnl_SystemObject\r\n        PUSH, __2_intnl_VRCUdonCommonInterfacesIUdonEventReceiver\r\n
+    \       COPY\r\n        PUSH, __2_intnl_VRCUdonCommonInterfacesIUdonEventReceiver\r\n
     \       PUSH, __0_eventReceiverHandler_UdonBehaviour\r\n        COPY\r\n        \r\n
     \        # if (eventReceiverHandler == null)\r\n        PUSH, __0_eventReceiverHandler_UdonBehaviour\r\n
     \       PUSH, __0_const_intnl_VRCUdonCommonInterfacesIUdonEventReceiver\r\n        PUSH,
     __18_intnl_SystemBoolean\r\n        EXTERN, \"UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean\"\r\n
-    \       PUSH, __18_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x0000081C\r\n
-    \       \r\n         # {\r\n        \r\n         # Debug.Log(\"[EventEmitter]
-    Error: No EventHandler found on target \" + receiverObject.name);\r\n        PUSH,
-    __0_receiverObject_GameObject\r\n        PUSH, __3_intnl_SystemString\r\n        EXTERN,
-    \"UnityEngineGameObject.__get_name__SystemString\"\r\n        PUSH, __8_const_intnl_SystemString\r\n
-    \       PUSH, __3_intnl_SystemString\r\n        PUSH, __4_intnl_SystemString\r\n
-    \       EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n
+    \       PUSH, __18_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x0000082C\r\n
+    \       \r\n         # {\r\n        \r\n         # Debug.Log(\"[SE_Emitter] Error:
+    No EventHandler found on target \" + receiverObject.name);\r\n        PUSH, __0_receiverObject_GameObject\r\n
+    \       PUSH, __3_intnl_SystemString\r\n        EXTERN, \"UnityEngineGameObject.__get_name__SystemString\"\r\n
+    \       PUSH, __8_const_intnl_SystemString\r\n        PUSH, __3_intnl_SystemString\r\n
+    \       PUSH, __4_intnl_SystemString\r\n        EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n
     \       PUSH, __4_intnl_SystemString\r\n        EXTERN, \"UnityEngineDebug.__Log__SystemObject__SystemVoid\"\r\n
     \       \r\n         # return;\r\n        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n
     \       \r\n         # eventReceiverHandler.SetProgramVariable(\"EventInbox\",
@@ -649,940 +651,996 @@ MonoBehaviour:
     - startInstruction: 56
       endInstruction: 55
       startSourceChar: 574
-      endSourceChar: 621
+      endSourceChar: 619
       line: 26
       lineChar: 38
-      spanCodeSection: GameObject.Find("[EventManager]").GetComponent(
+      spanCodeSection: GameObject.Find("[SE_Manager]").GetComponent(
     - startInstruction: 56
       endInstruction: 55
-      startSourceChar: 621
-      endSourceChar: 628
+      startSourceChar: 619
+      endSourceChar: 626
       line: 26
-      lineChar: 85
+      lineChar: 83
       spanCodeSection: typeof(
     - startInstruction: 56
       endInstruction: 159
-      startSourceChar: 628
-      endSourceChar: 659
+      startSourceChar: 626
+      endSourceChar: 657
       line: 26
-      lineChar: 92
+      lineChar: 90
       spanCodeSection: "UdonBehaviour));\r\n    }\r\n\r\n    "
     - startInstruction: 160
       endInstruction: 179
-      startSourceChar: 659
-      endSourceChar: 678
+      startSourceChar: 657
+      endSourceChar: 676
       line: 29
       lineChar: 4
       spanCodeSection: "void Update()\r\n    "
     - startInstruction: 180
       endInstruction: 179
-      startSourceChar: 678
-      endSourceChar: 689
+      startSourceChar: 676
+      endSourceChar: 687
       line: 30
       lineChar: 4
       spanCodeSection: "{\r\n        "
     - startInstruction: 180
       endInstruction: 179
-      startSourceChar: 689
-      endSourceChar: 693
+      startSourceChar: 687
+      endSourceChar: 691
       line: 31
       lineChar: 8
       spanCodeSection: if (
     - startInstruction: 180
       endInstruction: 179
-      startSourceChar: 693
-      endSourceChar: 711
+      startSourceChar: 691
+      endSourceChar: 709
       line: 31
       lineChar: 12
       spanCodeSection: 'LocalPlayerApi != '
     - startInstruction: 180
       endInstruction: 227
-      startSourceChar: 711
-      endSourceChar: 726
+      startSourceChar: 709
+      endSourceChar: 724
       line: 31
       lineChar: 30
       spanCodeSection: "null)\r\n        "
     - startInstruction: 228
       endInstruction: 227
-      startSourceChar: 726
-      endSourceChar: 741
+      startSourceChar: 724
+      endSourceChar: 739
       line: 32
       lineChar: 8
       spanCodeSection: "{\r\n            "
     - startInstruction: 228
       endInstruction: 227
-      startSourceChar: 741
-      endSourceChar: 745
+      startSourceChar: 739
+      endSourceChar: 743
       line: 33
       lineChar: 12
       spanCodeSection: if (
     - startInstruction: 228
       endInstruction: 227
-      startSourceChar: 745
-      endSourceChar: 758
+      startSourceChar: 743
+      endSourceChar: 756
       line: 33
       lineChar: 16
       spanCodeSection: Owner.Equals(
     - startInstruction: 228
       endInstruction: 227
-      startSourceChar: 758
-      endSourceChar: 758
+      startSourceChar: 756
+      endSourceChar: 756
       line: 33
       lineChar: 29
       spanCodeSection: 
     - startInstruction: 228
       endInstruction: 227
-      startSourceChar: 758
-      endSourceChar: 773
+      startSourceChar: 756
+      endSourceChar: 771
       line: 33
       lineChar: 29
       spanCodeSection: LocalPlayerApi.
     - startInstruction: 228
       endInstruction: 299
-      startSourceChar: 773
-      endSourceChar: 800
+      startSourceChar: 771
+      endSourceChar: 798
       line: 33
       lineChar: 44
       spanCodeSection: "displayName))\r\n            "
     - startInstruction: 300
       endInstruction: 299
-      startSourceChar: 800
-      endSourceChar: 819
+      startSourceChar: 798
+      endSourceChar: 817
       line: 34
       lineChar: 12
       spanCodeSection: "{\r\n                "
     - startInstruction: 300
       endInstruction: 299
-      startSourceChar: 819
-      endSourceChar: 819
+      startSourceChar: 817
+      endSourceChar: 817
       line: 35
       lineChar: 16
       spanCodeSection: 
     - startInstruction: 300
       endInstruction: 299
-      startSourceChar: 819
-      endSourceChar: 839
+      startSourceChar: 817
+      endSourceChar: 837
       line: 35
       lineChar: 16
       spanCodeSection: Networking.SetOwner(
     - startInstruction: 300
       endInstruction: 299
-      startSourceChar: 839
-      endSourceChar: 855
+      startSourceChar: 837
+      endSourceChar: 853
       line: 35
       lineChar: 36
       spanCodeSection: 'LocalPlayerApi, '
     - startInstruction: 300
       endInstruction: 323
-      startSourceChar: 855
-      endSourceChar: 885
+      startSourceChar: 853
+      endSourceChar: 883
       line: 35
       lineChar: 52
       spanCodeSection: "gameObject);\r\n                "
     - startInstruction: 324
       endInstruction: 323
-      startSourceChar: 885
-      endSourceChar: 885
+      startSourceChar: 883
+      endSourceChar: 883
       line: 36
       lineChar: 16
       spanCodeSection: 
     - startInstruction: 324
       endInstruction: 323
-      startSourceChar: 885
-      endSourceChar: 917
+      startSourceChar: 883
+      endSourceChar: 915
       line: 36
       lineChar: 16
       spanCodeSection: _EventManger.SetProgramVariable(
     - startInstruction: 324
       endInstruction: 323
-      startSourceChar: 917
-      endSourceChar: 940
+      startSourceChar: 915
+      endSourceChar: 938
       line: 36
       lineChar: 48
       spanCodeSection: '"LocallyOwnedEmitter", '
     - startInstruction: 324
       endInstruction: 355
-      startSourceChar: 940
-      endSourceChar: 964
+      startSourceChar: 938
+      endSourceChar: 962
       line: 36
       lineChar: 71
       spanCodeSection: "this);\r\n                "
     - startInstruction: 356
       endInstruction: 355
-      startSourceChar: 964
-      endSourceChar: 964
+      startSourceChar: 962
+      endSourceChar: 962
       line: 37
       lineChar: 16
       spanCodeSection: 
     - startInstruction: 356
       endInstruction: 355
-      startSourceChar: 964
-      endSourceChar: 983
+      startSourceChar: 962
+      endSourceChar: 981
       line: 37
       lineChar: 16
       spanCodeSection: SetProgramVariable(
     - startInstruction: 356
       endInstruction: 355
-      startSourceChar: 983
-      endSourceChar: 1001
+      startSourceChar: 981
+      endSourceChar: 999
       line: 37
       lineChar: 35
       spanCodeSection: '"hasBeenClaimed", '
     - startInstruction: 356
       endInstruction: 387
-      startSourceChar: 1001
-      endSourceChar: 1036
+      startSourceChar: 999
+      endSourceChar: 1034
       line: 37
       lineChar: 53
       spanCodeSection: "true);\r\n            }\r\n            "
     - startInstruction: 388
       endInstruction: 387
-      startSourceChar: 1036
-      endSourceChar: 1040
+      startSourceChar: 1034
+      endSourceChar: 1038
       line: 39
       lineChar: 12
       spanCodeSection: if (
     - startInstruction: 388
       endInstruction: 387
-      startSourceChar: 1040
-      endSourceChar: 1040
+      startSourceChar: 1038
+      endSourceChar: 1038
       line: 39
       lineChar: 16
       spanCodeSection: 
     - startInstruction: 388
       endInstruction: 387
-      startSourceChar: 1040
-      endSourceChar: 1040
+      startSourceChar: 1038
+      endSourceChar: 1038
       line: 39
       lineChar: 16
       spanCodeSection: 
     - startInstruction: 388
       endInstruction: 387
-      startSourceChar: 1040
-      endSourceChar: 1040
+      startSourceChar: 1038
+      endSourceChar: 1038
       line: 39
       lineChar: 16
       spanCodeSection: 
     - startInstruction: 388
       endInstruction: 387
-      startSourceChar: 1040
-      endSourceChar: 1063
+      startSourceChar: 1038
+      endSourceChar: 1061
       line: 39
       lineChar: 16
       spanCodeSection: LocalPlayerApi.IsOwner(
     - startInstruction: 388
       endInstruction: 455
-      startSourceChar: 1063
-      endSourceChar: 1078
+      startSourceChar: 1061
+      endSourceChar: 1076
       line: 39
       lineChar: 39
       spanCodeSection: 'gameObject) && '
     - startInstruction: 456
       endInstruction: 455
-      startSourceChar: 1078
-      endSourceChar: 1078
+      startSourceChar: 1076
+      endSourceChar: 1076
       line: 39
       lineChar: 54
       spanCodeSection: 
     - startInstruction: 456
       endInstruction: 455
-      startSourceChar: 1078
-      endSourceChar: 1093
+      startSourceChar: 1076
+      endSourceChar: 1091
       line: 39
       lineChar: 54
       spanCodeSection: LocalPlayerApi.
     - startInstruction: 456
       endInstruction: 567
-      startSourceChar: 1093
-      endSourceChar: 1105
+      startSourceChar: 1091
+      endSourceChar: 1103
       line: 39
       lineChar: 69
       spanCodeSection: 'isMaster && '
     - startInstruction: 568
       endInstruction: 567
-      startSourceChar: 1105
-      endSourceChar: 1106
+      startSourceChar: 1103
+      endSourceChar: 1104
       line: 39
       lineChar: 81
       spanCodeSection: '!'
     - startInstruction: 568
       endInstruction: 567
-      startSourceChar: 1106
-      endSourceChar: 1119
+      startSourceChar: 1104
+      endSourceChar: 1117
       line: 39
       lineChar: 82
       spanCodeSection: Owner.Equals(
     - startInstruction: 568
       endInstruction: 567
-      startSourceChar: 1119
-      endSourceChar: 1119
+      startSourceChar: 1117
+      endSourceChar: 1117
       line: 39
       lineChar: 95
       spanCodeSection: 
     - startInstruction: 568
       endInstruction: 567
-      startSourceChar: 1119
-      endSourceChar: 1134
+      startSourceChar: 1117
+      endSourceChar: 1132
       line: 39
       lineChar: 95
       spanCodeSection: LocalPlayerApi.
     - startInstruction: 568
       endInstruction: 735
-      startSourceChar: 1134
-      endSourceChar: 1150
+      startSourceChar: 1132
+      endSourceChar: 1148
       line: 39
       lineChar: 110
       spanCodeSection: 'displayName) && '
     - startInstruction: 736
       endInstruction: 803
-      startSourceChar: 1150
-      endSourceChar: 1179
+      startSourceChar: 1148
+      endSourceChar: 1177
       line: 39
       lineChar: 126
       spanCodeSection: "hasBeenClaimed)\r\n            "
     - startInstruction: 804
       endInstruction: 803
-      startSourceChar: 1179
-      endSourceChar: 1198
+      startSourceChar: 1177
+      endSourceChar: 1196
       line: 40
       lineChar: 12
       spanCodeSection: "{\r\n                "
     - startInstruction: 804
       endInstruction: 803
-      startSourceChar: 1198
-      endSourceChar: 1198
+      startSourceChar: 1196
+      endSourceChar: 1196
       line: 41
       lineChar: 16
       spanCodeSection: 
     - startInstruction: 804
       endInstruction: 803
-      startSourceChar: 1198
-      endSourceChar: 1217
+      startSourceChar: 1196
+      endSourceChar: 1215
       line: 41
       lineChar: 16
       spanCodeSection: SetProgramVariable(
     - startInstruction: 804
       endInstruction: 803
-      startSourceChar: 1217
-      endSourceChar: 1226
+      startSourceChar: 1215
+      endSourceChar: 1224
       line: 41
       lineChar: 35
       spanCodeSection: '"Owner", '
     - startInstruction: 804
       endInstruction: 835
-      startSourceChar: 1226
-      endSourceChar: 1255
+      startSourceChar: 1224
+      endSourceChar: 1253
       line: 41
       lineChar: 44
       spanCodeSection: "\"UNOWNED\");\r\n                "
     - startInstruction: 836
       endInstruction: 835
-      startSourceChar: 1255
-      endSourceChar: 1255
+      startSourceChar: 1253
+      endSourceChar: 1253
       line: 42
       lineChar: 16
       spanCodeSection: 
     - startInstruction: 836
       endInstruction: 835
-      startSourceChar: 1255
-      endSourceChar: 1272
+      startSourceChar: 1253
+      endSourceChar: 1270
       line: 42
       lineChar: 16
       spanCodeSection: 'hasBeenClaimed = '
     - startInstruction: 836
       endInstruction: 855
-      startSourceChar: 1272
-      endSourceChar: 1314
+      startSourceChar: 1270
+      endSourceChar: 1312
       line: 42
       lineChar: 33
       spanCodeSection: "false;\r\n            }\r\n        }\r\n        "
     - startInstruction: 856
       endInstruction: 855
-      startSourceChar: 1314
-      endSourceChar: 1318
+      startSourceChar: 1312
+      endSourceChar: 1316
       line: 45
       lineChar: 8
       spanCodeSection: if (
     - startInstruction: 856
       endInstruction: 855
-      startSourceChar: 1318
-      endSourceChar: 1318
+      startSourceChar: 1316
+      endSourceChar: 1316
       line: 45
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 856
       endInstruction: 855
-      startSourceChar: 1318
-      endSourceChar: 1319
+      startSourceChar: 1316
+      endSourceChar: 1317
       line: 45
       lineChar: 12
       spanCodeSection: '!'
     - startInstruction: 856
       endInstruction: 855
-      startSourceChar: 1319
-      endSourceChar: 1340
+      startSourceChar: 1317
+      endSourceChar: 1338
       line: 45
       lineChar: 13
       spanCodeSection: string.IsNullOrEmpty(
     - startInstruction: 856
       endInstruction: 939
-      startSourceChar: 1340
-      endSourceChar: 1350
+      startSourceChar: 1338
+      endSourceChar: 1348
       line: 45
       lineChar: 34
       spanCodeSection: 'EVENT) && '
     - startInstruction: 940
       endInstruction: 939
-      startSourceChar: 1350
-      endSourceChar: 1364
+      startSourceChar: 1348
+      endSourceChar: 1362
       line: 45
       lineChar: 44
       spanCodeSection: 'last_event != '
     - startInstruction: 940
       endInstruction: 1039
-      startSourceChar: 1364
-      endSourceChar: 1380
+      startSourceChar: 1362
+      endSourceChar: 1378
       line: 45
       lineChar: 58
       spanCodeSection: "EVENT)\r\n        "
     - startInstruction: 1040
       endInstruction: 1039
-      startSourceChar: 1380
-      endSourceChar: 1395
+      startSourceChar: 1378
+      endSourceChar: 1393
       line: 46
       lineChar: 8
       spanCodeSection: "{\r\n            "
     - startInstruction: 1040
       endInstruction: 1039
-      startSourceChar: 1395
-      endSourceChar: 1395
+      startSourceChar: 1393
+      endSourceChar: 1393
       line: 47
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 1040
       endInstruction: 1039
-      startSourceChar: 1395
-      endSourceChar: 1395
+      startSourceChar: 1393
+      endSourceChar: 1393
       line: 47
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 1040
       endInstruction: 1107
-      startSourceChar: 1395
-      endSourceChar: 1431
+      startSourceChar: 1393
+      endSourceChar: 1429
       line: 47
       lineChar: 12
       spanCodeSection: "ProcessEvent();\r\n        }\r\n        "
     - startInstruction: 1108
       endInstruction: 1107
-      startSourceChar: 1431
-      endSourceChar: 1431
+      startSourceChar: 1429
+      endSourceChar: 1429
       line: 49
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 1108
       endInstruction: 1107
-      startSourceChar: 1431
-      endSourceChar: 1444
+      startSourceChar: 1429
+      endSourceChar: 1442
       line: 49
       lineChar: 8
       spanCodeSection: 'last_event = '
     - startInstruction: 1108
       endInstruction: 1135
-      startSourceChar: 1444
-      endSourceChar: 1465
+      startSourceChar: 1442
+      endSourceChar: 1463
       line: 49
       lineChar: 21
       spanCodeSection: "EVENT;\r\n    }\r\n\r\n    "
     - startInstruction: 1136
       endInstruction: 1155
-      startSourceChar: 1465
-      endSourceChar: 1490
+      startSourceChar: 1463
+      endSourceChar: 1488
       line: 52
       lineChar: 4
       spanCodeSection: "void ProcessEvent()\r\n    "
     - startInstruction: 1156
       endInstruction: 1155
-      startSourceChar: 1490
-      endSourceChar: 1555
+      startSourceChar: 1488
+      endSourceChar: 1553
       line: 53
       lineChar: 4
       spanCodeSection: "{\r\n        //EVENT = EVENT_ID.ToString() + \";\" + EVENT;\r\n
         \       "
     - startInstruction: 1156
       endInstruction: 1155
-      startSourceChar: 1555
-      endSourceChar: 1555
+      startSourceChar: 1553
+      endSourceChar: 1553
       line: 55
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 1156
       endInstruction: 1155
-      startSourceChar: 1555
-      endSourceChar: 1569
+      startSourceChar: 1553
+      endSourceChar: 1567
       line: 55
       lineChar: 8
       spanCodeSection: 'EVENT_ARRAY = '
     - startInstruction: 1156
       endInstruction: 1155
-      startSourceChar: 1569
-      endSourceChar: 1581
+      startSourceChar: 1567
+      endSourceChar: 1579
       line: 55
       lineChar: 22
       spanCodeSection: EVENT.Split(
     - startInstruction: 1156
       endInstruction: 1239
-      startSourceChar: 1581
-      endSourceChar: 1596
+      startSourceChar: 1579
+      endSourceChar: 1594
       line: 55
       lineChar: 34
       spanCodeSection: "';');\r\n        "
     - startInstruction: 1240
       endInstruction: 1239
-      startSourceChar: 1596
-      endSourceChar: 1600
+      startSourceChar: 1594
+      endSourceChar: 1598
       line: 56
       lineChar: 8
       spanCodeSection: if (
     - startInstruction: 1240
       endInstruction: 1239
-      startSourceChar: 1600
-      endSourceChar: 1600
+      startSourceChar: 1598
+      endSourceChar: 1598
       line: 56
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 1240
       endInstruction: 1239
-      startSourceChar: 1600
-      endSourceChar: 1621
+      startSourceChar: 1598
+      endSourceChar: 1619
       line: 56
       lineChar: 12
       spanCodeSection: 'EVENT_ARRAY.Length < '
     - startInstruction: 1240
       endInstruction: 1355
-      startSourceChar: 1621
-      endSourceChar: 1626
+      startSourceChar: 1619
+      endSourceChar: 1624
       line: 56
       lineChar: 33
       spanCodeSection: '5 || '
     - startInstruction: 1356
       endInstruction: 1355
-      startSourceChar: 1626
-      endSourceChar: 1647
+      startSourceChar: 1624
+      endSourceChar: 1645
       line: 56
       lineChar: 38
       spanCodeSection: 'EVENT_ARRAY.Length > '
     - startInstruction: 1356
       endInstruction: 1479
-      startSourceChar: 1647
-      endSourceChar: 1659
+      startSourceChar: 1645
+      endSourceChar: 1657
       line: 56
       lineChar: 59
       spanCodeSection: "6)\r\n        "
     - startInstruction: 1480
       endInstruction: 1479
-      startSourceChar: 1659
-      endSourceChar: 1674
+      startSourceChar: 1657
+      endSourceChar: 1672
       line: 57
       lineChar: 8
       spanCodeSection: "{\r\n            "
     - startInstruction: 1480
       endInstruction: 1479
-      startSourceChar: 1674
-      endSourceChar: 1674
+      startSourceChar: 1672
+      endSourceChar: 1672
       line: 58
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 1480
       endInstruction: 1479
-      startSourceChar: 1674
-      endSourceChar: 1684
+      startSourceChar: 1672
+      endSourceChar: 1682
       line: 58
       lineChar: 12
       spanCodeSection: Debug.Log(
     - startInstruction: 1480
       endInstruction: 1495
-      startSourceChar: 1684
-      endSourceChar: 1744
+      startSourceChar: 1682
+      endSourceChar: 1740
       line: 58
       lineChar: 22
-      spanCodeSection: "\"[EventEmitter] Error: invalid event format\");\r\n            "
+      spanCodeSection: "\"[SE_Emitter] Error: invalid event format\");\r\n            "
     - startInstruction: 1496
       endInstruction: 1503
-      startSourceChar: 1744
-      endSourceChar: 1772
+      startSourceChar: 1740
+      endSourceChar: 1768
       line: 59
       lineChar: 12
       spanCodeSection: "return;\r\n        }\r\n        "
     - startInstruction: 1504
       endInstruction: 1503
-      startSourceChar: 1772
-      endSourceChar: 1772
+      startSourceChar: 1768
+      endSourceChar: 1768
       line: 61
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 1504
       endInstruction: 1503
-      startSourceChar: 1772
-      endSourceChar: 1772
+      startSourceChar: 1768
+      endSourceChar: 1768
       line: 61
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 1504
       endInstruction: 1579
-      startSourceChar: 1772
-      endSourceChar: 1805
+      startSourceChar: 1768
+      endSourceChar: 1801
       line: 61
       lineChar: 8
       spanCodeSection: "ProcessReceiver();\r\n    }\r\n\r\n    "
     - startInstruction: 1580
       endInstruction: 1599
-      startSourceChar: 1805
-      endSourceChar: 1833
+      startSourceChar: 1801
+      endSourceChar: 1829
       line: 64
       lineChar: 4
       spanCodeSection: "void ProcessReceiver()\r\n    "
     - startInstruction: 1600
       endInstruction: 1599
-      startSourceChar: 1833
-      endSourceChar: 1844
+      startSourceChar: 1829
+      endSourceChar: 1840
       line: 65
       lineChar: 4
       spanCodeSection: "{\r\n        "
     - startInstruction: 1600
       endInstruction: 1599
-      startSourceChar: 1844
-      endSourceChar: 1844
+      startSourceChar: 1840
+      endSourceChar: 1840
       line: 66
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 1600
       endInstruction: 1599
-      startSourceChar: 1844
-      endSourceChar: 1844
+      startSourceChar: 1840
+      endSourceChar: 1840
       line: 66
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 1600
       endInstruction: 1599
-      startSourceChar: 1844
-      endSourceChar: 1844
+      startSourceChar: 1840
+      endSourceChar: 1840
       line: 66
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 1600
       endInstruction: 1599
-      startSourceChar: 1844
-      endSourceChar: 1864
+      startSourceChar: 1840
+      endSourceChar: 1860
       line: 66
       lineChar: 8
       spanCodeSection: 'string receiverName '
     - startInstruction: 1600
       endInstruction: 1599
-      startSourceChar: 1864
-      endSourceChar: 1866
+      startSourceChar: 1860
+      endSourceChar: 1862
       line: 66
       lineChar: 28
       spanCodeSection: '= '
     - startInstruction: 1600
       endInstruction: 1599
-      startSourceChar: 1866
-      endSourceChar: 1874
+      startSourceChar: 1862
+      endSourceChar: 1870
       line: 66
       lineChar: 30
       spanCodeSection: (string)
     - startInstruction: 1600
       endInstruction: 1599
-      startSourceChar: 1874
-      endSourceChar: 1895
+      startSourceChar: 1870
+      endSourceChar: 1891
       line: 66
       lineChar: 38
       spanCodeSection: EVENT_ARRAY.GetValue(
     - startInstruction: 1600
       endInstruction: 1671
-      startSourceChar: 1895
-      endSourceChar: 1908
+      startSourceChar: 1891
+      endSourceChar: 1904
       line: 66
       lineChar: 59
       spanCodeSection: "1);\r\n        "
     - startInstruction: 1672
       endInstruction: 1671
-      startSourceChar: 1908
-      endSourceChar: 1908
+      startSourceChar: 1904
+      endSourceChar: 1904
       line: 67
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 1672
       endInstruction: 1671
-      startSourceChar: 1908
-      endSourceChar: 1908
+      startSourceChar: 1904
+      endSourceChar: 1904
       line: 67
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 1672
       endInstruction: 1671
-      startSourceChar: 1908
-      endSourceChar: 1908
+      startSourceChar: 1904
+      endSourceChar: 1904
       line: 67
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 1672
       endInstruction: 1671
-      startSourceChar: 1908
-      endSourceChar: 1934
+      startSourceChar: 1904
+      endSourceChar: 1930
       line: 67
       lineChar: 8
       spanCodeSection: 'GameObject receiverObject '
     - startInstruction: 1672
       endInstruction: 1671
-      startSourceChar: 1934
-      endSourceChar: 1936
+      startSourceChar: 1930
+      endSourceChar: 1932
       line: 67
       lineChar: 34
       spanCodeSection: '= '
     - startInstruction: 1672
       endInstruction: 1671
-      startSourceChar: 1936
-      endSourceChar: 1952
+      startSourceChar: 1932
+      endSourceChar: 1948
       line: 67
       lineChar: 36
       spanCodeSection: GameObject.Find(
     - startInstruction: 1672
       endInstruction: 1715
-      startSourceChar: 1952
-      endSourceChar: 1976
+      startSourceChar: 1948
+      endSourceChar: 1972
       line: 67
       lineChar: 52
       spanCodeSection: "receiverName);\r\n        "
     - startInstruction: 1716
       endInstruction: 1715
-      startSourceChar: 1976
-      endSourceChar: 1980
+      startSourceChar: 1972
+      endSourceChar: 1972
       line: 68
       lineChar: 8
-      spanCodeSection: if (
+      spanCodeSection: 
     - startInstruction: 1716
       endInstruction: 1715
-      startSourceChar: 1980
-      endSourceChar: 1998
+      startSourceChar: 1972
+      endSourceChar: 1972
       line: 68
-      lineChar: 12
-      spanCodeSection: 'receiverObject == '
+      lineChar: 8
+      spanCodeSection: 
     - startInstruction: 1716
-      endInstruction: 1763
-      startSourceChar: 1998
-      endSourceChar: 2013
+      endInstruction: 1715
+      startSourceChar: 1972
+      endSourceChar: 1972
       line: 68
-      lineChar: 30
-      spanCodeSection: "null)\r\n        "
-    - startInstruction: 1764
-      endInstruction: 1763
-      startSourceChar: 2013
-      endSourceChar: 2028
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 1716
+      endInstruction: 1715
+      startSourceChar: 1972
+      endSourceChar: 1999
+      line: 68
+      lineChar: 8
+      spanCodeSection: 'UdonBehaviour receiverUdon '
+    - startInstruction: 1716
+      endInstruction: 1715
+      startSourceChar: 1999
+      endSourceChar: 2001
+      line: 68
+      lineChar: 35
+      spanCodeSection: '= '
+    - startInstruction: 1716
+      endInstruction: 1715
+      startSourceChar: 2001
+      endSourceChar: 2016
+      line: 68
+      lineChar: 37
+      spanCodeSection: (UdonBehaviour)
+    - startInstruction: 1716
+      endInstruction: 1715
+      startSourceChar: 2016
+      endSourceChar: 2044
+      line: 68
+      lineChar: 52
+      spanCodeSection: receiverObject.GetComponent(
+    - startInstruction: 1716
+      endInstruction: 1715
+      startSourceChar: 2044
+      endSourceChar: 2051
+      line: 68
+      lineChar: 80
+      spanCodeSection: typeof(
+    - startInstruction: 1716
+      endInstruction: 1787
+      startSourceChar: 2051
+      endSourceChar: 2077
+      line: 68
+      lineChar: 87
+      spanCodeSection: "UdonBehaviour));\r\n        "
+    - startInstruction: 1788
+      endInstruction: 1787
+      startSourceChar: 2077
+      endSourceChar: 2081
       line: 69
       lineChar: 8
+      spanCodeSection: if (
+    - startInstruction: 1788
+      endInstruction: 1787
+      startSourceChar: 2081
+      endSourceChar: 2099
+      line: 69
+      lineChar: 12
+      spanCodeSection: 'receiverObject == '
+    - startInstruction: 1788
+      endInstruction: 1835
+      startSourceChar: 2099
+      endSourceChar: 2114
+      line: 69
+      lineChar: 30
+      spanCodeSection: "null)\r\n        "
+    - startInstruction: 1836
+      endInstruction: 1835
+      startSourceChar: 2114
+      endSourceChar: 2129
+      line: 70
+      lineChar: 8
       spanCodeSection: "{\r\n            "
-    - startInstruction: 1764
-      endInstruction: 1763
-      startSourceChar: 2028
-      endSourceChar: 2028
-      line: 70
-      lineChar: 12
-      spanCodeSection: 
-    - startInstruction: 1764
-      endInstruction: 1763
-      startSourceChar: 2028
-      endSourceChar: 2038
-      line: 70
-      lineChar: 12
-      spanCodeSection: Debug.Log(
-    - startInstruction: 1764
-      endInstruction: 1763
-      startSourceChar: 2038
-      endSourceChar: 2090
-      line: 70
-      lineChar: 22
-      spanCodeSection: '"[EventEmitter] Error: No Receiver found called " + '
-    - startInstruction: 1764
-      endInstruction: 1811
-      startSourceChar: 2090
-      endSourceChar: 2118
-      line: 70
-      lineChar: 74
-      spanCodeSection: "receiverName);\r\n            "
-    - startInstruction: 1812
-      endInstruction: 1819
-      startSourceChar: 2118
-      endSourceChar: 2146
+    - startInstruction: 1836
+      endInstruction: 1835
+      startSourceChar: 2129
+      endSourceChar: 2129
       line: 71
       lineChar: 12
-      spanCodeSection: "return;\r\n        }\r\n        "
-    - startInstruction: 1820
-      endInstruction: 1819
-      startSourceChar: 2146
-      endSourceChar: 2146
-      line: 73
-      lineChar: 8
       spanCodeSection: 
-    - startInstruction: 1820
-      endInstruction: 1819
-      startSourceChar: 2146
-      endSourceChar: 2146
-      line: 73
-      lineChar: 8
-      spanCodeSection: 
-    - startInstruction: 1820
-      endInstruction: 1819
-      startSourceChar: 2146
-      endSourceChar: 2146
-      line: 73
-      lineChar: 8
-      spanCodeSection: 
-    - startInstruction: 1820
-      endInstruction: 1819
-      startSourceChar: 2146
-      endSourceChar: 2181
-      line: 73
-      lineChar: 8
-      spanCodeSection: 'UdonBehaviour eventReceiverHandler '
-    - startInstruction: 1820
-      endInstruction: 1819
-      startSourceChar: 2181
-      endSourceChar: 2183
-      line: 73
-      lineChar: 43
-      spanCodeSection: '= '
-    - startInstruction: 1820
-      endInstruction: 1819
-      startSourceChar: 2183
-      endSourceChar: 2198
-      line: 73
-      lineChar: 45
-      spanCodeSection: (UdonBehaviour)
-    - startInstruction: 1820
-      endInstruction: 1819
-      startSourceChar: 2198
-      endSourceChar: 2259
-      line: 73
-      lineChar: 60
-      spanCodeSection: receiverObject.transform.Find("[EventHandler]").GetComponent(
-    - startInstruction: 1820
-      endInstruction: 1819
-      startSourceChar: 2259
-      endSourceChar: 2266
-      line: 73
-      lineChar: 121
-      spanCodeSection: typeof(
-    - startInstruction: 1820
-      endInstruction: 1947
-      startSourceChar: 2266
-      endSourceChar: 2292
-      line: 73
-      lineChar: 128
-      spanCodeSection: "UdonBehaviour));\r\n        "
-    - startInstruction: 1948
-      endInstruction: 1947
-      startSourceChar: 2292
-      endSourceChar: 2296
-      line: 74
-      lineChar: 8
-      spanCodeSection: if (
-    - startInstruction: 1948
-      endInstruction: 1947
-      startSourceChar: 2296
-      endSourceChar: 2320
-      line: 74
-      lineChar: 12
-      spanCodeSection: 'eventReceiverHandler == '
-    - startInstruction: 1948
-      endInstruction: 1995
-      startSourceChar: 2320
-      endSourceChar: 2335
-      line: 74
-      lineChar: 36
-      spanCodeSection: "null)\r\n        "
-    - startInstruction: 1996
-      endInstruction: 1995
-      startSourceChar: 2335
-      endSourceChar: 2350
-      line: 75
-      lineChar: 8
-      spanCodeSection: "{\r\n            "
-    - startInstruction: 1996
-      endInstruction: 1995
-      startSourceChar: 2350
-      endSourceChar: 2350
-      line: 76
-      lineChar: 12
-      spanCodeSection: 
-    - startInstruction: 1996
-      endInstruction: 1995
-      startSourceChar: 2350
-      endSourceChar: 2360
-      line: 76
+    - startInstruction: 1836
+      endInstruction: 1835
+      startSourceChar: 2129
+      endSourceChar: 2139
+      line: 71
       lineChar: 12
       spanCodeSection: Debug.Log(
-    - startInstruction: 1996
-      endInstruction: 1995
-      startSourceChar: 2360
-      endSourceChar: 2419
-      line: 76
+    - startInstruction: 1836
+      endInstruction: 1835
+      startSourceChar: 2139
+      endSourceChar: 2189
+      line: 71
       lineChar: 22
-      spanCodeSection: '"[EventEmitter] Error: No EventHandler found on target " + '
-    - startInstruction: 1996
-      endInstruction: 1995
-      startSourceChar: 2419
-      endSourceChar: 2419
-      line: 76
-      lineChar: 81
-      spanCodeSection: 
-    - startInstruction: 1996
-      endInstruction: 1995
-      startSourceChar: 2419
-      endSourceChar: 2434
-      line: 76
-      lineChar: 81
-      spanCodeSection: receiverObject.
-    - startInstruction: 1996
-      endInstruction: 2067
-      startSourceChar: 2434
-      endSourceChar: 2454
-      line: 76
-      lineChar: 96
-      spanCodeSection: "name);\r\n            "
-    - startInstruction: 2068
-      endInstruction: 2075
-      startSourceChar: 2454
-      endSourceChar: 2482
-      line: 77
+      spanCodeSection: '"[SE_Emitter] Error: No Receiver found called " + '
+    - startInstruction: 1836
+      endInstruction: 1883
+      startSourceChar: 2189
+      endSourceChar: 2217
+      line: 71
+      lineChar: 72
+      spanCodeSection: "receiverName);\r\n            "
+    - startInstruction: 1884
+      endInstruction: 1891
+      startSourceChar: 2217
+      endSourceChar: 2245
+      line: 72
       lineChar: 12
       spanCodeSection: "return;\r\n        }\r\n        "
-    - startInstruction: 2076
-      endInstruction: 2075
-      startSourceChar: 2482
-      endSourceChar: 2482
-      line: 79
+    - startInstruction: 1892
+      endInstruction: 1891
+      startSourceChar: 2245
+      endSourceChar: 2245
+      line: 74
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 2076
-      endInstruction: 2075
-      startSourceChar: 2482
-      endSourceChar: 2522
-      line: 79
+    - startInstruction: 1892
+      endInstruction: 1891
+      startSourceChar: 2245
+      endSourceChar: 2245
+      line: 74
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 1892
+      endInstruction: 1891
+      startSourceChar: 2245
+      endSourceChar: 2245
+      line: 74
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 1892
+      endInstruction: 1891
+      startSourceChar: 2245
+      endSourceChar: 2280
+      line: 74
+      lineChar: 8
+      spanCodeSection: 'UdonBehaviour eventReceiverHandler '
+    - startInstruction: 1892
+      endInstruction: 1891
+      startSourceChar: 2280
+      endSourceChar: 2282
+      line: 74
+      lineChar: 43
+      spanCodeSection: '= '
+    - startInstruction: 1892
+      endInstruction: 1891
+      startSourceChar: 2282
+      endSourceChar: 2297
+      line: 74
+      lineChar: 45
+      spanCodeSection: (UdonBehaviour)
+    - startInstruction: 1892
+      endInstruction: 1891
+      startSourceChar: 2297
+      endSourceChar: 2329
+      line: 74
+      lineChar: 60
+      spanCodeSection: receiverUdon.GetProgramVariable(
+    - startInstruction: 1892
+      endInstruction: 1963
+      startSourceChar: 2329
+      endSourceChar: 2355
+      line: 74
+      lineChar: 92
+      spanCodeSection: "\"EventHandler\");\r\n        "
+    - startInstruction: 1964
+      endInstruction: 1963
+      startSourceChar: 2355
+      endSourceChar: 2359
+      line: 75
+      lineChar: 8
+      spanCodeSection: if (
+    - startInstruction: 1964
+      endInstruction: 1963
+      startSourceChar: 2359
+      endSourceChar: 2383
+      line: 75
+      lineChar: 12
+      spanCodeSection: 'eventReceiverHandler == '
+    - startInstruction: 1964
+      endInstruction: 2011
+      startSourceChar: 2383
+      endSourceChar: 2398
+      line: 75
+      lineChar: 36
+      spanCodeSection: "null)\r\n        "
+    - startInstruction: 2012
+      endInstruction: 2011
+      startSourceChar: 2398
+      endSourceChar: 2413
+      line: 76
+      lineChar: 8
+      spanCodeSection: "{\r\n            "
+    - startInstruction: 2012
+      endInstruction: 2011
+      startSourceChar: 2413
+      endSourceChar: 2413
+      line: 77
+      lineChar: 12
+      spanCodeSection: 
+    - startInstruction: 2012
+      endInstruction: 2011
+      startSourceChar: 2413
+      endSourceChar: 2423
+      line: 77
+      lineChar: 12
+      spanCodeSection: Debug.Log(
+    - startInstruction: 2012
+      endInstruction: 2011
+      startSourceChar: 2423
+      endSourceChar: 2480
+      line: 77
+      lineChar: 22
+      spanCodeSection: '"[SE_Emitter] Error: No EventHandler found on target " + '
+    - startInstruction: 2012
+      endInstruction: 2011
+      startSourceChar: 2480
+      endSourceChar: 2480
+      line: 77
+      lineChar: 79
+      spanCodeSection: 
+    - startInstruction: 2012
+      endInstruction: 2011
+      startSourceChar: 2480
+      endSourceChar: 2495
+      line: 77
+      lineChar: 79
+      spanCodeSection: receiverObject.
+    - startInstruction: 2012
+      endInstruction: 2083
+      startSourceChar: 2495
+      endSourceChar: 2515
+      line: 77
+      lineChar: 94
+      spanCodeSection: "name);\r\n            "
+    - startInstruction: 2084
+      endInstruction: 2091
+      startSourceChar: 2515
+      endSourceChar: 2543
+      line: 78
+      lineChar: 12
+      spanCodeSection: "return;\r\n        }\r\n        "
+    - startInstruction: 2092
+      endInstruction: 2091
+      startSourceChar: 2543
+      endSourceChar: 2543
+      line: 80
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 2092
+      endInstruction: 2091
+      startSourceChar: 2543
+      endSourceChar: 2583
+      line: 80
       lineChar: 8
       spanCodeSection: eventReceiverHandler.SetProgramVariable(
-    - startInstruction: 2076
-      endInstruction: 2075
-      startSourceChar: 2522
-      endSourceChar: 2536
-      line: 79
+    - startInstruction: 2092
+      endInstruction: 2091
+      startSourceChar: 2583
+      endSourceChar: 2597
+      line: 80
       lineChar: 48
       spanCodeSection: '"EventInbox", '
-    - startInstruction: 2076
-      endInstruction: 2076
-      startSourceChar: 2536
-      endSourceChar: 2536
-      line: 79
+    - startInstruction: 2092
+      endInstruction: 2092
+      startSourceChar: 2597
+      endSourceChar: 2597
+      line: 80
       lineChar: 62
       spanCodeSection: 
   serializationData:

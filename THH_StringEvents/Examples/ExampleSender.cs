@@ -6,14 +6,9 @@ using VRC.Udon;
 
 public class ExampleSender : UdonSharpBehaviour
 {
-    // These members are required for the StringEventSystem
-    private UdonBehaviour EventHandler;
+    //=== These members are required for the StringEventSystem ===========//
+    public UdonBehaviour EventHandler;
     public string[] PARAMS;
-    void SendStringEvent(string eventString)
-    {
-        EventHandler.SetProgramVariable("EventOutbox", eventString);
-    }
-
     //====================================================================//
 
     public string EventToSend;
@@ -21,6 +16,6 @@ public class ExampleSender : UdonSharpBehaviour
     void Interact()
     {
         // Example way to send a StringEvent
-        SendStringEvent(EventToSend);
+        EventHandler.SetProgramVariable("EventOutbox", EventToSend);
     }
 }

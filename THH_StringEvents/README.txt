@@ -1,22 +1,13 @@
-Objects named with [] may not be renamed!
+GameObjects named with [] may not be renamed!
 
 StringEvent format:
-Receiver GameObject Name, Udon Component to target (0 is first, 1 is second etc.), Target: A(ll) or O(wner) OF THE RECEIVER, Event Name, Parameters (divided by commas)
+Receiver GameObject Name, Udon Component to target (0 is first, 1 is second etc.), Target: A(ll) or O(wner) OF THE RECEIVER, Event Name, Parameters (divided by vertical seperators | )
 
-Parameters can only be literals.
+Parameters can only be literals. (You can get a reference to a GameObject via its name)
 
-Objects that should be able to receive and send events need this:
+To make the system work you need to drop the THH_StringEvents prefab into your scene. Every GameObject that should be able to send and receive events need the equivalent of this code:
 
-// These members are required for the StringEventSystem
-    private UdonBehaviour EventHandler;
-    public string[] PARAMS;
-    void GetEventHandler()
-    {
-        EventHandler = (UdonBehaviour)gameObject.transform.Find("[EventHandler]").GetComponent(typeof(UdonBehaviour));
-    }
-    void SendEvent(string eventString)
-    {
-        EventHandler.SetProgramVariable("EventOutbox", eventString);
-    }
+public UdonBehaviour EventHandler;
+public string[] PARAMS;
 
-AND GetEventHandler() must be called in Start!
+and {SE_Handler} as a child!!

@@ -7,6 +7,9 @@ using VRC.Udon;
 public class EventManager : UdonSharpBehaviour
 {
     public UdonBehaviour LocallyOwnedEmitter;
+    public GameObject Emitters;
+    public GameObject SE_HandlerScenePrefab;
+
     public string EVENT;
 
     private VRCPlayerApi LocalPlayerApi;
@@ -20,7 +23,7 @@ public class EventManager : UdonSharpBehaviour
         }
         else 
         {
-            UdonBehaviour emitter = (UdonBehaviour)gameObject.transform.GetChild(0).GetComponent(typeof(UdonBehaviour));
+            UdonBehaviour emitter = (UdonBehaviour)Emitters.transform.GetChild(0).GetComponent(typeof(UdonBehaviour));
             emitter.SetProgramVariable("Owner", "UNITY_EDITOR");
             LocallyOwnedEmitter = emitter;
         }
@@ -30,10 +33,10 @@ public class EventManager : UdonSharpBehaviour
     {
         if (LocalPlayerApi.isMaster)
         {
-            int emitterCount = transform.childCount;
+            int emitterCount = Emitters.transform.childCount;
             for (int i = 0; i < emitterCount; i++)
             {
-                UdonBehaviour emitter = (UdonBehaviour)gameObject.transform.GetChild(i).GetComponent(typeof(UdonBehaviour));
+                UdonBehaviour emitter = (UdonBehaviour)Emitters.transform.GetChild(i).GetComponent(typeof(UdonBehaviour));
                 Debug.Log(emitter.name);
                 if (emitter.GetProgramVariable("Owner").Equals("UNOWNED"))
                 {
@@ -48,10 +51,10 @@ public class EventManager : UdonSharpBehaviour
     {
         if (LocalPlayerApi.isMaster)
         {
-            int emitterCount = transform.childCount;
+            int emitterCount = Emitters.transform.childCount;
             for (int i = 0; i < emitterCount; i++)
             {
-                UdonBehaviour emitter = (UdonBehaviour)transform.GetChild(i).GetComponent(typeof(UdonBehaviour));
+                UdonBehaviour emitter = (UdonBehaviour)Emitters.transform.GetChild(i).GetComponent(typeof(UdonBehaviour));
                 if (emitter.GetProgramVariable("Owner").Equals(leftPlayer.displayName))
                 {
                     emitter.SetProgramVariable("Owner", "UNOWNED");
@@ -72,7 +75,7 @@ public class EventManager : UdonSharpBehaviour
         {
             if (LocallyOwnedEmitter == null)
             {
-                Debug.Log("[EventManager]: Client owns no emitter");
+                Debug.Log("[SE_Manager] Error: Client owns no emitter");
                 return;
             }
             string eventString = Networking.GetServerTimeInMilliseconds().ToString() + ";" + EVENT;
