@@ -8,7 +8,6 @@ public class EventManager : UdonSharpBehaviour
 {
     public UdonBehaviour LocallyOwnedEmitter;
     public GameObject Emitters;
-    public GameObject SE_HandlerScenePrefab;
 
     public string EVENT;
 
@@ -17,50 +16,50 @@ public class EventManager : UdonSharpBehaviour
     void Start()
     {
         LocalPlayerApi = Networking.LocalPlayer;
-
-        if (LocalPlayerApi != null)
-        {
-        }
-        else 
-        {
-            UdonBehaviour emitter = (UdonBehaviour)Emitters.transform.GetChild(0).GetComponent(typeof(UdonBehaviour));
-            emitter.SetProgramVariable("Owner", "UNITY_EDITOR");
-            LocallyOwnedEmitter = emitter;
-        }
-    }
-
-    void OnPlayerJoined(VRCPlayerApi joinedPlayer)
-    {
-        if (LocalPlayerApi.isMaster)
-        {
-            int emitterCount = Emitters.transform.childCount;
-            for (int i = 0; i < emitterCount; i++)
-            {
-                UdonBehaviour emitter = (UdonBehaviour)Emitters.transform.GetChild(i).GetComponent(typeof(UdonBehaviour));
-                Debug.Log(emitter.name);
-                if (emitter.GetProgramVariable("Owner").Equals("UNOWNED"))
-                {
-                    emitter.SetProgramVariable("Owner", joinedPlayer.displayName);
-                    return;
-                }
-            }
-        }
+        GetEmitter();
     }
 
     void OnPlayerLeft(VRCPlayerApi leftPlayer)
     {
         if (LocalPlayerApi.isMaster)
         {
-            int emitterCount = Emitters.transform.childCount;
-            for (int i = 0; i < emitterCount; i++)
+            Debug.Log("Im Master Now!");
+            UdonBehaviour emitterUdon = (UdonBehaviour)Emitters.transform.GetChild(0).GetComponent(typeof(UdonBehaviour));
+            LocallyOwnedEmitter = emitterUdon;
+        }
+    }
+
+    void GetEmitter()
+    {
+        if (LocalPlayerApi != null)
+        {
+            if (LocalPlayerApi.isMaster)
             {
-                UdonBehaviour emitter = (UdonBehaviour)Emitters.transform.GetChild(i).GetComponent(typeof(UdonBehaviour));
-                if (emitter.GetProgramVariable("Owner").Equals(leftPlayer.displayName))
+                UdonBehaviour emitterUdon = (UdonBehaviour)Emitters.transform.GetChild(0).GetComponent(typeof(UdonBehaviour));
+                LocallyOwnedEmitter = emitterUdon;
+                return;
+            }
+            else
+            {
+                int emitterCount = Emitters.transform.childCount;
+                for (int i = 1; i < emitterCount; i++)
                 {
-                    emitter.SetProgramVariable("Owner", "UNOWNED");
-                    return;
+                    UdonBehaviour emitterUdon = (UdonBehaviour)Emitters.transform.GetChild(i).GetComponent(typeof(UdonBehaviour));
+                    if (Networking.GetOwner(emitterUdon.gameObject).isMaster)
+                    {
+                        Networking.SetOwner(LocalPlayerApi, emitterUdon.gameObject);
+                        LocallyOwnedEmitter = emitterUdon;
+                        return;
+                    }
                 }
             }
+        }
+        else
+        {
+            UdonBehaviour emitter = (UdonBehaviour)Emitters.transform.GetChild(0).GetComponent(typeof(UdonBehaviour));
+            emitter.SetProgramVariable("Owner", "UNITY_EDITOR");
+            LocallyOwnedEmitter = emitter;
+            return;
         }
     }
 
