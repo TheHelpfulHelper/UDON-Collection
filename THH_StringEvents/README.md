@@ -1,6 +1,6 @@
 **THH_StringEvents v1.2**
 
-Purpose: Sending parameterized events over the network. Very experimental!
+Purpose: Sending parameterized events over the network. Very experimental!<br/>
 Complexity Level: Very High
 
 Explanatory Video available at: https://youtu.be/DkyhF5d9st8
