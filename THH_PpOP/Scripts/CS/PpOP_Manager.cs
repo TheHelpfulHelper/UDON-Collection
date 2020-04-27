@@ -18,6 +18,7 @@ public class PpOP_Manager : UdonSharpBehaviour
 
                 Debug.Log("[<color=navy>THH_PpOP : Manager</color>] INFO: I am the first master, setting handler as " + handler.name);
                 ownedHandler = handler;
+                return;
             }
 
             for (int i = 0; i < transform.childCount; i++)
@@ -34,9 +35,11 @@ public class PpOP_Manager : UdonSharpBehaviour
                     }
 
                     handlerUdon.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "BecomeOwner");
-                    break;
+                    return;
                 }
             }
+
+            Debug.Log("[<color=navy>THH_PpOP : Manager</color>] <color=red>ERROR: No unowned handler found!");
         }
     } 
 }
