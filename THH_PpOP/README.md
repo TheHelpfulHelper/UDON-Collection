@@ -1,6 +1,6 @@
 **THH_PpOP v1.0**
 
-Purpose: PpOP stands for 'Per-player Object Pool' and is used to give each player one unique object that belongs to them and which they are owner of<br/>
+Purpose: PpOP stands for 'Per-player Object Pooled'. After joining each player is assigned an object out of a pool, which they become owner of. After leaving the object is released and can be assigned again. <br/>
 Complexity Level: Moderate/High
 
 *SETUP:*
