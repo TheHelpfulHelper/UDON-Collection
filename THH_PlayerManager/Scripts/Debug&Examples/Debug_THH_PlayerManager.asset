@@ -1,0 +1,1847 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
+  m_Name: Debug_THH_PlayerManager
+  m_EditorClassIdentifier: 
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 572bf5518ea91eb4b83a92160cef6dfa,
+    type: 2}
+  udonAssembly: ".data_start\r\n\r\n    .export playerManager\r\n    .export masterHandlerText\r\n
+    \   .export assignedHandlerText\r\n    .export HandlerTextHolder\r\n    .export
+    HandlerTextPrefab\r\n    .export handlerTexts\r\n\r\n    __refl_const_intnl_udonTypeID:
+    %SystemInt64, null\r\n    __refl_const_intnl_udonTypeName: %SystemString, null\r\n
+    \   HandlerTextPrefab: %UnityEngineGameObject, null\r\n    assignedHandlerText:
+    %UnityEngineUIText, null\r\n    masterHandlerText: %UnityEngineUIText, null\r\n
+    \   handlerTexts: %UnityEngineUITextArray, null\r\n    HandlerTextHolder: %UnityEngineTransform,
+    null\r\n    playerManager: %VRCUdonUdonBehaviour, null\r\n    __0_this_intnl_Debug_THH_PlayerManager:
+    %VRCUdonUdonBehaviour, this\r\n    __0_handlerText_GameObject: %UnityEngineGameObject,
+    null\r\n    __0_i_Int32: %SystemInt32, null\r\n    __1_i_Int32: %SystemInt32,
+    null\r\n    __0_handler_THH_PlayerObjectHandler: %VRCUdonUdonBehaviour, null\r\n
+    \   __0_const_intnl_SystemBoolean: %SystemBoolean, null\r\n    __0_const_intnl_SystemInt32:
+    %SystemInt32, null\r\n    __1_const_intnl_SystemInt32: %SystemInt32, null\r\n
+    \   __0_const_intnl_SystemObject: %SystemObject, null\r\n    __0_const_intnl_SystemString:
+    %SystemString, null\r\n    __1_const_intnl_SystemString: %SystemString, null\r\n
+    \   __10_const_intnl_SystemString: %SystemString, null\r\n    __11_const_intnl_SystemString:
+    %SystemString, null\r\n    __2_const_intnl_SystemString: %SystemString, null\r\n
+    \   __3_const_intnl_SystemString: %SystemString, null\r\n    __4_const_intnl_SystemString:
+    %SystemString, null\r\n    __5_const_intnl_SystemString: %SystemString, null\r\n
+    \   __6_const_intnl_SystemString: %SystemString, null\r\n    __7_const_intnl_SystemString:
+    %SystemString, null\r\n    __8_const_intnl_SystemString: %SystemString, null\r\n
+    \   __9_const_intnl_SystemString: %SystemString, null\r\n    __0_const_intnl_SystemType:
+    %SystemType, null\r\n    __0_const_intnl_VRCUdonCommonInterfacesIUdonEventReceiver:
+    %VRCUdonUdonBehaviour, null\r\n    __0_const_intnl_SystemUInt32: %SystemUInt32,
+    null\r\n    __0_intnl_SystemBoolean: %SystemBoolean, null\r\n    __1_intnl_SystemBoolean:
+    %SystemBoolean, null\r\n    __2_intnl_SystemBoolean: %SystemBoolean, null\r\n
+    \   __3_intnl_SystemBoolean: %SystemBoolean, null\r\n    __4_intnl_SystemBoolean:
+    %SystemBoolean, null\r\n    __5_intnl_SystemBoolean: %SystemBoolean, null\r\n
+    \   __0_intnl_THH_PlayerObjectHandlerArray: %UnityEngineComponentArray, null\r\n
+    \   __0_intnl_UnityEngineComponentArray: %UnityEngineComponentArray, null\r\n
+    \   __0_intnl_UnityEngineGameObject: %UnityEngineGameObject, null\r\n    __1_intnl_UnityEngineGameObject:
+    %UnityEngineGameObject, null\r\n    __0_intnl_SystemInt32: %SystemInt32, null\r\n
+    \   __1_intnl_SystemInt32: %SystemInt32, null\r\n    __2_intnl_SystemInt32: %SystemInt32,
+    null\r\n    __3_intnl_SystemInt32: %SystemInt32, null\r\n    __4_intnl_SystemInt32:
+    %SystemInt32, null\r\n    __5_intnl_SystemInt32: %SystemInt32, null\r\n    __6_intnl_SystemInt32:
+    %SystemInt32, null\r\n    __7_intnl_SystemInt32: %SystemInt32, null\r\n    __8_intnl_SystemInt32:
+    %SystemInt32, null\r\n    __0_intnl_SystemObject: %SystemObject, null\r\n    __1_intnl_SystemObject:
+    %SystemObject, null\r\n    __2_intnl_SystemObject: %SystemObject, null\r\n    __3_intnl_SystemObject:
+    %SystemObject, null\r\n    __4_intnl_SystemObject: %SystemObject, null\r\n    __5_intnl_SystemObject:
+    %SystemObject, null\r\n    __0_intnl_interpolatedStr_String: %SystemString, null\r\n
+    \   __0_intnl_SystemString: %SystemString, null\r\n    __1_intnl_SystemString:
+    %SystemString, null\r\n    __2_intnl_SystemString: %SystemString, null\r\n    __3_intnl_SystemString:
+    %SystemString, null\r\n    __4_intnl_SystemString: %SystemString, null\r\n    __5_intnl_SystemString:
+    %SystemString, null\r\n    __0_intnl_UnityEngineUIText: %UnityEngineUIText, null\r\n
+    \   __1_intnl_UnityEngineUIText: %UnityEngineUIText, null\r\n    __0_intnl_UnityEngineUITextArray:
+    %UnityEngineUITextArray, null\r\n    __1_intnl_UnityEngineUITextArray: %UnityEngineUITextArray,
+    null\r\n    __0_intnl_UnityEngineTransform: %UnityEngineTransform, null\r\n    __1_intnl_UnityEngineTransform:
+    %UnityEngineTransform, null\r\n    __0_intnl_THH_PlayerObjectHandler: %VRCUdonUdonBehaviour,
+    null\r\n    __0_intnl_VRCUdonCommonInterfacesIUdonEventReceiver: %VRCUdonUdonBehaviour,
+    null\r\n    __1_intnl_THH_PlayerObjectHandler: %VRCUdonUdonBehaviour, null\r\n
+    \   __1_intnl_VRCUdonCommonInterfacesIUdonEventReceiver: %VRCUdonUdonBehaviour,
+    null\r\n    __2_intnl_THH_PlayerObjectHandler: %VRCUdonUdonBehaviour, null\r\n
+    \   __2_intnl_VRCUdonCommonInterfacesIUdonEventReceiver: %VRCUdonUdonBehaviour,
+    null\r\n    __0_intnl_returnTarget_UInt32: %SystemUInt32, null\r\n    __0_intnl_VRCSDKBaseVRCPlayerApi:
+    %VRCSDKBaseVRCPlayerApi, null\r\n\r\n.data_end\r\n\r\n        \r\n         # using
+    UdonSharp;\r\n        \r\n         # using UnityEngine;\r\n        \r\n         #
+    using VRC.SDKBase;\r\n        \r\n         # using VRC.Udon;\r\n        \r\n         #
+    using UI = UnityEngine.UI;\r\n        \r\n         # public class Debug_THH_PlayerManager
+    : UdonSharpBehaviour\r\n.code_start\r\n        \r\n         # public THH_PlayerManager
+    playerManager;\r\n        \r\n         # public UI.Text masterHandlerText;\r\n
+    \       \r\n         # public UI.Text assignedHandlerText;\r\n        \r\n         #
+    public Transform HandlerTextHolder;\r\n        \r\n         # public GameObject
+    HandlerTextPrefab;\r\n        \r\n         # public UI.Text[] handlerTexts;\r\n
+    \       \r\n         # void Start()\r\n    .export _start\r\n        \r\n    _start:\r\n
+    \       \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
+    \       COPY\r\n        \r\n         # {\r\n        \r\n         # handlerTexts
+    = new UI.Text[playerManager.handlerCount];\r\n        PUSH, playerManager\r\n
+    \       PUSH, __0_const_intnl_SystemString\r\n        PUSH, __0_intnl_SystemObject\r\n
+    \       EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject\"\r\n
+    \       PUSH, __0_intnl_SystemObject\r\n        PUSH, __1_intnl_SystemInt32\r\n
+    \       EXTERN, \"SystemConvert.__ToInt32__SystemObject__SystemInt32\"\r\n        PUSH,
+    __1_intnl_SystemInt32\r\n        PUSH, __1_intnl_UnityEngineUITextArray\r\n        EXTERN,
+    \"UnityEngineUITextArray.__ctor__SystemInt32__UnityEngineUITextArray\"\r\n        PUSH,
+    __1_intnl_UnityEngineUITextArray\r\n        PUSH, __0_intnl_UnityEngineUITextArray\r\n
+    \       COPY\r\n        PUSH, __0_intnl_UnityEngineUITextArray\r\n        PUSH,
+    handlerTexts\r\n        COPY\r\n        \r\n         # for (int i = 0; i < playerManager.handlerCount;
+    i++)\r\n        PUSH, __0_const_intnl_SystemInt32\r\n        PUSH, __0_i_Int32\r\n
+    \       COPY\r\n        PUSH, playerManager\r\n        PUSH, __0_const_intnl_SystemString\r\n
+    \       PUSH, __1_intnl_SystemObject\r\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject\"\r\n
+    \       PUSH, __1_intnl_SystemObject\r\n        PUSH, __3_intnl_SystemInt32\r\n
+    \       EXTERN, \"SystemConvert.__ToInt32__SystemObject__SystemInt32\"\r\n        PUSH,
+    __0_i_Int32\r\n        PUSH, __3_intnl_SystemInt32\r\n        PUSH, __0_intnl_SystemBoolean\r\n
+    \       EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\r\n
+    \       PUSH, __0_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000214\r\n
+    \       \r\n         # {\r\n        \r\n         # GameObject handlerText = VRCInstantiate(HandlerTextPrefab);\r\n
+    \       PUSH, HandlerTextPrefab\r\n        PUSH, __0_intnl_UnityEngineGameObject\r\n
+    \       EXTERN, \"VRCInstantiate.__Instantiate__UnityEngineGameObject__UnityEngineGameObject\"\r\n
+    \       PUSH, __0_intnl_UnityEngineGameObject\r\n        PUSH, __0_handlerText_GameObject\r\n
+    \       COPY\r\n        \r\n         # handlerText.transform.SetParent(HandlerTextHolder,
+    false);\r\n        PUSH, __0_handlerText_GameObject\r\n        PUSH, __0_intnl_UnityEngineTransform\r\n
+    \       EXTERN, \"UnityEngineGameObject.__get_transform__UnityEngineTransform\"\r\n
+    \       PUSH, __0_intnl_UnityEngineTransform\r\n        PUSH, HandlerTextHolder\r\n
+    \       PUSH, __0_const_intnl_SystemBoolean\r\n        EXTERN, \"UnityEngineTransform.__SetParent__UnityEngineTransform_SystemBoolean__SystemVoid\"\r\n
+    \       \r\n         # handlerTexts[i] = handlerText.GetComponent<UI.Text>();\r\n
+    \       PUSH, __0_handlerText_GameObject\r\n        PUSH, __1_intnl_UnityEngineTransform\r\n
+    \       EXTERN, \"UnityEngineGameObject.__get_transform__UnityEngineTransform\"\r\n
+    \       PUSH, __1_intnl_UnityEngineTransform\r\n        PUSH, __0_const_intnl_SystemType\r\n
+    \       PUSH, __0_intnl_UnityEngineUIText\r\n        EXTERN, \"UnityEngineUIText.__GetComponent__T\"\r\n
+    \       PUSH, handlerTexts\r\n        PUSH, __0_i_Int32\r\n        PUSH, __0_intnl_UnityEngineUIText\r\n
+    \       EXTERN, \"UnityEngineUITextArray.__Set__SystemInt32_UnityEngineUIText__SystemVoid\"\r\n
+    \       PUSH, __0_i_Int32\r\n        PUSH, __4_intnl_SystemInt32\r\n        COPY\r\n
+    \       PUSH, __0_i_Int32\r\n        PUSH, __1_const_intnl_SystemInt32\r\n        PUSH,
+    __5_intnl_SystemInt32\r\n        EXTERN, \"SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32\"\r\n
+    \       PUSH, __5_intnl_SystemInt32\r\n        PUSH, __0_i_Int32\r\n        COPY\r\n
+    \       JUMP, 0x000000A0\r\n        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n
+    \       \r\n        \r\n         # void Update()\r\n    .export _update\r\n        \r\n
+    \   _update:\r\n        \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n        PUSH,
+    __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        \r\n         # {\r\n
+    \       \r\n         # if (playerManager.masterHandler == null)\r\n        PUSH,
+    playerManager\r\n        PUSH, __1_const_intnl_SystemString\r\n        PUSH, __2_intnl_SystemObject\r\n
+    \       EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject\"\r\n
+    \       PUSH, __2_intnl_SystemObject\r\n        PUSH, __0_intnl_THH_PlayerObjectHandler\r\n
+    \       COPY\r\n        PUSH, __0_intnl_THH_PlayerObjectHandler\r\n        PUSH,
+    __0_const_intnl_VRCUdonCommonInterfacesIUdonEventReceiver\r\n        PUSH, __1_intnl_SystemBoolean\r\n
+    \       EXTERN, \"UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean\"\r\n
+    \       PUSH, __1_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x000002C8\r\n
+    \       \r\n         # {\r\n        \r\n         # masterHandlerText.text = $\"Master
+    Handler: NULL\";\r\n        PUSH, __2_const_intnl_SystemString\r\n        PUSH,
+    __0_intnl_interpolatedStr_String\r\n        COPY\r\n        PUSH, masterHandlerText\r\n
+    \       PUSH, __0_intnl_interpolatedStr_String\r\n        EXTERN, \"UnityEngineUIText.__set_text__SystemString__SystemVoid\"\r\n
+    \       JUMP, 0x00000374\r\n        \r\n         # else\r\n        \r\n         #
+    {\r\n        \r\n         # masterHandlerText.text = $\"Master Handler: {playerManager.masterHandler.name}\";\r\n
+    \       PUSH, __3_const_intnl_SystemString\r\n        PUSH, __0_intnl_interpolatedStr_String\r\n
+    \       COPY\r\n        PUSH, playerManager\r\n        PUSH, __1_const_intnl_SystemString\r\n
+    \       PUSH, __3_intnl_SystemObject\r\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject\"\r\n
+    \       PUSH, __3_intnl_SystemObject\r\n        PUSH, __1_intnl_THH_PlayerObjectHandler\r\n
+    \       COPY\r\n        PUSH, __1_intnl_THH_PlayerObjectHandler\r\n        PUSH,
+    __0_intnl_SystemString\r\n        EXTERN, \"UnityEngineComponent.__get_name__SystemString\"\r\n
+    \       PUSH, __0_intnl_interpolatedStr_String\r\n        PUSH, __0_intnl_SystemString\r\n
+    \       PUSH, __1_intnl_SystemString\r\n        EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n
+    \       PUSH, __1_intnl_SystemString\r\n        PUSH, __0_intnl_interpolatedStr_String\r\n
+    \       COPY\r\n        PUSH, masterHandlerText\r\n        PUSH, __0_intnl_interpolatedStr_String\r\n
+    \       EXTERN, \"UnityEngineUIText.__set_text__SystemString__SystemVoid\"\r\n
+    \       \r\n         # if (playerManager.assignedHandler == null)\r\n        PUSH,
+    playerManager\r\n        PUSH, __4_const_intnl_SystemString\r\n        PUSH, __3_intnl_SystemObject\r\n
+    \       EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject\"\r\n
+    \       PUSH, __3_intnl_SystemObject\r\n        PUSH, __1_intnl_THH_PlayerObjectHandler\r\n
+    \       COPY\r\n        PUSH, __1_intnl_THH_PlayerObjectHandler\r\n        PUSH,
+    __0_const_intnl_VRCUdonCommonInterfacesIUdonEventReceiver\r\n        PUSH, __2_intnl_SystemBoolean\r\n
+    \       EXTERN, \"UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean\"\r\n
+    \       PUSH, __2_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x0000040C\r\n
+    \       \r\n         # {\r\n        \r\n         # assignedHandlerText.text =
+    $\"Assigned Handler: NULL\";\r\n        PUSH, __5_const_intnl_SystemString\r\n
+    \       PUSH, __0_intnl_interpolatedStr_String\r\n        COPY\r\n        PUSH,
+    assignedHandlerText\r\n        PUSH, __0_intnl_interpolatedStr_String\r\n        EXTERN,
+    \"UnityEngineUIText.__set_text__SystemString__SystemVoid\"\r\n        JUMP, 0x000004B8\r\n
+    \       \r\n         # else\r\n        \r\n         # {\r\n        \r\n         #
+    assignedHandlerText.text = $\"Assigned Handler: {playerManager.assignedHandler.name}\";\r\n
+    \       PUSH, __6_const_intnl_SystemString\r\n        PUSH, __0_intnl_interpolatedStr_String\r\n
+    \       COPY\r\n        PUSH, playerManager\r\n        PUSH, __4_const_intnl_SystemString\r\n
+    \       PUSH, __4_intnl_SystemObject\r\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject\"\r\n
+    \       PUSH, __4_intnl_SystemObject\r\n        PUSH, __2_intnl_THH_PlayerObjectHandler\r\n
+    \       COPY\r\n        PUSH, __2_intnl_THH_PlayerObjectHandler\r\n        PUSH,
+    __0_intnl_SystemString\r\n        EXTERN, \"UnityEngineComponent.__get_name__SystemString\"\r\n
+    \       PUSH, __0_intnl_interpolatedStr_String\r\n        PUSH, __0_intnl_SystemString\r\n
+    \       PUSH, __1_intnl_SystemString\r\n        EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n
+    \       PUSH, __1_intnl_SystemString\r\n        PUSH, __0_intnl_interpolatedStr_String\r\n
+    \       COPY\r\n        PUSH, assignedHandlerText\r\n        PUSH, __0_intnl_interpolatedStr_String\r\n
+    \       EXTERN, \"UnityEngineUIText.__set_text__SystemString__SystemVoid\"\r\n
+    \       \r\n         # for (int i = 0; i < handlerTexts.Length; i++)\r\n        PUSH,
+    __0_const_intnl_SystemInt32\r\n        PUSH, __1_i_Int32\r\n        COPY\r\n        PUSH,
+    handlerTexts\r\n        PUSH, __6_intnl_SystemInt32\r\n        EXTERN, \"UnityEngineUITextArray.__get_Length__SystemInt32\"\r\n
+    \       PUSH, __1_i_Int32\r\n        PUSH, __6_intnl_SystemInt32\r\n        PUSH,
+    __3_intnl_SystemBoolean\r\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\r\n
+    \       PUSH, __3_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000780\r\n
+    \       \r\n         # {\r\n        \r\n         # THH_PlayerObjectHandler handler
+    = playerManager.handlers[i];\r\n        PUSH, playerManager\r\n        PUSH, __7_const_intnl_SystemString\r\n
+    \       PUSH, __4_intnl_SystemObject\r\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject\"\r\n
+    \       PUSH, __4_intnl_SystemObject\r\n        PUSH, __0_intnl_THH_PlayerObjectHandlerArray\r\n
+    \       COPY\r\n        PUSH, __0_intnl_THH_PlayerObjectHandlerArray\r\n        PUSH,
+    __1_i_Int32\r\n        PUSH, __2_intnl_THH_PlayerObjectHandler\r\n        EXTERN,
+    \"UnityEngineComponentArray.__Get__SystemInt32__UnityEngineComponent\"\r\n        PUSH,
+    __2_intnl_THH_PlayerObjectHandler\r\n        PUSH, __0_handler_THH_PlayerObjectHandler\r\n
+    \       COPY\r\n        \r\n         # handlerTexts[i].text = $\"Owner: {Networking.GetOwner(handler.gameObject).displayName};
+    Blocked?: {handler.blocked}; \";\r\n        PUSH, __8_const_intnl_SystemString\r\n
+    \       PUSH, __0_intnl_interpolatedStr_String\r\n        COPY\r\n        PUSH,
+    __0_handler_THH_PlayerObjectHandler\r\n        PUSH, __1_intnl_UnityEngineGameObject\r\n
+    \       EXTERN, \"UnityEngineComponent.__get_gameObject__UnityEngineGameObject\"\r\n
+    \       PUSH, __1_intnl_UnityEngineGameObject\r\n        PUSH, __0_intnl_VRCSDKBaseVRCPlayerApi\r\n
+    \       EXTERN, \"VRCSDKBaseNetworking.__GetOwner__UnityEngineGameObject__VRCSDKBaseVRCPlayerApi\"\r\n
+    \       PUSH, __0_intnl_VRCSDKBaseVRCPlayerApi\r\n        PUSH, __0_intnl_SystemString\r\n
+    \       EXTERN, \"VRCSDKBaseVRCPlayerApi.__get_displayName__SystemString\"\r\n
+    \       PUSH, __0_intnl_interpolatedStr_String\r\n        PUSH, __0_intnl_SystemString\r\n
+    \       PUSH, __1_intnl_SystemString\r\n        EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n
+    \       PUSH, __1_intnl_SystemString\r\n        PUSH, __0_intnl_interpolatedStr_String\r\n
+    \       COPY\r\n        PUSH, __0_intnl_interpolatedStr_String\r\n        PUSH,
+    __9_const_intnl_SystemString\r\n        PUSH, __2_intnl_SystemString\r\n        EXTERN,
+    \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n        PUSH,
+    __2_intnl_SystemString\r\n        PUSH, __0_intnl_interpolatedStr_String\r\n        COPY\r\n
+    \       PUSH, __0_handler_THH_PlayerObjectHandler\r\n        PUSH, __10_const_intnl_SystemString\r\n
+    \       PUSH, __5_intnl_SystemObject\r\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject\"\r\n
+    \       PUSH, __5_intnl_SystemObject\r\n        PUSH, __5_intnl_SystemBoolean\r\n
+    \       EXTERN, \"SystemConvert.__ToBoolean__SystemObject__SystemBoolean\"\r\n
+    \       PUSH, __5_intnl_SystemBoolean\r\n        PUSH, __3_intnl_SystemString\r\n
+    \       EXTERN, \"SystemBoolean.__ToString__SystemString\"\r\n        PUSH, __0_intnl_interpolatedStr_String\r\n
+    \       PUSH, __3_intnl_SystemString\r\n        PUSH, __4_intnl_SystemString\r\n
+    \       EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n
+    \       PUSH, __4_intnl_SystemString\r\n        PUSH, __0_intnl_interpolatedStr_String\r\n
+    \       COPY\r\n        PUSH, __0_intnl_interpolatedStr_String\r\n        PUSH,
+    __11_const_intnl_SystemString\r\n        PUSH, __5_intnl_SystemString\r\n        EXTERN,
+    \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n        PUSH,
+    __5_intnl_SystemString\r\n        PUSH, __0_intnl_interpolatedStr_String\r\n        COPY\r\n
+    \       PUSH, handlerTexts\r\n        PUSH, __1_i_Int32\r\n        PUSH, __1_intnl_UnityEngineUIText\r\n
+    \       EXTERN, \"UnityEngineUITextArray.__Get__SystemInt32__UnityEngineUIText\"\r\n
+    \       PUSH, __1_intnl_UnityEngineUIText\r\n        PUSH, __0_intnl_interpolatedStr_String\r\n
+    \       EXTERN, \"UnityEngineUIText.__set_text__SystemString__SystemVoid\"\r\n
+    \       PUSH, __1_i_Int32\r\n        PUSH, __7_intnl_SystemInt32\r\n        COPY\r\n
+    \       PUSH, __1_i_Int32\r\n        PUSH, __1_const_intnl_SystemInt32\r\n        PUSH,
+    __8_intnl_SystemInt32\r\n        EXTERN, \"SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32\"\r\n
+    \       PUSH, __8_intnl_SystemInt32\r\n        PUSH, __1_i_Int32\r\n        COPY\r\n
+    \       JUMP, 0x000004CC\r\n        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n
+    \       \r\n.code_end\r\n"
+  assemblyError: 
+  sourceCsScript: {fileID: 11500000, guid: c4a5509d7bf543542a7b3269b65b22f2, type: 3}
+  behaviourIDHeapVarName: __refl_const_intnl_udonTypeID
+  compileErrors: []
+  debugInfo:
+    serializedDebugSpans:
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 0
+      endSourceChar: 2
+      line: 0
+      lineChar: 0
+      spanCodeSection: "\r\n"
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 2
+      endSourceChar: 2
+      line: 1
+      lineChar: 0
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 2
+      endSourceChar: 8
+      line: 1
+      lineChar: 0
+      spanCodeSection: 'using '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 8
+      endSourceChar: 20
+      line: 1
+      lineChar: 6
+      spanCodeSection: "UdonSharp;\r\n"
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 20
+      endSourceChar: 26
+      line: 2
+      lineChar: 0
+      spanCodeSection: 'using '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 26
+      endSourceChar: 40
+      line: 2
+      lineChar: 6
+      spanCodeSection: "UnityEngine;\r\n"
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 40
+      endSourceChar: 46
+      line: 3
+      lineChar: 0
+      spanCodeSection: 'using '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 46
+      endSourceChar: 46
+      line: 3
+      lineChar: 6
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 46
+      endSourceChar: 50
+      line: 3
+      lineChar: 6
+      spanCodeSection: VRC.
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 50
+      endSourceChar: 60
+      line: 3
+      lineChar: 10
+      spanCodeSection: "SDKBase;\r\n"
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 60
+      endSourceChar: 66
+      line: 4
+      lineChar: 0
+      spanCodeSection: 'using '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 66
+      endSourceChar: 66
+      line: 4
+      lineChar: 6
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 66
+      endSourceChar: 70
+      line: 4
+      lineChar: 6
+      spanCodeSection: VRC.
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 70
+      endSourceChar: 77
+      line: 4
+      lineChar: 10
+      spanCodeSection: "Udon;\r\n"
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 77
+      endSourceChar: 88
+      line: 5
+      lineChar: 0
+      spanCodeSection: 'using UI = '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 88
+      endSourceChar: 88
+      line: 5
+      lineChar: 11
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 88
+      endSourceChar: 100
+      line: 5
+      lineChar: 11
+      spanCodeSection: UnityEngine.
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 100
+      endSourceChar: 107
+      line: 5
+      lineChar: 23
+      spanCodeSection: "UI;\r\n\r\n"
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 107
+      endSourceChar: 144
+      line: 7
+      lineChar: 0
+      spanCodeSection: 'public class Debug_THH_PlayerManager '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 144
+      endSourceChar: 146
+      line: 7
+      lineChar: 37
+      spanCodeSection: ': '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 146
+      endSourceChar: 146
+      line: 7
+      lineChar: 39
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 146
+      endSourceChar: 173
+      line: 7
+      lineChar: 39
+      spanCodeSection: "UdonSharpBehaviour\r\n{\r\n    "
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 173
+      endSourceChar: 180
+      line: 9
+      lineChar: 4
+      spanCodeSection: 'public '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 180
+      endSourceChar: 180
+      line: 9
+      lineChar: 11
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 180
+      endSourceChar: 218
+      line: 9
+      lineChar: 11
+      spanCodeSection: "THH_PlayerManager playerManager;\r\n    "
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 218
+      endSourceChar: 225
+      line: 10
+      lineChar: 4
+      spanCodeSection: 'public '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 225
+      endSourceChar: 225
+      line: 10
+      lineChar: 11
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 225
+      endSourceChar: 225
+      line: 10
+      lineChar: 11
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 225
+      endSourceChar: 228
+      line: 10
+      lineChar: 11
+      spanCodeSection: UI.
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 228
+      endSourceChar: 257
+      line: 10
+      lineChar: 14
+      spanCodeSection: "Text masterHandlerText;\r\n    "
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 257
+      endSourceChar: 264
+      line: 11
+      lineChar: 4
+      spanCodeSection: 'public '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 264
+      endSourceChar: 264
+      line: 11
+      lineChar: 11
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 264
+      endSourceChar: 264
+      line: 11
+      lineChar: 11
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 264
+      endSourceChar: 267
+      line: 11
+      lineChar: 11
+      spanCodeSection: UI.
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 267
+      endSourceChar: 298
+      line: 11
+      lineChar: 14
+      spanCodeSection: "Text assignedHandlerText;\r\n    "
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 298
+      endSourceChar: 305
+      line: 12
+      lineChar: 4
+      spanCodeSection: 'public '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 305
+      endSourceChar: 305
+      line: 12
+      lineChar: 11
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 305
+      endSourceChar: 339
+      line: 12
+      lineChar: 11
+      spanCodeSection: "Transform HandlerTextHolder;\r\n    "
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 339
+      endSourceChar: 346
+      line: 13
+      lineChar: 4
+      spanCodeSection: 'public '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 346
+      endSourceChar: 346
+      line: 13
+      lineChar: 11
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 346
+      endSourceChar: 381
+      line: 13
+      lineChar: 11
+      spanCodeSection: "GameObject HandlerTextPrefab;\r\n    "
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 381
+      endSourceChar: 388
+      line: 14
+      lineChar: 4
+      spanCodeSection: 'public '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 388
+      endSourceChar: 388
+      line: 14
+      lineChar: 11
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 388
+      endSourceChar: 388
+      line: 14
+      lineChar: 11
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 388
+      endSourceChar: 388
+      line: 14
+      lineChar: 11
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 388
+      endSourceChar: 391
+      line: 14
+      lineChar: 11
+      spanCodeSection: UI.
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 391
+      endSourceChar: 419
+      line: 14
+      lineChar: 14
+      spanCodeSection: "Text[] handlerTexts;\r\n\r\n    "
+    - startInstruction: 0
+      endInstruction: 19
+      startSourceChar: 419
+      endSourceChar: 437
+      line: 16
+      lineChar: 4
+      spanCodeSection: "void Start()\r\n    "
+    - startInstruction: 20
+      endInstruction: 19
+      startSourceChar: 437
+      endSourceChar: 448
+      line: 17
+      lineChar: 4
+      spanCodeSection: "{\r\n        "
+    - startInstruction: 20
+      endInstruction: 19
+      startSourceChar: 448
+      endSourceChar: 448
+      line: 18
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 20
+      endInstruction: 19
+      startSourceChar: 448
+      endSourceChar: 463
+      line: 18
+      lineChar: 8
+      spanCodeSection: 'handlerTexts = '
+    - startInstruction: 20
+      endInstruction: 19
+      startSourceChar: 463
+      endSourceChar: 467
+      line: 18
+      lineChar: 23
+      spanCodeSection: 'new '
+    - startInstruction: 20
+      endInstruction: 19
+      startSourceChar: 467
+      endSourceChar: 467
+      line: 18
+      lineChar: 27
+      spanCodeSection: 
+    - startInstruction: 20
+      endInstruction: 19
+      startSourceChar: 467
+      endSourceChar: 467
+      line: 18
+      lineChar: 27
+      spanCodeSection: 
+    - startInstruction: 20
+      endInstruction: 19
+      startSourceChar: 467
+      endSourceChar: 470
+      line: 18
+      lineChar: 27
+      spanCodeSection: UI.
+    - startInstruction: 20
+      endInstruction: 19
+      startSourceChar: 470
+      endSourceChar: 474
+      line: 18
+      lineChar: 30
+      spanCodeSection: Text
+    - startInstruction: 20
+      endInstruction: 19
+      startSourceChar: 474
+      endSourceChar: 475
+      line: 18
+      lineChar: 34
+      spanCodeSection: '['
+    - startInstruction: 20
+      endInstruction: 19
+      startSourceChar: 475
+      endSourceChar: 475
+      line: 18
+      lineChar: 35
+      spanCodeSection: 
+    - startInstruction: 20
+      endInstruction: 19
+      startSourceChar: 475
+      endSourceChar: 489
+      line: 18
+      lineChar: 35
+      spanCodeSection: playerManager.
+    - startInstruction: 20
+      endInstruction: 139
+      startSourceChar: 489
+      endSourceChar: 513
+      line: 18
+      lineChar: 49
+      spanCodeSection: "handlerCount];\r\n        "
+    - startInstruction: 140
+      endInstruction: 139
+      startSourceChar: 513
+      endSourceChar: 518
+      line: 19
+      lineChar: 8
+      spanCodeSection: for (
+    - startInstruction: 140
+      endInstruction: 139
+      startSourceChar: 518
+      endSourceChar: 518
+      line: 19
+      lineChar: 13
+      spanCodeSection: 
+    - startInstruction: 140
+      endInstruction: 139
+      startSourceChar: 518
+      endSourceChar: 518
+      line: 19
+      lineChar: 13
+      spanCodeSection: 
+    - startInstruction: 140
+      endInstruction: 139
+      startSourceChar: 518
+      endSourceChar: 524
+      line: 19
+      lineChar: 13
+      spanCodeSection: 'int i '
+    - startInstruction: 140
+      endInstruction: 139
+      startSourceChar: 524
+      endSourceChar: 526
+      line: 19
+      lineChar: 19
+      spanCodeSection: '= '
+    - startInstruction: 140
+      endInstruction: 159
+      startSourceChar: 526
+      endSourceChar: 529
+      line: 19
+      lineChar: 21
+      spanCodeSection: '0; '
+    - startInstruction: 160
+      endInstruction: 159
+      startSourceChar: 529
+      endSourceChar: 533
+      line: 19
+      lineChar: 24
+      spanCodeSection: 'i < '
+    - startInstruction: 160
+      endInstruction: 159
+      startSourceChar: 533
+      endSourceChar: 533
+      line: 19
+      lineChar: 28
+      spanCodeSection: 
+    - startInstruction: 160
+      endInstruction: 159
+      startSourceChar: 533
+      endSourceChar: 547
+      line: 19
+      lineChar: 28
+      spanCodeSection: playerManager.
+    - startInstruction: 160
+      endInstruction: 263
+      startSourceChar: 547
+      endSourceChar: 575
+      line: 19
+      lineChar: 42
+      spanCodeSection: "handlerCount; i++)\r\n        "
+    - startInstruction: 264
+      endInstruction: 263
+      startSourceChar: 575
+      endSourceChar: 590
+      line: 20
+      lineChar: 8
+      spanCodeSection: "{\r\n            "
+    - startInstruction: 264
+      endInstruction: 263
+      startSourceChar: 590
+      endSourceChar: 590
+      line: 21
+      lineChar: 12
+      spanCodeSection: 
+    - startInstruction: 264
+      endInstruction: 263
+      startSourceChar: 590
+      endSourceChar: 590
+      line: 21
+      lineChar: 12
+      spanCodeSection: 
+    - startInstruction: 264
+      endInstruction: 263
+      startSourceChar: 590
+      endSourceChar: 590
+      line: 21
+      lineChar: 12
+      spanCodeSection: 
+    - startInstruction: 264
+      endInstruction: 263
+      startSourceChar: 590
+      endSourceChar: 613
+      line: 21
+      lineChar: 12
+      spanCodeSection: 'GameObject handlerText '
+    - startInstruction: 264
+      endInstruction: 263
+      startSourceChar: 613
+      endSourceChar: 615
+      line: 21
+      lineChar: 35
+      spanCodeSection: '= '
+    - startInstruction: 264
+      endInstruction: 263
+      startSourceChar: 615
+      endSourceChar: 630
+      line: 21
+      lineChar: 37
+      spanCodeSection: VRCInstantiate(
+    - startInstruction: 264
+      endInstruction: 307
+      startSourceChar: 630
+      endSourceChar: 663
+      line: 21
+      lineChar: 52
+      spanCodeSection: "HandlerTextPrefab);\r\n            "
+    - startInstruction: 308
+      endInstruction: 307
+      startSourceChar: 663
+      endSourceChar: 663
+      line: 22
+      lineChar: 12
+      spanCodeSection: 
+    - startInstruction: 308
+      endInstruction: 307
+      startSourceChar: 663
+      endSourceChar: 695
+      line: 22
+      lineChar: 12
+      spanCodeSection: handlerText.transform.SetParent(
+    - startInstruction: 308
+      endInstruction: 307
+      startSourceChar: 695
+      endSourceChar: 714
+      line: 22
+      lineChar: 44
+      spanCodeSection: 'HandlerTextHolder, '
+    - startInstruction: 308
+      endInstruction: 363
+      startSourceChar: 714
+      endSourceChar: 735
+      line: 22
+      lineChar: 63
+      spanCodeSection: "false);\r\n            "
+    - startInstruction: 364
+      endInstruction: 363
+      startSourceChar: 735
+      endSourceChar: 735
+      line: 23
+      lineChar: 12
+      spanCodeSection: 
+    - startInstruction: 364
+      endInstruction: 363
+      startSourceChar: 735
+      endSourceChar: 753
+      line: 23
+      lineChar: 12
+      spanCodeSection: 'handlerTexts[i] = '
+    - startInstruction: 364
+      endInstruction: 363
+      startSourceChar: 753
+      endSourceChar: 753
+      line: 23
+      lineChar: 30
+      spanCodeSection: 
+    - startInstruction: 364
+      endInstruction: 363
+      startSourceChar: 753
+      endSourceChar: 753
+      line: 23
+      lineChar: 30
+      spanCodeSection: 
+    - startInstruction: 364
+      endInstruction: 363
+      startSourceChar: 753
+      endSourceChar: 765
+      line: 23
+      lineChar: 30
+      spanCodeSection: handlerText.
+    - startInstruction: 364
+      endInstruction: 363
+      startSourceChar: 765
+      endSourceChar: 777
+      line: 23
+      lineChar: 42
+      spanCodeSection: GetComponent
+    - startInstruction: 364
+      endInstruction: 363
+      startSourceChar: 777
+      endSourceChar: 778
+      line: 23
+      lineChar: 54
+      spanCodeSection: <
+    - startInstruction: 364
+      endInstruction: 363
+      startSourceChar: 778
+      endSourceChar: 778
+      line: 23
+      lineChar: 55
+      spanCodeSection: 
+    - startInstruction: 364
+      endInstruction: 363
+      startSourceChar: 778
+      endSourceChar: 781
+      line: 23
+      lineChar: 55
+      spanCodeSection: UI.
+    - startInstruction: 364
+      endInstruction: 539
+      startSourceChar: 781
+      endSourceChar: 815
+      line: 23
+      lineChar: 58
+      spanCodeSection: "Text>();\r\n        }\r\n    }\r\n\r\n    "
+    - startInstruction: 540
+      endInstruction: 559
+      startSourceChar: 815
+      endSourceChar: 834
+      line: 27
+      lineChar: 4
+      spanCodeSection: "void Update()\r\n    "
+    - startInstruction: 560
+      endInstruction: 559
+      startSourceChar: 834
+      endSourceChar: 845
+      line: 28
+      lineChar: 4
+      spanCodeSection: "{\r\n        "
+    - startInstruction: 560
+      endInstruction: 559
+      startSourceChar: 845
+      endSourceChar: 849
+      line: 29
+      lineChar: 8
+      spanCodeSection: if (
+    - startInstruction: 560
+      endInstruction: 559
+      startSourceChar: 849
+      endSourceChar: 880
+      line: 29
+      lineChar: 12
+      spanCodeSection: 'playerManager.masterHandler == '
+    - startInstruction: 560
+      endInstruction: 659
+      startSourceChar: 880
+      endSourceChar: 895
+      line: 29
+      lineChar: 43
+      spanCodeSection: "null)\r\n        "
+    - startInstruction: 660
+      endInstruction: 659
+      startSourceChar: 895
+      endSourceChar: 910
+      line: 30
+      lineChar: 8
+      spanCodeSection: "{\r\n            "
+    - startInstruction: 660
+      endInstruction: 659
+      startSourceChar: 910
+      endSourceChar: 910
+      line: 31
+      lineChar: 12
+      spanCodeSection: 
+    - startInstruction: 660
+      endInstruction: 659
+      startSourceChar: 910
+      endSourceChar: 935
+      line: 31
+      lineChar: 12
+      spanCodeSection: 'masterHandlerText.text = '
+    - startInstruction: 660
+      endInstruction: 659
+      startSourceChar: 935
+      endSourceChar: 937
+      line: 31
+      lineChar: 37
+      spanCodeSection: $"
+    - startInstruction: 660
+      endInstruction: 711
+      startSourceChar: 937
+      endSourceChar: 980
+      line: 31
+      lineChar: 39
+      spanCodeSection: "Master Handler: NULL\";\r\n        }\r\n        "
+    - startInstruction: 712
+      endInstruction: 711
+      startSourceChar: 980
+      endSourceChar: 994
+      line: 33
+      lineChar: 8
+      spanCodeSection: "else\r\n        "
+    - startInstruction: 712
+      endInstruction: 711
+      startSourceChar: 994
+      endSourceChar: 1009
+      line: 34
+      lineChar: 8
+      spanCodeSection: "{\r\n            "
+    - startInstruction: 712
+      endInstruction: 711
+      startSourceChar: 1009
+      endSourceChar: 1009
+      line: 35
+      lineChar: 12
+      spanCodeSection: 
+    - startInstruction: 712
+      endInstruction: 711
+      startSourceChar: 1009
+      endSourceChar: 1034
+      line: 35
+      lineChar: 12
+      spanCodeSection: 'masterHandlerText.text = '
+    - startInstruction: 712
+      endInstruction: 711
+      startSourceChar: 1034
+      endSourceChar: 1036
+      line: 35
+      lineChar: 37
+      spanCodeSection: $"
+    - startInstruction: 712
+      endInstruction: 731
+      startSourceChar: 1036
+      endSourceChar: 1052
+      line: 35
+      lineChar: 39
+      spanCodeSection: 'Master Handler: '
+    - startInstruction: 732
+      endInstruction: 731
+      startSourceChar: 1052
+      endSourceChar: 1053
+      line: 35
+      lineChar: 55
+      spanCodeSection: '{'
+    - startInstruction: 732
+      endInstruction: 731
+      startSourceChar: 1053
+      endSourceChar: 1053
+      line: 35
+      lineChar: 56
+      spanCodeSection: 
+    - startInstruction: 732
+      endInstruction: 731
+      startSourceChar: 1053
+      endSourceChar: 1053
+      line: 35
+      lineChar: 56
+      spanCodeSection: 
+    - startInstruction: 732
+      endInstruction: 731
+      startSourceChar: 1053
+      endSourceChar: 1067
+      line: 35
+      lineChar: 56
+      spanCodeSection: playerManager.
+    - startInstruction: 732
+      endInstruction: 731
+      startSourceChar: 1067
+      endSourceChar: 1081
+      line: 35
+      lineChar: 70
+      spanCodeSection: masterHandler.
+    - startInstruction: 732
+      endInstruction: 883
+      startSourceChar: 1081
+      endSourceChar: 1111
+      line: 35
+      lineChar: 84
+      spanCodeSection: "name}\";\r\n        }\r\n\r\n        "
+    - startInstruction: 884
+      endInstruction: 883
+      startSourceChar: 1111
+      endSourceChar: 1115
+      line: 38
+      lineChar: 8
+      spanCodeSection: if (
+    - startInstruction: 884
+      endInstruction: 883
+      startSourceChar: 1115
+      endSourceChar: 1148
+      line: 38
+      lineChar: 12
+      spanCodeSection: 'playerManager.assignedHandler == '
+    - startInstruction: 884
+      endInstruction: 983
+      startSourceChar: 1148
+      endSourceChar: 1163
+      line: 38
+      lineChar: 45
+      spanCodeSection: "null)\r\n        "
+    - startInstruction: 984
+      endInstruction: 983
+      startSourceChar: 1163
+      endSourceChar: 1178
+      line: 39
+      lineChar: 8
+      spanCodeSection: "{\r\n            "
+    - startInstruction: 984
+      endInstruction: 983
+      startSourceChar: 1178
+      endSourceChar: 1178
+      line: 40
+      lineChar: 12
+      spanCodeSection: 
+    - startInstruction: 984
+      endInstruction: 983
+      startSourceChar: 1178
+      endSourceChar: 1205
+      line: 40
+      lineChar: 12
+      spanCodeSection: 'assignedHandlerText.text = '
+    - startInstruction: 984
+      endInstruction: 983
+      startSourceChar: 1205
+      endSourceChar: 1207
+      line: 40
+      lineChar: 39
+      spanCodeSection: $"
+    - startInstruction: 984
+      endInstruction: 1035
+      startSourceChar: 1207
+      endSourceChar: 1252
+      line: 40
+      lineChar: 41
+      spanCodeSection: "Assigned Handler: NULL\";\r\n        }\r\n        "
+    - startInstruction: 1036
+      endInstruction: 1035
+      startSourceChar: 1252
+      endSourceChar: 1266
+      line: 42
+      lineChar: 8
+      spanCodeSection: "else\r\n        "
+    - startInstruction: 1036
+      endInstruction: 1035
+      startSourceChar: 1266
+      endSourceChar: 1281
+      line: 43
+      lineChar: 8
+      spanCodeSection: "{\r\n            "
+    - startInstruction: 1036
+      endInstruction: 1035
+      startSourceChar: 1281
+      endSourceChar: 1281
+      line: 44
+      lineChar: 12
+      spanCodeSection: 
+    - startInstruction: 1036
+      endInstruction: 1035
+      startSourceChar: 1281
+      endSourceChar: 1308
+      line: 44
+      lineChar: 12
+      spanCodeSection: 'assignedHandlerText.text = '
+    - startInstruction: 1036
+      endInstruction: 1035
+      startSourceChar: 1308
+      endSourceChar: 1310
+      line: 44
+      lineChar: 39
+      spanCodeSection: $"
+    - startInstruction: 1036
+      endInstruction: 1055
+      startSourceChar: 1310
+      endSourceChar: 1328
+      line: 44
+      lineChar: 41
+      spanCodeSection: 'Assigned Handler: '
+    - startInstruction: 1056
+      endInstruction: 1055
+      startSourceChar: 1328
+      endSourceChar: 1329
+      line: 44
+      lineChar: 59
+      spanCodeSection: '{'
+    - startInstruction: 1056
+      endInstruction: 1055
+      startSourceChar: 1329
+      endSourceChar: 1329
+      line: 44
+      lineChar: 60
+      spanCodeSection: 
+    - startInstruction: 1056
+      endInstruction: 1055
+      startSourceChar: 1329
+      endSourceChar: 1329
+      line: 44
+      lineChar: 60
+      spanCodeSection: 
+    - startInstruction: 1056
+      endInstruction: 1055
+      startSourceChar: 1329
+      endSourceChar: 1343
+      line: 44
+      lineChar: 60
+      spanCodeSection: playerManager.
+    - startInstruction: 1056
+      endInstruction: 1055
+      startSourceChar: 1343
+      endSourceChar: 1359
+      line: 44
+      lineChar: 74
+      spanCodeSection: assignedHandler.
+    - startInstruction: 1056
+      endInstruction: 1207
+      startSourceChar: 1359
+      endSourceChar: 1389
+      line: 44
+      lineChar: 90
+      spanCodeSection: "name}\";\r\n        }\r\n\r\n        "
+    - startInstruction: 1208
+      endInstruction: 1207
+      startSourceChar: 1389
+      endSourceChar: 1394
+      line: 47
+      lineChar: 8
+      spanCodeSection: for (
+    - startInstruction: 1208
+      endInstruction: 1207
+      startSourceChar: 1394
+      endSourceChar: 1394
+      line: 47
+      lineChar: 13
+      spanCodeSection: 
+    - startInstruction: 1208
+      endInstruction: 1207
+      startSourceChar: 1394
+      endSourceChar: 1394
+      line: 47
+      lineChar: 13
+      spanCodeSection: 
+    - startInstruction: 1208
+      endInstruction: 1207
+      startSourceChar: 1394
+      endSourceChar: 1400
+      line: 47
+      lineChar: 13
+      spanCodeSection: 'int i '
+    - startInstruction: 1208
+      endInstruction: 1207
+      startSourceChar: 1400
+      endSourceChar: 1402
+      line: 47
+      lineChar: 19
+      spanCodeSection: '= '
+    - startInstruction: 1208
+      endInstruction: 1227
+      startSourceChar: 1402
+      endSourceChar: 1405
+      line: 47
+      lineChar: 21
+      spanCodeSection: '0; '
+    - startInstruction: 1228
+      endInstruction: 1227
+      startSourceChar: 1405
+      endSourceChar: 1409
+      line: 47
+      lineChar: 24
+      spanCodeSection: 'i < '
+    - startInstruction: 1228
+      endInstruction: 1227
+      startSourceChar: 1409
+      endSourceChar: 1409
+      line: 47
+      lineChar: 28
+      spanCodeSection: 
+    - startInstruction: 1228
+      endInstruction: 1227
+      startSourceChar: 1409
+      endSourceChar: 1422
+      line: 47
+      lineChar: 28
+      spanCodeSection: handlerTexts.
+    - startInstruction: 1228
+      endInstruction: 1299
+      startSourceChar: 1422
+      endSourceChar: 1444
+      line: 47
+      lineChar: 41
+      spanCodeSection: "Length; i++)\r\n        "
+    - startInstruction: 1300
+      endInstruction: 1299
+      startSourceChar: 1444
+      endSourceChar: 1459
+      line: 48
+      lineChar: 8
+      spanCodeSection: "{\r\n            "
+    - startInstruction: 1300
+      endInstruction: 1299
+      startSourceChar: 1459
+      endSourceChar: 1459
+      line: 49
+      lineChar: 12
+      spanCodeSection: 
+    - startInstruction: 1300
+      endInstruction: 1299
+      startSourceChar: 1459
+      endSourceChar: 1459
+      line: 49
+      lineChar: 12
+      spanCodeSection: 
+    - startInstruction: 1300
+      endInstruction: 1299
+      startSourceChar: 1459
+      endSourceChar: 1459
+      line: 49
+      lineChar: 12
+      spanCodeSection: 
+    - startInstruction: 1300
+      endInstruction: 1299
+      startSourceChar: 1459
+      endSourceChar: 1491
+      line: 49
+      lineChar: 12
+      spanCodeSection: 'THH_PlayerObjectHandler handler '
+    - startInstruction: 1300
+      endInstruction: 1299
+      startSourceChar: 1491
+      endSourceChar: 1493
+      line: 49
+      lineChar: 44
+      spanCodeSection: '= '
+    - startInstruction: 1300
+      endInstruction: 1299
+      startSourceChar: 1493
+      endSourceChar: 1493
+      line: 49
+      lineChar: 46
+      spanCodeSection: 
+    - startInstruction: 1300
+      endInstruction: 1299
+      startSourceChar: 1493
+      endSourceChar: 1493
+      line: 49
+      lineChar: 46
+      spanCodeSection: 
+    - startInstruction: 1300
+      endInstruction: 1299
+      startSourceChar: 1493
+      endSourceChar: 1507
+      line: 49
+      lineChar: 46
+      spanCodeSection: playerManager.
+    - startInstruction: 1300
+      endInstruction: 1299
+      startSourceChar: 1507
+      endSourceChar: 1516
+      line: 49
+      lineChar: 60
+      spanCodeSection: handlers[
+    - startInstruction: 1300
+      endInstruction: 1299
+      startSourceChar: 1516
+      endSourceChar: 1516
+      line: 49
+      lineChar: 69
+      spanCodeSection: 
+    - startInstruction: 1300
+      endInstruction: 1403
+      startSourceChar: 1516
+      endSourceChar: 1533
+      line: 49
+      lineChar: 69
+      spanCodeSection: "i];\r\n            "
+    - startInstruction: 1404
+      endInstruction: 1403
+      startSourceChar: 1533
+      endSourceChar: 1533
+      line: 50
+      lineChar: 12
+      spanCodeSection: 
+    - startInstruction: 1404
+      endInstruction: 1403
+      startSourceChar: 1533
+      endSourceChar: 1556
+      line: 50
+      lineChar: 12
+      spanCodeSection: 'handlerTexts[i].text = '
+    - startInstruction: 1404
+      endInstruction: 1403
+      startSourceChar: 1556
+      endSourceChar: 1558
+      line: 50
+      lineChar: 35
+      spanCodeSection: $"
+    - startInstruction: 1404
+      endInstruction: 1423
+      startSourceChar: 1558
+      endSourceChar: 1565
+      line: 50
+      lineChar: 37
+      spanCodeSection: 'Owner: '
+    - startInstruction: 1424
+      endInstruction: 1423
+      startSourceChar: 1565
+      endSourceChar: 1566
+      line: 50
+      lineChar: 44
+      spanCodeSection: '{'
+    - startInstruction: 1424
+      endInstruction: 1423
+      startSourceChar: 1566
+      endSourceChar: 1566
+      line: 50
+      lineChar: 45
+      spanCodeSection: 
+    - startInstruction: 1424
+      endInstruction: 1423
+      startSourceChar: 1566
+      endSourceChar: 1586
+      line: 50
+      lineChar: 45
+      spanCodeSection: Networking.GetOwner(
+    - startInstruction: 1424
+      endInstruction: 1423
+      startSourceChar: 1586
+      endSourceChar: 1586
+      line: 50
+      lineChar: 65
+      spanCodeSection: 
+    - startInstruction: 1424
+      endInstruction: 1423
+      startSourceChar: 1586
+      endSourceChar: 1594
+      line: 50
+      lineChar: 65
+      spanCodeSection: handler.
+    - startInstruction: 1424
+      endInstruction: 1471
+      startSourceChar: 1594
+      endSourceChar: 1606
+      line: 50
+      lineChar: 73
+      spanCodeSection: gameObject).
+    - startInstruction: 1472
+      endInstruction: 1547
+      startSourceChar: 1606
+      endSourceChar: 1618
+      line: 50
+      lineChar: 85
+      spanCodeSection: displayName}
+    - startInstruction: 1548
+      endInstruction: 1599
+      startSourceChar: 1618
+      endSourceChar: 1630
+      line: 50
+      lineChar: 97
+      spanCodeSection: '; Blocked?: '
+    - startInstruction: 1600
+      endInstruction: 1599
+      startSourceChar: 1630
+      endSourceChar: 1631
+      line: 50
+      lineChar: 109
+      spanCodeSection: '{'
+    - startInstruction: 1600
+      endInstruction: 1599
+      startSourceChar: 1631
+      endSourceChar: 1631
+      line: 50
+      lineChar: 110
+      spanCodeSection: 
+    - startInstruction: 1600
+      endInstruction: 1599
+      startSourceChar: 1631
+      endSourceChar: 1639
+      line: 50
+      lineChar: 110
+      spanCodeSection: handler.
+    - startInstruction: 1600
+      endInstruction: 1731
+      startSourceChar: 1639
+      endSourceChar: 1647
+      line: 50
+      lineChar: 118
+      spanCodeSection: blocked}
+    - startInstruction: 1732
+      endInstruction: 1732
+      startSourceChar: 1647
+      endSourceChar: 1647
+      line: 50
+      lineChar: 126
+      spanCodeSection: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 11500000, guid: 45d10110d8b505c4ca1e44a042d3b62b, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: fieldDefinitions
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[UdonSharp.FieldDefinition,
+        UdonSharp.Editor]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 6
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: playerManager
+    - Name: $v
+      Entry: 7
+      Data: 2|UdonSharp.FieldDefinition, UdonSharp.Editor
+    - Name: fieldSymbol
+      Entry: 7
+      Data: 3|UdonSharp.SymbolDefinition, UdonSharp.Editor
+    - Name: internalType
+      Entry: 7
+      Data: 4|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: THH_PlayerManager, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: declarationType
+      Entry: 3
+      Data: 1
+    - Name: syncMode
+      Entry: 3
+      Data: 0
+    - Name: symbolResolvedTypeName
+      Entry: 1
+      Data: VRCUdonUdonBehaviour
+    - Name: symbolOriginalName
+      Entry: 1
+      Data: playerManager
+    - Name: symbolUniqueName
+      Entry: 1
+      Data: playerManager
+    - Name: symbolDefaultValue
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: fieldAttributes
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: userBehaviourSource
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: masterHandlerText
+    - Name: $v
+      Entry: 7
+      Data: 6|UdonSharp.FieldDefinition, UdonSharp.Editor
+    - Name: fieldSymbol
+      Entry: 7
+      Data: 7|UdonSharp.SymbolDefinition, UdonSharp.Editor
+    - Name: internalType
+      Entry: 7
+      Data: 8|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: UnityEngine.UI.Text, UnityEngine.UI
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: declarationType
+      Entry: 3
+      Data: 1
+    - Name: syncMode
+      Entry: 3
+      Data: 0
+    - Name: symbolResolvedTypeName
+      Entry: 1
+      Data: UnityEngineUIText
+    - Name: symbolOriginalName
+      Entry: 1
+      Data: masterHandlerText
+    - Name: symbolUniqueName
+      Entry: 1
+      Data: masterHandlerText
+    - Name: symbolDefaultValue
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: fieldAttributes
+      Entry: 7
+      Data: 9|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: userBehaviourSource
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: assignedHandlerText
+    - Name: $v
+      Entry: 7
+      Data: 10|UdonSharp.FieldDefinition, UdonSharp.Editor
+    - Name: fieldSymbol
+      Entry: 7
+      Data: 11|UdonSharp.SymbolDefinition, UdonSharp.Editor
+    - Name: internalType
+      Entry: 9
+      Data: 8
+    - Name: declarationType
+      Entry: 3
+      Data: 1
+    - Name: syncMode
+      Entry: 3
+      Data: 0
+    - Name: symbolResolvedTypeName
+      Entry: 1
+      Data: UnityEngineUIText
+    - Name: symbolOriginalName
+      Entry: 1
+      Data: assignedHandlerText
+    - Name: symbolUniqueName
+      Entry: 1
+      Data: assignedHandlerText
+    - Name: symbolDefaultValue
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: fieldAttributes
+      Entry: 7
+      Data: 12|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: userBehaviourSource
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: HandlerTextHolder
+    - Name: $v
+      Entry: 7
+      Data: 13|UdonSharp.FieldDefinition, UdonSharp.Editor
+    - Name: fieldSymbol
+      Entry: 7
+      Data: 14|UdonSharp.SymbolDefinition, UdonSharp.Editor
+    - Name: internalType
+      Entry: 7
+      Data: 15|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: UnityEngine.Transform, UnityEngine.CoreModule
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: declarationType
+      Entry: 3
+      Data: 1
+    - Name: syncMode
+      Entry: 3
+      Data: 0
+    - Name: symbolResolvedTypeName
+      Entry: 1
+      Data: UnityEngineTransform
+    - Name: symbolOriginalName
+      Entry: 1
+      Data: HandlerTextHolder
+    - Name: symbolUniqueName
+      Entry: 1
+      Data: HandlerTextHolder
+    - Name: symbolDefaultValue
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: fieldAttributes
+      Entry: 7
+      Data: 16|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: userBehaviourSource
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: HandlerTextPrefab
+    - Name: $v
+      Entry: 7
+      Data: 17|UdonSharp.FieldDefinition, UdonSharp.Editor
+    - Name: fieldSymbol
+      Entry: 7
+      Data: 18|UdonSharp.SymbolDefinition, UdonSharp.Editor
+    - Name: internalType
+      Entry: 7
+      Data: 19|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: UnityEngine.GameObject, UnityEngine.CoreModule
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: declarationType
+      Entry: 3
+      Data: 1
+    - Name: syncMode
+      Entry: 3
+      Data: 0
+    - Name: symbolResolvedTypeName
+      Entry: 1
+      Data: UnityEngineGameObject
+    - Name: symbolOriginalName
+      Entry: 1
+      Data: HandlerTextPrefab
+    - Name: symbolUniqueName
+      Entry: 1
+      Data: HandlerTextPrefab
+    - Name: symbolDefaultValue
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: fieldAttributes
+      Entry: 7
+      Data: 20|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: userBehaviourSource
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: handlerTexts
+    - Name: $v
+      Entry: 7
+      Data: 21|UdonSharp.FieldDefinition, UdonSharp.Editor
+    - Name: fieldSymbol
+      Entry: 7
+      Data: 22|UdonSharp.SymbolDefinition, UdonSharp.Editor
+    - Name: internalType
+      Entry: 7
+      Data: 23|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: UnityEngine.UI.Text[], UnityEngine.UI
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: declarationType
+      Entry: 3
+      Data: 1
+    - Name: syncMode
+      Entry: 3
+      Data: 0
+    - Name: symbolResolvedTypeName
+      Entry: 1
+      Data: UnityEngineUITextArray
+    - Name: symbolOriginalName
+      Entry: 1
+      Data: handlerTexts
+    - Name: symbolUniqueName
+      Entry: 1
+      Data: handlerTexts
+    - Name: symbolDefaultValue
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: fieldAttributes
+      Entry: 7
+      Data: 24|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: userBehaviourSource
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
