@@ -1,10 +1,6 @@
 
-using Amazon.S3.Model;
-using System.Net;
 using UdonSharp;
 using UnityEngine;
-using UnityEngine.Networking;
-using UnityEngine.SocialPlatforms;
 using VRC.SDKBase;
 using VRC.Udon;
 
