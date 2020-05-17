@@ -30,20 +30,21 @@ MonoBehaviour:
     \   __0_const_intnl_SystemObject: %SystemObject, null\r\n    __0_const_intnl_SystemString:
     %SystemString, null\r\n    __1_const_intnl_SystemString: %SystemString, null\r\n
     \   __10_const_intnl_SystemString: %SystemString, null\r\n    __11_const_intnl_SystemString:
-    %SystemString, null\r\n    __2_const_intnl_SystemString: %SystemString, null\r\n
-    \   __3_const_intnl_SystemString: %SystemString, null\r\n    __4_const_intnl_SystemString:
-    %SystemString, null\r\n    __5_const_intnl_SystemString: %SystemString, null\r\n
-    \   __6_const_intnl_SystemString: %SystemString, null\r\n    __7_const_intnl_SystemString:
-    %SystemString, null\r\n    __8_const_intnl_SystemString: %SystemString, null\r\n
-    \   __9_const_intnl_SystemString: %SystemString, null\r\n    __0_const_intnl_SystemType:
-    %SystemType, null\r\n    __0_const_intnl_VRCUdonCommonInterfacesIUdonEventReceiver:
+    %SystemString, null\r\n    __12_const_intnl_SystemString: %SystemString, null\r\n
+    \   __2_const_intnl_SystemString: %SystemString, null\r\n    __3_const_intnl_SystemString:
+    %SystemString, null\r\n    __4_const_intnl_SystemString: %SystemString, null\r\n
+    \   __5_const_intnl_SystemString: %SystemString, null\r\n    __6_const_intnl_SystemString:
+    %SystemString, null\r\n    __7_const_intnl_SystemString: %SystemString, null\r\n
+    \   __8_const_intnl_SystemString: %SystemString, null\r\n    __9_const_intnl_SystemString:
+    %SystemString, null\r\n    __0_const_intnl_SystemType: %SystemType, null\r\n    __0_const_intnl_VRCUdonCommonInterfacesIUdonEventReceiver:
     %VRCUdonUdonBehaviour, null\r\n    __0_const_intnl_SystemUInt32: %SystemUInt32,
     null\r\n    __0_intnl_SystemBoolean: %SystemBoolean, null\r\n    __1_intnl_SystemBoolean:
     %SystemBoolean, null\r\n    __2_intnl_SystemBoolean: %SystemBoolean, null\r\n
     \   __3_intnl_SystemBoolean: %SystemBoolean, null\r\n    __4_intnl_SystemBoolean:
     %SystemBoolean, null\r\n    __5_intnl_SystemBoolean: %SystemBoolean, null\r\n
-    \   __0_intnl_THH_PlayerObjectHandlerArray: %UnityEngineComponentArray, null\r\n
-    \   __0_intnl_UnityEngineComponentArray: %UnityEngineComponentArray, null\r\n
+    \   __6_intnl_SystemBoolean: %SystemBoolean, null\r\n    __7_intnl_SystemBoolean:
+    %SystemBoolean, null\r\n    __0_intnl_THH_PlayerObjectHandlerArray: %UnityEngineComponentArray,
+    null\r\n    __0_intnl_UnityEngineComponentArray: %UnityEngineComponentArray, null\r\n
     \   __0_intnl_UnityEngineGameObject: %UnityEngineGameObject, null\r\n    __1_intnl_UnityEngineGameObject:
     %UnityEngineGameObject, null\r\n    __0_intnl_SystemInt32: %SystemInt32, null\r\n
     \   __1_intnl_SystemInt32: %SystemInt32, null\r\n    __2_intnl_SystemInt32: %SystemInt32,
@@ -53,10 +54,11 @@ MonoBehaviour:
     %SystemInt32, null\r\n    __0_intnl_SystemObject: %SystemObject, null\r\n    __1_intnl_SystemObject:
     %SystemObject, null\r\n    __2_intnl_SystemObject: %SystemObject, null\r\n    __3_intnl_SystemObject:
     %SystemObject, null\r\n    __4_intnl_SystemObject: %SystemObject, null\r\n    __5_intnl_SystemObject:
-    %SystemObject, null\r\n    __0_intnl_interpolatedStr_String: %SystemString, null\r\n
-    \   __0_intnl_SystemString: %SystemString, null\r\n    __1_intnl_SystemString:
+    %SystemObject, null\r\n    __6_intnl_SystemObject: %SystemObject, null\r\n    __0_intnl_interpolatedStr_String:
+    %SystemString, null\r\n    __0_intnl_SystemString: %SystemString, null\r\n    __1_intnl_SystemString:
     %SystemString, null\r\n    __2_intnl_SystemString: %SystemString, null\r\n    __3_intnl_SystemString:
     %SystemString, null\r\n    __4_intnl_SystemString: %SystemString, null\r\n    __5_intnl_SystemString:
+    %SystemString, null\r\n    __6_intnl_SystemString: %SystemString, null\r\n    __7_intnl_SystemString:
     %SystemString, null\r\n    __0_intnl_UnityEngineUIText: %UnityEngineUIText, null\r\n
     \   __1_intnl_UnityEngineUIText: %UnityEngineUIText, null\r\n    __0_intnl_UnityEngineUITextArray:
     %UnityEngineUITextArray, null\r\n    __1_intnl_UnityEngineUITextArray: %UnityEngineUITextArray,
@@ -178,7 +180,7 @@ MonoBehaviour:
     handlerTexts\r\n        PUSH, __6_intnl_SystemInt32\r\n        EXTERN, \"UnityEngineUITextArray.__get_Length__SystemInt32\"\r\n
     \       PUSH, __1_i_Int32\r\n        PUSH, __6_intnl_SystemInt32\r\n        PUSH,
     __3_intnl_SystemBoolean\r\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\r\n
-    \       PUSH, __3_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000780\r\n
+    \       PUSH, __3_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000804\r\n
     \       \r\n         # {\r\n        \r\n         # THH_PlayerObjectHandler handler
     = playerManager.handlers[i];\r\n        PUSH, playerManager\r\n        PUSH, __7_const_intnl_SystemString\r\n
     \       PUSH, __4_intnl_SystemObject\r\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject\"\r\n
@@ -188,7 +190,7 @@ MonoBehaviour:
     \"UnityEngineComponentArray.__Get__SystemInt32__UnityEngineComponent\"\r\n        PUSH,
     __2_intnl_THH_PlayerObjectHandler\r\n        PUSH, __0_handler_THH_PlayerObjectHandler\r\n
     \       COPY\r\n        \r\n         # handlerTexts[i].text = $\"Owner: {Networking.GetOwner(handler.gameObject).displayName};
-    Blocked?: {handler.blocked}; \";\r\n        PUSH, __8_const_intnl_SystemString\r\n
+    Blocked?: {handler.blocked}; Active?: {handler.isActive}\";\r\n        PUSH, __8_const_intnl_SystemString\r\n
     \       PUSH, __0_intnl_interpolatedStr_String\r\n        COPY\r\n        PUSH,
     __0_handler_THH_PlayerObjectHandler\r\n        PUSH, __1_intnl_UnityEngineGameObject\r\n
     \       EXTERN, \"UnityEngineComponent.__get_gameObject__UnityEngineGameObject\"\r\n
@@ -216,8 +218,17 @@ MonoBehaviour:
     __11_const_intnl_SystemString\r\n        PUSH, __5_intnl_SystemString\r\n        EXTERN,
     \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n        PUSH,
     __5_intnl_SystemString\r\n        PUSH, __0_intnl_interpolatedStr_String\r\n        COPY\r\n
-    \       PUSH, handlerTexts\r\n        PUSH, __1_i_Int32\r\n        PUSH, __1_intnl_UnityEngineUIText\r\n
-    \       EXTERN, \"UnityEngineUITextArray.__Get__SystemInt32__UnityEngineUIText\"\r\n
+    \       PUSH, __0_handler_THH_PlayerObjectHandler\r\n        PUSH, __12_const_intnl_SystemString\r\n
+    \       PUSH, __6_intnl_SystemObject\r\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject\"\r\n
+    \       PUSH, __6_intnl_SystemObject\r\n        PUSH, __7_intnl_SystemBoolean\r\n
+    \       EXTERN, \"SystemConvert.__ToBoolean__SystemObject__SystemBoolean\"\r\n
+    \       PUSH, __7_intnl_SystemBoolean\r\n        PUSH, __6_intnl_SystemString\r\n
+    \       EXTERN, \"SystemBoolean.__ToString__SystemString\"\r\n        PUSH, __0_intnl_interpolatedStr_String\r\n
+    \       PUSH, __6_intnl_SystemString\r\n        PUSH, __7_intnl_SystemString\r\n
+    \       EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n
+    \       PUSH, __7_intnl_SystemString\r\n        PUSH, __0_intnl_interpolatedStr_String\r\n
+    \       COPY\r\n        PUSH, handlerTexts\r\n        PUSH, __1_i_Int32\r\n        PUSH,
+    __1_intnl_UnityEngineUIText\r\n        EXTERN, \"UnityEngineUITextArray.__Get__SystemInt32__UnityEngineUIText\"\r\n
     \       PUSH, __1_intnl_UnityEngineUIText\r\n        PUSH, __0_intnl_interpolatedStr_String\r\n
     \       EXTERN, \"UnityEngineUIText.__set_text__SystemString__SystemVoid\"\r\n
     \       PUSH, __1_i_Int32\r\n        PUSH, __7_intnl_SystemInt32\r\n        COPY\r\n
@@ -1437,11 +1448,39 @@ MonoBehaviour:
       lineChar: 118
       spanCodeSection: blocked}
     - startInstruction: 1732
-      endInstruction: 1732
+      endInstruction: 1783
       startSourceChar: 1647
-      endSourceChar: 1647
+      endSourceChar: 1658
       line: 50
       lineChar: 126
+      spanCodeSection: '; Active?: '
+    - startInstruction: 1784
+      endInstruction: 1783
+      startSourceChar: 1658
+      endSourceChar: 1659
+      line: 50
+      lineChar: 137
+      spanCodeSection: '{'
+    - startInstruction: 1784
+      endInstruction: 1783
+      startSourceChar: 1659
+      endSourceChar: 1659
+      line: 50
+      lineChar: 138
+      spanCodeSection: 
+    - startInstruction: 1784
+      endInstruction: 1783
+      startSourceChar: 1659
+      endSourceChar: 1667
+      line: 50
+      lineChar: 138
+      spanCodeSection: handler.
+    - startInstruction: 1784
+      endInstruction: 1784
+      startSourceChar: 1667
+      endSourceChar: 1667
+      line: 50
+      lineChar: 146
       spanCodeSection: 
   serializationData:
     SerializedFormat: 2

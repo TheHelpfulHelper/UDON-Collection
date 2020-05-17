@@ -14,73 +14,90 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serializedUdonProgramAsset: {fileID: 11400000, guid: fb02a191b92f1e640bfceea773545797,
     type: 2}
-  udonAssembly: ".data_start\r\n\r\n    .export blocked\r\n    .export ownedByNonMaster\r\n
-    \   .export customEventUdonTarget\r\n    .export customEventName\r\n\r\n    __refl_const_intnl_udonTypeID:
+  udonAssembly: ".data_start\r\n\r\n    .export blocked\r\n    .export customEventUdonTarget\r\n
+    \   .export customEventName\r\n    .export isActive\r\n\r\n    __refl_const_intnl_udonTypeID:
     %SystemInt64, null\r\n    __refl_const_intnl_udonTypeName: %SystemString, null\r\n
-    \   blocked: %SystemBoolean, null\r\n    ownedByNonMaster: %SystemBoolean, null\r\n
-    \   customEventName: %SystemString, null\r\n    customEventUdonTarget: %VRCUdonUdonBehaviour,
-    null\r\n    playerManager: %VRCUdonUdonBehaviour, null\r\n    onPlayerLeftPlayer:
-    %VRCSDKBaseVRCPlayerApi, null\r\n    __0_this_intnl_UnityEngineGameObject: %UnityEngineGameObject,
-    this\r\n    __0_this_intnl_UnityEngineTransform: %UnityEngineTransform, this\r\n
-    \   __0_this_intnl_THH_PlayerObjectHandler: %VRCUdonUdonBehaviour, this\r\n    __0_child_Transform:
-    %UnityEngineTransform, null\r\n    __0_children_TransformArray: %UnityEngineTransformArray,
-    null\r\n    __0_player_VRCPlayerApi: %VRCSDKBaseVRCPlayerApi, null\r\n    __0_const_intnl_SystemBoolean:
-    %SystemBoolean, null\r\n    __1_const_intnl_SystemBoolean: %SystemBoolean, null\r\n
-    \   __0_const_intnl_SystemInt32: %SystemInt32, null\r\n    __1_const_intnl_SystemInt32:
-    %SystemInt32, null\r\n    __0_const_intnl_SystemInt64: %SystemInt64, null\r\n
-    \   __1_const_intnl_SystemInt64: %SystemInt64, null\r\n    __0_const_intnl_SystemObject:
-    %SystemObject, null\r\n    __0_const_intnl_SystemString: %SystemString, null\r\n
-    \   __1_const_intnl_SystemString: %SystemString, null\r\n    __2_const_intnl_SystemString:
-    %SystemString, null\r\n    __3_const_intnl_SystemString: %SystemString, null\r\n
-    \   __4_const_intnl_SystemString: %SystemString, null\r\n    __5_const_intnl_SystemString:
-    %SystemString, null\r\n    __6_const_intnl_SystemString: %SystemString, null\r\n
-    \   __0_const_intnl_SystemType: %SystemType, null\r\n    __1_const_intnl_SystemType:
-    %SystemType, null\r\n    __0_const_intnl_THH_PlayerManager: %VRCUdonUdonBehaviour,
-    null\r\n    __0_const_intnl_SystemUInt32: %SystemUInt32, null\r\n    __0_intnl_SystemBoolean:
-    %SystemBoolean, null\r\n    __1_intnl_SystemBoolean: %SystemBoolean, null\r\n
-    \   __2_intnl_SystemBoolean: %SystemBoolean, null\r\n    __3_intnl_SystemBoolean:
-    %SystemBoolean, null\r\n    __4_intnl_SystemBoolean: %SystemBoolean, null\r\n
-    \   __5_intnl_SystemBoolean: %SystemBoolean, null\r\n    __6_intnl_SystemBoolean:
-    %SystemBoolean, null\r\n    __7_intnl_SystemBoolean: %SystemBoolean, null\r\n
-    \   __0_intnl_UnityEngineComponent: %UnityEngineComponent, null\r\n    __0_intnl_UnityEngineComponentArray:
-    %UnityEngineComponentArray, null\r\n    __0_intnl_UnityEngineGameObject: %UnityEngineGameObject,
+    \   blocked: %SystemBoolean, null\r\n    isActive: %SystemBoolean, null\r\n    customEventName:
+    %SystemString, null\r\n    customEventUdonTarget: %VRCUdonUdonBehaviour, null\r\n
+    \   playerManager: %VRCUdonUdonBehaviour, null\r\n    onPlayerLeftPlayer: %VRCSDKBaseVRCPlayerApi,
+    null\r\n    __0_this_intnl_UnityEngineGameObject: %UnityEngineGameObject, this\r\n
+    \   __0_this_intnl_UnityEngineTransform: %UnityEngineTransform, this\r\n    __0_this_intnl_THH_PlayerObjectHandler:
+    %VRCUdonUdonBehaviour, this\r\n    __0_player_VRCPlayerApi: %VRCSDKBaseVRCPlayerApi,
+    null\r\n    __0_const_intnl_SystemBoolean: %SystemBoolean, null\r\n    __1_const_intnl_SystemBoolean:
+    %SystemBoolean, null\r\n    __0_const_intnl_SystemInt32: %SystemInt32, null\r\n
+    \   __1_const_intnl_SystemInt32: %SystemInt32, null\r\n    __0_const_intnl_SystemInt64:
+    %SystemInt64, null\r\n    __1_const_intnl_SystemInt64: %SystemInt64, null\r\n
+    \   __0_const_intnl_VRCUdonCommonInterfacesNetworkEventTarget: %VRCUdonCommonInterfacesNetworkEventTarget,
+    null\r\n    __1_const_intnl_VRCUdonCommonInterfacesNetworkEventTarget: %VRCUdonCommonInterfacesNetworkEventTarget,
+    null\r\n    __0_const_intnl_SystemObject: %SystemObject, null\r\n    __0_const_intnl_SystemString:
+    %SystemString, null\r\n    __1_const_intnl_SystemString: %SystemString, null\r\n
+    \   __10_const_intnl_SystemString: %SystemString, null\r\n    __11_const_intnl_SystemString:
+    %SystemString, null\r\n    __12_const_intnl_SystemString: %SystemString, null\r\n
+    \   __13_const_intnl_SystemString: %SystemString, null\r\n    __14_const_intnl_SystemString:
+    %SystemString, null\r\n    __15_const_intnl_SystemString: %SystemString, null\r\n
+    \   __2_const_intnl_SystemString: %SystemString, null\r\n    __3_const_intnl_SystemString:
+    %SystemString, null\r\n    __4_const_intnl_SystemString: %SystemString, null\r\n
+    \   __5_const_intnl_SystemString: %SystemString, null\r\n    __6_const_intnl_SystemString:
+    %SystemString, null\r\n    __7_const_intnl_SystemString: %SystemString, null\r\n
+    \   __8_const_intnl_SystemString: %SystemString, null\r\n    __9_const_intnl_SystemString:
+    %SystemString, null\r\n    __0_const_intnl_SystemType: %SystemType, null\r\n    __0_const_intnl_THH_PlayerManager:
+    %VRCUdonUdonBehaviour, null\r\n    __0_const_intnl_SystemUInt32: %SystemUInt32,
+    null\r\n    __0_intnl_SystemBoolean: %SystemBoolean, null\r\n    __1_intnl_SystemBoolean:
+    %SystemBoolean, null\r\n    __10_intnl_SystemBoolean: %SystemBoolean, null\r\n
+    \   __11_intnl_SystemBoolean: %SystemBoolean, null\r\n    __12_intnl_SystemBoolean:
+    %SystemBoolean, null\r\n    __2_intnl_SystemBoolean: %SystemBoolean, null\r\n
+    \   __3_intnl_SystemBoolean: %SystemBoolean, null\r\n    __4_intnl_SystemBoolean:
+    %SystemBoolean, null\r\n    __5_intnl_SystemBoolean: %SystemBoolean, null\r\n
+    \   __6_intnl_SystemBoolean: %SystemBoolean, null\r\n    __7_intnl_SystemBoolean:
+    %SystemBoolean, null\r\n    __8_intnl_SystemBoolean: %SystemBoolean, null\r\n
+    \   __9_intnl_SystemBoolean: %SystemBoolean, null\r\n    __0_intnl_UnityEngineComponent:
+    %UnityEngineComponent, null\r\n    __0_intnl_UnityEngineComponentArray: %UnityEngineComponentArray,
     null\r\n    __0_intnl_SystemInt32: %SystemInt32, null\r\n    __1_intnl_SystemInt32:
     %SystemInt32, null\r\n    __2_intnl_SystemInt32: %SystemInt32, null\r\n    __3_intnl_SystemInt32:
     %SystemInt32, null\r\n    __4_intnl_SystemInt32: %SystemInt32, null\r\n    __5_intnl_SystemInt32:
-    %SystemInt32, null\r\n    __6_intnl_SystemInt32: %SystemInt32, null\r\n    __7_intnl_SystemInt32:
-    %SystemInt32, null\r\n    __8_intnl_SystemInt32: %SystemInt32, null\r\n    __0_intnl_SystemInt64:
-    %SystemInt64, null\r\n    __1_intnl_SystemInt64: %SystemInt64, null\r\n    __0_intnl_SystemObject:
-    %SystemObject, null\r\n    __1_intnl_SystemObject: %SystemObject, null\r\n    __0_intnl_interpolatedStr_String:
-    %SystemString, null\r\n    __0_intnl_SystemString: %SystemString, null\r\n    __1_intnl_interpolatedStr_String:
-    %SystemString, null\r\n    __1_intnl_SystemString: %SystemString, null\r\n    __2_intnl_interpolatedStr_String:
-    %SystemString, null\r\n    __2_intnl_SystemString: %SystemString, null\r\n    __3_intnl_SystemString:
-    %SystemString, null\r\n    __4_intnl_SystemString: %SystemString, null\r\n    __5_intnl_SystemString:
-    %SystemString, null\r\n    __6_intnl_SystemString: %SystemString, null\r\n    __0_intnl_UnityEngineTransform:
-    %UnityEngineTransform, null\r\n    __1_intnl_UnityEngineTransform: %UnityEngineTransform,
-    null\r\n    __0_intnl_UnityEngineTransformArray: %UnityEngineTransformArray, null\r\n
-    \   __0_intnl_THH_PlayerManager: %VRCUdonUdonBehaviour, null\r\n    __1_intnl_THH_PlayerManager:
-    %VRCUdonUdonBehaviour, null\r\n    __0_intnl_returnTarget_UInt32: %SystemUInt32,
-    null\r\n    __0_intnl_VRCSDKBaseVRCPlayerApi: %VRCSDKBaseVRCPlayerApi, null\r\n
-    \   __1_intnl_VRCSDKBaseVRCPlayerApi: %VRCSDKBaseVRCPlayerApi, null\r\n    __2_intnl_VRCSDKBaseVRCPlayerApi:
-    %VRCSDKBaseVRCPlayerApi, null\r\n\r\n.data_end\r\n\r\n        \r\n         # using
-    UdonSharp;\r\n        \r\n         # using UnityEngine;\r\n        \r\n         #
-    using VRC.SDKBase;\r\n        \r\n         # using VRC.Udon;\r\n        \r\n         #
-    public class THH_PlayerObjectHandler : UdonSharpBehaviour\r\n.code_start\r\n        \r\n
-    \        # private THH_PlayerManager playerManager;\r\n        \r\n         #
-    [HideInInspector]\r\n        \r\n         # public bool blocked;\r\n        \r\n
-    \        # [HideInInspector]\r\n        \r\n         # public bool ownedByNonMaster;\r\n
-    \       \r\n         # [HideInInspector]\r\n        \r\n         # public UdonBehaviour
-    customEventUdonTarget;\r\n        \r\n         # [HideInInspector]\r\n        \r\n
-    \        # public string customEventName;\r\n        \r\n         # public void
-    SendCustomNetworkEventToPlayer()\r\n    .export SendCustomNetworkEventToPlayer\r\n
-    \       \r\n    SendCustomNetworkEventToPlayer:\r\n        \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n
-    \       PUSH, __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        \r\n         #
-    {\r\n        \r\n         # Debug.Log(customEventUdonTarget.name);\r\n        PUSH,
-    customEventUdonTarget\r\n        PUSH, __0_intnl_SystemString\r\n        EXTERN,
-    \"UnityEngineComponent.__get_name__SystemString\"\r\n        PUSH, __0_intnl_SystemString\r\n
-    \       EXTERN, \"UnityEngineDebug.__Log__SystemObject__SystemVoid\"\r\n        \r\n
-    \        # customEventUdonTarget.SendCustomEvent(customEventName);\r\n        PUSH,
-    customEventUdonTarget\r\n        PUSH, customEventName\r\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid\"\r\n
+    %SystemInt32, null\r\n    __0_intnl_SystemInt64: %SystemInt64, null\r\n    __1_intnl_SystemInt64:
+    %SystemInt64, null\r\n    __0_intnl_SystemObject: %SystemObject, null\r\n    __1_intnl_SystemObject:
+    %SystemObject, null\r\n    __2_intnl_SystemObject: %SystemObject, null\r\n    __3_intnl_SystemObject:
+    %SystemObject, null\r\n    __0_intnl_interpolatedStr_String: %SystemString, null\r\n
+    \   __0_intnl_SystemString: %SystemString, null\r\n    __1_intnl_interpolatedStr_String:
+    %SystemString, null\r\n    __1_intnl_SystemString: %SystemString, null\r\n    __10_intnl_SystemString:
+    %SystemString, null\r\n    __11_intnl_SystemString: %SystemString, null\r\n    __12_intnl_SystemString:
+    %SystemString, null\r\n    __13_intnl_SystemString: %SystemString, null\r\n    __14_intnl_SystemString:
+    %SystemString, null\r\n    __15_intnl_SystemString: %SystemString, null\r\n    __16_intnl_SystemString:
+    %SystemString, null\r\n    __2_intnl_interpolatedStr_String: %SystemString, null\r\n
+    \   __2_intnl_SystemString: %SystemString, null\r\n    __3_intnl_interpolatedStr_String:
+    %SystemString, null\r\n    __3_intnl_SystemString: %SystemString, null\r\n    __4_intnl_interpolatedStr_String:
+    %SystemString, null\r\n    __4_intnl_SystemString: %SystemString, null\r\n    __5_intnl_interpolatedStr_String:
+    %SystemString, null\r\n    __5_intnl_SystemString: %SystemString, null\r\n    __6_intnl_SystemString:
+    %SystemString, null\r\n    __7_intnl_SystemString: %SystemString, null\r\n    __8_intnl_SystemString:
+    %SystemString, null\r\n    __9_intnl_SystemString: %SystemString, null\r\n    __0_intnl_UnityEngineTransform:
+    %UnityEngineTransform, null\r\n    __0_intnl_THH_PlayerManager: %VRCUdonUdonBehaviour,
+    null\r\n    __0_intnl_THH_PlayerObjectHandler: %VRCUdonUdonBehaviour, null\r\n
+    \   __0_intnl_VRCUdonCommonInterfacesIUdonEventReceiver: %VRCUdonUdonBehaviour,
+    null\r\n    __1_intnl_THH_PlayerManager: %VRCUdonUdonBehaviour, null\r\n    __0_intnl_returnTarget_UInt32:
+    %SystemUInt32, null\r\n    __0_intnl_VRCSDKBaseVRCPlayerApi: %VRCSDKBaseVRCPlayerApi,
+    null\r\n    __1_intnl_VRCSDKBaseVRCPlayerApi: %VRCSDKBaseVRCPlayerApi, null\r\n
+    \   __2_intnl_VRCSDKBaseVRCPlayerApi: %VRCSDKBaseVRCPlayerApi, null\r\n    __3_intnl_VRCSDKBaseVRCPlayerApi:
+    %VRCSDKBaseVRCPlayerApi, null\r\n    __4_intnl_VRCSDKBaseVRCPlayerApi: %VRCSDKBaseVRCPlayerApi,
+    null\r\n\r\n.data_end\r\n\r\n        \r\n         # using UdonSharp;\r\n        \r\n
+    \        # using UnityEngine;\r\n        \r\n         # using VRC.SDKBase;\r\n
+    \       \r\n         # using VRC.Udon;\r\n        \r\n         # public class
+    THH_PlayerObjectHandler : UdonSharpBehaviour\r\n.code_start\r\n        \r\n         #
+    private THH_PlayerManager playerManager;\r\n        \r\n         # [HideInInspector]\r\n
+    \       \r\n         # public bool blocked;\r\n        \r\n         # [HideInInspector]\r\n
+    \       \r\n         # public UdonBehaviour customEventUdonTarget;\r\n        \r\n
+    \        # [HideInInspector]\r\n        \r\n         # public string customEventName;\r\n
+    \       \r\n         # [HideInInspector]\r\n        \r\n         # public bool
+    isActive;\r\n        \r\n         # public void SendCustomNetworkEventToPlayer()\r\n
+    \   .export SendCustomNetworkEventToPlayer\r\n        \r\n    SendCustomNetworkEventToPlayer:\r\n
+    \       \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
+    \       COPY\r\n        \r\n         # {\r\n        \r\n         # Debug.Log(customEventUdonTarget.name);\r\n
+    \       PUSH, customEventUdonTarget\r\n        PUSH, __0_intnl_SystemString\r\n
+    \       EXTERN, \"UnityEngineComponent.__get_name__SystemString\"\r\n        PUSH,
+    __0_intnl_SystemString\r\n        EXTERN, \"UnityEngineDebug.__Log__SystemObject__SystemVoid\"\r\n
+    \       \r\n         # customEventUdonTarget.SendCustomEvent(customEventName);\r\n
+    \       PUSH, customEventUdonTarget\r\n        PUSH, customEventName\r\n        EXTERN,
+    \"VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid\"\r\n
     \       JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n        \r\n        \r\n
     \        # void Start()\r\n    .export _start\r\n        \r\n    _start:\r\n        \r\n
     \       PUSH, __0_const_intnl_SystemUInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
@@ -118,12 +135,16 @@ MonoBehaviour:
     \       EXTERN, \"SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32\"\r\n
     \       PUSH, __2_intnl_SystemInt32\r\n        PUSH, __1_intnl_SystemInt32\r\n
     \       COPY\r\n        JUMP, 0x000000E8\r\n        PUSH, __0_intnl_THH_PlayerManager\r\n
-    \       PUSH, playerManager\r\n        COPY\r\n        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n
-    \       \r\n        \r\n         # public void SetMasterHandler()\r\n    .export
-    SetMasterHandler\r\n        \r\n    SetMasterHandler:\r\n        \r\n        PUSH,
-    __0_const_intnl_SystemUInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
-    \       COPY\r\n        \r\n         # {\r\n        \r\n         # Debug.Log($\"<color=green>[THH_PlayerManager]</color>
-    Setting master handler to {name}\");\r\n        PUSH, __1_const_intnl_SystemString\r\n
+    \       PUSH, playerManager\r\n        COPY\r\n        \r\n         # SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.Owner,
+    \"BroadcastHandlerState\");\r\n        PUSH, __0_this_intnl_THH_PlayerObjectHandler\r\n
+    \       PUSH, __0_const_intnl_VRCUdonCommonInterfacesNetworkEventTarget\r\n        PUSH,
+    __1_const_intnl_SystemString\r\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomNetworkEvent__VRCUdonCommonInterfacesNetworkEventTarget_SystemString__SystemVoid\"\r\n
+    \       JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n        \r\n        \r\n
+    \        # public void SetMasterHandler()\r\n    .export SetMasterHandler\r\n
+    \       \r\n    SetMasterHandler:\r\n        \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n
+    \       PUSH, __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        \r\n         #
+    {\r\n        \r\n         # Debug.Log($\"<color=green>[THH_PlayerManager]</color>
+    Setting master handler to {name}\");\r\n        PUSH, __2_const_intnl_SystemString\r\n
     \       PUSH, __0_intnl_interpolatedStr_String\r\n        COPY\r\n        PUSH,
     __0_this_intnl_THH_PlayerObjectHandler\r\n        PUSH, __1_intnl_SystemString\r\n
     \       EXTERN, \"UnityEngineComponent.__get_name__SystemString\"\r\n        PUSH,
@@ -133,8 +154,17 @@ MonoBehaviour:
     \       COPY\r\n        PUSH, __0_intnl_interpolatedStr_String\r\n        EXTERN,
     \"UnityEngineDebug.__Log__SystemObject__SystemVoid\"\r\n        \r\n         #
     playerManager.masterHandler = this;\r\n        PUSH, playerManager\r\n        PUSH,
-    __2_const_intnl_SystemString\r\n        PUSH, __0_this_intnl_THH_PlayerObjectHandler\r\n
+    __3_const_intnl_SystemString\r\n        PUSH, __0_this_intnl_THH_PlayerObjectHandler\r\n
     \       EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid\"\r\n
+    \       \r\n         # if (playerManager.masterTransfer)\r\n        PUSH, playerManager\r\n
+    \       PUSH, __4_const_intnl_SystemString\r\n        PUSH, __1_intnl_SystemObject\r\n
+    \       EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject\"\r\n
+    \       PUSH, __1_intnl_SystemObject\r\n        PUSH, __4_intnl_SystemBoolean\r\n
+    \       EXTERN, \"SystemConvert.__ToBoolean__SystemObject__SystemBoolean\"\r\n
+    \       PUSH, __4_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x000003AC\r\n
+    \       \r\n         # {\r\n        \r\n         # playerManager.MasterTransferFinished();\r\n
+    \       PUSH, playerManager\r\n        PUSH, __5_const_intnl_SystemString\r\n
+    \       EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid\"\r\n
     \       JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n        \r\n        \r\n
     \        # public void TakeOwnership()\r\n    .export TakeOwnership\r\n        \r\n
     \   TakeOwnership:\r\n        \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n
@@ -143,15 +173,15 @@ MonoBehaviour:
     \       PUSH, __0_intnl_VRCSDKBaseVRCPlayerApi\r\n        EXTERN, \"VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi\"\r\n
     \       PUSH, __0_intnl_VRCSDKBaseVRCPlayerApi\r\n        PUSH, __3_intnl_SystemInt32\r\n
     \       EXTERN, \"VRCSDKBaseVRCPlayerApi.__get_playerId__SystemInt32\"\r\n        PUSH,
-    playerManager\r\n        PUSH, __3_const_intnl_SystemString\r\n        PUSH, __1_intnl_SystemObject\r\n
+    playerManager\r\n        PUSH, __6_const_intnl_SystemString\r\n        PUSH, __2_intnl_SystemObject\r\n
     \       EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject\"\r\n
-    \       PUSH, __1_intnl_SystemObject\r\n        PUSH, __5_intnl_SystemInt32\r\n
+    \       PUSH, __2_intnl_SystemObject\r\n        PUSH, __5_intnl_SystemInt32\r\n
     \       EXTERN, \"SystemConvert.__ToInt32__SystemObject__SystemInt32\"\r\n        PUSH,
     __5_intnl_SystemInt32\r\n        PUSH, __3_intnl_SystemInt32\r\n        PUSH,
-    __3_intnl_SystemBoolean\r\n        EXTERN, \"SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean\"\r\n
-    \       PUSH, __3_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x000005BC\r\n
+    __5_intnl_SystemBoolean\r\n        EXTERN, \"SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean\"\r\n
+    \       PUSH, __5_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000544\r\n
     \       \r\n         # {\r\n        \r\n         # Debug.Log($\"<color=green>[THH_PlayerManager]</color>
-    You have been assigned handler {name}\");\r\n        PUSH, __4_const_intnl_SystemString\r\n
+    You have been assigned handler {name}\");\r\n        PUSH, __7_const_intnl_SystemString\r\n
     \       PUSH, __1_intnl_interpolatedStr_String\r\n        COPY\r\n        PUSH,
     __0_this_intnl_THH_PlayerObjectHandler\r\n        PUSH, __3_intnl_SystemString\r\n
     \       EXTERN, \"UnityEngineComponent.__get_name__SystemString\"\r\n        PUSH,
@@ -160,52 +190,31 @@ MonoBehaviour:
     \       PUSH, __4_intnl_SystemString\r\n        PUSH, __1_intnl_interpolatedStr_String\r\n
     \       COPY\r\n        PUSH, __1_intnl_interpolatedStr_String\r\n        EXTERN,
     \"UnityEngineDebug.__Log__SystemObject__SystemVoid\"\r\n        \r\n         #
-    Transform[] children = GetComponentsInChildren<Transform>();\r\n        PUSH,
-    __0_this_intnl_THH_PlayerObjectHandler\r\n        PUSH, __1_const_intnl_SystemType\r\n
-    \       PUSH, __0_intnl_UnityEngineTransformArray\r\n        EXTERN, \"UnityEngineTransform.__GetComponentsInChildren__TArray\"\r\n
-    \       PUSH, __0_intnl_UnityEngineTransformArray\r\n        PUSH, __0_children_TransformArray\r\n
-    \       COPY\r\n        \r\n         # foreach (Transform child in children)\r\n
-    \       PUSH, __0_const_intnl_SystemInt32\r\n        PUSH, __6_intnl_SystemInt32\r\n
-    \       COPY\r\n        PUSH, __0_children_TransformArray\r\n        PUSH, __7_intnl_SystemInt32\r\n
-    \       EXTERN, \"UnityEngineTransformArray.__get_Length__SystemInt32\"\r\n        PUSH,
-    __6_intnl_SystemInt32\r\n        PUSH, __7_intnl_SystemInt32\r\n        PUSH,
-    __4_intnl_SystemBoolean\r\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\r\n
-    \       PUSH, __4_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000588\r\n
-    \       PUSH, __0_children_TransformArray\r\n        PUSH, __6_intnl_SystemInt32\r\n
-    \       PUSH, __1_intnl_UnityEngineTransform\r\n        EXTERN, \"UnityEngineTransformArray.__Get__SystemInt32__UnityEngineTransform\"\r\n
-    \       PUSH, __1_intnl_UnityEngineTransform\r\n        PUSH, __0_child_Transform\r\n
-    \       COPY\r\n        \r\n         # {\r\n        \r\n         # Networking.SetOwner(Networking.LocalPlayer,
-    child.gameObject);\r\n        PUSH, __1_intnl_VRCSDKBaseVRCPlayerApi\r\n        EXTERN,
-    \"VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi\"\r\n        PUSH,
-    __0_child_Transform\r\n        PUSH, __0_intnl_UnityEngineGameObject\r\n        EXTERN,
-    \"UnityEngineTransform.__get_gameObject__UnityEngineGameObject\"\r\n        PUSH,
-    __1_intnl_VRCSDKBaseVRCPlayerApi\r\n        PUSH, __0_intnl_UnityEngineGameObject\r\n
+    Networking.SetOwner(Networking.LocalPlayer, gameObject);\r\n        PUSH, __1_intnl_VRCSDKBaseVRCPlayerApi\r\n
+    \       EXTERN, \"VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi\"\r\n
+    \       PUSH, __1_intnl_VRCSDKBaseVRCPlayerApi\r\n        PUSH, __0_this_intnl_UnityEngineGameObject\r\n
     \       EXTERN, \"VRCSDKBaseNetworking.__SetOwner__VRCSDKBaseVRCPlayerApi_UnityEngineGameObject__SystemVoid\"\r\n
-    \       PUSH, __6_intnl_SystemInt32\r\n        PUSH, __1_const_intnl_SystemInt32\r\n
-    \       PUSH, __8_intnl_SystemInt32\r\n        EXTERN, \"SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32\"\r\n
-    \       PUSH, __8_intnl_SystemInt32\r\n        PUSH, __6_intnl_SystemInt32\r\n
-    \       COPY\r\n        JUMP, 0x000004A8\r\n        \r\n         # playerManager.assignedHandler
-    = this;\r\n        PUSH, playerManager\r\n        PUSH, __5_const_intnl_SystemString\r\n
-    \       PUSH, __0_this_intnl_THH_PlayerObjectHandler\r\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid\"\r\n
+    \       \r\n         # playerManager.assignedHandler = this;\r\n        PUSH,
+    playerManager\r\n        PUSH, __8_const_intnl_SystemString\r\n        PUSH, __0_this_intnl_THH_PlayerObjectHandler\r\n
+    \       EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid\"\r\n
     \       \r\n         # blocked = true;\r\n        PUSH, __0_const_intnl_SystemBoolean\r\n
-    \       PUSH, blocked\r\n        COPY\r\n        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n
-    \       \r\n        \r\n         # public override void OnPlayerLeft(VRCPlayerApi
-    player)\r\n    .export _onPlayerLeft\r\n        \r\n    _onPlayerLeft:\r\n        \r\n
-    \       PUSH, __0_const_intnl_SystemUInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
-    \       COPY\r\n        PUSH, onPlayerLeftPlayer\r\n        PUSH, __0_player_VRCPlayerApi\r\n
-    \       COPY\r\n        \r\n         # {\r\n        \r\n         # if (Networking.GetOwner(gameObject).isMaster
-    && ownedByNonMaster)\r\n        PUSH, __0_this_intnl_UnityEngineGameObject\r\n
-    \       PUSH, __2_intnl_VRCSDKBaseVRCPlayerApi\r\n        EXTERN, \"VRCSDKBaseNetworking.__GetOwner__UnityEngineGameObject__VRCSDKBaseVRCPlayerApi\"\r\n
+    \       PUSH, blocked\r\n        COPY\r\n        \r\n         # SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All,
+    \"Activate\");\r\n        PUSH, __0_this_intnl_THH_PlayerObjectHandler\r\n        PUSH,
+    __1_const_intnl_VRCUdonCommonInterfacesNetworkEventTarget\r\n        PUSH, __9_const_intnl_SystemString\r\n
+    \       EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomNetworkEvent__VRCUdonCommonInterfacesNetworkEventTarget_SystemString__SystemVoid\"\r\n
+    \       JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n        \r\n        \r\n
+    \        # public override void OnPlayerLeft(VRCPlayerApi player)\r\n    .export
+    _onPlayerLeft\r\n        \r\n    _onPlayerLeft:\r\n        \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n
+    \       PUSH, __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        PUSH, onPlayerLeftPlayer\r\n
+    \       PUSH, __0_player_VRCPlayerApi\r\n        COPY\r\n        \r\n         #
+    {\r\n        \r\n         # if (Networking.GetOwner(gameObject).isMaster)\r\n
+    \       PUSH, __0_this_intnl_UnityEngineGameObject\r\n        PUSH, __2_intnl_VRCSDKBaseVRCPlayerApi\r\n
+    \       EXTERN, \"VRCSDKBaseNetworking.__GetOwner__UnityEngineGameObject__VRCSDKBaseVRCPlayerApi\"\r\n
     \       PUSH, __2_intnl_VRCSDKBaseVRCPlayerApi\r\n        PUSH, __6_intnl_SystemBoolean\r\n
     \       EXTERN, \"VRCSDKBaseVRCPlayerApi.__get_isMaster__SystemBoolean\"\r\n        PUSH,
-    __6_intnl_SystemBoolean\r\n        PUSH, __5_intnl_SystemBoolean\r\n        COPY\r\n
-    \       PUSH, __5_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000674\r\n
-    \       PUSH, __5_intnl_SystemBoolean\r\n        PUSH, ownedByNonMaster\r\n        PUSH,
-    __7_intnl_SystemBoolean\r\n        EXTERN, \"SystemBoolean.__op_ConditionalAnd__SystemBoolean_SystemBoolean__SystemBoolean\"\r\n
-    \       PUSH, __7_intnl_SystemBoolean\r\n        PUSH, __5_intnl_SystemBoolean\r\n
-    \       COPY\r\n        PUSH, __5_intnl_SystemBoolean\r\n        JUMP_IF_FALSE,
-    0x0000071C\r\n        \r\n         # {\r\n        \r\n         # Debug.Log($\"<color=green>[THH_PlayerManager]</color>
-    Unblocking handler {name}\");\r\n        PUSH, __6_const_intnl_SystemString\r\n
+    __6_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000724\r\n        \r\n         #
+    {\r\n        \r\n         # Debug.Log($\"<color=green>[THH_PlayerManager]</color>
+    Unblocking handler {name}\");\r\n        PUSH, __10_const_intnl_SystemString\r\n
     \       PUSH, __2_intnl_interpolatedStr_String\r\n        COPY\r\n        PUSH,
     __0_this_intnl_THH_PlayerObjectHandler\r\n        PUSH, __5_intnl_SystemString\r\n
     \       EXTERN, \"UnityEngineComponent.__get_name__SystemString\"\r\n        PUSH,
@@ -214,10 +223,104 @@ MonoBehaviour:
     \       PUSH, __6_intnl_SystemString\r\n        PUSH, __2_intnl_interpolatedStr_String\r\n
     \       COPY\r\n        PUSH, __2_intnl_interpolatedStr_String\r\n        EXTERN,
     \"UnityEngineDebug.__Log__SystemObject__SystemVoid\"\r\n        \r\n         #
-    ownedByNonMaster = false;\r\n        PUSH, __1_const_intnl_SystemBoolean\r\n        PUSH,
-    ownedByNonMaster\r\n        COPY\r\n        \r\n         # blocked = false;\r\n
-    \       PUSH, __1_const_intnl_SystemBoolean\r\n        PUSH, blocked\r\n        COPY\r\n
-    \       JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n        \r\n.code_end\r\n"
+    blocked = false;\r\n        PUSH, __1_const_intnl_SystemBoolean\r\n        PUSH,
+    blocked\r\n        COPY\r\n        \r\n         # if (Networking.IsMaster && playerManager.assignedHandler
+    != this)\r\n        PUSH, __8_intnl_SystemBoolean\r\n        EXTERN, \"VRCSDKBaseNetworking.__get_IsMaster__SystemBoolean\"\r\n
+    \       PUSH, __8_intnl_SystemBoolean\r\n        PUSH, __7_intnl_SystemBoolean\r\n
+    \       COPY\r\n        PUSH, __7_intnl_SystemBoolean\r\n        JUMP_IF_FALSE,
+    0x000006F4\r\n        PUSH, playerManager\r\n        PUSH, __8_const_intnl_SystemString\r\n
+    \       PUSH, __3_intnl_SystemObject\r\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject\"\r\n
+    \       PUSH, __3_intnl_SystemObject\r\n        PUSH, __0_intnl_THH_PlayerObjectHandler\r\n
+    \       COPY\r\n        PUSH, __0_intnl_THH_PlayerObjectHandler\r\n        PUSH,
+    __0_this_intnl_THH_PlayerObjectHandler\r\n        PUSH, __9_intnl_SystemBoolean\r\n
+    \       EXTERN, \"UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean\"\r\n
+    \       PUSH, __7_intnl_SystemBoolean\r\n        PUSH, __9_intnl_SystemBoolean\r\n
+    \       PUSH, __10_intnl_SystemBoolean\r\n        EXTERN, \"SystemBoolean.__op_ConditionalAnd__SystemBoolean_SystemBoolean__SystemBoolean\"\r\n
+    \       PUSH, __10_intnl_SystemBoolean\r\n        PUSH, __7_intnl_SystemBoolean\r\n
+    \       COPY\r\n        PUSH, __7_intnl_SystemBoolean\r\n        JUMP_IF_FALSE,
+    0x00000724\r\n        \r\n         # {\r\n        \r\n         # SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All,
+    \"Deactivate\");\r\n        PUSH, __0_this_intnl_THH_PlayerObjectHandler\r\n        PUSH,
+    __1_const_intnl_VRCUdonCommonInterfacesNetworkEventTarget\r\n        PUSH, __11_const_intnl_SystemString\r\n
+    \       EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomNetworkEvent__VRCUdonCommonInterfacesNetworkEventTarget_SystemString__SystemVoid\"\r\n
+    \       JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n        \r\n        \r\n
+    \        # public void BroadcastHandlerState()\r\n    .export BroadcastHandlerState\r\n
+    \       \r\n    BroadcastHandlerState:\r\n        \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n
+    \       PUSH, __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        \r\n         #
+    {\r\n        \r\n         # if (!Networking.IsOwner(gameObject))\r\n        PUSH,
+    __0_this_intnl_UnityEngineGameObject\r\n        PUSH, __11_intnl_SystemBoolean\r\n
+    \       EXTERN, \"VRCSDKBaseNetworking.__IsOwner__UnityEngineGameObject__SystemBoolean\"\r\n
+    \       PUSH, __11_intnl_SystemBoolean\r\n        PUSH, __12_intnl_SystemBoolean\r\n
+    \       EXTERN, \"SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean\"\r\n
+    \       PUSH, __12_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x000007AC\r\n
+    \       \r\n         # {\r\n        \r\n         # Debug.LogWarning($\"<color=green>[THH_PlayerManager]</color>
+    Unauthorized event call: BroadcastHandlerState; You are not owner!\");\r\n        PUSH,
+    __12_const_intnl_SystemString\r\n        PUSH, __3_intnl_interpolatedStr_String\r\n
+    \       COPY\r\n        PUSH, __3_intnl_interpolatedStr_String\r\n        EXTERN,
+    \"UnityEngineDebug.__LogWarning__SystemObject__SystemVoid\"\r\n        \r\n         #
+    return;\r\n        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n        \r\n
+    \        # if (isActive)\r\n        PUSH, isActive\r\n        JUMP_IF_FALSE, 0x000007E4\r\n
+    \       \r\n         # {\r\n        \r\n         # SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All,
+    \"Activate\");\r\n        PUSH, __0_this_intnl_THH_PlayerObjectHandler\r\n        PUSH,
+    __1_const_intnl_VRCUdonCommonInterfacesNetworkEventTarget\r\n        PUSH, __9_const_intnl_SystemString\r\n
+    \       EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomNetworkEvent__VRCUdonCommonInterfacesNetworkEventTarget_SystemString__SystemVoid\"\r\n
+    \       JUMP, 0x00000804\r\n        \r\n         # else\r\n        \r\n         #
+    {\r\n        \r\n         # SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All,
+    \"Deactivate\");\r\n        PUSH, __0_this_intnl_THH_PlayerObjectHandler\r\n        PUSH,
+    __1_const_intnl_VRCUdonCommonInterfacesNetworkEventTarget\r\n        PUSH, __11_const_intnl_SystemString\r\n
+    \       EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomNetworkEvent__VRCUdonCommonInterfacesNetworkEventTarget_SystemString__SystemVoid\"\r\n
+    \       JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n        \r\n        \r\n
+    \        # public void Activate()\r\n    .export Activate\r\n        \r\n    Activate:\r\n
+    \       \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
+    \       COPY\r\n        \r\n         # {\r\n        \r\n         # Debug.Log($\"<color=green>[THH_PlayerManager]</color>
+    Activating handler {name}; Owner is: {Networking.GetOwner(gameObject).displayName}\");\r\n
+    \       PUSH, __13_const_intnl_SystemString\r\n        PUSH, __4_intnl_interpolatedStr_String\r\n
+    \       COPY\r\n        PUSH, __0_this_intnl_THH_PlayerObjectHandler\r\n        PUSH,
+    __7_intnl_SystemString\r\n        EXTERN, \"UnityEngineComponent.__get_name__SystemString\"\r\n
+    \       PUSH, __4_intnl_interpolatedStr_String\r\n        PUSH, __7_intnl_SystemString\r\n
+    \       PUSH, __8_intnl_SystemString\r\n        EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n
+    \       PUSH, __8_intnl_SystemString\r\n        PUSH, __4_intnl_interpolatedStr_String\r\n
+    \       COPY\r\n        PUSH, __4_intnl_interpolatedStr_String\r\n        PUSH,
+    __14_const_intnl_SystemString\r\n        PUSH, __9_intnl_SystemString\r\n        EXTERN,
+    \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n        PUSH,
+    __9_intnl_SystemString\r\n        PUSH, __4_intnl_interpolatedStr_String\r\n        COPY\r\n
+    \       PUSH, __0_this_intnl_UnityEngineGameObject\r\n        PUSH, __3_intnl_VRCSDKBaseVRCPlayerApi\r\n
+    \       EXTERN, \"VRCSDKBaseNetworking.__GetOwner__UnityEngineGameObject__VRCSDKBaseVRCPlayerApi\"\r\n
+    \       PUSH, __3_intnl_VRCSDKBaseVRCPlayerApi\r\n        PUSH, __10_intnl_SystemString\r\n
+    \       EXTERN, \"VRCSDKBaseVRCPlayerApi.__get_displayName__SystemString\"\r\n
+    \       PUSH, __4_intnl_interpolatedStr_String\r\n        PUSH, __10_intnl_SystemString\r\n
+    \       PUSH, __11_intnl_SystemString\r\n        EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n
+    \       PUSH, __11_intnl_SystemString\r\n        PUSH, __4_intnl_interpolatedStr_String\r\n
+    \       COPY\r\n        PUSH, __4_intnl_interpolatedStr_String\r\n        EXTERN,
+    \"UnityEngineDebug.__Log__SystemObject__SystemVoid\"\r\n        \r\n         #
+    isActive = true;\r\n        PUSH, __0_const_intnl_SystemBoolean\r\n        PUSH,
+    isActive\r\n        COPY\r\n        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n
+    \       \r\n        \r\n         # public void Deactivate()\r\n    .export Deactivate\r\n
+    \       \r\n    Deactivate:\r\n        \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n
+    \       PUSH, __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        \r\n         #
+    {\r\n        \r\n         # Debug.Log($\"<color=green>[THH_PlayerManager]</color>
+    Deactivating handler {name}; Owner is: {Networking.GetOwner(gameObject).displayName}\");\r\n
+    \       PUSH, __15_const_intnl_SystemString\r\n        PUSH, __5_intnl_interpolatedStr_String\r\n
+    \       COPY\r\n        PUSH, __0_this_intnl_THH_PlayerObjectHandler\r\n        PUSH,
+    __12_intnl_SystemString\r\n        EXTERN, \"UnityEngineComponent.__get_name__SystemString\"\r\n
+    \       PUSH, __5_intnl_interpolatedStr_String\r\n        PUSH, __12_intnl_SystemString\r\n
+    \       PUSH, __13_intnl_SystemString\r\n        EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n
+    \       PUSH, __13_intnl_SystemString\r\n        PUSH, __5_intnl_interpolatedStr_String\r\n
+    \       COPY\r\n        PUSH, __5_intnl_interpolatedStr_String\r\n        PUSH,
+    __14_const_intnl_SystemString\r\n        PUSH, __14_intnl_SystemString\r\n        EXTERN,
+    \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n        PUSH,
+    __14_intnl_SystemString\r\n        PUSH, __5_intnl_interpolatedStr_String\r\n
+    \       COPY\r\n        PUSH, __0_this_intnl_UnityEngineGameObject\r\n        PUSH,
+    __4_intnl_VRCSDKBaseVRCPlayerApi\r\n        EXTERN, \"VRCSDKBaseNetworking.__GetOwner__UnityEngineGameObject__VRCSDKBaseVRCPlayerApi\"\r\n
+    \       PUSH, __4_intnl_VRCSDKBaseVRCPlayerApi\r\n        PUSH, __15_intnl_SystemString\r\n
+    \       EXTERN, \"VRCSDKBaseVRCPlayerApi.__get_displayName__SystemString\"\r\n
+    \       PUSH, __5_intnl_interpolatedStr_String\r\n        PUSH, __15_intnl_SystemString\r\n
+    \       PUSH, __16_intnl_SystemString\r\n        EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n
+    \       PUSH, __16_intnl_SystemString\r\n        PUSH, __5_intnl_interpolatedStr_String\r\n
+    \       COPY\r\n        PUSH, __5_intnl_interpolatedStr_String\r\n        EXTERN,
+    \"UnityEngineDebug.__Log__SystemObject__SystemVoid\"\r\n        \r\n         #
+    isActive = false;\r\n        PUSH, __1_const_intnl_SystemBoolean\r\n        PUSH,
+    isActive\r\n        COPY\r\n        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n
+    \       \r\n.code_end\r\n"
   assemblyError: 
   sourceCsScript: {fileID: 11500000, guid: 3e6256ba6da4fab4ba1702888097bb61, type: 3}
   behaviourIDHeapVarName: __refl_const_intnl_udonTypeID
@@ -402,810 +505,1638 @@ MonoBehaviour:
     - startInstruction: 0
       endInstruction: -1
       startSourceChar: 221
-      endSourceChar: 240
+      endSourceChar: 242
       line: 10
       lineChar: 11
-      spanCodeSection: "bool blocked;\r\n    "
+      spanCodeSection: "bool blocked;\r\n\r\n    "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 240
-      endSourceChar: 241
-      line: 11
+      startSourceChar: 242
+      endSourceChar: 243
+      line: 12
       lineChar: 4
       spanCodeSection: '['
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 241
-      endSourceChar: 241
-      line: 11
+      startSourceChar: 243
+      endSourceChar: 243
+      line: 12
       lineChar: 5
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 241
-      endSourceChar: 270
-      line: 11
+      startSourceChar: 243
+      endSourceChar: 272
+      line: 12
       lineChar: 5
       spanCodeSection: "HideInInspector]\r\n    public "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 270
-      endSourceChar: 270
-      line: 12
+      startSourceChar: 272
+      endSourceChar: 272
+      line: 13
       lineChar: 11
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 270
-      endSourceChar: 300
-      line: 12
-      lineChar: 11
-      spanCodeSection: "bool ownedByNonMaster;\r\n\r\n    "
-    - startInstruction: 0
-      endInstruction: -1
-      startSourceChar: 300
-      endSourceChar: 301
-      line: 14
-      lineChar: 4
-      spanCodeSection: '['
-    - startInstruction: 0
-      endInstruction: -1
-      startSourceChar: 301
-      endSourceChar: 301
-      line: 14
-      lineChar: 5
-      spanCodeSection: 
-    - startInstruction: 0
-      endInstruction: -1
-      startSourceChar: 301
-      endSourceChar: 330
-      line: 14
-      lineChar: 5
-      spanCodeSection: "HideInInspector]\r\n    public "
-    - startInstruction: 0
-      endInstruction: -1
-      startSourceChar: 330
-      endSourceChar: 330
-      line: 15
-      lineChar: 11
-      spanCodeSection: 
-    - startInstruction: 0
-      endInstruction: -1
-      startSourceChar: 330
-      endSourceChar: 372
-      line: 15
+      startSourceChar: 272
+      endSourceChar: 314
+      line: 13
       lineChar: 11
       spanCodeSection: "UdonBehaviour customEventUdonTarget;\r\n    "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 372
+      startSourceChar: 314
+      endSourceChar: 315
+      line: 14
+      lineChar: 4
+      spanCodeSection: '['
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 315
+      endSourceChar: 315
+      line: 14
+      lineChar: 5
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 315
+      endSourceChar: 344
+      line: 14
+      lineChar: 5
+      spanCodeSection: "HideInInspector]\r\n    public "
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 344
+      endSourceChar: 344
+      line: 15
+      lineChar: 11
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 344
       endSourceChar: 373
+      line: 15
+      lineChar: 11
+      spanCodeSection: "string customEventName;\r\n    "
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 373
+      endSourceChar: 374
       line: 16
       lineChar: 4
       spanCodeSection: '['
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 373
-      endSourceChar: 373
+      startSourceChar: 374
+      endSourceChar: 374
       line: 16
       lineChar: 5
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 373
-      endSourceChar: 402
+      startSourceChar: 374
+      endSourceChar: 403
       line: 16
       lineChar: 5
       spanCodeSection: "HideInInspector]\r\n    public "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 402
-      endSourceChar: 402
+      startSourceChar: 403
+      endSourceChar: 403
       line: 17
       lineChar: 11
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 402
-      endSourceChar: 433
+      startSourceChar: 403
+      endSourceChar: 425
       line: 17
       lineChar: 11
-      spanCodeSection: "string customEventName;\r\n\r\n    "
+      spanCodeSection: "bool isActive;\r\n\r\n    "
     - startInstruction: 0
       endInstruction: 19
-      startSourceChar: 433
-      endSourceChar: 483
+      startSourceChar: 425
+      endSourceChar: 475
       line: 19
       lineChar: 4
       spanCodeSection: "public void SendCustomNetworkEventToPlayer()\r\n    "
     - startInstruction: 20
       endInstruction: 19
-      startSourceChar: 483
-      endSourceChar: 494
+      startSourceChar: 475
+      endSourceChar: 486
       line: 20
       lineChar: 4
       spanCodeSection: "{\r\n        "
     - startInstruction: 20
       endInstruction: 19
-      startSourceChar: 494
-      endSourceChar: 494
+      startSourceChar: 486
+      endSourceChar: 486
       line: 21
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 20
       endInstruction: 19
-      startSourceChar: 494
-      endSourceChar: 504
+      startSourceChar: 486
+      endSourceChar: 496
       line: 21
       lineChar: 8
       spanCodeSection: Debug.Log(
     - startInstruction: 20
       endInstruction: 19
-      startSourceChar: 504
-      endSourceChar: 504
+      startSourceChar: 496
+      endSourceChar: 496
       line: 21
       lineChar: 18
       spanCodeSection: 
     - startInstruction: 20
       endInstruction: 19
-      startSourceChar: 504
-      endSourceChar: 526
+      startSourceChar: 496
+      endSourceChar: 518
       line: 21
       lineChar: 18
       spanCodeSection: customEventUdonTarget.
     - startInstruction: 20
       endInstruction: 59
-      startSourceChar: 526
-      endSourceChar: 542
+      startSourceChar: 518
+      endSourceChar: 534
       line: 21
       lineChar: 40
       spanCodeSection: "name);\r\n        "
     - startInstruction: 60
       endInstruction: 59
-      startSourceChar: 542
-      endSourceChar: 542
+      startSourceChar: 534
+      endSourceChar: 534
       line: 22
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 60
       endInstruction: 59
-      startSourceChar: 542
-      endSourceChar: 580
+      startSourceChar: 534
+      endSourceChar: 572
       line: 22
       lineChar: 8
       spanCodeSection: customEventUdonTarget.SendCustomEvent(
     - startInstruction: 60
       endInstruction: 91
-      startSourceChar: 580
-      endSourceChar: 612
+      startSourceChar: 572
+      endSourceChar: 604
       line: 22
       lineChar: 46
       spanCodeSection: "customEventName);\r\n    }\r\n\r\n    "
     - startInstruction: 92
       endInstruction: 111
-      startSourceChar: 612
-      endSourceChar: 630
+      startSourceChar: 604
+      endSourceChar: 622
       line: 25
       lineChar: 4
       spanCodeSection: "void Start()\r\n    "
     - startInstruction: 112
       endInstruction: 111
-      startSourceChar: 630
-      endSourceChar: 641
+      startSourceChar: 622
+      endSourceChar: 633
       line: 26
       lineChar: 4
       spanCodeSection: "{\r\n        "
     - startInstruction: 112
       endInstruction: 111
-      startSourceChar: 641
-      endSourceChar: 641
+      startSourceChar: 633
+      endSourceChar: 633
       line: 27
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 112
       endInstruction: 111
-      startSourceChar: 641
-      endSourceChar: 657
+      startSourceChar: 633
+      endSourceChar: 649
       line: 27
       lineChar: 8
       spanCodeSection: 'playerManager = '
     - startInstruction: 112
       endInstruction: 111
-      startSourceChar: 657
-      endSourceChar: 657
+      startSourceChar: 649
+      endSourceChar: 649
       line: 27
       lineChar: 24
       spanCodeSection: 
     - startInstruction: 112
       endInstruction: 111
-      startSourceChar: 657
-      endSourceChar: 657
+      startSourceChar: 649
+      endSourceChar: 649
       line: 27
       lineChar: 24
       spanCodeSection: 
     - startInstruction: 112
       endInstruction: 111
-      startSourceChar: 657
-      endSourceChar: 657
+      startSourceChar: 649
+      endSourceChar: 649
       line: 27
       lineChar: 24
       spanCodeSection: 
     - startInstruction: 112
       endInstruction: 111
-      startSourceChar: 657
-      endSourceChar: 667
+      startSourceChar: 649
+      endSourceChar: 659
       line: 27
       lineChar: 24
       spanCodeSection: transform.
     - startInstruction: 112
       endInstruction: 111
-      startSourceChar: 667
-      endSourceChar: 674
+      startSourceChar: 659
+      endSourceChar: 666
       line: 27
       lineChar: 34
       spanCodeSection: parent.
     - startInstruction: 112
       endInstruction: 135
-      startSourceChar: 674
-      endSourceChar: 686
+      startSourceChar: 666
+      endSourceChar: 678
       line: 27
       lineChar: 41
       spanCodeSection: GetComponent
     - startInstruction: 136
       endInstruction: 135
-      startSourceChar: 686
-      endSourceChar: 687
+      startSourceChar: 678
+      endSourceChar: 679
       line: 27
       lineChar: 53
       spanCodeSection: <
     - startInstruction: 136
-      endInstruction: 647
-      startSourceChar: 687
-      endSourceChar: 726
+      endInstruction: 639
+      startSourceChar: 679
+      endSourceChar: 710
       line: 27
       lineChar: 54
-      spanCodeSection: "THH_PlayerManager>();   \r\n    }\r\n\r\n    "
-    - startInstruction: 648
-      endInstruction: 667
-      startSourceChar: 726
-      endSourceChar: 762
-      line: 30
-      lineChar: 4
-      spanCodeSection: "public void SetMasterHandler()\r\n    "
-    - startInstruction: 668
-      endInstruction: 667
-      startSourceChar: 762
-      endSourceChar: 773
-      line: 31
-      lineChar: 4
-      spanCodeSection: "{\r\n        "
-    - startInstruction: 668
-      endInstruction: 667
-      startSourceChar: 773
-      endSourceChar: 773
-      line: 32
+      spanCodeSection: "THH_PlayerManager>();\r\n        "
+    - startInstruction: 640
+      endInstruction: 639
+      startSourceChar: 710
+      endSourceChar: 710
+      line: 28
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 668
-      endInstruction: 667
-      startSourceChar: 773
-      endSourceChar: 783
+    - startInstruction: 640
+      endInstruction: 639
+      startSourceChar: 710
+      endSourceChar: 733
+      line: 28
+      lineChar: 8
+      spanCodeSection: SendCustomNetworkEvent(
+    - startInstruction: 640
+      endInstruction: 639
+      startSourceChar: 733
+      endSourceChar: 733
+      line: 28
+      lineChar: 31
+      spanCodeSection: 
+    - startInstruction: 640
+      endInstruction: 639
+      startSourceChar: 733
+      endSourceChar: 733
+      line: 28
+      lineChar: 31
+      spanCodeSection: 
+    - startInstruction: 640
+      endInstruction: 639
+      startSourceChar: 733
+      endSourceChar: 733
+      line: 28
+      lineChar: 31
+      spanCodeSection: 
+    - startInstruction: 640
+      endInstruction: 639
+      startSourceChar: 733
+      endSourceChar: 733
+      line: 28
+      lineChar: 31
+      spanCodeSection: 
+    - startInstruction: 640
+      endInstruction: 639
+      startSourceChar: 733
+      endSourceChar: 733
+      line: 28
+      lineChar: 31
+      spanCodeSection: 
+    - startInstruction: 640
+      endInstruction: 639
+      startSourceChar: 733
+      endSourceChar: 737
+      line: 28
+      lineChar: 31
+      spanCodeSection: VRC.
+    - startInstruction: 640
+      endInstruction: 639
+      startSourceChar: 737
+      endSourceChar: 742
+      line: 28
+      lineChar: 35
+      spanCodeSection: Udon.
+    - startInstruction: 640
+      endInstruction: 639
+      startSourceChar: 742
+      endSourceChar: 749
+      line: 28
+      lineChar: 40
+      spanCodeSection: Common.
+    - startInstruction: 640
+      endInstruction: 639
+      startSourceChar: 749
+      endSourceChar: 760
+      line: 28
+      lineChar: 47
+      spanCodeSection: Interfaces.
+    - startInstruction: 640
+      endInstruction: 639
+      startSourceChar: 760
+      endSourceChar: 779
+      line: 28
+      lineChar: 58
+      spanCodeSection: NetworkEventTarget.
+    - startInstruction: 640
+      endInstruction: 639
+      startSourceChar: 779
+      endSourceChar: 786
+      line: 28
+      lineChar: 77
+      spanCodeSection: 'Owner, '
+    - startInstruction: 640
+      endInstruction: 679
+      startSourceChar: 786
+      endSourceChar: 826
+      line: 28
+      lineChar: 84
+      spanCodeSection: "\"BroadcastHandlerState\");\r\n    }\r\n\r\n    "
+    - startInstruction: 680
+      endInstruction: 699
+      startSourceChar: 826
+      endSourceChar: 862
+      line: 31
+      lineChar: 4
+      spanCodeSection: "public void SetMasterHandler()\r\n    "
+    - startInstruction: 700
+      endInstruction: 699
+      startSourceChar: 862
+      endSourceChar: 873
       line: 32
+      lineChar: 4
+      spanCodeSection: "{\r\n        "
+    - startInstruction: 700
+      endInstruction: 699
+      startSourceChar: 873
+      endSourceChar: 873
+      line: 33
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 700
+      endInstruction: 699
+      startSourceChar: 873
+      endSourceChar: 883
+      line: 33
       lineChar: 8
       spanCodeSection: Debug.Log(
-    - startInstruction: 668
-      endInstruction: 667
-      startSourceChar: 783
-      endSourceChar: 785
-      line: 32
+    - startInstruction: 700
+      endInstruction: 699
+      startSourceChar: 883
+      endSourceChar: 885
+      line: 33
       lineChar: 18
       spanCodeSection: $"
-    - startInstruction: 668
-      endInstruction: 687
-      startSourceChar: 785
-      endSourceChar: 852
-      line: 32
+    - startInstruction: 700
+      endInstruction: 719
+      startSourceChar: 885
+      endSourceChar: 952
+      line: 33
       lineChar: 20
       spanCodeSection: '<color=green>[THH_PlayerManager]</color> Setting master handler
         to '
-    - startInstruction: 688
-      endInstruction: 687
-      startSourceChar: 852
-      endSourceChar: 853
-      line: 32
+    - startInstruction: 720
+      endInstruction: 719
+      startSourceChar: 952
+      endSourceChar: 953
+      line: 33
       lineChar: 87
       spanCodeSection: '{'
-    - startInstruction: 688
-      endInstruction: 779
-      startSourceChar: 853
-      endSourceChar: 871
-      line: 32
+    - startInstruction: 720
+      endInstruction: 811
+      startSourceChar: 953
+      endSourceChar: 971
+      line: 33
       lineChar: 88
       spanCodeSection: "name}\");\r\n        "
-    - startInstruction: 780
-      endInstruction: 779
-      startSourceChar: 871
-      endSourceChar: 871
-      line: 33
+    - startInstruction: 812
+      endInstruction: 811
+      startSourceChar: 971
+      endSourceChar: 971
+      line: 34
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 780
-      endInstruction: 779
-      startSourceChar: 871
-      endSourceChar: 901
-      line: 33
+    - startInstruction: 812
+      endInstruction: 811
+      startSourceChar: 971
+      endSourceChar: 1001
+      line: 34
       lineChar: 8
       spanCodeSection: 'playerManager.masterHandler = '
-    - startInstruction: 780
-      endInstruction: 819
-      startSourceChar: 901
-      endSourceChar: 921
-      line: 33
+    - startInstruction: 812
+      endInstruction: 843
+      startSourceChar: 1001
+      endSourceChar: 1016
+      line: 34
       lineChar: 38
-      spanCodeSection: "this;\r\n    }\r\n\r\n    "
-    - startInstruction: 820
-      endInstruction: 839
-      startSourceChar: 921
-      endSourceChar: 954
-      line: 36
-      lineChar: 4
-      spanCodeSection: "public void TakeOwnership()\r\n    "
-    - startInstruction: 840
-      endInstruction: 839
-      startSourceChar: 954
-      endSourceChar: 965
-      line: 37
-      lineChar: 4
-      spanCodeSection: "{\r\n        "
-    - startInstruction: 840
-      endInstruction: 839
-      startSourceChar: 965
-      endSourceChar: 969
-      line: 38
+      spanCodeSection: "this;\r\n        "
+    - startInstruction: 844
+      endInstruction: 843
+      startSourceChar: 1016
+      endSourceChar: 1020
+      line: 35
       lineChar: 8
       spanCodeSection: if (
-    - startInstruction: 840
-      endInstruction: 839
-      startSourceChar: 969
-      endSourceChar: 1004
-      line: 38
+    - startInstruction: 844
+      endInstruction: 843
+      startSourceChar: 1020
+      endSourceChar: 1020
+      line: 35
       lineChar: 12
-      spanCodeSection: 'playerManager.ownershipTargetID == '
-    - startInstruction: 840
-      endInstruction: 839
-      startSourceChar: 1004
-      endSourceChar: 1004
-      line: 38
-      lineChar: 47
       spanCodeSection: 
-    - startInstruction: 840
-      endInstruction: 839
-      startSourceChar: 1004
-      endSourceChar: 1004
-      line: 38
-      lineChar: 47
-      spanCodeSection: 
-    - startInstruction: 840
-      endInstruction: 839
-      startSourceChar: 1004
-      endSourceChar: 1015
-      line: 38
-      lineChar: 47
-      spanCodeSection: Networking.
-    - startInstruction: 840
-      endInstruction: 839
-      startSourceChar: 1015
-      endSourceChar: 1027
-      line: 38
-      lineChar: 58
-      spanCodeSection: LocalPlayer.
-    - startInstruction: 840
-      endInstruction: 983
-      startSourceChar: 1027
-      endSourceChar: 1046
-      line: 38
-      lineChar: 70
-      spanCodeSection: "playerId)\r\n        "
-    - startInstruction: 984
-      endInstruction: 983
-      startSourceChar: 1046
-      endSourceChar: 1061
-      line: 39
+    - startInstruction: 844
+      endInstruction: 843
+      startSourceChar: 1020
+      endSourceChar: 1034
+      line: 35
+      lineChar: 12
+      spanCodeSection: playerManager.
+    - startInstruction: 844
+      endInstruction: 915
+      startSourceChar: 1034
+      endSourceChar: 1059
+      line: 35
+      lineChar: 26
+      spanCodeSection: "masterTransfer)\r\n        "
+    - startInstruction: 916
+      endInstruction: 915
+      startSourceChar: 1059
+      endSourceChar: 1074
+      line: 36
       lineChar: 8
       spanCodeSection: "{\r\n            "
-    - startInstruction: 984
-      endInstruction: 983
-      startSourceChar: 1061
-      endSourceChar: 1061
-      line: 40
+    - startInstruction: 916
+      endInstruction: 915
+      startSourceChar: 1074
+      endSourceChar: 1074
+      line: 37
       lineChar: 12
       spanCodeSection: 
-    - startInstruction: 984
-      endInstruction: 983
-      startSourceChar: 1061
-      endSourceChar: 1071
-      line: 40
+    - startInstruction: 916
+      endInstruction: 915
+      startSourceChar: 1074
+      endSourceChar: 1074
+      line: 37
+      lineChar: 12
+      spanCodeSection: 
+    - startInstruction: 916
+      endInstruction: 915
+      startSourceChar: 1074
+      endSourceChar: 1074
+      line: 37
+      lineChar: 12
+      spanCodeSection: 
+    - startInstruction: 916
+      endInstruction: 915
+      startSourceChar: 1074
+      endSourceChar: 1088
+      line: 37
+      lineChar: 12
+      spanCodeSection: playerManager.
+    - startInstruction: 916
+      endInstruction: 947
+      startSourceChar: 1088
+      endSourceChar: 1139
+      line: 37
+      lineChar: 26
+      spanCodeSection: "MasterTransferFinished();\r\n        }\r\n    }\r\n\r\n    "
+    - startInstruction: 948
+      endInstruction: 967
+      startSourceChar: 1139
+      endSourceChar: 1172
+      line: 41
+      lineChar: 4
+      spanCodeSection: "public void TakeOwnership()\r\n    "
+    - startInstruction: 968
+      endInstruction: 967
+      startSourceChar: 1172
+      endSourceChar: 1183
+      line: 42
+      lineChar: 4
+      spanCodeSection: "{\r\n        "
+    - startInstruction: 968
+      endInstruction: 967
+      startSourceChar: 1183
+      endSourceChar: 1187
+      line: 43
+      lineChar: 8
+      spanCodeSection: if (
+    - startInstruction: 968
+      endInstruction: 967
+      startSourceChar: 1187
+      endSourceChar: 1222
+      line: 43
+      lineChar: 12
+      spanCodeSection: 'playerManager.ownershipTargetID == '
+    - startInstruction: 968
+      endInstruction: 967
+      startSourceChar: 1222
+      endSourceChar: 1222
+      line: 43
+      lineChar: 47
+      spanCodeSection: 
+    - startInstruction: 968
+      endInstruction: 967
+      startSourceChar: 1222
+      endSourceChar: 1222
+      line: 43
+      lineChar: 47
+      spanCodeSection: 
+    - startInstruction: 968
+      endInstruction: 967
+      startSourceChar: 1222
+      endSourceChar: 1233
+      line: 43
+      lineChar: 47
+      spanCodeSection: Networking.
+    - startInstruction: 968
+      endInstruction: 967
+      startSourceChar: 1233
+      endSourceChar: 1245
+      line: 43
+      lineChar: 58
+      spanCodeSection: LocalPlayer.
+    - startInstruction: 968
+      endInstruction: 1111
+      startSourceChar: 1245
+      endSourceChar: 1264
+      line: 43
+      lineChar: 70
+      spanCodeSection: "playerId)\r\n        "
+    - startInstruction: 1112
+      endInstruction: 1111
+      startSourceChar: 1264
+      endSourceChar: 1279
+      line: 44
+      lineChar: 8
+      spanCodeSection: "{\r\n            "
+    - startInstruction: 1112
+      endInstruction: 1111
+      startSourceChar: 1279
+      endSourceChar: 1279
+      line: 45
+      lineChar: 12
+      spanCodeSection: 
+    - startInstruction: 1112
+      endInstruction: 1111
+      startSourceChar: 1279
+      endSourceChar: 1289
+      line: 45
       lineChar: 12
       spanCodeSection: Debug.Log(
-    - startInstruction: 984
-      endInstruction: 983
-      startSourceChar: 1071
-      endSourceChar: 1073
-      line: 40
+    - startInstruction: 1112
+      endInstruction: 1111
+      startSourceChar: 1289
+      endSourceChar: 1291
+      line: 45
       lineChar: 22
       spanCodeSection: $"
-    - startInstruction: 984
-      endInstruction: 1003
-      startSourceChar: 1073
-      endSourceChar: 1145
-      line: 40
+    - startInstruction: 1112
+      endInstruction: 1131
+      startSourceChar: 1291
+      endSourceChar: 1363
+      line: 45
       lineChar: 24
       spanCodeSection: '<color=green>[THH_PlayerManager]</color> You have been assigned
         handler '
-    - startInstruction: 1004
-      endInstruction: 1003
-      startSourceChar: 1145
-      endSourceChar: 1146
-      line: 40
+    - startInstruction: 1132
+      endInstruction: 1131
+      startSourceChar: 1363
+      endSourceChar: 1364
+      line: 45
       lineChar: 96
       spanCodeSection: '{'
-    - startInstruction: 1004
-      endInstruction: 1095
-      startSourceChar: 1146
-      endSourceChar: 1168
-      line: 40
+    - startInstruction: 1132
+      endInstruction: 1223
+      startSourceChar: 1364
+      endSourceChar: 1386
+      line: 45
       lineChar: 97
       spanCodeSection: "name}\");\r\n            "
-    - startInstruction: 1096
-      endInstruction: 1095
-      startSourceChar: 1168
-      endSourceChar: 1168
-      line: 41
+    - startInstruction: 1224
+      endInstruction: 1223
+      startSourceChar: 1386
+      endSourceChar: 1386
+      line: 46
       lineChar: 12
       spanCodeSection: 
-    - startInstruction: 1096
-      endInstruction: 1095
-      startSourceChar: 1168
-      endSourceChar: 1168
-      line: 41
+    - startInstruction: 1224
+      endInstruction: 1223
+      startSourceChar: 1386
+      endSourceChar: 1406
+      line: 46
       lineChar: 12
-      spanCodeSection: 
-    - startInstruction: 1096
-      endInstruction: 1095
-      startSourceChar: 1168
-      endSourceChar: 1168
-      line: 41
-      lineChar: 12
-      spanCodeSection: 
-    - startInstruction: 1096
-      endInstruction: 1095
-      startSourceChar: 1168
-      endSourceChar: 1168
-      line: 41
-      lineChar: 12
-      spanCodeSection: 
-    - startInstruction: 1096
-      endInstruction: 1095
-      startSourceChar: 1168
-      endSourceChar: 1189
-      line: 41
-      lineChar: 12
-      spanCodeSection: 'Transform[] children '
-    - startInstruction: 1096
-      endInstruction: 1095
-      startSourceChar: 1189
-      endSourceChar: 1191
-      line: 41
-      lineChar: 33
-      spanCodeSection: '= '
-    - startInstruction: 1096
-      endInstruction: 1095
-      startSourceChar: 1191
-      endSourceChar: 1191
-      line: 41
-      lineChar: 35
-      spanCodeSection: 
-    - startInstruction: 1096
-      endInstruction: 1095
-      startSourceChar: 1191
-      endSourceChar: 1214
-      line: 41
-      lineChar: 35
-      spanCodeSection: GetComponentsInChildren
-    - startInstruction: 1096
-      endInstruction: 1095
-      startSourceChar: 1214
-      endSourceChar: 1215
-      line: 41
-      lineChar: 58
-      spanCodeSection: <
-    - startInstruction: 1096
-      endInstruction: 1147
-      startSourceChar: 1215
-      endSourceChar: 1242
-      line: 41
-      lineChar: 59
-      spanCodeSection: "Transform>();\r\n            "
-    - startInstruction: 1148
-      endInstruction: 1147
-      startSourceChar: 1242
-      endSourceChar: 1251
-      line: 42
-      lineChar: 12
-      spanCodeSection: foreach (
-    - startInstruction: 1148
-      endInstruction: 1147
-      startSourceChar: 1251
-      endSourceChar: 1270
-      line: 42
-      lineChar: 21
-      spanCodeSection: 'Transform child in '
-    - startInstruction: 1148
-      endInstruction: 1291
-      startSourceChar: 1270
-      endSourceChar: 1293
-      line: 42
-      lineChar: 40
-      spanCodeSection: "children)\r\n            "
-    - startInstruction: 1292
-      endInstruction: 1291
-      startSourceChar: 1293
-      endSourceChar: 1312
-      line: 43
-      lineChar: 12
-      spanCodeSection: "{\r\n                "
-    - startInstruction: 1292
-      endInstruction: 1291
-      startSourceChar: 1312
-      endSourceChar: 1312
-      line: 44
-      lineChar: 16
-      spanCodeSection: 
-    - startInstruction: 1292
-      endInstruction: 1291
-      startSourceChar: 1312
-      endSourceChar: 1332
-      line: 44
-      lineChar: 16
       spanCodeSection: Networking.SetOwner(
-    - startInstruction: 1292
-      endInstruction: 1291
-      startSourceChar: 1332
-      endSourceChar: 1332
-      line: 44
-      lineChar: 36
-      spanCodeSection: 
-    - startInstruction: 1292
-      endInstruction: 1291
-      startSourceChar: 1332
-      endSourceChar: 1343
-      line: 44
-      lineChar: 36
-      spanCodeSection: Networking.
-    - startInstruction: 1292
-      endInstruction: 1307
-      startSourceChar: 1343
-      endSourceChar: 1356
-      line: 44
-      lineChar: 47
-      spanCodeSection: 'LocalPlayer, '
-    - startInstruction: 1308
-      endInstruction: 1307
-      startSourceChar: 1356
-      endSourceChar: 1356
-      line: 44
-      lineChar: 60
-      spanCodeSection: 
-    - startInstruction: 1308
-      endInstruction: 1307
-      startSourceChar: 1356
-      endSourceChar: 1362
-      line: 44
-      lineChar: 60
-      spanCodeSection: child.
-    - startInstruction: 1308
-      endInstruction: 1415
-      startSourceChar: 1362
-      endSourceChar: 1403
-      line: 44
-      lineChar: 66
-      spanCodeSection: "gameObject);\r\n            }\r\n            "
-    - startInstruction: 1416
-      endInstruction: 1415
-      startSourceChar: 1403
-      endSourceChar: 1403
+    - startInstruction: 1224
+      endInstruction: 1223
+      startSourceChar: 1406
+      endSourceChar: 1406
       line: 46
+      lineChar: 32
+      spanCodeSection: 
+    - startInstruction: 1224
+      endInstruction: 1223
+      startSourceChar: 1406
+      endSourceChar: 1417
+      line: 46
+      lineChar: 32
+      spanCodeSection: Networking.
+    - startInstruction: 1224
+      endInstruction: 1239
+      startSourceChar: 1417
+      endSourceChar: 1430
+      line: 46
+      lineChar: 43
+      spanCodeSection: 'LocalPlayer, '
+    - startInstruction: 1240
+      endInstruction: 1263
+      startSourceChar: 1430
+      endSourceChar: 1456
+      line: 46
+      lineChar: 56
+      spanCodeSection: "gameObject);\r\n            "
+    - startInstruction: 1264
+      endInstruction: 1263
+      startSourceChar: 1456
+      endSourceChar: 1456
+      line: 47
       lineChar: 12
       spanCodeSection: 
-    - startInstruction: 1416
-      endInstruction: 1415
-      startSourceChar: 1403
-      endSourceChar: 1435
-      line: 46
+    - startInstruction: 1264
+      endInstruction: 1263
+      startSourceChar: 1456
+      endSourceChar: 1488
+      line: 47
       lineChar: 12
       spanCodeSection: 'playerManager.assignedHandler = '
-    - startInstruction: 1416
-      endInstruction: 1447
-      startSourceChar: 1435
-      endSourceChar: 1454
-      line: 46
+    - startInstruction: 1264
+      endInstruction: 1295
+      startSourceChar: 1488
+      endSourceChar: 1507
+      line: 47
       lineChar: 44
       spanCodeSection: "this;\r\n            "
-    - startInstruction: 1448
-      endInstruction: 1447
-      startSourceChar: 1454
-      endSourceChar: 1454
-      line: 47
+    - startInstruction: 1296
+      endInstruction: 1295
+      startSourceChar: 1507
+      endSourceChar: 1507
+      line: 48
       lineChar: 12
       spanCodeSection: 
-    - startInstruction: 1448
-      endInstruction: 1447
-      startSourceChar: 1454
-      endSourceChar: 1464
-      line: 47
+    - startInstruction: 1296
+      endInstruction: 1295
+      startSourceChar: 1507
+      endSourceChar: 1517
+      line: 48
       lineChar: 12
       spanCodeSection: 'blocked = '
-    - startInstruction: 1448
-      endInstruction: 1475
-      startSourceChar: 1464
-      endSourceChar: 1495
-      line: 47
+    - startInstruction: 1296
+      endInstruction: 1315
+      startSourceChar: 1517
+      endSourceChar: 1536
+      line: 48
       lineChar: 22
-      spanCodeSection: "true;\r\n        }\r\n    }\r\n\r\n    "
-    - startInstruction: 1476
-      endInstruction: 1515
-      startSourceChar: 1495
-      endSourceChar: 1555
-      line: 51
+      spanCodeSection: "true;\r\n            "
+    - startInstruction: 1316
+      endInstruction: 1315
+      startSourceChar: 1536
+      endSourceChar: 1536
+      line: 49
+      lineChar: 12
+      spanCodeSection: 
+    - startInstruction: 1316
+      endInstruction: 1315
+      startSourceChar: 1536
+      endSourceChar: 1559
+      line: 49
+      lineChar: 12
+      spanCodeSection: SendCustomNetworkEvent(
+    - startInstruction: 1316
+      endInstruction: 1315
+      startSourceChar: 1559
+      endSourceChar: 1559
+      line: 49
+      lineChar: 35
+      spanCodeSection: 
+    - startInstruction: 1316
+      endInstruction: 1315
+      startSourceChar: 1559
+      endSourceChar: 1559
+      line: 49
+      lineChar: 35
+      spanCodeSection: 
+    - startInstruction: 1316
+      endInstruction: 1315
+      startSourceChar: 1559
+      endSourceChar: 1559
+      line: 49
+      lineChar: 35
+      spanCodeSection: 
+    - startInstruction: 1316
+      endInstruction: 1315
+      startSourceChar: 1559
+      endSourceChar: 1559
+      line: 49
+      lineChar: 35
+      spanCodeSection: 
+    - startInstruction: 1316
+      endInstruction: 1315
+      startSourceChar: 1559
+      endSourceChar: 1559
+      line: 49
+      lineChar: 35
+      spanCodeSection: 
+    - startInstruction: 1316
+      endInstruction: 1315
+      startSourceChar: 1559
+      endSourceChar: 1563
+      line: 49
+      lineChar: 35
+      spanCodeSection: VRC.
+    - startInstruction: 1316
+      endInstruction: 1315
+      startSourceChar: 1563
+      endSourceChar: 1568
+      line: 49
+      lineChar: 39
+      spanCodeSection: Udon.
+    - startInstruction: 1316
+      endInstruction: 1315
+      startSourceChar: 1568
+      endSourceChar: 1575
+      line: 49
+      lineChar: 44
+      spanCodeSection: Common.
+    - startInstruction: 1316
+      endInstruction: 1315
+      startSourceChar: 1575
+      endSourceChar: 1586
+      line: 49
+      lineChar: 51
+      spanCodeSection: Interfaces.
+    - startInstruction: 1316
+      endInstruction: 1315
+      startSourceChar: 1586
+      endSourceChar: 1605
+      line: 49
+      lineChar: 62
+      spanCodeSection: NetworkEventTarget.
+    - startInstruction: 1316
+      endInstruction: 1315
+      startSourceChar: 1605
+      endSourceChar: 1610
+      line: 49
+      lineChar: 81
+      spanCodeSection: 'All, '
+    - startInstruction: 1316
+      endInstruction: 1355
+      startSourceChar: 1610
+      endSourceChar: 1648
+      line: 49
+      lineChar: 86
+      spanCodeSection: "\"Activate\");\r\n        }\r\n    }\r\n\r\n    "
+    - startInstruction: 1356
+      endInstruction: 1395
+      startSourceChar: 1648
+      endSourceChar: 1708
+      line: 53
       lineChar: 4
       spanCodeSection: "public override void OnPlayerLeft(VRCPlayerApi player)\r\n
         \   "
-    - startInstruction: 1516
-      endInstruction: 1515
-      startSourceChar: 1555
-      endSourceChar: 1566
-      line: 52
+    - startInstruction: 1396
+      endInstruction: 1395
+      startSourceChar: 1708
+      endSourceChar: 1719
+      line: 54
       lineChar: 4
       spanCodeSection: "{\r\n        "
-    - startInstruction: 1516
-      endInstruction: 1515
-      startSourceChar: 1566
-      endSourceChar: 1570
-      line: 53
+    - startInstruction: 1396
+      endInstruction: 1395
+      startSourceChar: 1719
+      endSourceChar: 1723
+      line: 55
       lineChar: 8
       spanCodeSection: if (
-    - startInstruction: 1516
-      endInstruction: 1515
-      startSourceChar: 1570
-      endSourceChar: 1570
-      line: 53
+    - startInstruction: 1396
+      endInstruction: 1395
+      startSourceChar: 1723
+      endSourceChar: 1723
+      line: 55
       lineChar: 12
       spanCodeSection: 
-    - startInstruction: 1516
-      endInstruction: 1515
-      startSourceChar: 1570
-      endSourceChar: 1570
-      line: 53
-      lineChar: 12
-      spanCodeSection: 
-    - startInstruction: 1516
-      endInstruction: 1515
-      startSourceChar: 1570
-      endSourceChar: 1590
-      line: 53
+    - startInstruction: 1396
+      endInstruction: 1395
+      startSourceChar: 1723
+      endSourceChar: 1743
+      line: 55
       lineChar: 12
       spanCodeSection: Networking.GetOwner(
-    - startInstruction: 1516
-      endInstruction: 1539
-      startSourceChar: 1590
-      endSourceChar: 1602
-      line: 53
+    - startInstruction: 1396
+      endInstruction: 1419
+      startSourceChar: 1743
+      endSourceChar: 1755
+      line: 55
       lineChar: 32
       spanCodeSection: gameObject).
-    - startInstruction: 1540
-      endInstruction: 1599
-      startSourceChar: 1602
-      endSourceChar: 1614
-      line: 53
+    - startInstruction: 1420
+      endInstruction: 1459
+      startSourceChar: 1755
+      endSourceChar: 1774
+      line: 55
       lineChar: 44
-      spanCodeSection: 'isMaster && '
-    - startInstruction: 1600
-      endInstruction: 1667
-      startSourceChar: 1614
-      endSourceChar: 1641
-      line: 53
-      lineChar: 56
-      spanCodeSection: "ownedByNonMaster)\r\n        "
-    - startInstruction: 1668
-      endInstruction: 1667
-      startSourceChar: 1641
-      endSourceChar: 1656
-      line: 54
+      spanCodeSection: "isMaster)\r\n        "
+    - startInstruction: 1460
+      endInstruction: 1459
+      startSourceChar: 1774
+      endSourceChar: 1789
+      line: 56
       lineChar: 8
       spanCodeSection: "{\r\n            "
-    - startInstruction: 1668
-      endInstruction: 1667
-      startSourceChar: 1656
-      endSourceChar: 1656
-      line: 55
+    - startInstruction: 1460
+      endInstruction: 1459
+      startSourceChar: 1789
+      endSourceChar: 1789
+      line: 57
       lineChar: 12
       spanCodeSection: 
-    - startInstruction: 1668
-      endInstruction: 1667
-      startSourceChar: 1656
-      endSourceChar: 1666
-      line: 55
+    - startInstruction: 1460
+      endInstruction: 1459
+      startSourceChar: 1789
+      endSourceChar: 1799
+      line: 57
       lineChar: 12
       spanCodeSection: Debug.Log(
-    - startInstruction: 1668
-      endInstruction: 1667
-      startSourceChar: 1666
-      endSourceChar: 1668
-      line: 55
+    - startInstruction: 1460
+      endInstruction: 1459
+      startSourceChar: 1799
+      endSourceChar: 1801
+      line: 57
       lineChar: 22
       spanCodeSection: $"
-    - startInstruction: 1668
-      endInstruction: 1687
-      startSourceChar: 1668
-      endSourceChar: 1728
-      line: 55
+    - startInstruction: 1460
+      endInstruction: 1479
+      startSourceChar: 1801
+      endSourceChar: 1861
+      line: 57
       lineChar: 24
       spanCodeSection: '<color=green>[THH_PlayerManager]</color> Unblocking handler '
-    - startInstruction: 1688
-      endInstruction: 1687
-      startSourceChar: 1728
-      endSourceChar: 1729
-      line: 55
+    - startInstruction: 1480
+      endInstruction: 1479
+      startSourceChar: 1861
+      endSourceChar: 1862
+      line: 57
       lineChar: 84
       spanCodeSection: '{'
-    - startInstruction: 1688
-      endInstruction: 1779
-      startSourceChar: 1729
-      endSourceChar: 1751
-      line: 55
+    - startInstruction: 1480
+      endInstruction: 1571
+      startSourceChar: 1862
+      endSourceChar: 1884
+      line: 57
       lineChar: 85
       spanCodeSection: "name}\");\r\n            "
-    - startInstruction: 1780
-      endInstruction: 1779
-      startSourceChar: 1751
-      endSourceChar: 1751
-      line: 56
+    - startInstruction: 1572
+      endInstruction: 1571
+      startSourceChar: 1884
+      endSourceChar: 1884
+      line: 58
       lineChar: 12
       spanCodeSection: 
-    - startInstruction: 1780
-      endInstruction: 1779
-      startSourceChar: 1751
-      endSourceChar: 1770
-      line: 56
-      lineChar: 12
-      spanCodeSection: 'ownedByNonMaster = '
-    - startInstruction: 1780
-      endInstruction: 1799
-      startSourceChar: 1770
-      endSourceChar: 1790
-      line: 56
-      lineChar: 31
-      spanCodeSection: "false;\r\n            "
-    - startInstruction: 1800
-      endInstruction: 1799
-      startSourceChar: 1790
-      endSourceChar: 1790
-      line: 57
-      lineChar: 12
-      spanCodeSection: 
-    - startInstruction: 1800
-      endInstruction: 1799
-      startSourceChar: 1790
-      endSourceChar: 1800
-      line: 57
+    - startInstruction: 1572
+      endInstruction: 1571
+      startSourceChar: 1884
+      endSourceChar: 1894
+      line: 58
       lineChar: 12
       spanCodeSection: 'blocked = '
-    - startInstruction: 1800
-      endInstruction: 1800
-      startSourceChar: 1800
-      endSourceChar: 1800
-      line: 57
+    - startInstruction: 1572
+      endInstruction: 1591
+      startSourceChar: 1894
+      endSourceChar: 1914
+      line: 58
       lineChar: 22
+      spanCodeSection: "false;\r\n            "
+    - startInstruction: 1592
+      endInstruction: 1591
+      startSourceChar: 1914
+      endSourceChar: 1918
+      line: 59
+      lineChar: 12
+      spanCodeSection: if (
+    - startInstruction: 1592
+      endInstruction: 1591
+      startSourceChar: 1918
+      endSourceChar: 1918
+      line: 59
+      lineChar: 16
+      spanCodeSection: 
+    - startInstruction: 1592
+      endInstruction: 1591
+      startSourceChar: 1918
+      endSourceChar: 1918
+      line: 59
+      lineChar: 16
+      spanCodeSection: 
+    - startInstruction: 1592
+      endInstruction: 1591
+      startSourceChar: 1918
+      endSourceChar: 1929
+      line: 59
+      lineChar: 16
+      spanCodeSection: Networking.
+    - startInstruction: 1592
+      endInstruction: 1643
+      startSourceChar: 1929
+      endSourceChar: 1941
+      line: 59
+      lineChar: 27
+      spanCodeSection: 'IsMaster && '
+    - startInstruction: 1644
+      endInstruction: 1643
+      startSourceChar: 1941
+      endSourceChar: 1974
+      line: 59
+      lineChar: 39
+      spanCodeSection: 'playerManager.assignedHandler != '
+    - startInstruction: 1644
+      endInstruction: 1795
+      startSourceChar: 1974
+      endSourceChar: 1993
+      line: 59
+      lineChar: 72
+      spanCodeSection: "this)\r\n            "
+    - startInstruction: 1796
+      endInstruction: 1795
+      startSourceChar: 1993
+      endSourceChar: 2012
+      line: 60
+      lineChar: 12
+      spanCodeSection: "{\r\n                "
+    - startInstruction: 1796
+      endInstruction: 1795
+      startSourceChar: 2012
+      endSourceChar: 2012
+      line: 61
+      lineChar: 16
+      spanCodeSection: 
+    - startInstruction: 1796
+      endInstruction: 1795
+      startSourceChar: 2012
+      endSourceChar: 2035
+      line: 61
+      lineChar: 16
+      spanCodeSection: SendCustomNetworkEvent(
+    - startInstruction: 1796
+      endInstruction: 1795
+      startSourceChar: 2035
+      endSourceChar: 2035
+      line: 61
+      lineChar: 39
+      spanCodeSection: 
+    - startInstruction: 1796
+      endInstruction: 1795
+      startSourceChar: 2035
+      endSourceChar: 2035
+      line: 61
+      lineChar: 39
+      spanCodeSection: 
+    - startInstruction: 1796
+      endInstruction: 1795
+      startSourceChar: 2035
+      endSourceChar: 2035
+      line: 61
+      lineChar: 39
+      spanCodeSection: 
+    - startInstruction: 1796
+      endInstruction: 1795
+      startSourceChar: 2035
+      endSourceChar: 2035
+      line: 61
+      lineChar: 39
+      spanCodeSection: 
+    - startInstruction: 1796
+      endInstruction: 1795
+      startSourceChar: 2035
+      endSourceChar: 2035
+      line: 61
+      lineChar: 39
+      spanCodeSection: 
+    - startInstruction: 1796
+      endInstruction: 1795
+      startSourceChar: 2035
+      endSourceChar: 2039
+      line: 61
+      lineChar: 39
+      spanCodeSection: VRC.
+    - startInstruction: 1796
+      endInstruction: 1795
+      startSourceChar: 2039
+      endSourceChar: 2044
+      line: 61
+      lineChar: 43
+      spanCodeSection: Udon.
+    - startInstruction: 1796
+      endInstruction: 1795
+      startSourceChar: 2044
+      endSourceChar: 2051
+      line: 61
+      lineChar: 48
+      spanCodeSection: Common.
+    - startInstruction: 1796
+      endInstruction: 1795
+      startSourceChar: 2051
+      endSourceChar: 2062
+      line: 61
+      lineChar: 55
+      spanCodeSection: Interfaces.
+    - startInstruction: 1796
+      endInstruction: 1795
+      startSourceChar: 2062
+      endSourceChar: 2081
+      line: 61
+      lineChar: 66
+      spanCodeSection: NetworkEventTarget.
+    - startInstruction: 1796
+      endInstruction: 1795
+      startSourceChar: 2081
+      endSourceChar: 2086
+      line: 61
+      lineChar: 85
+      spanCodeSection: 'All, '
+    - startInstruction: 1796
+      endInstruction: 1835
+      startSourceChar: 2086
+      endSourceChar: 2196
+      line: 61
+      lineChar: 90
+      spanCodeSection: "\"Deactivate\");\r\n            }\r\n        }\r\n    }\r\n\r\n
+        \   // This event should only be called by the owner!\r\n    "
+    - startInstruction: 1836
+      endInstruction: 1855
+      startSourceChar: 2196
+      endSourceChar: 2237
+      line: 67
+      lineChar: 4
+      spanCodeSection: "public void BroadcastHandlerState()\r\n    "
+    - startInstruction: 1856
+      endInstruction: 1855
+      startSourceChar: 2237
+      endSourceChar: 2248
+      line: 68
+      lineChar: 4
+      spanCodeSection: "{\r\n        "
+    - startInstruction: 1856
+      endInstruction: 1855
+      startSourceChar: 2248
+      endSourceChar: 2252
+      line: 69
+      lineChar: 8
+      spanCodeSection: if (
+    - startInstruction: 1856
+      endInstruction: 1855
+      startSourceChar: 2252
+      endSourceChar: 2253
+      line: 69
+      lineChar: 12
+      spanCodeSection: '!'
+    - startInstruction: 1856
+      endInstruction: 1855
+      startSourceChar: 2253
+      endSourceChar: 2272
+      line: 69
+      lineChar: 13
+      spanCodeSection: Networking.IsOwner(
+    - startInstruction: 1856
+      endInstruction: 1919
+      startSourceChar: 2272
+      endSourceChar: 2294
+      line: 69
+      lineChar: 32
+      spanCodeSection: "gameObject))\r\n        "
+    - startInstruction: 1920
+      endInstruction: 1919
+      startSourceChar: 2294
+      endSourceChar: 2309
+      line: 70
+      lineChar: 8
+      spanCodeSection: "{\r\n            "
+    - startInstruction: 1920
+      endInstruction: 1919
+      startSourceChar: 2309
+      endSourceChar: 2309
+      line: 71
+      lineChar: 12
+      spanCodeSection: 
+    - startInstruction: 1920
+      endInstruction: 1919
+      startSourceChar: 2309
+      endSourceChar: 2326
+      line: 71
+      lineChar: 12
+      spanCodeSection: Debug.LogWarning(
+    - startInstruction: 1920
+      endInstruction: 1919
+      startSourceChar: 2326
+      endSourceChar: 2328
+      line: 71
+      lineChar: 29
+      spanCodeSection: $"
+    - startInstruction: 1920
+      endInstruction: 1955
+      startSourceChar: 2328
+      endSourceChar: 2452
+      line: 71
+      lineChar: 31
+      spanCodeSection: "<color=green>[THH_PlayerManager]</color> Unauthorized event
+        call: BroadcastHandlerState; You are not owner!\");\r\n            "
+    - startInstruction: 1956
+      endInstruction: 1963
+      startSourceChar: 2452
+      endSourceChar: 2482
+      line: 72
+      lineChar: 12
+      spanCodeSection: "return;\r\n        }\r\n\r\n        "
+    - startInstruction: 1964
+      endInstruction: 1963
+      startSourceChar: 2482
+      endSourceChar: 2486
+      line: 75
+      lineChar: 8
+      spanCodeSection: if (
+    - startInstruction: 1964
+      endInstruction: 1979
+      startSourceChar: 2486
+      endSourceChar: 2505
+      line: 75
+      lineChar: 12
+      spanCodeSection: "isActive)\r\n        "
+    - startInstruction: 1980
+      endInstruction: 1979
+      startSourceChar: 2505
+      endSourceChar: 2520
+      line: 76
+      lineChar: 8
+      spanCodeSection: "{\r\n            "
+    - startInstruction: 1980
+      endInstruction: 1979
+      startSourceChar: 2520
+      endSourceChar: 2520
+      line: 77
+      lineChar: 12
+      spanCodeSection: 
+    - startInstruction: 1980
+      endInstruction: 1979
+      startSourceChar: 2520
+      endSourceChar: 2543
+      line: 77
+      lineChar: 12
+      spanCodeSection: SendCustomNetworkEvent(
+    - startInstruction: 1980
+      endInstruction: 1979
+      startSourceChar: 2543
+      endSourceChar: 2543
+      line: 77
+      lineChar: 35
+      spanCodeSection: 
+    - startInstruction: 1980
+      endInstruction: 1979
+      startSourceChar: 2543
+      endSourceChar: 2543
+      line: 77
+      lineChar: 35
+      spanCodeSection: 
+    - startInstruction: 1980
+      endInstruction: 1979
+      startSourceChar: 2543
+      endSourceChar: 2543
+      line: 77
+      lineChar: 35
+      spanCodeSection: 
+    - startInstruction: 1980
+      endInstruction: 1979
+      startSourceChar: 2543
+      endSourceChar: 2543
+      line: 77
+      lineChar: 35
+      spanCodeSection: 
+    - startInstruction: 1980
+      endInstruction: 1979
+      startSourceChar: 2543
+      endSourceChar: 2543
+      line: 77
+      lineChar: 35
+      spanCodeSection: 
+    - startInstruction: 1980
+      endInstruction: 1979
+      startSourceChar: 2543
+      endSourceChar: 2547
+      line: 77
+      lineChar: 35
+      spanCodeSection: VRC.
+    - startInstruction: 1980
+      endInstruction: 1979
+      startSourceChar: 2547
+      endSourceChar: 2552
+      line: 77
+      lineChar: 39
+      spanCodeSection: Udon.
+    - startInstruction: 1980
+      endInstruction: 1979
+      startSourceChar: 2552
+      endSourceChar: 2559
+      line: 77
+      lineChar: 44
+      spanCodeSection: Common.
+    - startInstruction: 1980
+      endInstruction: 1979
+      startSourceChar: 2559
+      endSourceChar: 2570
+      line: 77
+      lineChar: 51
+      spanCodeSection: Interfaces.
+    - startInstruction: 1980
+      endInstruction: 1979
+      startSourceChar: 2570
+      endSourceChar: 2589
+      line: 77
+      lineChar: 62
+      spanCodeSection: NetworkEventTarget.
+    - startInstruction: 1980
+      endInstruction: 1979
+      startSourceChar: 2589
+      endSourceChar: 2594
+      line: 77
+      lineChar: 81
+      spanCodeSection: 'All, '
+    - startInstruction: 1980
+      endInstruction: 2019
+      startSourceChar: 2594
+      endSourceChar: 2627
+      line: 77
+      lineChar: 86
+      spanCodeSection: "\"Activate\");\r\n        }\r\n        "
+    - startInstruction: 2020
+      endInstruction: 2019
+      startSourceChar: 2627
+      endSourceChar: 2641
+      line: 79
+      lineChar: 8
+      spanCodeSection: "else\r\n        "
+    - startInstruction: 2020
+      endInstruction: 2019
+      startSourceChar: 2641
+      endSourceChar: 2656
+      line: 80
+      lineChar: 8
+      spanCodeSection: "{\r\n            "
+    - startInstruction: 2020
+      endInstruction: 2019
+      startSourceChar: 2656
+      endSourceChar: 2656
+      line: 81
+      lineChar: 12
+      spanCodeSection: 
+    - startInstruction: 2020
+      endInstruction: 2019
+      startSourceChar: 2656
+      endSourceChar: 2679
+      line: 81
+      lineChar: 12
+      spanCodeSection: SendCustomNetworkEvent(
+    - startInstruction: 2020
+      endInstruction: 2019
+      startSourceChar: 2679
+      endSourceChar: 2679
+      line: 81
+      lineChar: 35
+      spanCodeSection: 
+    - startInstruction: 2020
+      endInstruction: 2019
+      startSourceChar: 2679
+      endSourceChar: 2679
+      line: 81
+      lineChar: 35
+      spanCodeSection: 
+    - startInstruction: 2020
+      endInstruction: 2019
+      startSourceChar: 2679
+      endSourceChar: 2679
+      line: 81
+      lineChar: 35
+      spanCodeSection: 
+    - startInstruction: 2020
+      endInstruction: 2019
+      startSourceChar: 2679
+      endSourceChar: 2679
+      line: 81
+      lineChar: 35
+      spanCodeSection: 
+    - startInstruction: 2020
+      endInstruction: 2019
+      startSourceChar: 2679
+      endSourceChar: 2679
+      line: 81
+      lineChar: 35
+      spanCodeSection: 
+    - startInstruction: 2020
+      endInstruction: 2019
+      startSourceChar: 2679
+      endSourceChar: 2683
+      line: 81
+      lineChar: 35
+      spanCodeSection: VRC.
+    - startInstruction: 2020
+      endInstruction: 2019
+      startSourceChar: 2683
+      endSourceChar: 2688
+      line: 81
+      lineChar: 39
+      spanCodeSection: Udon.
+    - startInstruction: 2020
+      endInstruction: 2019
+      startSourceChar: 2688
+      endSourceChar: 2695
+      line: 81
+      lineChar: 44
+      spanCodeSection: Common.
+    - startInstruction: 2020
+      endInstruction: 2019
+      startSourceChar: 2695
+      endSourceChar: 2706
+      line: 81
+      lineChar: 51
+      spanCodeSection: Interfaces.
+    - startInstruction: 2020
+      endInstruction: 2019
+      startSourceChar: 2706
+      endSourceChar: 2725
+      line: 81
+      lineChar: 62
+      spanCodeSection: NetworkEventTarget.
+    - startInstruction: 2020
+      endInstruction: 2019
+      startSourceChar: 2725
+      endSourceChar: 2730
+      line: 81
+      lineChar: 81
+      spanCodeSection: 'All, '
+    - startInstruction: 2020
+      endInstruction: 2059
+      startSourceChar: 2730
+      endSourceChar: 2770
+      line: 81
+      lineChar: 86
+      spanCodeSection: "\"Deactivate\");\r\n        }\r\n    }\r\n\r\n    "
+    - startInstruction: 2060
+      endInstruction: 2079
+      startSourceChar: 2770
+      endSourceChar: 2798
+      line: 85
+      lineChar: 4
+      spanCodeSection: "public void Activate()\r\n    "
+    - startInstruction: 2080
+      endInstruction: 2079
+      startSourceChar: 2798
+      endSourceChar: 2809
+      line: 86
+      lineChar: 4
+      spanCodeSection: "{\r\n        "
+    - startInstruction: 2080
+      endInstruction: 2079
+      startSourceChar: 2809
+      endSourceChar: 2809
+      line: 87
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 2080
+      endInstruction: 2079
+      startSourceChar: 2809
+      endSourceChar: 2819
+      line: 87
+      lineChar: 8
+      spanCodeSection: Debug.Log(
+    - startInstruction: 2080
+      endInstruction: 2079
+      startSourceChar: 2819
+      endSourceChar: 2821
+      line: 87
+      lineChar: 18
+      spanCodeSection: $"
+    - startInstruction: 2080
+      endInstruction: 2099
+      startSourceChar: 2821
+      endSourceChar: 2881
+      line: 87
+      lineChar: 20
+      spanCodeSection: '<color=green>[THH_PlayerManager]</color> Activating handler '
+    - startInstruction: 2100
+      endInstruction: 2099
+      startSourceChar: 2881
+      endSourceChar: 2882
+      line: 87
+      lineChar: 80
+      spanCodeSection: '{'
+    - startInstruction: 2100
+      endInstruction: 2175
+      startSourceChar: 2882
+      endSourceChar: 2887
+      line: 87
+      lineChar: 81
+      spanCodeSection: name}
+    - startInstruction: 2176
+      endInstruction: 2227
+      startSourceChar: 2887
+      endSourceChar: 2899
+      line: 87
+      lineChar: 86
+      spanCodeSection: '; Owner is: '
+    - startInstruction: 2228
+      endInstruction: 2227
+      startSourceChar: 2899
+      endSourceChar: 2900
+      line: 87
+      lineChar: 98
+      spanCodeSection: '{'
+    - startInstruction: 2228
+      endInstruction: 2227
+      startSourceChar: 2900
+      endSourceChar: 2900
+      line: 87
+      lineChar: 99
+      spanCodeSection: 
+    - startInstruction: 2228
+      endInstruction: 2227
+      startSourceChar: 2900
+      endSourceChar: 2920
+      line: 87
+      lineChar: 99
+      spanCodeSection: Networking.GetOwner(
+    - startInstruction: 2228
+      endInstruction: 2251
+      startSourceChar: 2920
+      endSourceChar: 2932
+      line: 87
+      lineChar: 119
+      spanCodeSection: gameObject).
+    - startInstruction: 2252
+      endInstruction: 2343
+      startSourceChar: 2932
+      endSourceChar: 2957
+      line: 87
+      lineChar: 131
+      spanCodeSection: "displayName}\");\r\n        "
+    - startInstruction: 2344
+      endInstruction: 2343
+      startSourceChar: 2957
+      endSourceChar: 2957
+      line: 88
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 2344
+      endInstruction: 2343
+      startSourceChar: 2957
+      endSourceChar: 2968
+      line: 88
+      lineChar: 8
+      spanCodeSection: 'isActive = '
+    - startInstruction: 2344
+      endInstruction: 2371
+      startSourceChar: 2968
+      endSourceChar: 2990
+      line: 88
+      lineChar: 19
+      spanCodeSection: "true;\r\n\r\n    }\r\n\r\n    "
+    - startInstruction: 2372
+      endInstruction: 2391
+      startSourceChar: 2990
+      endSourceChar: 3020
+      line: 92
+      lineChar: 4
+      spanCodeSection: "public void Deactivate()\r\n    "
+    - startInstruction: 2392
+      endInstruction: 2391
+      startSourceChar: 3020
+      endSourceChar: 3031
+      line: 93
+      lineChar: 4
+      spanCodeSection: "{\r\n        "
+    - startInstruction: 2392
+      endInstruction: 2391
+      startSourceChar: 3031
+      endSourceChar: 3031
+      line: 94
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 2392
+      endInstruction: 2391
+      startSourceChar: 3031
+      endSourceChar: 3041
+      line: 94
+      lineChar: 8
+      spanCodeSection: Debug.Log(
+    - startInstruction: 2392
+      endInstruction: 2391
+      startSourceChar: 3041
+      endSourceChar: 3043
+      line: 94
+      lineChar: 18
+      spanCodeSection: $"
+    - startInstruction: 2392
+      endInstruction: 2411
+      startSourceChar: 3043
+      endSourceChar: 3105
+      line: 94
+      lineChar: 20
+      spanCodeSection: '<color=green>[THH_PlayerManager]</color> Deactivating handler '
+    - startInstruction: 2412
+      endInstruction: 2411
+      startSourceChar: 3105
+      endSourceChar: 3106
+      line: 94
+      lineChar: 82
+      spanCodeSection: '{'
+    - startInstruction: 2412
+      endInstruction: 2487
+      startSourceChar: 3106
+      endSourceChar: 3111
+      line: 94
+      lineChar: 83
+      spanCodeSection: name}
+    - startInstruction: 2488
+      endInstruction: 2539
+      startSourceChar: 3111
+      endSourceChar: 3123
+      line: 94
+      lineChar: 88
+      spanCodeSection: '; Owner is: '
+    - startInstruction: 2540
+      endInstruction: 2539
+      startSourceChar: 3123
+      endSourceChar: 3124
+      line: 94
+      lineChar: 100
+      spanCodeSection: '{'
+    - startInstruction: 2540
+      endInstruction: 2539
+      startSourceChar: 3124
+      endSourceChar: 3124
+      line: 94
+      lineChar: 101
+      spanCodeSection: 
+    - startInstruction: 2540
+      endInstruction: 2539
+      startSourceChar: 3124
+      endSourceChar: 3144
+      line: 94
+      lineChar: 101
+      spanCodeSection: Networking.GetOwner(
+    - startInstruction: 2540
+      endInstruction: 2563
+      startSourceChar: 3144
+      endSourceChar: 3156
+      line: 94
+      lineChar: 121
+      spanCodeSection: gameObject).
+    - startInstruction: 2564
+      endInstruction: 2655
+      startSourceChar: 3156
+      endSourceChar: 3181
+      line: 94
+      lineChar: 133
+      spanCodeSection: "displayName}\");\r\n        "
+    - startInstruction: 2656
+      endInstruction: 2655
+      startSourceChar: 3181
+      endSourceChar: 3181
+      line: 95
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 2656
+      endInstruction: 2655
+      startSourceChar: 3181
+      endSourceChar: 3192
+      line: 95
+      lineChar: 8
+      spanCodeSection: 'isActive = '
+    - startInstruction: 2656
+      endInstruction: 2656
+      startSourceChar: 3192
+      endSourceChar: 3192
+      line: 95
+      lineChar: 19
       spanCodeSection: 
   serializationData:
     SerializedFormat: 2
@@ -1368,7 +2299,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: ownedByNonMaster
+      Data: customEventUdonTarget
     - Name: $v
       Entry: 7
       Data: 11|UdonSharp.FieldDefinition, UdonSharp.Editor
@@ -1376,71 +2307,8 @@ MonoBehaviour:
       Entry: 7
       Data: 12|UdonSharp.SymbolDefinition, UdonSharp.Editor
     - Name: internalType
-      Entry: 9
-      Data: 8
-    - Name: declarationType
-      Entry: 3
-      Data: 1
-    - Name: syncMode
-      Entry: 3
-      Data: 0
-    - Name: symbolResolvedTypeName
-      Entry: 1
-      Data: SystemBoolean
-    - Name: symbolOriginalName
-      Entry: 1
-      Data: ownedByNonMaster
-    - Name: symbolUniqueName
-      Entry: 1
-      Data: ownedByNonMaster
-    - Name: symbolDefaultValue
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: fieldAttributes
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 1
-    - Name: 
-      Entry: 7
-      Data: 14|UnityEngine.HideInInspector, UnityEngine.CoreModule
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: userBehaviourSource
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 1
-      Data: customEventUdonTarget
-    - Name: $v
-      Entry: 7
-      Data: 15|UdonSharp.FieldDefinition, UdonSharp.Editor
-    - Name: fieldSymbol
-      Entry: 7
-      Data: 16|UdonSharp.SymbolDefinition, UdonSharp.Editor
-    - Name: internalType
-      Entry: 7
-      Data: 17|System.RuntimeType, mscorlib
+      Data: 13|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
       Data: VRC.Udon.UdonBehaviour, VRC.Udon
@@ -1470,13 +2338,13 @@ MonoBehaviour:
       Data: 
     - Name: fieldAttributes
       Entry: 7
-      Data: 18|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+      Data: 14|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 19|UnityEngine.HideInInspector, UnityEngine.CoreModule
+      Data: 15|UnityEngine.HideInInspector, UnityEngine.CoreModule
     - Name: 
       Entry: 8
       Data: 
@@ -1503,13 +2371,13 @@ MonoBehaviour:
       Data: customEventName
     - Name: $v
       Entry: 7
-      Data: 20|UdonSharp.FieldDefinition, UdonSharp.Editor
+      Data: 16|UdonSharp.FieldDefinition, UdonSharp.Editor
     - Name: fieldSymbol
       Entry: 7
-      Data: 21|UdonSharp.SymbolDefinition, UdonSharp.Editor
+      Data: 17|UdonSharp.SymbolDefinition, UdonSharp.Editor
     - Name: internalType
       Entry: 7
-      Data: 22|System.RuntimeType, mscorlib
+      Data: 18|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
       Data: System.String, mscorlib
@@ -1531,6 +2399,69 @@ MonoBehaviour:
     - Name: symbolUniqueName
       Entry: 1
       Data: customEventName
+    - Name: symbolDefaultValue
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: fieldAttributes
+      Entry: 7
+      Data: 19|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 20|UnityEngine.HideInInspector, UnityEngine.CoreModule
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: userBehaviourSource
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: isActive
+    - Name: $v
+      Entry: 7
+      Data: 21|UdonSharp.FieldDefinition, UdonSharp.Editor
+    - Name: fieldSymbol
+      Entry: 7
+      Data: 22|UdonSharp.SymbolDefinition, UdonSharp.Editor
+    - Name: internalType
+      Entry: 9
+      Data: 8
+    - Name: declarationType
+      Entry: 3
+      Data: 1
+    - Name: syncMode
+      Entry: 3
+      Data: 0
+    - Name: symbolResolvedTypeName
+      Entry: 1
+      Data: SystemBoolean
+    - Name: symbolOriginalName
+      Entry: 1
+      Data: isActive
+    - Name: symbolUniqueName
+      Entry: 1
+      Data: isActive
     - Name: symbolDefaultValue
       Entry: 6
       Data: 

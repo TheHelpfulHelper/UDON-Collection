@@ -6,7 +6,7 @@ using VRC.Udon;
 
 public class THH_PlayerManager : UdonSharpBehaviour
 {
-    //public Debug_THH_PlayerManager TEMP_DEBUG;
+    public Debug_THH_PlayerManager TEMP_DEBUG;
 
     [HideInInspector]
     public VRCPlayerApi Master;
@@ -31,15 +31,16 @@ public class THH_PlayerManager : UdonSharpBehaviour
     [HideInInspector]
     public int handlerCount;
 
-    private bool isMaster;
     private bool processingQueue;
+    [HideInInspector]
+    public bool masterTransfer;
 
     private VRCPlayerApi[] playerQueue;
     private int queueCapacity = 40;
     private int queueSize;
     private int queueStart;
 
-    [UdonSynced, HideInInspector]
+    [UdonSynced(UdonSyncMode.None), HideInInspector]
     public int ownershipTargetID = -1;
     private int last_ownershipTargetID;
     private THH_PlayerObjectHandler ownershipTargetHandler;
@@ -53,26 +54,28 @@ public class THH_PlayerManager : UdonSharpBehaviour
 
     public void SendCustomNetworkEventToPlayer()
     {
-        UpdateHandlerOwnerList();
-        for (int i = 0; i < handlerCount; i++)
+        if (UpdateHandlerOwnerList())
         {
-            if (handlerOwnerList[i] == customEventPlayerTarget)
-            {                
-                THH_PlayerObjectHandler handler = handlers[i];
-                VRCPlayerApi handlerOwner = Networking.GetOwner(handler.gameObject);
-                if (handlerOwner != customEventPlayerTarget)
+            for (int i = 0; i < handlerCount; i++)
+            {
+                if (handlerOwnerList[i] == customEventPlayerTarget)
                 {
-                    Debug.LogError($"<color=green>[THH_PlayerManager]</color> Intended to send custom event {customEventUdonTarget.name}:{customEventName} to {customEventPlayerTarget.displayName}, however owner of handler {handler.name} is {handlerOwner.displayName}; Aborting event call");
+                    THH_PlayerObjectHandler handler = handlers[i];
+                    VRCPlayerApi handlerOwner = Networking.GetOwner(handler.gameObject);
+                    if (handlerOwner != customEventPlayerTarget)
+                    {
+                        Debug.LogError($"<color=green>[THH_PlayerManager]</color> Intended to send custom event {customEventUdonTarget.name}:{customEventName} to {customEventPlayerTarget.displayName}, however owner of handler {handler.name} is {handlerOwner.displayName}; Aborting event call");
+                        return;
+                    }
+                    handler.customEventName = customEventName;
+                    handler.customEventUdonTarget = customEventUdonTarget;
+                    Debug.Log($"<color=green>[THH_PlayerManager]</color> Sending custom event {customEventUdonTarget.name}:{customEventName} to {customEventPlayerTarget.displayName}");
+                    handler.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.Owner, "SendCustomNetworkEventToPlayer");
                     return;
                 }
-                handler.customEventName = customEventName;
-                handler.customEventUdonTarget = customEventUdonTarget;
-                Debug.Log($"<color=green>[THH_PlayerManager]</color> Sending custom event {customEventUdonTarget.name}:{customEventName} to {customEventPlayerTarget.displayName}");
-                handler.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.Owner, "SendCustomNetworkEventToPlayer");
-                return;
             }
+            Debug.LogWarning($"<color=green>[THH_PlayerManager]</color> Could not find matching player {customEventPlayerTarget.displayName} in handlerOwnerList, maybe its not initialised yet?");
         }
-        Debug.LogWarning($"<color=green>[THH_PlayerManager]</color> Could not find matching player {customEventPlayerTarget.displayName} in handlerOwnerList, maybe its not initialised yet?");
     }
 
     public void Start()
@@ -92,13 +95,13 @@ public class THH_PlayerManager : UdonSharpBehaviour
             assignedHandler = handlers[0];
             Debug.Log($"<color=green>[THH_PlayerManager]</color> Assigning handler {assignedHandler.name} to master");
             masterHandler = assignedHandler;
-            isMaster = true;
+            assignedHandler.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "Activate");
         }
         else
         {
             GetMasterHandler();
         }
-        //TEMP_DEBUG.gameObject.SetActive(true);
+        TEMP_DEBUG.gameObject.SetActive(true);
     }
 
     public void Update()
@@ -140,13 +143,21 @@ public class THH_PlayerManager : UdonSharpBehaviour
 
     public override void OnPlayerLeft(VRCPlayerApi player)
     {
-        // Are you the new master?
-        if (Networking.IsMaster && !isMaster)
+        // Master left?
+        if (player == Master)
         {
-            Debug.Log($"<color=green>[THH_PlayerManager]</color> Last master has left, I am the new master.");
-            isMaster = true;
-            assignedHandler.ownedByNonMaster = false;
-            BroadcastMasterHandler();
+            masterHandler = null;
+            Master = Networking.GetOwner(gameObject);
+            masterTransfer = true;
+            if (Networking.IsMaster)
+            {
+                Debug.Log($"<color=green>[THH_PlayerManager]</color> Last master has left, I AM THE NEW MASTER");
+                BroadcastMasterHandler();
+            }
+            else
+            {
+                Debug.Log($"<color=green>[THH_PlayerManager]</color> Last master has left!");
+            }
         }
 
         // Remove the player that has left from the player list
@@ -169,6 +180,14 @@ public class THH_PlayerManager : UdonSharpBehaviour
         SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.Owner, "BroadcastMasterHandler");
     }
 
+    public void MasterTransferFinished()
+    {
+        Debug.Log($"<color=green>[THH_PlayerManager]</color> Master transfer finished");
+        masterTransfer = false;
+        ProcessQueue();
+    }
+
+
     // Event should only be called for the master!
     public void BroadcastMasterHandler()
     {
@@ -188,10 +207,16 @@ public class THH_PlayerManager : UdonSharpBehaviour
 
     public void ProcessQueue()
     {
+        logQueue();
         if (processingQueue) 
         {
             Debug.LogWarning($"<color=green>[THH_PlayerManager]</color> Queue is currently being processed already.");
             return; 
+        }
+        if (masterTransfer)
+        {
+            Debug.LogWarning($"<color=green>[THH_PlayerManager]</color> Cannot process queue, waiting for master transfer to finish");
+            return;
         }
         processingQueue = true;
         Debug.Log($"<color=green>[THH_PlayerManager]</color> Processing queue...");
@@ -218,7 +243,6 @@ public class THH_PlayerManager : UdonSharpBehaviour
             {
                 handler.blocked = true;
                 ownershipTargetHandler = handler;
-                handler.ownedByNonMaster = true;
                 if (Networking.IsMaster)
                 {
                     Debug.Log($"<color=green>[THH_PlayerManager]</color> Assigning handler {handler.name} to {player.displayName}");
@@ -239,12 +263,12 @@ public class THH_PlayerManager : UdonSharpBehaviour
         RemoveFromQueue();
     }
 
-    public void UpdateHandlerOwnerList()
+    public bool UpdateHandlerOwnerList()
     {
         if (masterHandler == null)
         {
             Debug.LogWarning($"<color=green>[THH_PlayerManager]</color> Master handler has not yet been assigned, aborting UpdateHandlerOwnerList");
-            return;
+            return false;
         }
         for (int i = 0; i < handlerCount; i++)
         {
@@ -263,6 +287,7 @@ public class THH_PlayerManager : UdonSharpBehaviour
             }
         }
         logOwnerHandlerList();
+        return true;
     }
 
     void CleanPlayerList()
@@ -321,9 +346,14 @@ public class THH_PlayerManager : UdonSharpBehaviour
 
     public void logQueue()
     {
+        Debug.Log($"LOGGING QUEUE:");
         for (int i = 0; i < queueSize; i++)
         {
-            Debug.Log(playerQueue[(queueStart + i) % queueCapacity].displayName);
+            VRCPlayerApi player = playerQueue[(queueStart + i) % queueCapacity];
+            if (player != null)
+            {
+                Debug.Log(player.displayName);
+            }
         }
     }
 
