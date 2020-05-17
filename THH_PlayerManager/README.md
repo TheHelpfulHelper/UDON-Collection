@@ -1,3 +1,5 @@
+**WARNING: THE CURRENT VERSION HAS A BIG FLAW DO NOT DOWNLOAD! WILL FIX IT TOMORROW (18.05.2020)**
+
 **PlayerManager v1.0**
 
 Purpose: Give every player a personal object they own and send custom network events to specific players.<br/>
