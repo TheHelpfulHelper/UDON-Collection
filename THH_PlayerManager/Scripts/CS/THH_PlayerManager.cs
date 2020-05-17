@@ -6,7 +6,7 @@ using VRC.Udon;
 
 public class THH_PlayerManager : UdonSharpBehaviour
 {
-    public Debug_THH_PlayerManager TEMP_DEBUG;
+    //public Debug_THH_PlayerManager TEMP_DEBUG;
 
     [HideInInspector]
     public VRCPlayerApi Master;
@@ -101,7 +101,7 @@ public class THH_PlayerManager : UdonSharpBehaviour
         {
             GetMasterHandler();
         }
-        TEMP_DEBUG.gameObject.SetActive(true);
+        //TEMP_DEBUG.gameObject.SetActive(true);
     }
 
     public void Update()
