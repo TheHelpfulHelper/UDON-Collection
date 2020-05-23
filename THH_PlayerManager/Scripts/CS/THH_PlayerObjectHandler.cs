@@ -70,7 +70,7 @@ public class THH_PlayerObjectHandler : UdonSharpBehaviour
             }
             else if (!Networking.LocalPlayer.IsOwner(gameObject) && ownedByMaster)
             {
-                Debug.Log($"<color=green>[THH_PlayerManager]</color> Ownership has been transferred to {Networking.GetOwner(gameObject).displayName}");
+                Debug.Log($"<color=green>[THH_PlayerManager]</color> Ownership of handler {name} has been transferred to {Networking.GetOwner(gameObject).displayName}");
                 ownedByMaster = false;
                 PlayerManager.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "CheckHandlerAssignmentAvailability");
                 CheckStatus();
