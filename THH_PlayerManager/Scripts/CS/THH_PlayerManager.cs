@@ -29,6 +29,10 @@ public class THH_PlayerManager : UdonSharpBehaviour
     {
         Debug.Log($"<color=green>[THH_PlayerManager]</color> THH_PlayerManager v2.0 initialized");        
         handlers = GetComponentsInChildren<THH_PlayerObjectHandler>();
+        foreach (THH_PlayerObjectHandler handler in handlers)
+        {
+            handler.Initialize();
+        }
         handlerCount = handlers.Length;
 
         LateJoiners = new VRCPlayerApi[handlerCount];
@@ -38,6 +42,7 @@ public class THH_PlayerManager : UdonSharpBehaviour
             assignedHandler = handlers[0];
             masterHandler = assignedHandler;
             handlerAssigned = true;
+            CheckAllHandlerStatus();
             Debug.Log($"<color=green>[THH_PlayerManager]</color> Assigned handler {assignedHandler.name} as master");
         }
         else
@@ -172,6 +177,15 @@ public class THH_PlayerManager : UdonSharpBehaviour
         {
             FindUnassignedHandler();
         }
+        CheckAllHandlerStatus();
+    }
+
+    void CheckAllHandlerStatus()
+    {
+        foreach (THH_PlayerObjectHandler handler in handlers)
+        {
+            handler.CheckStatus();
+        }
     }
 
     bool ProcessLateJoin(VRCPlayerApi player)
@@ -260,7 +274,7 @@ public class THH_PlayerManager : UdonSharpBehaviour
             {
                 Debug.Log($"<color=green>[THH_PlayerManager]</color> Assigning handler {handler.name}");
 
-                Networking.SetOwner(Networking.LocalPlayer, handler.gameObject);
+                handler.TakeOwnership();
 
                 assignedHandler = handler;
                 handlerAssigned = true;
