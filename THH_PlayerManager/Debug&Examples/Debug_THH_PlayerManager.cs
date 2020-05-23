@@ -48,7 +48,7 @@ public class Debug_THH_PlayerManager : UdonSharpBehaviour
         for (int i = 0; i < handlerTexts.Length; i++)
         {
             THH_PlayerObjectHandler handler = playerManager.handlers[i];
-            handlerTexts[i].text = $"Owner: {Networking.GetOwner(handler.gameObject).displayName}; Blocked?: {handler.blocked}; Active?: {handler.isActive}";
+            handlerTexts[i].text = $"Owner: {Networking.GetOwner(handler.gameObject).displayName}";
         }
     }
 }

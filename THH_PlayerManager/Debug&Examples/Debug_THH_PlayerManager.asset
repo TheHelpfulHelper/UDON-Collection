@@ -29,36 +29,27 @@ MonoBehaviour:
     %SystemInt32, null\r\n    __1_const_intnl_SystemInt32: %SystemInt32, null\r\n
     \   __0_const_intnl_SystemObject: %SystemObject, null\r\n    __0_const_intnl_SystemString:
     %SystemString, null\r\n    __1_const_intnl_SystemString: %SystemString, null\r\n
-    \   __10_const_intnl_SystemString: %SystemString, null\r\n    __11_const_intnl_SystemString:
-    %SystemString, null\r\n    __12_const_intnl_SystemString: %SystemString, null\r\n
     \   __2_const_intnl_SystemString: %SystemString, null\r\n    __3_const_intnl_SystemString:
     %SystemString, null\r\n    __4_const_intnl_SystemString: %SystemString, null\r\n
     \   __5_const_intnl_SystemString: %SystemString, null\r\n    __6_const_intnl_SystemString:
     %SystemString, null\r\n    __7_const_intnl_SystemString: %SystemString, null\r\n
-    \   __8_const_intnl_SystemString: %SystemString, null\r\n    __9_const_intnl_SystemString:
-    %SystemString, null\r\n    __0_const_intnl_SystemType: %SystemType, null\r\n    __0_const_intnl_VRCUdonCommonInterfacesIUdonEventReceiver:
+    \   __8_const_intnl_SystemString: %SystemString, null\r\n    __0_const_intnl_SystemType:
+    %SystemType, null\r\n    __0_const_intnl_VRCUdonCommonInterfacesIUdonEventReceiver:
     %VRCUdonUdonBehaviour, null\r\n    __0_const_intnl_SystemUInt32: %SystemUInt32,
     null\r\n    __0_intnl_SystemBoolean: %SystemBoolean, null\r\n    __1_intnl_SystemBoolean:
     %SystemBoolean, null\r\n    __2_intnl_SystemBoolean: %SystemBoolean, null\r\n
-    \   __3_intnl_SystemBoolean: %SystemBoolean, null\r\n    __4_intnl_SystemBoolean:
-    %SystemBoolean, null\r\n    __5_intnl_SystemBoolean: %SystemBoolean, null\r\n
-    \   __6_intnl_SystemBoolean: %SystemBoolean, null\r\n    __7_intnl_SystemBoolean:
-    %SystemBoolean, null\r\n    __0_intnl_THH_PlayerObjectHandlerArray: %UnityEngineComponentArray,
-    null\r\n    __0_intnl_UnityEngineComponentArray: %UnityEngineComponentArray, null\r\n
-    \   __0_intnl_UnityEngineGameObject: %UnityEngineGameObject, null\r\n    __1_intnl_UnityEngineGameObject:
-    %UnityEngineGameObject, null\r\n    __0_intnl_SystemInt32: %SystemInt32, null\r\n
-    \   __1_intnl_SystemInt32: %SystemInt32, null\r\n    __2_intnl_SystemInt32: %SystemInt32,
-    null\r\n    __3_intnl_SystemInt32: %SystemInt32, null\r\n    __4_intnl_SystemInt32:
+    \   __3_intnl_SystemBoolean: %SystemBoolean, null\r\n    __0_intnl_THH_PlayerObjectHandlerArray:
+    %UnityEngineComponentArray, null\r\n    __0_intnl_UnityEngineComponentArray: %UnityEngineComponentArray,
+    null\r\n    __0_intnl_UnityEngineGameObject: %UnityEngineGameObject, null\r\n
+    \   __1_intnl_UnityEngineGameObject: %UnityEngineGameObject, null\r\n    __0_intnl_SystemInt32:
+    %SystemInt32, null\r\n    __1_intnl_SystemInt32: %SystemInt32, null\r\n    __2_intnl_SystemInt32:
+    %SystemInt32, null\r\n    __3_intnl_SystemInt32: %SystemInt32, null\r\n    __4_intnl_SystemInt32:
     %SystemInt32, null\r\n    __5_intnl_SystemInt32: %SystemInt32, null\r\n    __6_intnl_SystemInt32:
     %SystemInt32, null\r\n    __7_intnl_SystemInt32: %SystemInt32, null\r\n    __8_intnl_SystemInt32:
     %SystemInt32, null\r\n    __0_intnl_SystemObject: %SystemObject, null\r\n    __1_intnl_SystemObject:
     %SystemObject, null\r\n    __2_intnl_SystemObject: %SystemObject, null\r\n    __3_intnl_SystemObject:
-    %SystemObject, null\r\n    __4_intnl_SystemObject: %SystemObject, null\r\n    __5_intnl_SystemObject:
-    %SystemObject, null\r\n    __6_intnl_SystemObject: %SystemObject, null\r\n    __0_intnl_interpolatedStr_String:
+    %SystemObject, null\r\n    __4_intnl_SystemObject: %SystemObject, null\r\n    __0_intnl_interpolatedStr_String:
     %SystemString, null\r\n    __0_intnl_SystemString: %SystemString, null\r\n    __1_intnl_SystemString:
-    %SystemString, null\r\n    __2_intnl_SystemString: %SystemString, null\r\n    __3_intnl_SystemString:
-    %SystemString, null\r\n    __4_intnl_SystemString: %SystemString, null\r\n    __5_intnl_SystemString:
-    %SystemString, null\r\n    __6_intnl_SystemString: %SystemString, null\r\n    __7_intnl_SystemString:
     %SystemString, null\r\n    __0_intnl_UnityEngineUIText: %UnityEngineUIText, null\r\n
     \   __1_intnl_UnityEngineUIText: %UnityEngineUIText, null\r\n    __0_intnl_UnityEngineUITextArray:
     %UnityEngineUITextArray, null\r\n    __1_intnl_UnityEngineUITextArray: %UnityEngineUITextArray,
@@ -180,7 +171,7 @@ MonoBehaviour:
     handlerTexts\r\n        PUSH, __6_intnl_SystemInt32\r\n        EXTERN, \"UnityEngineUITextArray.__get_Length__SystemInt32\"\r\n
     \       PUSH, __1_i_Int32\r\n        PUSH, __6_intnl_SystemInt32\r\n        PUSH,
     __3_intnl_SystemBoolean\r\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\r\n
-    \       PUSH, __3_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000804\r\n
+    \       PUSH, __3_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000694\r\n
     \       \r\n         # {\r\n        \r\n         # THH_PlayerObjectHandler handler
     = playerManager.handlers[i];\r\n        PUSH, playerManager\r\n        PUSH, __7_const_intnl_SystemString\r\n
     \       PUSH, __4_intnl_SystemObject\r\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject\"\r\n
@@ -189,11 +180,10 @@ MonoBehaviour:
     __1_i_Int32\r\n        PUSH, __2_intnl_THH_PlayerObjectHandler\r\n        EXTERN,
     \"UnityEngineComponentArray.__Get__SystemInt32__UnityEngineComponent\"\r\n        PUSH,
     __2_intnl_THH_PlayerObjectHandler\r\n        PUSH, __0_handler_THH_PlayerObjectHandler\r\n
-    \       COPY\r\n        \r\n         # handlerTexts[i].text = $\"Owner: {Networking.GetOwner(handler.gameObject).displayName};
-    Blocked?: {handler.blocked}; Active?: {handler.isActive}\";\r\n        PUSH, __8_const_intnl_SystemString\r\n
-    \       PUSH, __0_intnl_interpolatedStr_String\r\n        COPY\r\n        PUSH,
-    __0_handler_THH_PlayerObjectHandler\r\n        PUSH, __1_intnl_UnityEngineGameObject\r\n
-    \       EXTERN, \"UnityEngineComponent.__get_gameObject__UnityEngineGameObject\"\r\n
+    \       COPY\r\n        \r\n         # handlerTexts[i].text = $\"Owner: {Networking.GetOwner(handler.gameObject).displayName}\";\r\n
+    \       PUSH, __8_const_intnl_SystemString\r\n        PUSH, __0_intnl_interpolatedStr_String\r\n
+    \       COPY\r\n        PUSH, __0_handler_THH_PlayerObjectHandler\r\n        PUSH,
+    __1_intnl_UnityEngineGameObject\r\n        EXTERN, \"UnityEngineComponent.__get_gameObject__UnityEngineGameObject\"\r\n
     \       PUSH, __1_intnl_UnityEngineGameObject\r\n        PUSH, __0_intnl_VRCSDKBaseVRCPlayerApi\r\n
     \       EXTERN, \"VRCSDKBaseNetworking.__GetOwner__UnityEngineGameObject__VRCSDKBaseVRCPlayerApi\"\r\n
     \       PUSH, __0_intnl_VRCSDKBaseVRCPlayerApi\r\n        PUSH, __0_intnl_SystemString\r\n
@@ -201,32 +191,6 @@ MonoBehaviour:
     \       PUSH, __0_intnl_interpolatedStr_String\r\n        PUSH, __0_intnl_SystemString\r\n
     \       PUSH, __1_intnl_SystemString\r\n        EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n
     \       PUSH, __1_intnl_SystemString\r\n        PUSH, __0_intnl_interpolatedStr_String\r\n
-    \       COPY\r\n        PUSH, __0_intnl_interpolatedStr_String\r\n        PUSH,
-    __9_const_intnl_SystemString\r\n        PUSH, __2_intnl_SystemString\r\n        EXTERN,
-    \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n        PUSH,
-    __2_intnl_SystemString\r\n        PUSH, __0_intnl_interpolatedStr_String\r\n        COPY\r\n
-    \       PUSH, __0_handler_THH_PlayerObjectHandler\r\n        PUSH, __10_const_intnl_SystemString\r\n
-    \       PUSH, __5_intnl_SystemObject\r\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject\"\r\n
-    \       PUSH, __5_intnl_SystemObject\r\n        PUSH, __5_intnl_SystemBoolean\r\n
-    \       EXTERN, \"SystemConvert.__ToBoolean__SystemObject__SystemBoolean\"\r\n
-    \       PUSH, __5_intnl_SystemBoolean\r\n        PUSH, __3_intnl_SystemString\r\n
-    \       EXTERN, \"SystemBoolean.__ToString__SystemString\"\r\n        PUSH, __0_intnl_interpolatedStr_String\r\n
-    \       PUSH, __3_intnl_SystemString\r\n        PUSH, __4_intnl_SystemString\r\n
-    \       EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n
-    \       PUSH, __4_intnl_SystemString\r\n        PUSH, __0_intnl_interpolatedStr_String\r\n
-    \       COPY\r\n        PUSH, __0_intnl_interpolatedStr_String\r\n        PUSH,
-    __11_const_intnl_SystemString\r\n        PUSH, __5_intnl_SystemString\r\n        EXTERN,
-    \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n        PUSH,
-    __5_intnl_SystemString\r\n        PUSH, __0_intnl_interpolatedStr_String\r\n        COPY\r\n
-    \       PUSH, __0_handler_THH_PlayerObjectHandler\r\n        PUSH, __12_const_intnl_SystemString\r\n
-    \       PUSH, __6_intnl_SystemObject\r\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject\"\r\n
-    \       PUSH, __6_intnl_SystemObject\r\n        PUSH, __7_intnl_SystemBoolean\r\n
-    \       EXTERN, \"SystemConvert.__ToBoolean__SystemObject__SystemBoolean\"\r\n
-    \       PUSH, __7_intnl_SystemBoolean\r\n        PUSH, __6_intnl_SystemString\r\n
-    \       EXTERN, \"SystemBoolean.__ToString__SystemString\"\r\n        PUSH, __0_intnl_interpolatedStr_String\r\n
-    \       PUSH, __6_intnl_SystemString\r\n        PUSH, __7_intnl_SystemString\r\n
-    \       EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n
-    \       PUSH, __7_intnl_SystemString\r\n        PUSH, __0_intnl_interpolatedStr_String\r\n
     \       COPY\r\n        PUSH, handlerTexts\r\n        PUSH, __1_i_Int32\r\n        PUSH,
     __1_intnl_UnityEngineUIText\r\n        EXTERN, \"UnityEngineUITextArray.__Get__SystemInt32__UnityEngineUIText\"\r\n
     \       PUSH, __1_intnl_UnityEngineUIText\r\n        PUSH, __0_intnl_interpolatedStr_String\r\n
@@ -1406,87 +1370,17 @@ MonoBehaviour:
       lineChar: 73
       spanCodeSection: gameObject).
     - startInstruction: 1472
-      endInstruction: 1547
+      endInstruction: 1472
       startSourceChar: 1606
-      endSourceChar: 1618
+      endSourceChar: 1606
       line: 50
       lineChar: 85
-      spanCodeSection: displayName}
-    - startInstruction: 1548
-      endInstruction: 1599
-      startSourceChar: 1618
-      endSourceChar: 1630
-      line: 50
-      lineChar: 97
-      spanCodeSection: '; Blocked?: '
-    - startInstruction: 1600
-      endInstruction: 1599
-      startSourceChar: 1630
-      endSourceChar: 1631
-      line: 50
-      lineChar: 109
-      spanCodeSection: '{'
-    - startInstruction: 1600
-      endInstruction: 1599
-      startSourceChar: 1631
-      endSourceChar: 1631
-      line: 50
-      lineChar: 110
-      spanCodeSection: 
-    - startInstruction: 1600
-      endInstruction: 1599
-      startSourceChar: 1631
-      endSourceChar: 1639
-      line: 50
-      lineChar: 110
-      spanCodeSection: handler.
-    - startInstruction: 1600
-      endInstruction: 1731
-      startSourceChar: 1639
-      endSourceChar: 1647
-      line: 50
-      lineChar: 118
-      spanCodeSection: blocked}
-    - startInstruction: 1732
-      endInstruction: 1783
-      startSourceChar: 1647
-      endSourceChar: 1658
-      line: 50
-      lineChar: 126
-      spanCodeSection: '; Active?: '
-    - startInstruction: 1784
-      endInstruction: 1783
-      startSourceChar: 1658
-      endSourceChar: 1659
-      line: 50
-      lineChar: 137
-      spanCodeSection: '{'
-    - startInstruction: 1784
-      endInstruction: 1783
-      startSourceChar: 1659
-      endSourceChar: 1659
-      line: 50
-      lineChar: 138
-      spanCodeSection: 
-    - startInstruction: 1784
-      endInstruction: 1783
-      startSourceChar: 1659
-      endSourceChar: 1667
-      line: 50
-      lineChar: 138
-      spanCodeSection: handler.
-    - startInstruction: 1784
-      endInstruction: 1784
-      startSourceChar: 1667
-      endSourceChar: 1667
-      line: 50
-      lineChar: 146
       spanCodeSection: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 11500000, guid: 45d10110d8b505c4ca1e44a042d3b62b, type: 3}
+    - {fileID: 11500000, guid: 18659145c15e10a4e8c576ac71922fe9, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []

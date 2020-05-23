@@ -1,375 +1,274 @@
 
 using UdonSharp;
 using UnityEngine;
+using UnityEngine.Networking;
 using VRC.SDKBase;
 using VRC.Udon;
 
 public class THH_PlayerManager : UdonSharpBehaviour
 {
-    public Debug_THH_PlayerManager TEMP_DEBUG;
-
-    [HideInInspector]
-    public VRCPlayerApi Master;
-
-    [HideInInspector]
-    public int playerCount;
-    // Variable Size = playerCount, no null gaps
-    [HideInInspector]
-    public VRCPlayerApi[] cleanPlayerList;
-
-    // Constant Size = handlerCount, null gaps
-    private VRCPlayerApi[] playerList;
-
-    private VRCPlayerApi[] handlerOwnerList;
-
-    [HideInInspector]
-    public THH_PlayerObjectHandler assignedHandler;
-    [HideInInspector]
-    public THH_PlayerObjectHandler masterHandler;
     [HideInInspector]
     public THH_PlayerObjectHandler[] handlers;
     [HideInInspector]
     public int handlerCount;
 
-    private bool processingQueue;
-    [HideInInspector]
-    public bool masterTransfer;
+    private VRCPlayerApi[] LateJoiners;
+    private int LateJoinersCount;
 
-    private VRCPlayerApi[] playerQueue;
-    private int queueCapacity = 40;
-    private int queueSize;
-    private int queueStart;
-
-    [UdonSynced(UdonSyncMode.None), HideInInspector]
-    public int ownershipTargetID = -1;
-    private int last_ownershipTargetID;
-    private THH_PlayerObjectHandler ownershipTargetHandler;
+    private VRCPlayerApi ward;
+    private VRCPlayerApi guardian;
 
     [HideInInspector]
-    public VRCPlayerApi customEventPlayerTarget;
+    public THH_PlayerObjectHandler masterHandler;
     [HideInInspector]
-    public UdonBehaviour customEventUdonTarget;
-    [HideInInspector]
-    public string customEventName;
+    public THH_PlayerObjectHandler assignedHandler;
+    private bool handlerAssigned;
+    private bool assignmentDelayed;
 
-    public void SendCustomNetworkEventToPlayer()
+    void Start()
     {
-        if (UpdateHandlerOwnerList())
-        {
-            for (int i = 0; i < handlerCount; i++)
-            {
-                if (handlerOwnerList[i] == customEventPlayerTarget)
-                {
-                    THH_PlayerObjectHandler handler = handlers[i];
-                    VRCPlayerApi handlerOwner = Networking.GetOwner(handler.gameObject);
-                    if (handlerOwner != customEventPlayerTarget)
-                    {
-                        Debug.LogError($"<color=green>[THH_PlayerManager]</color> Intended to send custom event {customEventUdonTarget.name}:{customEventName} to {customEventPlayerTarget.displayName}, however owner of handler {handler.name} is {handlerOwner.displayName}; Aborting event call");
-                        return;
-                    }
-                    handler.customEventName = customEventName;
-                    handler.customEventUdonTarget = customEventUdonTarget;
-                    Debug.Log($"<color=green>[THH_PlayerManager]</color> Sending custom event {customEventUdonTarget.name}:{customEventName} to {customEventPlayerTarget.displayName}");
-                    handler.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.Owner, "SendCustomNetworkEventToPlayer");
-                    return;
-                }
-            }
-            Debug.LogWarning($"<color=green>[THH_PlayerManager]</color> Could not find matching player {customEventPlayerTarget.displayName} in handlerOwnerList, maybe its not initialised yet?");
-        }
-    }
-
-    public void Start()
-    {
-        Master = Networking.GetOwner(gameObject);
-        handlers = transform.GetComponentsInChildren<THH_PlayerObjectHandler>();
+        Debug.Log($"<color=green>[THH_PlayerManager]</color> THH_PlayerManager v2.0 initialized");        
+        handlers = GetComponentsInChildren<THH_PlayerObjectHandler>();
         handlerCount = handlers.Length;
-        playerList = new VRCPlayerApi[handlerCount];
-        handlerOwnerList = new VRCPlayerApi[handlerCount];
 
-        Debug.Log($"<color=green>[THH_PlayerManager]</color> Amount of available handlers: {handlerCount}");
-        playerQueue = new VRCPlayerApi[queueCapacity];
+        LateJoiners = new VRCPlayerApi[handlerCount];
 
-        // If youre the master automatically assign the first handler
         if (Networking.IsMaster)
         {
             assignedHandler = handlers[0];
-            Debug.Log($"<color=green>[THH_PlayerManager]</color> Assigning handler {assignedHandler.name} to master");
             masterHandler = assignedHandler;
-            assignedHandler.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "Activate");
+            handlerAssigned = true;
+            Debug.Log($"<color=green>[THH_PlayerManager]</color> Assigned handler {assignedHandler.name} as master");
         }
         else
         {
-            GetMasterHandler();
+            SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.Owner, "RequestMasterHandler");
         }
-        TEMP_DEBUG.gameObject.SetActive(true);
     }
 
-    public void Update()
+    // This event should only be called for the master!
+    public void RequestMasterHandler()
     {
-        if (ownershipTargetID != last_ownershipTargetID && ownershipTargetID == Networking.LocalPlayer.playerId)
+        if (!Networking.IsMaster)
         {
-            Debug.Log($"<color=green>[THH_PlayerManager]</color> Received and confirmed ownership target ID");
-            SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.Owner, "OwnershipTargetReady");
+            Debug.LogWarning($"<color=green>[THH_PlayerManager]</color> Unauthorized event call: 'RequestMasterHandler'; You are not master!");
+            return;
         }
-        last_ownershipTargetID = ownershipTargetID;
+
+        assignedHandler.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "BroadcastMasterHandler");
     }
 
     public override void OnPlayerJoined(VRCPlayerApi player)
     {
-        if (playerCount == handlers.Length)
+        // If youre the last player (LateJoinersCount == 0) and you have a handlerAssigned then inform the player that joined that they should check for handler assignment availability
+        if (player != Networking.LocalPlayer && handlerAssigned && LateJoinersCount == 0)
         {
-            Debug.LogWarning($"<color=green>[THH_PlayerManager]</color>: Tracked player limit reached, player '{player.displayName}' cannot be processed.");
-            return;
+            SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "CheckHandlerAssignmentAvailability");
         }
-
-        for (int i = 0; i < playerList.Length; i++)
-        {
-            if (playerList[i] == null)
-            {
-                playerList[i] = player;
-                playerCount++;
-                CleanPlayerList();
-                break;
-            }
-        }
-        // Player that joined, has joined after you
+        
+        // If the player that has joined, joined after you process them as a late-joiner
         if (player.playerId > Networking.LocalPlayer.playerId)
         {
-            Debug.Log($"<color=green>[THH_PlayerManager]</color> Adding {player.displayName} to the queue");
-            AddToQueue(player);
-            ProcessQueue();
+            bool suscessfullyProcessedLateJoiner = ProcessLateJoin(player);
+            if (!suscessfullyProcessedLateJoiner)
+            {
+                Debug.LogError($"<color=green>[THH_PlayerManager]</color> LateJoiner {player.displayName} could not be processed. You may need more Handlers!");
+            }
+            if (LateJoinersCount == 1)
+            {
+                ward = player;
+                Debug.Log($"<color=green>[THH_PlayerManager]</color> Your ward is now {ward.displayName}");
+            }
         }
     }
 
     public override void OnPlayerLeft(VRCPlayerApi player)
     {
-        // Master left?
-        if (player == Master)
+        // If the player that has left, joined after you, decrement LateJoinersCount
+        if (player.playerId > Networking.LocalPlayer.playerId)
         {
-            masterHandler = null;
-            Master = Networking.GetOwner(gameObject);
-            masterTransfer = true;
-            if (Networking.IsMaster)
+            LateJoinersCount--;
+            // If the player was also your ward, find a new ward
+            if (player == ward)
             {
-                Debug.Log($"<color=green>[THH_PlayerManager]</color> Last master has left, I AM THE NEW MASTER");
-                BroadcastMasterHandler();
-            }
-            else
-            {
-                Debug.Log($"<color=green>[THH_PlayerManager]</color> Last master has left!");
-            }
-        }
-
-        // Remove the player that has left from the player list
-        for (int i = 0; i < playerList.Length; i++)
-        {
-            if (playerList[i] == player)
-            {
-                playerList[i] = null;
-                break;
-            }
-        }
-
-        playerCount--;
-        CleanPlayerList();
-    }
-
-    void GetMasterHandler()
-    {
-        Debug.Log($"<color=green>[THH_PlayerManager]</color> Retrieving master handler");
-        SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.Owner, "BroadcastMasterHandler");
-    }
-
-    public void MasterTransferFinished()
-    {
-        Debug.Log($"<color=green>[THH_PlayerManager]</color> Master transfer finished");
-        masterTransfer = false;
-        ProcessQueue();
-    }
-
-
-    // Event should only be called for the master!
-    public void BroadcastMasterHandler()
-    {
-        if (!Networking.IsMaster)
-        {
-            Debug.LogWarning($"<color=green>[THH_PlayerManager]</color> Unauthorized event call: BroadcastMasterHandler; You are not master!");
-            return;
-        }
-
-        assignedHandler.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "SetMasterHandler");
-    }
-
-    public void OwnershipTargetReady()
-    {
-        ownershipTargetHandler.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "TakeOwnership");
-    }
-
-    public void ProcessQueue()
-    {
-        logQueue();
-        if (processingQueue) 
-        {
-            Debug.LogWarning($"<color=green>[THH_PlayerManager]</color> Queue is currently being processed already.");
-            return; 
-        }
-        if (masterTransfer)
-        {
-            Debug.LogWarning($"<color=green>[THH_PlayerManager]</color> Cannot process queue, waiting for master transfer to finish");
-            return;
-        }
-        processingQueue = true;
-        Debug.Log($"<color=green>[THH_PlayerManager]</color> Processing queue...");
-        if (masterHandler == null)
-        {
-            Debug.LogWarning($"<color=green>[THH_PlayerManager]</color> Master handler has not yet been assigned, aborting queue proccessing.");
-            processingQueue = false;
-            return;
-        }
-
-        VRCPlayerApi player = GetPlayerFromQueue();
-
-        if (player == null)
-        {
-            Debug.Log($"<color=green>[THH_PlayerManager]</color> No player in queue or player was null");
-            processingQueue = false;
-            return;
-        }
-
-        for (int i = 0; i < handlers.Length; i++)
-        {
-            THH_PlayerObjectHandler handler = handlers[i];
-            if (Networking.GetOwner(handler.gameObject).isMaster && handler != masterHandler && !handler.blocked)
-            {
-                handler.blocked = true;
-                ownershipTargetHandler = handler;
-                if (Networking.IsMaster)
+                ward = FindWard(player);
+                if (ward == null)
                 {
-                    Debug.Log($"<color=green>[THH_PlayerManager]</color> Assigning handler {handler.name} to {player.displayName}");
-                    // Does not work because bugs: Networking.SetOwner(player, handler.gameObject);
-                    ownershipTargetID = player.playerId;
+                    Debug.Log($"<color=green>[THH_PlayerManager]</color> Your last ward has left, but no new ward was found");
                 }
-                processingQueue = false;
-                RemoveFromQueue();
-                return;
-            }
-            else
-            {
-                handler.blocked = true;
-            }
-        }
-        Debug.LogError($"<color=green>[THH_PlayerManager]</color> Could not find an unassigned handler, {player.displayName} cannot be processed");
-        processingQueue = false;
-        RemoveFromQueue();
-    }
-
-    public bool UpdateHandlerOwnerList()
-    {
-        if (masterHandler == null)
-        {
-            Debug.LogWarning($"<color=green>[THH_PlayerManager]</color> Master handler has not yet been assigned, aborting UpdateHandlerOwnerList");
-            return false;
-        }
-        for (int i = 0; i < handlerCount; i++)
-        {
-            THH_PlayerObjectHandler handler = handlers[i];
-            VRCPlayerApi owner = Networking.GetOwner(handler.gameObject);
-            if (owner.isMaster)
-            {
-                if (handler == masterHandler)
+                else
                 {
-                    handlerOwnerList[i] = owner;
+                    Debug.Log($"<color=green>[THH_PlayerManager]</color> Your last ward has left. You became guardian of a new ward: {ward.displayName}");
+                    // If the new ward does not have a handler yet, inform them that they should check for handler assignment availability
+                    if (!PlayerHasHandler(ward))
+                    {
+                        SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "CheckHandlerAssignmentAvailability");
+                    }
                 }
             }
-            else
+        }
+        //If the player that left had joined before you, then make sure it was not your guardian who left;
+        else if (player.playerId < Networking.LocalPlayer.playerId)
+        {
+            // Only matters if youre not the master, otherwise you will not have a guardian
+            if (guardian == null && !Networking.IsMaster)
             {
-                handlerOwnerList[i] = owner;
+                guardian = FindGuardian(null);
+                if (guardian == null)
+                {
+                    Debug.LogError($"<color=green>[THH_PlayerManager]</color> Could not find a guardian, something went wrong...");
+                    return;
+                }
+                Debug.Log($"<color=green>[THH_PlayerManager]</color> Your last guardian has left, your new guardian is {guardian.displayName}");
+            }
+            // If you are the master, then that must mean that the previous master has left, since only they can have a lower playerID than you (being the master)
+            else if (Networking.IsMaster)
+            {
+                Debug.Log($"<color=green>[THH_PlayerManager]</color> The last master has left, you are the new master");
             }
         }
-        logOwnerHandlerList();
-        return true;
     }
 
-    void CleanPlayerList()
+    // This event is called for everyone in the instance
+    public void CheckHandlerAssignmentAvailability()
     {
-        cleanPlayerList = new VRCPlayerApi[playerCount];
-        int c = 0;
-        foreach (VRCPlayerApi player in playerList)
+        // Could check if youre not master, but should be redundant, since master should always have a handler assigned
+        if (!handlerAssigned)
         {
-            if (player == null) { continue; }
-            cleanPlayerList[c] = player;
-            c++;
-        }
-    }
-
-    public void AddToQueue(VRCPlayerApi player)
-    {
-        playerQueue[(queueStart + queueSize) % queueCapacity] = player;
-        if (queueSize < queueCapacity)
-        {
-            queueSize++;
-        }
-        else
-        {
-            queueStart = (queueStart + 1) % queueCapacity;
-        }
-    }
-
-    public void RemoveFromQueue()
-    {
-        while (queueSize > 0 && playerQueue[queueStart] == null)
-        {
-            queueStart = (queueStart + 1) % queueCapacity;
-            queueSize--;
-        }
-        if (queueSize > 0)
-        {
-            playerQueue[queueStart] = null;
-            queueStart = (queueStart + 1) % queueCapacity;
-            queueSize--;
+            // If you dont have a guardian yet, try to find one
+            if (guardian == null)
+            {
+                guardian = FindGuardian(null);
+                if (guardian == null)
+                {
+                    Debug.LogError($"<color=green>[THH_PlayerManager]</color> Could not find a guardian, something went wrong...");
+                    return;
+                }
+                Debug.Log($"<color=green>[THH_PlayerManager]</color> Your guardian is now {guardian.displayName}");
+            }
+            // Only proceed if the guardian actually has a handler assigned yet, otherwise wait for further instructions
+            if (PlayerHasHandler(guardian))
+            {
+                // Cant check for masters handler, if masterHandler is not set yet, wait for it
+                if (masterHandler == null)
+                {
+                    Debug.LogWarning($"<color=green>[THH_PlayerManager]</color> Master handler has not yet been set, delaying handler assignment untill it has been set");
+                    assignmentDelayed = true;
+                    return;
+                }
+                FindUnassignedHandler();
+            }
+            else
+            {
+                Debug.Log($"<color=green>[THH_PlayerManager]</color> Your guardian does not have a handler assigned to them yet, waiting for further instructions");
+            }
         }
     }
 
-    public VRCPlayerApi GetPlayerFromQueue()
+    // Callback
+    public void OnMasterHandlerSet()
     {
-        while (queueSize > 0 && playerQueue[queueStart] == null)
+        if (assignmentDelayed && !handlerAssigned)
         {
-            queueStart = (queueStart + 1) % queueCapacity;
-            queueSize--;
+            FindUnassignedHandler();
         }
-        if (queueSize > 0)
+    }
+
+    bool ProcessLateJoin(VRCPlayerApi player)
+    {
+        for (int i = 0; i < LateJoiners.Length; i++)
         {
-            return playerQueue[queueStart];
+            if (LateJoiners[i] == null)
+            {
+                LateJoiners[i] = player;
+                LateJoinersCount++;
+                return true;
+            }
+        }
+        return false;
+    }
+
+    VRCPlayerApi FindGuardian(VRCPlayerApi playerWhoLeft)
+    {
+        // Trying every ID decrementally until a player is found (Janky if a lot of players have joined and left the instance)
+        int i = Networking.LocalPlayer.playerId - 1;
+        while (i > 0)
+        {
+            VRCPlayerApi player = VRCPlayerApi.GetPlayerById(i);
+            if ( player != null)
+            {
+                return player;
+            }
+            i--;
         }
         return null;
     }
 
-    public void logQueue()
+    VRCPlayerApi FindWard(VRCPlayerApi playerWhoLeft)
     {
-        Debug.Log($"LOGGING QUEUE:");
-        for (int i = 0; i < queueSize; i++)
+        // Can only find a ward if someone joined after you
+        if (LateJoinersCount == 0)
         {
-            VRCPlayerApi player = playerQueue[(queueStart + i) % queueCapacity];
-            if (player != null)
+            return null;
+        }
+        VRCPlayerApi _ward = null;
+        foreach (VRCPlayerApi lateJoiner in LateJoiners)
+        {
+            if (lateJoiner == null || lateJoiner == playerWhoLeft)
             {
-                Debug.Log(player.displayName);
+                continue;
+            }
+            if (_ward == null)
+            {
+                _ward = lateJoiner;
+                continue;
+            }
+            if (lateJoiner.playerId < _ward.playerId)
+            {
+                _ward = lateJoiner;
+                continue;
             }
         }
+        return _ward;
     }
 
-    public void logOwnerHandlerList()
+    bool PlayerHasHandler(VRCPlayerApi player)
     {
-        Debug.Log($"LOGGING OWNER HANDLER LIST:");
-        for (int i = 0; i < handlerCount; i++)
+        // Go trough all handlers and check if the handlers owner matches the player
+        foreach (THH_PlayerObjectHandler handler in handlers)
         {
-            if (handlerOwnerList[i] == null)
+            VRCPlayerApi owner = Networking.GetOwner(handler.gameObject);
+            if (owner == player)
             {
-                Debug.Log($"{i}: NULL");
-            }
-            else
-            {
-                Debug.Log($"{i}: {handlerOwnerList[i].displayName}");
+                return true;
             }
         }
+        return false;
+    }
+
+    void FindUnassignedHandler()
+    {
+        if (masterHandler == null)
+        {
+            Debug.LogError($"<color=green>[THH_PlayerManager]</color> Master handler has not yet been set, aborting FindUnassignedHandler");
+            return;
+        }
+
+        foreach (THH_PlayerObjectHandler handler in handlers)
+        {
+            if (Networking.GetOwner(handler.gameObject).isMaster && handler != masterHandler)
+            {
+                Debug.Log($"<color=green>[THH_PlayerManager]</color> Assigning handler {handler.name}");
+
+                Networking.SetOwner(Networking.LocalPlayer, handler.gameObject);
+
+                assignedHandler = handler;
+                handlerAssigned = true;
+                assignmentDelayed = false;
+                return;
+            }
+        }
+        assignmentDelayed = false;
+        Debug.LogError($"<color=green>[THH_PlayerManager]</color> No unassigned handler could be found");
     }
 }

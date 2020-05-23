@@ -2,97 +2,63 @@
 using UdonSharp;
 using UnityEngine;
 using VRC.SDKBase;
-using VRC.Udon;
 
 public class THH_PlayerObjectHandler : UdonSharpBehaviour
 {
-    private THH_PlayerManager playerManager;
-    [HideInInspector]
-    public bool blocked;
-
-    [HideInInspector]
-    public UdonBehaviour customEventUdonTarget;
-    [HideInInspector]
-    public string customEventName;
-    [HideInInspector]
-    public bool isActive;
-
-    public void SendCustomNetworkEventToPlayer()
-    {
-        Debug.Log(customEventUdonTarget.name);
-        customEventUdonTarget.SendCustomEvent(customEventName);
-    }
-
+    private THH_PlayerManager PlayerManager;
+    // This variable is only relevant and accurate for the master; Do not use it unless you know what youre doing
+    private bool ownedByMaster = true;
     void Start()
-    {
-        playerManager = transform.parent.GetComponent<THH_PlayerManager>();
-        SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.Owner, "BroadcastHandlerState");
-    }
-
-    public void SetMasterHandler()
-    {
-        Debug.Log($"<color=green>[THH_PlayerManager]</color> Setting master handler to {name}");
-        playerManager.masterHandler = this;
-        if (playerManager.masterTransfer)
+    { 
+        GameObject PlayerManagerGO = GameObject.Find("[THH_PlayerManager]");
+        if (PlayerManagerGO == null)
         {
-            playerManager.MasterTransferFinished();
+            Debug.LogError($"<color=green>[THH_PlayerManager]</color> Could not find Player Manager GameObject");
+        }
+        PlayerManager = PlayerManagerGO.GetComponent<THH_PlayerManager>();
+        if (PlayerManager == null)
+        {
+            Debug.LogError($"<color=green>[THH_PlayerManager]</color> PlayerManager GameObject has no THH_PlayerManager Component");
         }
     }
 
-    public void TakeOwnership()
+    public void BroadcastMasterHandler()
     {
-        if (playerManager.ownershipTargetID == Networking.LocalPlayer.playerId)
+        if (PlayerManager.masterHandler != this)
         {
-            Debug.Log($"<color=green>[THH_PlayerManager]</color> You have been assigned handler {name}");
-            Networking.SetOwner(Networking.LocalPlayer, gameObject);
-            playerManager.assignedHandler = this;
-            blocked = true;
-            SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "Activate");
+            Debug.Log($"<color=green>[THH_PlayerManager]</color> Master handler set to {name}");
+            PlayerManager.masterHandler = this;
+            PlayerManager.OnMasterHandlerSet();
+        }
+    }
+
+    public override void OnOwnershipTransferred()
+    {
+        if (Networking.IsMaster)
+        {
+            if (Networking.LocalPlayer.IsOwner(gameObject) && !ownedByMaster)
+            {
+                ownedByMaster = true;
+            }
+            else if (!Networking.LocalPlayer.IsOwner(gameObject) && ownedByMaster)
+            {
+                Debug.Log($"<color=green>[THH_PlayerManager]</color> Ownership has been transferred to {Networking.GetOwner(gameObject).displayName}");
+                ownedByMaster = false;
+                PlayerManager.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "CheckHandlerAssignmentAvailability");
+            }
         }
     }
 
     public override void OnPlayerLeft(VRCPlayerApi player)
     {
-        if (Networking.GetOwner(gameObject).isMaster)
+        if (Networking.IsMaster)
         {
-            Debug.Log($"<color=green>[THH_PlayerManager]</color> Unblocking handler {name}");
-            blocked = false;
-            if (Networking.IsMaster && playerManager.assignedHandler != this)
+            // If any player left, check if you are owner again (master)
+            if (Networking.LocalPlayer.IsOwner(gameObject) && !ownedByMaster)
             {
-                SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "Deactivate");
+                Debug.Log($"<color=green>[THH_PlayerManager]</color> The previous owner of handler {name}: {player.displayName} has left; Ownership has been transferred back to you");
+                ownedByMaster = true;
             }
         }
-    }
-
-    // This event should only be called by the owner!
-    public void BroadcastHandlerState()
-    {
-        if (!Networking.IsOwner(gameObject))
-        {
-            Debug.LogWarning($"<color=green>[THH_PlayerManager]</color> Unauthorized event call: BroadcastHandlerState; You are not owner!");
-            return;
-        }
-
-        if (isActive)
-        {
-            SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "Activate");
-        }
-        else
-        {
-            SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "Deactivate");
-        }
-    }
-
-    public void Activate()
-    {
-        Debug.Log($"<color=green>[THH_PlayerManager]</color> Activating handler {name}; Owner is: {Networking.GetOwner(gameObject).displayName}");
-        isActive = true;
-
-    }
-
-    public void Deactivate()
-    {
-        Debug.Log($"<color=green>[THH_PlayerManager]</color> Deactivating handler {name}; Owner is: {Networking.GetOwner(gameObject).displayName}");
-        isActive = false;
     }
 }
