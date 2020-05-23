@@ -1,4 +1,4 @@
-**PlayerManager v1.1**
+**PlayerManager v2.0**
 
 Purpose: Give every player a personal object they own and send custom network events to specific players.<br/>
 Complexity Level: High
@@ -7,5 +7,3 @@ Complexity Level: High
 Unpack both prefabs and add your system to the handler. Now duplicate the handler as many times as you need it (Maximum Players * 2 + 1 to be safe).
 
 **MAKE SURE TO RECOMPILE ALL UDON SHARP SCRIPTS AFTER IMPORTING**
-
-Explanatory Video: https://www.youtube.com/watch?v=CmIHnWkpyzA
