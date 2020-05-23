@@ -1,0 +1,1764 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
+  m_Name: THH_CanvasLogManager
+  m_EditorClassIdentifier: 
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 73d8de92ce061804dbefcdca3f992fa6,
+    type: 2}
+  udonAssembly: ".data_start\r\n\r\n    .export LogTextPrefab\r\n\r\n    __refl_const_intnl_udonTypeID:
+    %SystemInt64, null\r\n    __refl_const_intnl_udonTypeName: %SystemString, null\r\n
+    \   LogTextPrefab: %UnityEngineGameObject, null\r\n    currentNumberOfLogs: %SystemInt32,
+    null\r\n    maxLogs: %SystemInt32, null\r\n    LogTextContainer: %UnityEngineTransform,
+    null\r\n    __0_this_intnl_UnityEngineTransform: %UnityEngineTransform, this\r\n
+    \   __0_this_intnl_THH_CanvasLogManager: %VRCUdonUdonBehaviour, this\r\n    __0_newLog_GameObject:
+    %UnityEngineGameObject, null\r\n    __1_newLog_GameObject: %UnityEngineGameObject,
+    null\r\n    __2_newLog_GameObject: %UnityEngineGameObject, null\r\n    __0_text_String:
+    %SystemString, null\r\n    __1_text_String: %SystemString, null\r\n    __2_text_String:
+    %SystemString, null\r\n    __0_newLogText_Text: %UnityEngineUIText, null\r\n    __1_newLogText_Text:
+    %UnityEngineUIText, null\r\n    __2_newLogText_Text: %UnityEngineUIText, null\r\n
+    \   __0_const_intnl_SystemBoolean: %SystemBoolean, null\r\n    __0_const_intnl_SystemInt32:
+    %SystemInt32, null\r\n    __1_const_intnl_SystemInt32: %SystemInt32, null\r\n
+    \   __0_const_intnl_SystemString: %SystemString, null\r\n    __1_const_intnl_SystemString:
+    %SystemString, null\r\n    __2_const_intnl_SystemString: %SystemString, null\r\n
+    \   __3_const_intnl_SystemString: %SystemString, null\r\n    __4_const_intnl_SystemString:
+    %SystemString, null\r\n    __0_const_intnl_SystemType: %SystemType, null\r\n    __0_const_intnl_SystemUInt32:
+    %SystemUInt32, null\r\n    __0_intnl_SystemBoolean: %SystemBoolean, null\r\n    __1_intnl_SystemBoolean:
+    %SystemBoolean, null\r\n    __2_intnl_SystemBoolean: %SystemBoolean, null\r\n
+    \   __0_intnl_SystemDateTime: %SystemDateTime, null\r\n    __1_intnl_SystemDateTime:
+    %SystemDateTime, null\r\n    __2_intnl_SystemDateTime: %SystemDateTime, null\r\n
+    \   __0_intnl_UnityEngineGameObject: %UnityEngineGameObject, null\r\n    __1_intnl_UnityEngineGameObject:
+    %UnityEngineGameObject, null\r\n    __2_intnl_UnityEngineGameObject: %UnityEngineGameObject,
+    null\r\n    __3_intnl_UnityEngineGameObject: %UnityEngineGameObject, null\r\n
+    \   __4_intnl_UnityEngineGameObject: %UnityEngineGameObject, null\r\n    __5_intnl_UnityEngineGameObject:
+    %UnityEngineGameObject, null\r\n    __0_intnl_SystemInt32: %SystemInt32, null\r\n
+    \   __1_intnl_SystemInt32: %SystemInt32, null\r\n    __2_intnl_SystemInt32: %SystemInt32,
+    null\r\n    __3_intnl_SystemInt32: %SystemInt32, null\r\n    __4_intnl_SystemInt32:
+    %SystemInt32, null\r\n    __5_intnl_SystemInt32: %SystemInt32, null\r\n    __0_intnl_interpolatedStr_String:
+    %SystemString, null\r\n    __0_intnl_SystemString: %SystemString, null\r\n    __1_intnl_interpolatedStr_String:
+    %SystemString, null\r\n    __1_intnl_SystemString: %SystemString, null\r\n    __2_intnl_interpolatedStr_String:
+    %SystemString, null\r\n    __2_intnl_SystemString: %SystemString, null\r\n    __3_intnl_SystemString:
+    %SystemString, null\r\n    __4_intnl_SystemString: %SystemString, null\r\n    __5_intnl_SystemString:
+    %SystemString, null\r\n    __6_intnl_SystemString: %SystemString, null\r\n    __7_intnl_SystemString:
+    %SystemString, null\r\n    __8_intnl_SystemString: %SystemString, null\r\n    __0_intnl_UnityEngineUIText:
+    %UnityEngineUIText, null\r\n    __1_intnl_UnityEngineUIText: %UnityEngineUIText,
+    null\r\n    __2_intnl_UnityEngineUIText: %UnityEngineUIText, null\r\n    __0_intnl_UnityEngineTransform:
+    %UnityEngineTransform, null\r\n    __1_intnl_UnityEngineTransform: %UnityEngineTransform,
+    null\r\n    __2_intnl_UnityEngineTransform: %UnityEngineTransform, null\r\n    __3_intnl_UnityEngineTransform:
+    %UnityEngineTransform, null\r\n    __4_intnl_UnityEngineTransform: %UnityEngineTransform,
+    null\r\n    __5_intnl_UnityEngineTransform: %UnityEngineTransform, null\r\n    __6_intnl_UnityEngineTransform:
+    %UnityEngineTransform, null\r\n    __7_intnl_UnityEngineTransform: %UnityEngineTransform,
+    null\r\n    __8_intnl_UnityEngineTransform: %UnityEngineTransform, null\r\n    __9_intnl_UnityEngineTransform:
+    %UnityEngineTransform, null\r\n    __0_intnl_returnTarget_UInt32: %SystemUInt32,
+    null\r\n\r\n.data_end\r\n\r\n        \r\n         # using System;\r\n        \r\n
+    \        # using UdonSharp;\r\n        \r\n         # using UnityEngine;\r\n        \r\n
+    \        # using UnityEngine.UI;\r\n        \r\n         # using VRC.SDKBase;\r\n
+    \       \r\n         # using VRC.Udon;\r\n        \r\n         # public class
+    THH_CanvasLogManager : UdonSharpBehaviour\r\n.code_start\r\n        \r\n         #
+    public GameObject LogTextPrefab;\r\n        \r\n         # private Transform LogTextContainer;\r\n
+    \       \r\n         # private int maxLogs = 50;\r\n        \r\n         # private
+    int currentNumberOfLogs;\r\n        \r\n         # public void Start()\r\n    .export
+    _start\r\n        \r\n    _start:\r\n        \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n
+    \       PUSH, __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        \r\n         #
+    {\r\n        \r\n         # LogTextContainer = transform.Find(\"Scroll View/Viewport/Content/LogTextContainer\");\r\n
+    \       PUSH, __0_this_intnl_UnityEngineTransform\r\n        PUSH, __0_const_intnl_SystemString\r\n
+    \       PUSH, __0_intnl_UnityEngineTransform\r\n        EXTERN, \"UnityEngineTransform.__Find__SystemString__UnityEngineTransform\"\r\n
+    \       PUSH, __0_intnl_UnityEngineTransform\r\n        PUSH, LogTextContainer\r\n
+    \       COPY\r\n        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n        \r\n
+    \       \r\n         # public void Log(string text)\r\n    .export Log\r\n        \r\n
+    \   Log:\r\n        \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n        PUSH,
+    __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        \r\n         # {\r\n
+    \       \r\n         # GameObject newLog = VRCInstantiate(LogTextPrefab);\r\n
+    \       PUSH, LogTextPrefab\r\n        PUSH, __0_intnl_UnityEngineGameObject\r\n
+    \       EXTERN, \"VRCInstantiate.__Instantiate__UnityEngineGameObject__UnityEngineGameObject\"\r\n
+    \       PUSH, __0_intnl_UnityEngineGameObject\r\n        PUSH, __0_newLog_GameObject\r\n
+    \       COPY\r\n        \r\n         # Text newLogText = newLog.GetComponent<Text>();\r\n
+    \       PUSH, __0_newLog_GameObject\r\n        PUSH, __1_intnl_UnityEngineTransform\r\n
+    \       EXTERN, \"UnityEngineGameObject.__get_transform__UnityEngineTransform\"\r\n
+    \       PUSH, __1_intnl_UnityEngineTransform\r\n        PUSH, __0_const_intnl_SystemType\r\n
+    \       PUSH, __0_intnl_UnityEngineUIText\r\n        EXTERN, \"UnityEngineUIText.__GetComponent__T\"\r\n
+    \       PUSH, __0_intnl_UnityEngineUIText\r\n        PUSH, __0_newLogText_Text\r\n
+    \       COPY\r\n        \r\n         # newLogText.text = $\"{DateTime.Now.ToString(\"MM/dd/yyyy
+    HH:mm:ss\")} <color=white>Log</color> - {text}\";\r\n        PUSH, __0_intnl_SystemDateTime\r\n
+    \       EXTERN, \"SystemDateTime.__get_Now__SystemDateTime\"\r\n        PUSH,
+    __0_intnl_SystemDateTime\r\n        PUSH, __1_const_intnl_SystemString\r\n        PUSH,
+    __0_intnl_SystemString\r\n        EXTERN, \"SystemDateTime.__ToString__SystemString__SystemString\"\r\n
+    \       PUSH, __0_intnl_SystemString\r\n        PUSH, __0_intnl_interpolatedStr_String\r\n
+    \       COPY\r\n        PUSH, __0_intnl_interpolatedStr_String\r\n        PUSH,
+    __2_const_intnl_SystemString\r\n        PUSH, __1_intnl_SystemString\r\n        EXTERN,
+    \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n        PUSH,
+    __1_intnl_SystemString\r\n        PUSH, __0_intnl_interpolatedStr_String\r\n        COPY\r\n
+    \       PUSH, __0_intnl_interpolatedStr_String\r\n        PUSH, __0_text_String\r\n
+    \       PUSH, __2_intnl_SystemString\r\n        EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n
+    \       PUSH, __2_intnl_SystemString\r\n        PUSH, __0_intnl_interpolatedStr_String\r\n
+    \       COPY\r\n        PUSH, __0_newLogText_Text\r\n        PUSH, __0_intnl_interpolatedStr_String\r\n
+    \       EXTERN, \"UnityEngineUIText.__set_text__SystemString__SystemVoid\"\r\n
+    \       \r\n         # newLog.transform.SetParent(LogTextContainer, false);\r\n
+    \       PUSH, __0_newLog_GameObject\r\n        PUSH, __2_intnl_UnityEngineTransform\r\n
+    \       EXTERN, \"UnityEngineGameObject.__get_transform__UnityEngineTransform\"\r\n
+    \       PUSH, __2_intnl_UnityEngineTransform\r\n        PUSH, LogTextContainer\r\n
+    \       PUSH, __0_const_intnl_SystemBoolean\r\n        EXTERN, \"UnityEngineTransform.__SetParent__UnityEngineTransform_SystemBoolean__SystemVoid\"\r\n
+    \       \r\n         # currentNumberOfLogs++;\r\n        PUSH, currentNumberOfLogs\r\n
+    \       PUSH, __0_intnl_SystemInt32\r\n        COPY\r\n        PUSH, currentNumberOfLogs\r\n
+    \       PUSH, __0_const_intnl_SystemInt32\r\n        PUSH, __1_intnl_SystemInt32\r\n
+    \       EXTERN, \"SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32\"\r\n
+    \       PUSH, __1_intnl_SystemInt32\r\n        PUSH, currentNumberOfLogs\r\n        COPY\r\n
+    \       \r\n         # if (currentNumberOfLogs > maxLogs)\r\n        PUSH, currentNumberOfLogs\r\n
+    \       PUSH, maxLogs\r\n        PUSH, __0_intnl_SystemBoolean\r\n        EXTERN,
+    \"SystemInt32.__op_GreaterThan__SystemInt32_SystemInt32__SystemBoolean\"\r\n        PUSH,
+    __0_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000298\r\n        \r\n         #
+    {\r\n        \r\n         # Destroy(LogTextContainer.GetChild(0).gameObject);\r\n
+    \       PUSH, LogTextContainer\r\n        PUSH, __1_const_intnl_SystemInt32\r\n
+    \       PUSH, __3_intnl_UnityEngineTransform\r\n        EXTERN, \"UnityEngineTransform.__GetChild__SystemInt32__UnityEngineTransform\"\r\n
+    \       PUSH, __3_intnl_UnityEngineTransform\r\n        PUSH, __1_intnl_UnityEngineGameObject\r\n
+    \       EXTERN, \"UnityEngineTransform.__get_gameObject__UnityEngineGameObject\"\r\n
+    \       PUSH, __1_intnl_UnityEngineGameObject\r\n        EXTERN, \"UnityEngineObject.__Destroy__UnityEngineObject__SystemVoid\"\r\n
+    \       JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n        \r\n        \r\n
+    \        # public void LogWarning(string text)\r\n    .export LogWarning\r\n        \r\n
+    \   LogWarning:\r\n        \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n
+    \       PUSH, __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        \r\n         #
+    {\r\n        \r\n         # GameObject newLog = VRCInstantiate(LogTextPrefab);\r\n
+    \       PUSH, LogTextPrefab\r\n        PUSH, __2_intnl_UnityEngineGameObject\r\n
+    \       EXTERN, \"VRCInstantiate.__Instantiate__UnityEngineGameObject__UnityEngineGameObject\"\r\n
+    \       PUSH, __2_intnl_UnityEngineGameObject\r\n        PUSH, __1_newLog_GameObject\r\n
+    \       COPY\r\n        \r\n         # Text newLogText = newLog.GetComponent<Text>();\r\n
+    \       PUSH, __1_newLog_GameObject\r\n        PUSH, __4_intnl_UnityEngineTransform\r\n
+    \       EXTERN, \"UnityEngineGameObject.__get_transform__UnityEngineTransform\"\r\n
+    \       PUSH, __4_intnl_UnityEngineTransform\r\n        PUSH, __0_const_intnl_SystemType\r\n
+    \       PUSH, __1_intnl_UnityEngineUIText\r\n        EXTERN, \"UnityEngineUIText.__GetComponent__T\"\r\n
+    \       PUSH, __1_intnl_UnityEngineUIText\r\n        PUSH, __1_newLogText_Text\r\n
+    \       COPY\r\n        \r\n         # newLogText.text = $\"{DateTime.Now.ToString(\"MM/dd/yyyy
+    HH:mm:ss\")} <color=yellow>Warning</color> - {text}\";\r\n        PUSH, __1_intnl_SystemDateTime\r\n
+    \       EXTERN, \"SystemDateTime.__get_Now__SystemDateTime\"\r\n        PUSH,
+    __1_intnl_SystemDateTime\r\n        PUSH, __1_const_intnl_SystemString\r\n        PUSH,
+    __3_intnl_SystemString\r\n        EXTERN, \"SystemDateTime.__ToString__SystemString__SystemString\"\r\n
+    \       PUSH, __3_intnl_SystemString\r\n        PUSH, __1_intnl_interpolatedStr_String\r\n
+    \       COPY\r\n        PUSH, __1_intnl_interpolatedStr_String\r\n        PUSH,
+    __3_const_intnl_SystemString\r\n        PUSH, __4_intnl_SystemString\r\n        EXTERN,
+    \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n        PUSH,
+    __4_intnl_SystemString\r\n        PUSH, __1_intnl_interpolatedStr_String\r\n        COPY\r\n
+    \       PUSH, __1_intnl_interpolatedStr_String\r\n        PUSH, __1_text_String\r\n
+    \       PUSH, __5_intnl_SystemString\r\n        EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n
+    \       PUSH, __5_intnl_SystemString\r\n        PUSH, __1_intnl_interpolatedStr_String\r\n
+    \       COPY\r\n        PUSH, __1_newLogText_Text\r\n        PUSH, __1_intnl_interpolatedStr_String\r\n
+    \       EXTERN, \"UnityEngineUIText.__set_text__SystemString__SystemVoid\"\r\n
+    \       \r\n         # newLog.transform.SetParent(LogTextContainer, false);\r\n
+    \       PUSH, __1_newLog_GameObject\r\n        PUSH, __5_intnl_UnityEngineTransform\r\n
+    \       EXTERN, \"UnityEngineGameObject.__get_transform__UnityEngineTransform\"\r\n
+    \       PUSH, __5_intnl_UnityEngineTransform\r\n        PUSH, LogTextContainer\r\n
+    \       PUSH, __0_const_intnl_SystemBoolean\r\n        EXTERN, \"UnityEngineTransform.__SetParent__UnityEngineTransform_SystemBoolean__SystemVoid\"\r\n
+    \       \r\n         # currentNumberOfLogs++;\r\n        PUSH, currentNumberOfLogs\r\n
+    \       PUSH, __2_intnl_SystemInt32\r\n        COPY\r\n        PUSH, currentNumberOfLogs\r\n
+    \       PUSH, __0_const_intnl_SystemInt32\r\n        PUSH, __3_intnl_SystemInt32\r\n
+    \       EXTERN, \"SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32\"\r\n
+    \       PUSH, __3_intnl_SystemInt32\r\n        PUSH, currentNumberOfLogs\r\n        COPY\r\n
+    \       \r\n         # if (currentNumberOfLogs > maxLogs)\r\n        PUSH, currentNumberOfLogs\r\n
+    \       PUSH, maxLogs\r\n        PUSH, __1_intnl_SystemBoolean\r\n        EXTERN,
+    \"SystemInt32.__op_GreaterThan__SystemInt32_SystemInt32__SystemBoolean\"\r\n        PUSH,
+    __1_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x000004E8\r\n        \r\n         #
+    {\r\n        \r\n         # Destroy(LogTextContainer.GetChild(0).gameObject);\r\n
+    \       PUSH, LogTextContainer\r\n        PUSH, __1_const_intnl_SystemInt32\r\n
+    \       PUSH, __6_intnl_UnityEngineTransform\r\n        EXTERN, \"UnityEngineTransform.__GetChild__SystemInt32__UnityEngineTransform\"\r\n
+    \       PUSH, __6_intnl_UnityEngineTransform\r\n        PUSH, __3_intnl_UnityEngineGameObject\r\n
+    \       EXTERN, \"UnityEngineTransform.__get_gameObject__UnityEngineGameObject\"\r\n
+    \       PUSH, __3_intnl_UnityEngineGameObject\r\n        EXTERN, \"UnityEngineObject.__Destroy__UnityEngineObject__SystemVoid\"\r\n
+    \       JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n        \r\n        \r\n
+    \        # public void LogError(string text)\r\n    .export LogError\r\n        \r\n
+    \   LogError:\r\n        \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n        PUSH,
+    __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        \r\n         # {\r\n
+    \       \r\n         # GameObject newLog = VRCInstantiate(LogTextPrefab);\r\n
+    \       PUSH, LogTextPrefab\r\n        PUSH, __4_intnl_UnityEngineGameObject\r\n
+    \       EXTERN, \"VRCInstantiate.__Instantiate__UnityEngineGameObject__UnityEngineGameObject\"\r\n
+    \       PUSH, __4_intnl_UnityEngineGameObject\r\n        PUSH, __2_newLog_GameObject\r\n
+    \       COPY\r\n        \r\n         # Text newLogText = newLog.GetComponent<Text>();\r\n
+    \       PUSH, __2_newLog_GameObject\r\n        PUSH, __7_intnl_UnityEngineTransform\r\n
+    \       EXTERN, \"UnityEngineGameObject.__get_transform__UnityEngineTransform\"\r\n
+    \       PUSH, __7_intnl_UnityEngineTransform\r\n        PUSH, __0_const_intnl_SystemType\r\n
+    \       PUSH, __2_intnl_UnityEngineUIText\r\n        EXTERN, \"UnityEngineUIText.__GetComponent__T\"\r\n
+    \       PUSH, __2_intnl_UnityEngineUIText\r\n        PUSH, __2_newLogText_Text\r\n
+    \       COPY\r\n        \r\n         # newLogText.text = $\"{DateTime.Now.ToString(\"MM/dd/yyyy
+    HH:mm:ss\")} <color=red>ERROR</color> - {text}\";\r\n        PUSH, __2_intnl_SystemDateTime\r\n
+    \       EXTERN, \"SystemDateTime.__get_Now__SystemDateTime\"\r\n        PUSH,
+    __2_intnl_SystemDateTime\r\n        PUSH, __1_const_intnl_SystemString\r\n        PUSH,
+    __6_intnl_SystemString\r\n        EXTERN, \"SystemDateTime.__ToString__SystemString__SystemString\"\r\n
+    \       PUSH, __6_intnl_SystemString\r\n        PUSH, __2_intnl_interpolatedStr_String\r\n
+    \       COPY\r\n        PUSH, __2_intnl_interpolatedStr_String\r\n        PUSH,
+    __4_const_intnl_SystemString\r\n        PUSH, __7_intnl_SystemString\r\n        EXTERN,
+    \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n        PUSH,
+    __7_intnl_SystemString\r\n        PUSH, __2_intnl_interpolatedStr_String\r\n        COPY\r\n
+    \       PUSH, __2_intnl_interpolatedStr_String\r\n        PUSH, __2_text_String\r\n
+    \       PUSH, __8_intnl_SystemString\r\n        EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n
+    \       PUSH, __8_intnl_SystemString\r\n        PUSH, __2_intnl_interpolatedStr_String\r\n
+    \       COPY\r\n        PUSH, __2_newLogText_Text\r\n        PUSH, __2_intnl_interpolatedStr_String\r\n
+    \       EXTERN, \"UnityEngineUIText.__set_text__SystemString__SystemVoid\"\r\n
+    \       \r\n         # newLog.transform.SetParent(LogTextContainer, false);\r\n
+    \       PUSH, __2_newLog_GameObject\r\n        PUSH, __8_intnl_UnityEngineTransform\r\n
+    \       EXTERN, \"UnityEngineGameObject.__get_transform__UnityEngineTransform\"\r\n
+    \       PUSH, __8_intnl_UnityEngineTransform\r\n        PUSH, LogTextContainer\r\n
+    \       PUSH, __0_const_intnl_SystemBoolean\r\n        EXTERN, \"UnityEngineTransform.__SetParent__UnityEngineTransform_SystemBoolean__SystemVoid\"\r\n
+    \       \r\n         # currentNumberOfLogs++;\r\n        PUSH, currentNumberOfLogs\r\n
+    \       PUSH, __4_intnl_SystemInt32\r\n        COPY\r\n        PUSH, currentNumberOfLogs\r\n
+    \       PUSH, __0_const_intnl_SystemInt32\r\n        PUSH, __5_intnl_SystemInt32\r\n
+    \       EXTERN, \"SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32\"\r\n
+    \       PUSH, __5_intnl_SystemInt32\r\n        PUSH, currentNumberOfLogs\r\n        COPY\r\n
+    \       \r\n         # if (currentNumberOfLogs > maxLogs)\r\n        PUSH, currentNumberOfLogs\r\n
+    \       PUSH, maxLogs\r\n        PUSH, __2_intnl_SystemBoolean\r\n        EXTERN,
+    \"SystemInt32.__op_GreaterThan__SystemInt32_SystemInt32__SystemBoolean\"\r\n        PUSH,
+    __2_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000738\r\n        \r\n         #
+    {\r\n        \r\n         # Destroy(LogTextContainer.GetChild(0).gameObject);\r\n
+    \       PUSH, LogTextContainer\r\n        PUSH, __1_const_intnl_SystemInt32\r\n
+    \       PUSH, __9_intnl_UnityEngineTransform\r\n        EXTERN, \"UnityEngineTransform.__GetChild__SystemInt32__UnityEngineTransform\"\r\n
+    \       PUSH, __9_intnl_UnityEngineTransform\r\n        PUSH, __5_intnl_UnityEngineGameObject\r\n
+    \       EXTERN, \"UnityEngineTransform.__get_gameObject__UnityEngineGameObject\"\r\n
+    \       PUSH, __5_intnl_UnityEngineGameObject\r\n        EXTERN, \"UnityEngineObject.__Destroy__UnityEngineObject__SystemVoid\"\r\n
+    \       JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n        \r\n.code_end\r\n"
+  assemblyError: 
+  sourceCsScript: {fileID: 11500000, guid: 026360b4f030e4a49a19e0188b8a2fa0, type: 3}
+  behaviourIDHeapVarName: __refl_const_intnl_udonTypeID
+  compileErrors: []
+  debugInfo:
+    serializedDebugSpans:
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 0
+      endSourceChar: 2
+      line: 0
+      lineChar: 0
+      spanCodeSection: "\r\n"
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 2
+      endSourceChar: 2
+      line: 1
+      lineChar: 0
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 2
+      endSourceChar: 8
+      line: 1
+      lineChar: 0
+      spanCodeSection: 'using '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 8
+      endSourceChar: 17
+      line: 1
+      lineChar: 6
+      spanCodeSection: "System;\r\n"
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 17
+      endSourceChar: 23
+      line: 2
+      lineChar: 0
+      spanCodeSection: 'using '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 23
+      endSourceChar: 35
+      line: 2
+      lineChar: 6
+      spanCodeSection: "UdonSharp;\r\n"
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 35
+      endSourceChar: 41
+      line: 3
+      lineChar: 0
+      spanCodeSection: 'using '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 41
+      endSourceChar: 55
+      line: 3
+      lineChar: 6
+      spanCodeSection: "UnityEngine;\r\n"
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 55
+      endSourceChar: 61
+      line: 4
+      lineChar: 0
+      spanCodeSection: 'using '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 61
+      endSourceChar: 61
+      line: 4
+      lineChar: 6
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 61
+      endSourceChar: 73
+      line: 4
+      lineChar: 6
+      spanCodeSection: UnityEngine.
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 73
+      endSourceChar: 78
+      line: 4
+      lineChar: 18
+      spanCodeSection: "UI;\r\n"
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 78
+      endSourceChar: 84
+      line: 5
+      lineChar: 0
+      spanCodeSection: 'using '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 84
+      endSourceChar: 84
+      line: 5
+      lineChar: 6
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 84
+      endSourceChar: 88
+      line: 5
+      lineChar: 6
+      spanCodeSection: VRC.
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 88
+      endSourceChar: 98
+      line: 5
+      lineChar: 10
+      spanCodeSection: "SDKBase;\r\n"
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 98
+      endSourceChar: 104
+      line: 6
+      lineChar: 0
+      spanCodeSection: 'using '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 104
+      endSourceChar: 104
+      line: 6
+      lineChar: 6
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 104
+      endSourceChar: 108
+      line: 6
+      lineChar: 6
+      spanCodeSection: VRC.
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 108
+      endSourceChar: 117
+      line: 6
+      lineChar: 10
+      spanCodeSection: "Udon;\r\n\r\n"
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 117
+      endSourceChar: 151
+      line: 8
+      lineChar: 0
+      spanCodeSection: 'public class THH_CanvasLogManager '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 151
+      endSourceChar: 153
+      line: 8
+      lineChar: 34
+      spanCodeSection: ': '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 153
+      endSourceChar: 153
+      line: 8
+      lineChar: 36
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 153
+      endSourceChar: 180
+      line: 8
+      lineChar: 36
+      spanCodeSection: "UdonSharpBehaviour\r\n{\r\n    "
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 180
+      endSourceChar: 187
+      line: 10
+      lineChar: 4
+      spanCodeSection: 'public '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 187
+      endSourceChar: 187
+      line: 10
+      lineChar: 11
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 187
+      endSourceChar: 218
+      line: 10
+      lineChar: 11
+      spanCodeSection: "GameObject LogTextPrefab;\r\n    "
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 218
+      endSourceChar: 226
+      line: 11
+      lineChar: 4
+      spanCodeSection: 'private '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 226
+      endSourceChar: 226
+      line: 11
+      lineChar: 12
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 226
+      endSourceChar: 261
+      line: 11
+      lineChar: 12
+      spanCodeSection: "Transform LogTextContainer;\r\n\r\n    "
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 261
+      endSourceChar: 269
+      line: 13
+      lineChar: 4
+      spanCodeSection: 'private '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 269
+      endSourceChar: 269
+      line: 13
+      lineChar: 12
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 269
+      endSourceChar: 292
+      line: 13
+      lineChar: 12
+      spanCodeSection: "int maxLogs = 50;\r\n    "
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 292
+      endSourceChar: 300
+      line: 14
+      lineChar: 4
+      spanCodeSection: 'private '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 300
+      endSourceChar: 300
+      line: 14
+      lineChar: 12
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 300
+      endSourceChar: 332
+      line: 14
+      lineChar: 12
+      spanCodeSection: "int currentNumberOfLogs;\r\n\r\n    "
+    - startInstruction: 0
+      endInstruction: 19
+      startSourceChar: 332
+      endSourceChar: 357
+      line: 16
+      lineChar: 4
+      spanCodeSection: "public void Start()\r\n    "
+    - startInstruction: 20
+      endInstruction: 19
+      startSourceChar: 357
+      endSourceChar: 368
+      line: 17
+      lineChar: 4
+      spanCodeSection: "{\r\n        "
+    - startInstruction: 20
+      endInstruction: 19
+      startSourceChar: 368
+      endSourceChar: 368
+      line: 18
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 20
+      endInstruction: 19
+      startSourceChar: 368
+      endSourceChar: 387
+      line: 18
+      lineChar: 8
+      spanCodeSection: 'LogTextContainer = '
+    - startInstruction: 20
+      endInstruction: 19
+      startSourceChar: 387
+      endSourceChar: 402
+      line: 18
+      lineChar: 27
+      spanCodeSection: transform.Find(
+    - startInstruction: 20
+      endInstruction: 79
+      startSourceChar: 402
+      endSourceChar: 464
+      line: 18
+      lineChar: 42
+      spanCodeSection: "\"Scroll View/Viewport/Content/LogTextContainer\");\r\n    }\r\n
+        \   "
+    - startInstruction: 80
+      endInstruction: 99
+      startSourceChar: 464
+      endSourceChar: 498
+      line: 20
+      lineChar: 4
+      spanCodeSection: "public void Log(string text)\r\n    "
+    - startInstruction: 100
+      endInstruction: 99
+      startSourceChar: 498
+      endSourceChar: 509
+      line: 21
+      lineChar: 4
+      spanCodeSection: "{\r\n        "
+    - startInstruction: 100
+      endInstruction: 99
+      startSourceChar: 509
+      endSourceChar: 509
+      line: 22
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 100
+      endInstruction: 99
+      startSourceChar: 509
+      endSourceChar: 509
+      line: 22
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 100
+      endInstruction: 99
+      startSourceChar: 509
+      endSourceChar: 509
+      line: 22
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 100
+      endInstruction: 99
+      startSourceChar: 509
+      endSourceChar: 527
+      line: 22
+      lineChar: 8
+      spanCodeSection: 'GameObject newLog '
+    - startInstruction: 100
+      endInstruction: 99
+      startSourceChar: 527
+      endSourceChar: 529
+      line: 22
+      lineChar: 26
+      spanCodeSection: '= '
+    - startInstruction: 100
+      endInstruction: 99
+      startSourceChar: 529
+      endSourceChar: 544
+      line: 22
+      lineChar: 28
+      spanCodeSection: VRCInstantiate(
+    - startInstruction: 100
+      endInstruction: 143
+      startSourceChar: 544
+      endSourceChar: 569
+      line: 22
+      lineChar: 43
+      spanCodeSection: "LogTextPrefab);\r\n        "
+    - startInstruction: 144
+      endInstruction: 143
+      startSourceChar: 569
+      endSourceChar: 569
+      line: 23
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 144
+      endInstruction: 143
+      startSourceChar: 569
+      endSourceChar: 569
+      line: 23
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 144
+      endInstruction: 143
+      startSourceChar: 569
+      endSourceChar: 569
+      line: 23
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 144
+      endInstruction: 143
+      startSourceChar: 569
+      endSourceChar: 585
+      line: 23
+      lineChar: 8
+      spanCodeSection: 'Text newLogText '
+    - startInstruction: 144
+      endInstruction: 143
+      startSourceChar: 585
+      endSourceChar: 587
+      line: 23
+      lineChar: 24
+      spanCodeSection: '= '
+    - startInstruction: 144
+      endInstruction: 143
+      startSourceChar: 587
+      endSourceChar: 587
+      line: 23
+      lineChar: 26
+      spanCodeSection: 
+    - startInstruction: 144
+      endInstruction: 143
+      startSourceChar: 587
+      endSourceChar: 587
+      line: 23
+      lineChar: 26
+      spanCodeSection: 
+    - startInstruction: 144
+      endInstruction: 143
+      startSourceChar: 587
+      endSourceChar: 594
+      line: 23
+      lineChar: 26
+      spanCodeSection: newLog.
+    - startInstruction: 144
+      endInstruction: 143
+      startSourceChar: 594
+      endSourceChar: 606
+      line: 23
+      lineChar: 33
+      spanCodeSection: GetComponent
+    - startInstruction: 144
+      endInstruction: 143
+      startSourceChar: 606
+      endSourceChar: 607
+      line: 23
+      lineChar: 45
+      spanCodeSection: <
+    - startInstruction: 144
+      endInstruction: 219
+      startSourceChar: 607
+      endSourceChar: 625
+      line: 23
+      lineChar: 46
+      spanCodeSection: "Text>();\r\n        "
+    - startInstruction: 220
+      endInstruction: 219
+      startSourceChar: 625
+      endSourceChar: 625
+      line: 24
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 220
+      endInstruction: 219
+      startSourceChar: 625
+      endSourceChar: 643
+      line: 24
+      lineChar: 8
+      spanCodeSection: 'newLogText.text = '
+    - startInstruction: 220
+      endInstruction: 219
+      startSourceChar: 643
+      endSourceChar: 645
+      line: 24
+      lineChar: 26
+      spanCodeSection: $"
+    - startInstruction: 220
+      endInstruction: 219
+      startSourceChar: 645
+      endSourceChar: 646
+      line: 24
+      lineChar: 28
+      spanCodeSection: '{'
+    - startInstruction: 220
+      endInstruction: 219
+      startSourceChar: 646
+      endSourceChar: 668
+      line: 24
+      lineChar: 29
+      spanCodeSection: DateTime.Now.ToString(
+    - startInstruction: 220
+      endInstruction: 287
+      startSourceChar: 668
+      endSourceChar: 691
+      line: 24
+      lineChar: 51
+      spanCodeSection: '"MM/dd/yyyy HH:mm:ss")}'
+    - startInstruction: 288
+      endInstruction: 339
+      startSourceChar: 691
+      endSourceChar: 719
+      line: 24
+      lineChar: 74
+      spanCodeSection: ' <color=white>Log</color> - '
+    - startInstruction: 340
+      endInstruction: 339
+      startSourceChar: 719
+      endSourceChar: 720
+      line: 24
+      lineChar: 102
+      spanCodeSection: '{'
+    - startInstruction: 340
+      endInstruction: 415
+      startSourceChar: 720
+      endSourceChar: 737
+      line: 24
+      lineChar: 103
+      spanCodeSection: "text}\";\r\n        "
+    - startInstruction: 416
+      endInstruction: 415
+      startSourceChar: 737
+      endSourceChar: 737
+      line: 25
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 416
+      endInstruction: 415
+      startSourceChar: 737
+      endSourceChar: 764
+      line: 25
+      lineChar: 8
+      spanCodeSection: newLog.transform.SetParent(
+    - startInstruction: 416
+      endInstruction: 415
+      startSourceChar: 764
+      endSourceChar: 782
+      line: 25
+      lineChar: 35
+      spanCodeSection: 'LogTextContainer, '
+    - startInstruction: 416
+      endInstruction: 471
+      startSourceChar: 782
+      endSourceChar: 799
+      line: 25
+      lineChar: 53
+      spanCodeSection: "false);\r\n        "
+    - startInstruction: 472
+      endInstruction: 471
+      startSourceChar: 799
+      endSourceChar: 799
+      line: 26
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 472
+      endInstruction: 471
+      startSourceChar: 799
+      endSourceChar: 799
+      line: 26
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 472
+      endInstruction: 543
+      startSourceChar: 799
+      endSourceChar: 833
+      line: 26
+      lineChar: 8
+      spanCodeSection: "currentNumberOfLogs++;\r\n\r\n        "
+    - startInstruction: 544
+      endInstruction: 543
+      startSourceChar: 833
+      endSourceChar: 837
+      line: 28
+      lineChar: 8
+      spanCodeSection: if (
+    - startInstruction: 544
+      endInstruction: 543
+      startSourceChar: 837
+      endSourceChar: 859
+      line: 28
+      lineChar: 12
+      spanCodeSection: 'currentNumberOfLogs > '
+    - startInstruction: 544
+      endInstruction: 591
+      startSourceChar: 859
+      endSourceChar: 877
+      line: 28
+      lineChar: 34
+      spanCodeSection: "maxLogs)\r\n        "
+    - startInstruction: 592
+      endInstruction: 591
+      startSourceChar: 877
+      endSourceChar: 892
+      line: 29
+      lineChar: 8
+      spanCodeSection: "{\r\n            "
+    - startInstruction: 592
+      endInstruction: 591
+      startSourceChar: 892
+      endSourceChar: 892
+      line: 30
+      lineChar: 12
+      spanCodeSection: 
+    - startInstruction: 592
+      endInstruction: 591
+      startSourceChar: 892
+      endSourceChar: 900
+      line: 30
+      lineChar: 12
+      spanCodeSection: Destroy(
+    - startInstruction: 592
+      endInstruction: 591
+      startSourceChar: 900
+      endSourceChar: 900
+      line: 30
+      lineChar: 20
+      spanCodeSection: 
+    - startInstruction: 592
+      endInstruction: 591
+      startSourceChar: 900
+      endSourceChar: 926
+      line: 30
+      lineChar: 20
+      spanCodeSection: LogTextContainer.GetChild(
+    - startInstruction: 592
+      endInstruction: 623
+      startSourceChar: 926
+      endSourceChar: 929
+      line: 30
+      lineChar: 46
+      spanCodeSection: 0).
+    - startInstruction: 624
+      endInstruction: 671
+      startSourceChar: 929
+      endSourceChar: 967
+      line: 30
+      lineChar: 49
+      spanCodeSection: "gameObject);\r\n        }\r\n    }\r\n\r\n    "
+    - startInstruction: 672
+      endInstruction: 691
+      startSourceChar: 967
+      endSourceChar: 1008
+      line: 34
+      lineChar: 4
+      spanCodeSection: "public void LogWarning(string text)\r\n    "
+    - startInstruction: 692
+      endInstruction: 691
+      startSourceChar: 1008
+      endSourceChar: 1019
+      line: 35
+      lineChar: 4
+      spanCodeSection: "{\r\n        "
+    - startInstruction: 692
+      endInstruction: 691
+      startSourceChar: 1019
+      endSourceChar: 1019
+      line: 36
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 692
+      endInstruction: 691
+      startSourceChar: 1019
+      endSourceChar: 1019
+      line: 36
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 692
+      endInstruction: 691
+      startSourceChar: 1019
+      endSourceChar: 1019
+      line: 36
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 692
+      endInstruction: 691
+      startSourceChar: 1019
+      endSourceChar: 1037
+      line: 36
+      lineChar: 8
+      spanCodeSection: 'GameObject newLog '
+    - startInstruction: 692
+      endInstruction: 691
+      startSourceChar: 1037
+      endSourceChar: 1039
+      line: 36
+      lineChar: 26
+      spanCodeSection: '= '
+    - startInstruction: 692
+      endInstruction: 691
+      startSourceChar: 1039
+      endSourceChar: 1054
+      line: 36
+      lineChar: 28
+      spanCodeSection: VRCInstantiate(
+    - startInstruction: 692
+      endInstruction: 735
+      startSourceChar: 1054
+      endSourceChar: 1079
+      line: 36
+      lineChar: 43
+      spanCodeSection: "LogTextPrefab);\r\n        "
+    - startInstruction: 736
+      endInstruction: 735
+      startSourceChar: 1079
+      endSourceChar: 1079
+      line: 37
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 736
+      endInstruction: 735
+      startSourceChar: 1079
+      endSourceChar: 1079
+      line: 37
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 736
+      endInstruction: 735
+      startSourceChar: 1079
+      endSourceChar: 1079
+      line: 37
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 736
+      endInstruction: 735
+      startSourceChar: 1079
+      endSourceChar: 1095
+      line: 37
+      lineChar: 8
+      spanCodeSection: 'Text newLogText '
+    - startInstruction: 736
+      endInstruction: 735
+      startSourceChar: 1095
+      endSourceChar: 1097
+      line: 37
+      lineChar: 24
+      spanCodeSection: '= '
+    - startInstruction: 736
+      endInstruction: 735
+      startSourceChar: 1097
+      endSourceChar: 1097
+      line: 37
+      lineChar: 26
+      spanCodeSection: 
+    - startInstruction: 736
+      endInstruction: 735
+      startSourceChar: 1097
+      endSourceChar: 1097
+      line: 37
+      lineChar: 26
+      spanCodeSection: 
+    - startInstruction: 736
+      endInstruction: 735
+      startSourceChar: 1097
+      endSourceChar: 1104
+      line: 37
+      lineChar: 26
+      spanCodeSection: newLog.
+    - startInstruction: 736
+      endInstruction: 735
+      startSourceChar: 1104
+      endSourceChar: 1116
+      line: 37
+      lineChar: 33
+      spanCodeSection: GetComponent
+    - startInstruction: 736
+      endInstruction: 735
+      startSourceChar: 1116
+      endSourceChar: 1117
+      line: 37
+      lineChar: 45
+      spanCodeSection: <
+    - startInstruction: 736
+      endInstruction: 811
+      startSourceChar: 1117
+      endSourceChar: 1135
+      line: 37
+      lineChar: 46
+      spanCodeSection: "Text>();\r\n        "
+    - startInstruction: 812
+      endInstruction: 811
+      startSourceChar: 1135
+      endSourceChar: 1135
+      line: 38
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 812
+      endInstruction: 811
+      startSourceChar: 1135
+      endSourceChar: 1153
+      line: 38
+      lineChar: 8
+      spanCodeSection: 'newLogText.text = '
+    - startInstruction: 812
+      endInstruction: 811
+      startSourceChar: 1153
+      endSourceChar: 1155
+      line: 38
+      lineChar: 26
+      spanCodeSection: $"
+    - startInstruction: 812
+      endInstruction: 811
+      startSourceChar: 1155
+      endSourceChar: 1156
+      line: 38
+      lineChar: 28
+      spanCodeSection: '{'
+    - startInstruction: 812
+      endInstruction: 811
+      startSourceChar: 1156
+      endSourceChar: 1178
+      line: 38
+      lineChar: 29
+      spanCodeSection: DateTime.Now.ToString(
+    - startInstruction: 812
+      endInstruction: 879
+      startSourceChar: 1178
+      endSourceChar: 1201
+      line: 38
+      lineChar: 51
+      spanCodeSection: '"MM/dd/yyyy HH:mm:ss")}'
+    - startInstruction: 880
+      endInstruction: 931
+      startSourceChar: 1201
+      endSourceChar: 1234
+      line: 38
+      lineChar: 74
+      spanCodeSection: ' <color=yellow>Warning</color> - '
+    - startInstruction: 932
+      endInstruction: 931
+      startSourceChar: 1234
+      endSourceChar: 1235
+      line: 38
+      lineChar: 107
+      spanCodeSection: '{'
+    - startInstruction: 932
+      endInstruction: 1007
+      startSourceChar: 1235
+      endSourceChar: 1252
+      line: 38
+      lineChar: 108
+      spanCodeSection: "text}\";\r\n        "
+    - startInstruction: 1008
+      endInstruction: 1007
+      startSourceChar: 1252
+      endSourceChar: 1252
+      line: 39
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 1008
+      endInstruction: 1007
+      startSourceChar: 1252
+      endSourceChar: 1279
+      line: 39
+      lineChar: 8
+      spanCodeSection: newLog.transform.SetParent(
+    - startInstruction: 1008
+      endInstruction: 1007
+      startSourceChar: 1279
+      endSourceChar: 1297
+      line: 39
+      lineChar: 35
+      spanCodeSection: 'LogTextContainer, '
+    - startInstruction: 1008
+      endInstruction: 1063
+      startSourceChar: 1297
+      endSourceChar: 1314
+      line: 39
+      lineChar: 53
+      spanCodeSection: "false);\r\n        "
+    - startInstruction: 1064
+      endInstruction: 1063
+      startSourceChar: 1314
+      endSourceChar: 1314
+      line: 40
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 1064
+      endInstruction: 1063
+      startSourceChar: 1314
+      endSourceChar: 1314
+      line: 40
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 1064
+      endInstruction: 1135
+      startSourceChar: 1314
+      endSourceChar: 1348
+      line: 40
+      lineChar: 8
+      spanCodeSection: "currentNumberOfLogs++;\r\n\r\n        "
+    - startInstruction: 1136
+      endInstruction: 1135
+      startSourceChar: 1348
+      endSourceChar: 1352
+      line: 42
+      lineChar: 8
+      spanCodeSection: if (
+    - startInstruction: 1136
+      endInstruction: 1135
+      startSourceChar: 1352
+      endSourceChar: 1374
+      line: 42
+      lineChar: 12
+      spanCodeSection: 'currentNumberOfLogs > '
+    - startInstruction: 1136
+      endInstruction: 1183
+      startSourceChar: 1374
+      endSourceChar: 1392
+      line: 42
+      lineChar: 34
+      spanCodeSection: "maxLogs)\r\n        "
+    - startInstruction: 1184
+      endInstruction: 1183
+      startSourceChar: 1392
+      endSourceChar: 1407
+      line: 43
+      lineChar: 8
+      spanCodeSection: "{\r\n            "
+    - startInstruction: 1184
+      endInstruction: 1183
+      startSourceChar: 1407
+      endSourceChar: 1407
+      line: 44
+      lineChar: 12
+      spanCodeSection: 
+    - startInstruction: 1184
+      endInstruction: 1183
+      startSourceChar: 1407
+      endSourceChar: 1415
+      line: 44
+      lineChar: 12
+      spanCodeSection: Destroy(
+    - startInstruction: 1184
+      endInstruction: 1183
+      startSourceChar: 1415
+      endSourceChar: 1415
+      line: 44
+      lineChar: 20
+      spanCodeSection: 
+    - startInstruction: 1184
+      endInstruction: 1183
+      startSourceChar: 1415
+      endSourceChar: 1441
+      line: 44
+      lineChar: 20
+      spanCodeSection: LogTextContainer.GetChild(
+    - startInstruction: 1184
+      endInstruction: 1215
+      startSourceChar: 1441
+      endSourceChar: 1444
+      line: 44
+      lineChar: 46
+      spanCodeSection: 0).
+    - startInstruction: 1216
+      endInstruction: 1263
+      startSourceChar: 1444
+      endSourceChar: 1482
+      line: 44
+      lineChar: 49
+      spanCodeSection: "gameObject);\r\n        }\r\n    }\r\n\r\n    "
+    - startInstruction: 1264
+      endInstruction: 1283
+      startSourceChar: 1482
+      endSourceChar: 1521
+      line: 48
+      lineChar: 4
+      spanCodeSection: "public void LogError(string text)\r\n    "
+    - startInstruction: 1284
+      endInstruction: 1283
+      startSourceChar: 1521
+      endSourceChar: 1532
+      line: 49
+      lineChar: 4
+      spanCodeSection: "{\r\n        "
+    - startInstruction: 1284
+      endInstruction: 1283
+      startSourceChar: 1532
+      endSourceChar: 1532
+      line: 50
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 1284
+      endInstruction: 1283
+      startSourceChar: 1532
+      endSourceChar: 1532
+      line: 50
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 1284
+      endInstruction: 1283
+      startSourceChar: 1532
+      endSourceChar: 1532
+      line: 50
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 1284
+      endInstruction: 1283
+      startSourceChar: 1532
+      endSourceChar: 1550
+      line: 50
+      lineChar: 8
+      spanCodeSection: 'GameObject newLog '
+    - startInstruction: 1284
+      endInstruction: 1283
+      startSourceChar: 1550
+      endSourceChar: 1552
+      line: 50
+      lineChar: 26
+      spanCodeSection: '= '
+    - startInstruction: 1284
+      endInstruction: 1283
+      startSourceChar: 1552
+      endSourceChar: 1567
+      line: 50
+      lineChar: 28
+      spanCodeSection: VRCInstantiate(
+    - startInstruction: 1284
+      endInstruction: 1327
+      startSourceChar: 1567
+      endSourceChar: 1592
+      line: 50
+      lineChar: 43
+      spanCodeSection: "LogTextPrefab);\r\n        "
+    - startInstruction: 1328
+      endInstruction: 1327
+      startSourceChar: 1592
+      endSourceChar: 1592
+      line: 51
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 1328
+      endInstruction: 1327
+      startSourceChar: 1592
+      endSourceChar: 1592
+      line: 51
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 1328
+      endInstruction: 1327
+      startSourceChar: 1592
+      endSourceChar: 1592
+      line: 51
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 1328
+      endInstruction: 1327
+      startSourceChar: 1592
+      endSourceChar: 1608
+      line: 51
+      lineChar: 8
+      spanCodeSection: 'Text newLogText '
+    - startInstruction: 1328
+      endInstruction: 1327
+      startSourceChar: 1608
+      endSourceChar: 1610
+      line: 51
+      lineChar: 24
+      spanCodeSection: '= '
+    - startInstruction: 1328
+      endInstruction: 1327
+      startSourceChar: 1610
+      endSourceChar: 1610
+      line: 51
+      lineChar: 26
+      spanCodeSection: 
+    - startInstruction: 1328
+      endInstruction: 1327
+      startSourceChar: 1610
+      endSourceChar: 1610
+      line: 51
+      lineChar: 26
+      spanCodeSection: 
+    - startInstruction: 1328
+      endInstruction: 1327
+      startSourceChar: 1610
+      endSourceChar: 1617
+      line: 51
+      lineChar: 26
+      spanCodeSection: newLog.
+    - startInstruction: 1328
+      endInstruction: 1327
+      startSourceChar: 1617
+      endSourceChar: 1629
+      line: 51
+      lineChar: 33
+      spanCodeSection: GetComponent
+    - startInstruction: 1328
+      endInstruction: 1327
+      startSourceChar: 1629
+      endSourceChar: 1630
+      line: 51
+      lineChar: 45
+      spanCodeSection: <
+    - startInstruction: 1328
+      endInstruction: 1403
+      startSourceChar: 1630
+      endSourceChar: 1648
+      line: 51
+      lineChar: 46
+      spanCodeSection: "Text>();\r\n        "
+    - startInstruction: 1404
+      endInstruction: 1403
+      startSourceChar: 1648
+      endSourceChar: 1648
+      line: 52
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 1404
+      endInstruction: 1403
+      startSourceChar: 1648
+      endSourceChar: 1666
+      line: 52
+      lineChar: 8
+      spanCodeSection: 'newLogText.text = '
+    - startInstruction: 1404
+      endInstruction: 1403
+      startSourceChar: 1666
+      endSourceChar: 1668
+      line: 52
+      lineChar: 26
+      spanCodeSection: $"
+    - startInstruction: 1404
+      endInstruction: 1403
+      startSourceChar: 1668
+      endSourceChar: 1669
+      line: 52
+      lineChar: 28
+      spanCodeSection: '{'
+    - startInstruction: 1404
+      endInstruction: 1403
+      startSourceChar: 1669
+      endSourceChar: 1691
+      line: 52
+      lineChar: 29
+      spanCodeSection: DateTime.Now.ToString(
+    - startInstruction: 1404
+      endInstruction: 1471
+      startSourceChar: 1691
+      endSourceChar: 1714
+      line: 52
+      lineChar: 51
+      spanCodeSection: '"MM/dd/yyyy HH:mm:ss")}'
+    - startInstruction: 1472
+      endInstruction: 1523
+      startSourceChar: 1714
+      endSourceChar: 1742
+      line: 52
+      lineChar: 74
+      spanCodeSection: ' <color=red>ERROR</color> - '
+    - startInstruction: 1524
+      endInstruction: 1523
+      startSourceChar: 1742
+      endSourceChar: 1743
+      line: 52
+      lineChar: 102
+      spanCodeSection: '{'
+    - startInstruction: 1524
+      endInstruction: 1599
+      startSourceChar: 1743
+      endSourceChar: 1760
+      line: 52
+      lineChar: 103
+      spanCodeSection: "text}\";\r\n        "
+    - startInstruction: 1600
+      endInstruction: 1599
+      startSourceChar: 1760
+      endSourceChar: 1760
+      line: 53
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 1600
+      endInstruction: 1599
+      startSourceChar: 1760
+      endSourceChar: 1787
+      line: 53
+      lineChar: 8
+      spanCodeSection: newLog.transform.SetParent(
+    - startInstruction: 1600
+      endInstruction: 1599
+      startSourceChar: 1787
+      endSourceChar: 1805
+      line: 53
+      lineChar: 35
+      spanCodeSection: 'LogTextContainer, '
+    - startInstruction: 1600
+      endInstruction: 1655
+      startSourceChar: 1805
+      endSourceChar: 1822
+      line: 53
+      lineChar: 53
+      spanCodeSection: "false);\r\n        "
+    - startInstruction: 1656
+      endInstruction: 1655
+      startSourceChar: 1822
+      endSourceChar: 1822
+      line: 54
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 1656
+      endInstruction: 1655
+      startSourceChar: 1822
+      endSourceChar: 1822
+      line: 54
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 1656
+      endInstruction: 1727
+      startSourceChar: 1822
+      endSourceChar: 1856
+      line: 54
+      lineChar: 8
+      spanCodeSection: "currentNumberOfLogs++;\r\n\r\n        "
+    - startInstruction: 1728
+      endInstruction: 1727
+      startSourceChar: 1856
+      endSourceChar: 1860
+      line: 56
+      lineChar: 8
+      spanCodeSection: if (
+    - startInstruction: 1728
+      endInstruction: 1727
+      startSourceChar: 1860
+      endSourceChar: 1882
+      line: 56
+      lineChar: 12
+      spanCodeSection: 'currentNumberOfLogs > '
+    - startInstruction: 1728
+      endInstruction: 1775
+      startSourceChar: 1882
+      endSourceChar: 1900
+      line: 56
+      lineChar: 34
+      spanCodeSection: "maxLogs)\r\n        "
+    - startInstruction: 1776
+      endInstruction: 1775
+      startSourceChar: 1900
+      endSourceChar: 1915
+      line: 57
+      lineChar: 8
+      spanCodeSection: "{\r\n            "
+    - startInstruction: 1776
+      endInstruction: 1775
+      startSourceChar: 1915
+      endSourceChar: 1915
+      line: 58
+      lineChar: 12
+      spanCodeSection: 
+    - startInstruction: 1776
+      endInstruction: 1775
+      startSourceChar: 1915
+      endSourceChar: 1923
+      line: 58
+      lineChar: 12
+      spanCodeSection: Destroy(
+    - startInstruction: 1776
+      endInstruction: 1775
+      startSourceChar: 1923
+      endSourceChar: 1923
+      line: 58
+      lineChar: 20
+      spanCodeSection: 
+    - startInstruction: 1776
+      endInstruction: 1775
+      startSourceChar: 1923
+      endSourceChar: 1949
+      line: 58
+      lineChar: 20
+      spanCodeSection: LogTextContainer.GetChild(
+    - startInstruction: 1776
+      endInstruction: 1807
+      startSourceChar: 1949
+      endSourceChar: 1952
+      line: 58
+      lineChar: 46
+      spanCodeSection: 0).
+    - startInstruction: 1808
+      endInstruction: 1808
+      startSourceChar: 1952
+      endSourceChar: 1952
+      line: 58
+      lineChar: 49
+      spanCodeSection: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: fieldDefinitions
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[UdonSharp.FieldDefinition,
+        UdonSharp.Editor]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: LogTextPrefab
+    - Name: $v
+      Entry: 7
+      Data: 2|UdonSharp.FieldDefinition, UdonSharp.Editor
+    - Name: fieldSymbol
+      Entry: 7
+      Data: 3|UdonSharp.SymbolDefinition, UdonSharp.Editor
+    - Name: internalType
+      Entry: 7
+      Data: 4|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: UnityEngine.GameObject, UnityEngine.CoreModule
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: declarationType
+      Entry: 3
+      Data: 1
+    - Name: syncMode
+      Entry: 3
+      Data: 0
+    - Name: symbolResolvedTypeName
+      Entry: 1
+      Data: UnityEngineGameObject
+    - Name: symbolOriginalName
+      Entry: 1
+      Data: LogTextPrefab
+    - Name: symbolUniqueName
+      Entry: 1
+      Data: LogTextPrefab
+    - Name: symbolDefaultValue
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: fieldAttributes
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: userBehaviourSource
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: LogTextContainer
+    - Name: $v
+      Entry: 7
+      Data: 6|UdonSharp.FieldDefinition, UdonSharp.Editor
+    - Name: fieldSymbol
+      Entry: 7
+      Data: 7|UdonSharp.SymbolDefinition, UdonSharp.Editor
+    - Name: internalType
+      Entry: 7
+      Data: 8|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: UnityEngine.Transform, UnityEngine.CoreModule
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: declarationType
+      Entry: 3
+      Data: 2
+    - Name: syncMode
+      Entry: 3
+      Data: 0
+    - Name: symbolResolvedTypeName
+      Entry: 1
+      Data: UnityEngineTransform
+    - Name: symbolOriginalName
+      Entry: 1
+      Data: LogTextContainer
+    - Name: symbolUniqueName
+      Entry: 1
+      Data: LogTextContainer
+    - Name: symbolDefaultValue
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: fieldAttributes
+      Entry: 7
+      Data: 9|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: userBehaviourSource
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: maxLogs
+    - Name: $v
+      Entry: 7
+      Data: 10|UdonSharp.FieldDefinition, UdonSharp.Editor
+    - Name: fieldSymbol
+      Entry: 7
+      Data: 11|UdonSharp.SymbolDefinition, UdonSharp.Editor
+    - Name: internalType
+      Entry: 7
+      Data: 12|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: System.Int32, mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: declarationType
+      Entry: 3
+      Data: 2
+    - Name: syncMode
+      Entry: 3
+      Data: 0
+    - Name: symbolResolvedTypeName
+      Entry: 1
+      Data: SystemInt32
+    - Name: symbolOriginalName
+      Entry: 1
+      Data: maxLogs
+    - Name: symbolUniqueName
+      Entry: 1
+      Data: maxLogs
+    - Name: symbolDefaultValue
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: fieldAttributes
+      Entry: 7
+      Data: 13|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: userBehaviourSource
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: currentNumberOfLogs
+    - Name: $v
+      Entry: 7
+      Data: 14|UdonSharp.FieldDefinition, UdonSharp.Editor
+    - Name: fieldSymbol
+      Entry: 7
+      Data: 15|UdonSharp.SymbolDefinition, UdonSharp.Editor
+    - Name: internalType
+      Entry: 9
+      Data: 12
+    - Name: declarationType
+      Entry: 3
+      Data: 2
+    - Name: syncMode
+      Entry: 3
+      Data: 0
+    - Name: symbolResolvedTypeName
+      Entry: 1
+      Data: SystemInt32
+    - Name: symbolOriginalName
+      Entry: 1
+      Data: currentNumberOfLogs
+    - Name: symbolUniqueName
+      Entry: 1
+      Data: currentNumberOfLogs
+    - Name: symbolDefaultValue
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: fieldAttributes
+      Entry: 7
+      Data: 16|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: userBehaviourSource
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
