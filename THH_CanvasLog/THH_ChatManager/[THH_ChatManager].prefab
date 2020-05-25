@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4756663972283449596}
   - component: {fileID: 2480194602645833608}
   - component: {fileID: 6042646022795541737}
+  - component: {fileID: 6818735605083130533}
   m_Layer: 5
   m_Name: LogTextPrefab
   m_TagString: Untagged
@@ -78,6 +79,20 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 12:34:56 - <color=green>[YourCustomText]</color> Lorem ipsum dolor sit amet,
     consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+--- !u!114 &6818735605083130533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619983256904369589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1741964061, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 0
+  m_VerticalFit: 2
 --- !u!1 &816868879817095489
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,7 +465,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
