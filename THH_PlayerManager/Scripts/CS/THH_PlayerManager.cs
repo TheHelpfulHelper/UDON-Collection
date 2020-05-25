@@ -27,7 +27,7 @@ public class THH_PlayerManager : UdonSharpBehaviour
 
     void Start()
     {
-        Debug.Log($"<color=green>[THH_PlayerManager]</color> THH_PlayerManager v2.0 initialized");        
+        Debug.Log($"<color=green>[THH_PlayerManager]</color> THH_PlayerManager v2.0 initialized");
         handlers = GetComponentsInChildren<THH_PlayerObjectHandler>();
         foreach (THH_PlayerObjectHandler handler in handlers)
         {
@@ -130,6 +130,7 @@ public class THH_PlayerManager : UdonSharpBehaviour
             else if (Networking.IsMaster)
             {
                 Debug.Log($"<color=green>[THH_PlayerManager]</color> The last master has left, you are the new master");
+                assignedHandler.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "BroadcastMasterHandler");
             }
         }
     }
