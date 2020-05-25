@@ -9,7 +9,7 @@ using VRC.Udon;
 public class THH_CanvasLogManager : UdonSharpBehaviour
 {
     public GameObject LogTextPrefab;
-    public int maxLogs = 12;
+    public int maxLogs = 50;
     public bool logMetaInfo = true;
 
     private Transform LogTextContainer;
