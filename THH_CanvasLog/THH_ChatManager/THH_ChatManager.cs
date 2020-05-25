@@ -4,6 +4,7 @@ using UnityEngine;
 using VRC.SDKBase;
 using VRC.Udon;
 using UnityEngine.UI;
+using System;
 
 public class THH_ChatManager : UdonSharpBehaviour
 {
@@ -17,13 +18,55 @@ public class THH_ChatManager : UdonSharpBehaviour
     private bool wasOwner;
     private bool reclaiming;
     private float chatDelay = 1f;
-    private float sendStart;
     private float sendEnd;
     private bool messageSending;
     private bool locked;
+    private int messageCounter;
 
     public THH_CanvasLogManager canvasLogManager;
     public InputField inputField;
+
+    public void InputFieldEndEdit()
+    {
+        string inputString = inputField.text.Trim();
+        if (string.IsNullOrEmpty(inputString))
+        {
+            return;
+        }
+        SendChatMessage(inputString);
+    }
+
+    // == API ==================================================================================================//
+    public void SendChatMessage(string message)
+    {
+        MESSAGE = inputField.text;
+        if (ProcessMessage())
+        {
+            OnMessageSentSuccess();
+        }
+        else
+        {
+            OnMessageSentFail();
+        }
+    }
+
+    void OnMessageSentSuccess()
+    {
+        inputField.text = string.Empty;
+    }
+
+    void OnMessageSentFail()
+    {
+
+    }
+
+    void OnMessageReceived(string message)
+    {
+        Debug.Log($"<color=green>[THH_ChatManager]</color> Chat message received: '{message}'");
+        canvasLogManager.Log(message);
+    }
+
+    //==================================================================================================//
 
     public void Start()
     {
@@ -47,8 +90,7 @@ public class THH_ChatManager : UdonSharpBehaviour
                     reclaiming = false;
                     return;
                 }
-                sendStart = Time.timeSinceLevelLoad;
-                sendEnd = sendStart + chatDelay;
+                sendEnd = Time.timeSinceLevelLoad + chatDelay;
                 messageSending = true;
             }
             else
@@ -62,7 +104,8 @@ public class THH_ChatManager : UdonSharpBehaviour
         {
             if (Time.timeSinceLevelLoad > sendEnd)
             {
-                CHAT_MESSAGE = $"<<color=lime>{Networking.LocalPlayer.displayName}</color>>: {MESSAGE}|{Networking.GetServerTimeInMilliseconds()}";
+                CHAT_MESSAGE = $"{Networking.LocalPlayer.playerId}|{MESSAGE}|{messageCounter.ToString("X")}";
+                messageCounter++;
                 messageSending = false;
             }
         }
@@ -70,8 +113,10 @@ public class THH_ChatManager : UdonSharpBehaviour
         if (CHAT_MESSAGE != last_ChatMessage && !string.IsNullOrEmpty(CHAT_MESSAGE))
         {
             string[] M = CHAT_MESSAGE.Split('|');
-            string message = M[0];
-            MessageReceived(message);
+            string messageSender = VRCPlayerApi.GetPlayerById(Int32.Parse(M[0])).displayName;
+            string messageContent = M[1];
+            string message = $"<<color=lime>{messageSender}</color>>: {messageContent}";
+            OnMessageReceived(message);
 
             // Reclaim ownership as master after message has been received
             if (Networking.IsMaster && !Networking.GetOwner(gameObject).isLocal)
@@ -84,8 +129,7 @@ public class THH_ChatManager : UdonSharpBehaviour
         }
     }
 
-    // Set MESSAGE first before calling this method!
-    public bool SendChatMessage()
+    bool ProcessMessage()
     {
         if (locked)
         {
@@ -96,7 +140,8 @@ public class THH_ChatManager : UdonSharpBehaviour
         {
             if (Networking.IsMaster)
             {
-                CHAT_MESSAGE = $"<<color=lime>{Networking.LocalPlayer.displayName}</color>>: {MESSAGE}|{Networking.GetServerTimeInMilliseconds()}";
+                CHAT_MESSAGE = $"{Networking.LocalPlayer.playerId}|{MESSAGE}|{messageCounter.ToString("X")}";
+                messageCounter++;
                 return true;
             }
             else
@@ -112,24 +157,5 @@ public class THH_ChatManager : UdonSharpBehaviour
             canvasLogManager.Log($"<color=red>Your message could not be delivered, retry in a bit</color>");
             return false;
         }
-    }
-
-    public void InputFieldEndEdit()
-    {
-        if (string.IsNullOrEmpty(inputField.text))
-        {
-            return;
-        }
-        MESSAGE = inputField.text;
-        if (SendChatMessage())
-        {
-            inputField.text = string.Empty;
-        }
-    }
-
-    void MessageReceived(string message)
-    {
-        Debug.Log($"<color=green>[THH_ChatManager]</color> Chat message received: '{message}'");
-        canvasLogManager.Log(message);
     }
 }
