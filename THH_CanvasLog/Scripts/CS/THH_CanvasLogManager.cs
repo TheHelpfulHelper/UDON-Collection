@@ -14,6 +14,8 @@ public class THH_CanvasLogManager : UdonSharpBehaviour
     private int maxLogs = 50;
     private int currentNumberOfLogs;
 
+    public bool logMetaInfo = true;
+
     public void Start()
     {
         LogTextContainer = transform.Find("Scroll View/Viewport/Content/LogTextContainer");
@@ -22,7 +24,7 @@ public class THH_CanvasLogManager : UdonSharpBehaviour
     {
         GameObject newLog = VRCInstantiate(LogTextPrefab);
         Text newLogText = newLog.GetComponent<Text>();
-        newLogText.text = $"{DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss")} <color=white>Log</color> - {text}";
+        newLogText.text = logMetaInfo ? $"{DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss")} <color=white>Log</color> - {text}" : $"{text}";
         newLog.transform.SetParent(LogTextContainer, false);
         currentNumberOfLogs++;
 
@@ -36,7 +38,7 @@ public class THH_CanvasLogManager : UdonSharpBehaviour
     {
         GameObject newLog = VRCInstantiate(LogTextPrefab);
         Text newLogText = newLog.GetComponent<Text>();
-        newLogText.text = $"{DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss")} <color=yellow>Warning</color> - {text}";
+        newLogText.text = logMetaInfo ? $"{DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss")} <color=yellow>Warning</color> - {text}" : $"{text}";
         newLog.transform.SetParent(LogTextContainer, false);
         currentNumberOfLogs++;
 
@@ -50,7 +52,7 @@ public class THH_CanvasLogManager : UdonSharpBehaviour
     {
         GameObject newLog = VRCInstantiate(LogTextPrefab);
         Text newLogText = newLog.GetComponent<Text>();
-        newLogText.text = $"{DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss")} <color=red>ERROR</color> - {text}";
+        newLogText.text = logMetaInfo ? $"{DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss")} <color=red>ERROR</color> - {text}" : $"{text}";
         newLog.transform.SetParent(LogTextContainer, false);
         currentNumberOfLogs++;
 
