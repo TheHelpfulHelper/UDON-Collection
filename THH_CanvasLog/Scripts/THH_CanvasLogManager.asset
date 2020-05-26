@@ -19,19 +19,20 @@ MonoBehaviour:
     null\r\n    __refl_const_intnl_udonTypeName: %SystemString, null\r\n    logMetaInfo:
     %SystemBoolean, null\r\n    LogTextPrefab: %UnityEngineGameObject, null\r\n    maxLogs:
     %SystemInt32, null\r\n    currentNumberOfLogs: %SystemInt32, null\r\n    LogTextContainer:
-    %UnityEngineTransform, null\r\n    __0_this_intnl_UnityEngineTransform: %UnityEngineTransform,
-    this\r\n    __0_this_intnl_THH_CanvasLogManager: %VRCUdonUdonBehaviour, this\r\n
-    \   __0_newLog_GameObject: %UnityEngineGameObject, null\r\n    __1_newLog_GameObject:
-    %UnityEngineGameObject, null\r\n    __2_newLog_GameObject: %UnityEngineGameObject,
-    null\r\n    __0_text_String: %SystemString, null\r\n    __1_text_String: %SystemString,
-    null\r\n    __2_text_String: %SystemString, null\r\n    __0_newLogText_Text: %UnityEngineUIText,
-    null\r\n    __1_newLogText_Text: %UnityEngineUIText, null\r\n    __2_newLogText_Text:
-    %UnityEngineUIText, null\r\n    __0_const_intnl_SystemBoolean: %SystemBoolean,
-    null\r\n    __0_const_intnl_SystemInt32: %SystemInt32, null\r\n    __1_const_intnl_SystemInt32:
-    %SystemInt32, null\r\n    __0_const_intnl_SystemString: %SystemString, null\r\n
-    \   __1_const_intnl_SystemString: %SystemString, null\r\n    __2_const_intnl_SystemString:
-    %SystemString, null\r\n    __3_const_intnl_SystemString: %SystemString, null\r\n
-    \   __4_const_intnl_SystemString: %SystemString, null\r\n    __0_const_intnl_SystemType:
+    %UnityEngineTransform, null\r\n    VLG: %UnityEngineUIVerticalLayoutGroup, null\r\n
+    \   __0_this_intnl_UnityEngineTransform: %UnityEngineTransform, this\r\n    __0_this_intnl_THH_CanvasLogManager:
+    %VRCUdonUdonBehaviour, this\r\n    __0_newLog_GameObject: %UnityEngineGameObject,
+    null\r\n    __1_newLog_GameObject: %UnityEngineGameObject, null\r\n    __2_newLog_GameObject:
+    %UnityEngineGameObject, null\r\n    __0_text_String: %SystemString, null\r\n    __1_text_String:
+    %SystemString, null\r\n    __2_text_String: %SystemString, null\r\n    __0_newLogText_Text:
+    %UnityEngineUIText, null\r\n    __1_newLogText_Text: %UnityEngineUIText, null\r\n
+    \   __2_newLogText_Text: %UnityEngineUIText, null\r\n    __0_const_intnl_SystemBoolean:
+    %SystemBoolean, null\r\n    __0_const_intnl_SystemInt32: %SystemInt32, null\r\n
+    \   __1_const_intnl_SystemInt32: %SystemInt32, null\r\n    __0_const_intnl_SystemString:
+    %SystemString, null\r\n    __1_const_intnl_SystemString: %SystemString, null\r\n
+    \   __2_const_intnl_SystemString: %SystemString, null\r\n    __3_const_intnl_SystemString:
+    %SystemString, null\r\n    __4_const_intnl_SystemString: %SystemString, null\r\n
+    \   __0_const_intnl_SystemType: %SystemType, null\r\n    __1_const_intnl_SystemType:
     %SystemType, null\r\n    __0_const_intnl_SystemUInt32: %SystemUInt32, null\r\n
     \   __0_intnl_SystemBoolean: %SystemBoolean, null\r\n    __1_intnl_SystemBoolean:
     %SystemBoolean, null\r\n    __2_intnl_SystemBoolean: %SystemBoolean, null\r\n
@@ -64,12 +65,16 @@ MonoBehaviour:
     public GameObject LogTextPrefab;\r\n        \r\n         # public int maxLogs
     = 50;\r\n        \r\n         # public bool logMetaInfo = true;\r\n        \r\n
     \        # private Transform LogTextContainer;\r\n        \r\n         # private
-    int currentNumberOfLogs;\r\n        \r\n         # public void Start()\r\n    .export
-    _start\r\n        \r\n    _start:\r\n        \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n
-    \       \r\n         # {\r\n        \r\n         # LogTextContainer = transform.Find(\"Scroll
+    int currentNumberOfLogs;\r\n        \r\n         # private VerticalLayoutGroup
+    VLG;\r\n        \r\n         # public void Start()\r\n    .export _start\r\n        \r\n
+    \   _start:\r\n        \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n        \r\n
+    \        # {\r\n        \r\n         # LogTextContainer = transform.Find(\"Scroll
     View/Viewport/Content/LogTextContainer\");\r\n        PUSH, __0_this_intnl_UnityEngineTransform\r\n
     \       PUSH, __0_const_intnl_SystemString\r\n        PUSH, LogTextContainer\r\n
     \       EXTERN, \"UnityEngineTransform.__Find__SystemString__UnityEngineTransform\"\r\n
+    \       \r\n         # VLG = LogTextContainer.GetComponent<VerticalLayoutGroup>();\r\n
+    \       PUSH, LogTextContainer\r\n        PUSH, __0_const_intnl_SystemType\r\n
+    \       PUSH, VLG\r\n        EXTERN, \"UnityEngineUIVerticalLayoutGroup.__GetComponent__T\"\r\n
     \       PUSH, __0_intnl_returnTarget_UInt32 #Function epilogue\r\n        COPY\r\n
     \       JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n        \r\n        \r\n
     \        # public void Log(string text)\r\n    .export Log\r\n        \r\n    Log:\r\n
@@ -80,11 +85,11 @@ MonoBehaviour:
     \       \r\n         # Text newLogText = newLog.GetComponent<Text>();\r\n        PUSH,
     __0_newLog_GameObject\r\n        PUSH, __0_intnl_UnityEngineTransform\r\n        EXTERN,
     \"UnityEngineGameObject.__get_transform__UnityEngineTransform\"\r\n        PUSH,
-    __0_intnl_UnityEngineTransform\r\n        PUSH, __0_const_intnl_SystemType\r\n
+    __0_intnl_UnityEngineTransform\r\n        PUSH, __1_const_intnl_SystemType\r\n
     \       PUSH, __0_newLogText_Text\r\n        EXTERN, \"UnityEngineUIText.__GetComponent__T\"\r\n
     \       \r\n         # newLogText.text = logMetaInfo ? $\"{DateTime.Now.ToString(\"MM/dd/yyyy
     HH:mm:ss\")} <color=white>Log</color> - {text}\" : $\"{text}\";\r\n        PUSH,
-    logMetaInfo\r\n        JUMP_IF_FALSE, 0x0000016C\r\n        PUSH, __0_intnl_SystemDateTime\r\n
+    logMetaInfo\r\n        JUMP_IF_FALSE, 0x0000018C\r\n        PUSH, __0_intnl_SystemDateTime\r\n
     \       EXTERN, \"SystemDateTime.__get_Now__SystemDateTime\"\r\n        PUSH,
     __0_intnl_SystemDateTime\r\n        PUSH, __1_const_intnl_SystemString\r\n        PUSH,
     __0_intnl_SystemString\r\n        EXTERN, \"SystemDateTime.__ToString__SystemString__SystemString\"\r\n
@@ -97,7 +102,7 @@ MonoBehaviour:
     \       PUSH, __2_intnl_SystemString\r\n        EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n
     \       PUSH, __2_intnl_SystemString\r\n        PUSH, __0_intnl_interpolatedStr_String\r\n
     \       COPY\r\n        PUSH, __0_intnl_interpolatedStr_String\r\n        PUSH,
-    __3_intnl_SystemString\r\n        COPY\r\n        JUMP, 0x00000194\r\n        PUSH,
+    __3_intnl_SystemString\r\n        COPY\r\n        JUMP, 0x000001B4\r\n        PUSH,
     __0_text_String\r\n        PUSH, __1_intnl_interpolatedStr_String\r\n        COPY\r\n
     \       PUSH, __1_intnl_interpolatedStr_String\r\n        PUSH, __3_intnl_SystemString\r\n
     \       COPY\r\n        PUSH, __0_newLogText_Text\r\n        PUSH, __3_intnl_SystemString\r\n
@@ -114,7 +119,7 @@ MonoBehaviour:
     \       \r\n         # if (currentNumberOfLogs > maxLogs)\r\n        PUSH, currentNumberOfLogs\r\n
     \       PUSH, maxLogs\r\n        PUSH, __0_intnl_SystemBoolean\r\n        EXTERN,
     \"SystemInt32.__op_GreaterThan__SystemInt32_SystemInt32__SystemBoolean\"\r\n        PUSH,
-    __0_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000290\r\n        \r\n         #
+    __0_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x000002B0\r\n        \r\n         #
     {\r\n        \r\n         # Destroy(LogTextContainer.GetChild(0).gameObject);\r\n
     \       PUSH, LogTextContainer\r\n        PUSH, __1_const_intnl_SystemInt32\r\n
     \       PUSH, __2_intnl_UnityEngineTransform\r\n        EXTERN, \"UnityEngineTransform.__GetChild__SystemInt32__UnityEngineTransform\"\r\n
@@ -131,11 +136,11 @@ MonoBehaviour:
     \       \r\n         # Text newLogText = newLog.GetComponent<Text>();\r\n        PUSH,
     __1_newLog_GameObject\r\n        PUSH, __3_intnl_UnityEngineTransform\r\n        EXTERN,
     \"UnityEngineGameObject.__get_transform__UnityEngineTransform\"\r\n        PUSH,
-    __3_intnl_UnityEngineTransform\r\n        PUSH, __0_const_intnl_SystemType\r\n
+    __3_intnl_UnityEngineTransform\r\n        PUSH, __1_const_intnl_SystemType\r\n
     \       PUSH, __1_newLogText_Text\r\n        EXTERN, \"UnityEngineUIText.__GetComponent__T\"\r\n
     \       \r\n         # newLogText.text = logMetaInfo ? $\"{DateTime.Now.ToString(\"MM/dd/yyyy
     HH:mm:ss\")} <color=yellow>Warning</color> - {text}\" : $\"{text}\";\r\n        PUSH,
-    logMetaInfo\r\n        JUMP_IF_FALSE, 0x000003D4\r\n        PUSH, __1_intnl_SystemDateTime\r\n
+    logMetaInfo\r\n        JUMP_IF_FALSE, 0x000003F4\r\n        PUSH, __1_intnl_SystemDateTime\r\n
     \       EXTERN, \"SystemDateTime.__get_Now__SystemDateTime\"\r\n        PUSH,
     __1_intnl_SystemDateTime\r\n        PUSH, __1_const_intnl_SystemString\r\n        PUSH,
     __4_intnl_SystemString\r\n        EXTERN, \"SystemDateTime.__ToString__SystemString__SystemString\"\r\n
@@ -148,7 +153,7 @@ MonoBehaviour:
     \       PUSH, __6_intnl_SystemString\r\n        EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n
     \       PUSH, __6_intnl_SystemString\r\n        PUSH, __2_intnl_interpolatedStr_String\r\n
     \       COPY\r\n        PUSH, __2_intnl_interpolatedStr_String\r\n        PUSH,
-    __7_intnl_SystemString\r\n        COPY\r\n        JUMP, 0x000003FC\r\n        PUSH,
+    __7_intnl_SystemString\r\n        COPY\r\n        JUMP, 0x0000041C\r\n        PUSH,
     __1_text_String\r\n        PUSH, __3_intnl_interpolatedStr_String\r\n        COPY\r\n
     \       PUSH, __3_intnl_interpolatedStr_String\r\n        PUSH, __7_intnl_SystemString\r\n
     \       COPY\r\n        PUSH, __1_newLogText_Text\r\n        PUSH, __7_intnl_SystemString\r\n
@@ -165,7 +170,7 @@ MonoBehaviour:
     \       \r\n         # if (currentNumberOfLogs > maxLogs)\r\n        PUSH, currentNumberOfLogs\r\n
     \       PUSH, maxLogs\r\n        PUSH, __1_intnl_SystemBoolean\r\n        EXTERN,
     \"SystemInt32.__op_GreaterThan__SystemInt32_SystemInt32__SystemBoolean\"\r\n        PUSH,
-    __1_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x000004F8\r\n        \r\n         #
+    __1_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000518\r\n        \r\n         #
     {\r\n        \r\n         # Destroy(LogTextContainer.GetChild(0).gameObject);\r\n
     \       PUSH, LogTextContainer\r\n        PUSH, __1_const_intnl_SystemInt32\r\n
     \       PUSH, __5_intnl_UnityEngineTransform\r\n        EXTERN, \"UnityEngineTransform.__GetChild__SystemInt32__UnityEngineTransform\"\r\n
@@ -182,11 +187,11 @@ MonoBehaviour:
     \       \r\n         # Text newLogText = newLog.GetComponent<Text>();\r\n        PUSH,
     __2_newLog_GameObject\r\n        PUSH, __6_intnl_UnityEngineTransform\r\n        EXTERN,
     \"UnityEngineGameObject.__get_transform__UnityEngineTransform\"\r\n        PUSH,
-    __6_intnl_UnityEngineTransform\r\n        PUSH, __0_const_intnl_SystemType\r\n
+    __6_intnl_UnityEngineTransform\r\n        PUSH, __1_const_intnl_SystemType\r\n
     \       PUSH, __2_newLogText_Text\r\n        EXTERN, \"UnityEngineUIText.__GetComponent__T\"\r\n
     \       \r\n         # newLogText.text = logMetaInfo ? $\"{DateTime.Now.ToString(\"MM/dd/yyyy
     HH:mm:ss\")} <color=red>ERROR</color> - {text}\" : $\"{text}\";\r\n        PUSH,
-    logMetaInfo\r\n        JUMP_IF_FALSE, 0x0000063C\r\n        PUSH, __2_intnl_SystemDateTime\r\n
+    logMetaInfo\r\n        JUMP_IF_FALSE, 0x0000065C\r\n        PUSH, __2_intnl_SystemDateTime\r\n
     \       EXTERN, \"SystemDateTime.__get_Now__SystemDateTime\"\r\n        PUSH,
     __2_intnl_SystemDateTime\r\n        PUSH, __1_const_intnl_SystemString\r\n        PUSH,
     __8_intnl_SystemString\r\n        EXTERN, \"SystemDateTime.__ToString__SystemString__SystemString\"\r\n
@@ -199,7 +204,7 @@ MonoBehaviour:
     \       PUSH, __10_intnl_SystemString\r\n        EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n
     \       PUSH, __10_intnl_SystemString\r\n        PUSH, __4_intnl_interpolatedStr_String\r\n
     \       COPY\r\n        PUSH, __4_intnl_interpolatedStr_String\r\n        PUSH,
-    __11_intnl_SystemString\r\n        COPY\r\n        JUMP, 0x00000664\r\n        PUSH,
+    __11_intnl_SystemString\r\n        COPY\r\n        JUMP, 0x00000684\r\n        PUSH,
     __2_text_String\r\n        PUSH, __5_intnl_interpolatedStr_String\r\n        COPY\r\n
     \       PUSH, __5_intnl_interpolatedStr_String\r\n        PUSH, __11_intnl_SystemString\r\n
     \       COPY\r\n        PUSH, __2_newLogText_Text\r\n        PUSH, __11_intnl_SystemString\r\n
@@ -216,7 +221,7 @@ MonoBehaviour:
     \       \r\n         # if (currentNumberOfLogs > maxLogs)\r\n        PUSH, currentNumberOfLogs\r\n
     \       PUSH, maxLogs\r\n        PUSH, __2_intnl_SystemBoolean\r\n        EXTERN,
     \"SystemInt32.__op_GreaterThan__SystemInt32_SystemInt32__SystemBoolean\"\r\n        PUSH,
-    __2_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000760\r\n        \r\n         #
+    __2_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000780\r\n        \r\n         #
     {\r\n        \r\n         # Destroy(LogTextContainer.GetChild(0).gameObject);\r\n
     \       PUSH, LogTextContainer\r\n        PUSH, __1_const_intnl_SystemInt32\r\n
     \       PUSH, __8_intnl_UnityEngineTransform\r\n        EXTERN, \"UnityEngineTransform.__GetChild__SystemInt32__UnityEngineTransform\"\r\n
@@ -500,1570 +505,1653 @@ MonoBehaviour:
     - startInstruction: 0
       endInstruction: -1
       startSourceChar: 336
-      endSourceChar: 368
+      endSourceChar: 366
       line: 15
       lineChar: 12
-      spanCodeSection: "int currentNumberOfLogs;\r\n\r\n    "
+      spanCodeSection: "int currentNumberOfLogs;\r\n    "
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 366
+      endSourceChar: 374
+      line: 16
+      lineChar: 4
+      spanCodeSection: 'private '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 374
+      endSourceChar: 374
+      line: 16
+      lineChar: 12
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 374
+      endSourceChar: 406
+      line: 16
+      lineChar: 12
+      spanCodeSection: "VerticalLayoutGroup VLG;\r\n\r\n    "
     - startInstruction: 0
       endInstruction: 7
-      startSourceChar: 368
-      endSourceChar: 393
-      line: 17
+      startSourceChar: 406
+      endSourceChar: 431
+      line: 18
       lineChar: 4
       spanCodeSection: "public void Start()\r\n    "
     - startInstruction: 8
       endInstruction: 7
-      startSourceChar: 393
-      endSourceChar: 404
-      line: 18
+      startSourceChar: 431
+      endSourceChar: 442
+      line: 19
       lineChar: 4
       spanCodeSection: "{\r\n        "
     - startInstruction: 8
       endInstruction: 7
-      startSourceChar: 404
-      endSourceChar: 404
-      line: 19
+      startSourceChar: 442
+      endSourceChar: 442
+      line: 20
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 8
       endInstruction: 7
-      startSourceChar: 404
-      endSourceChar: 404
-      line: 19
+      startSourceChar: 442
+      endSourceChar: 442
+      line: 20
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 8
       endInstruction: 7
-      startSourceChar: 404
-      endSourceChar: 423
-      line: 19
+      startSourceChar: 442
+      endSourceChar: 461
+      line: 20
       lineChar: 8
       spanCodeSection: 'LogTextContainer = '
     - startInstruction: 8
       endInstruction: 7
-      startSourceChar: 423
-      endSourceChar: 423
-      line: 19
+      startSourceChar: 461
+      endSourceChar: 461
+      line: 20
       lineChar: 27
       spanCodeSection: 
     - startInstruction: 8
       endInstruction: 7
-      startSourceChar: 423
-      endSourceChar: 423
-      line: 19
+      startSourceChar: 461
+      endSourceChar: 461
+      line: 20
       lineChar: 27
       spanCodeSection: 
     - startInstruction: 8
       endInstruction: 7
-      startSourceChar: 423
-      endSourceChar: 433
-      line: 19
+      startSourceChar: 461
+      endSourceChar: 471
+      line: 20
       lineChar: 27
       spanCodeSection: transform.
     - startInstruction: 8
       endInstruction: 7
-      startSourceChar: 433
-      endSourceChar: 438
-      line: 19
+      startSourceChar: 471
+      endSourceChar: 476
+      line: 20
       lineChar: 37
       spanCodeSection: Find(
     - startInstruction: 8
-      endInstruction: 59
-      startSourceChar: 438
-      endSourceChar: 500
-      line: 19
+      endInstruction: 39
+      startSourceChar: 476
+      endSourceChar: 535
+      line: 20
       lineChar: 42
-      spanCodeSection: "\"Scroll View/Viewport/Content/LogTextContainer\");\r\n    }\r\n
-        \   "
-    - startInstruction: 60
-      endInstruction: 59
-      startSourceChar: 500
-      endSourceChar: 516
+      spanCodeSection: "\"Scroll View/Viewport/Content/LogTextContainer\");\r\n        "
+    - startInstruction: 40
+      endInstruction: 39
+      startSourceChar: 535
+      endSourceChar: 535
       line: 21
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 40
+      endInstruction: 39
+      startSourceChar: 535
+      endSourceChar: 535
+      line: 21
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 40
+      endInstruction: 39
+      startSourceChar: 535
+      endSourceChar: 541
+      line: 21
+      lineChar: 8
+      spanCodeSection: 'VLG = '
+    - startInstruction: 40
+      endInstruction: 39
+      startSourceChar: 541
+      endSourceChar: 541
+      line: 21
+      lineChar: 14
+      spanCodeSection: 
+    - startInstruction: 40
+      endInstruction: 39
+      startSourceChar: 541
+      endSourceChar: 541
+      line: 21
+      lineChar: 14
+      spanCodeSection: 
+    - startInstruction: 40
+      endInstruction: 39
+      startSourceChar: 541
+      endSourceChar: 558
+      line: 21
+      lineChar: 14
+      spanCodeSection: LogTextContainer.
+    - startInstruction: 40
+      endInstruction: 39
+      startSourceChar: 558
+      endSourceChar: 570
+      line: 21
+      lineChar: 31
+      spanCodeSection: GetComponent
+    - startInstruction: 40
+      endInstruction: 39
+      startSourceChar: 570
+      endSourceChar: 571
+      line: 21
+      lineChar: 43
+      spanCodeSection: <
+    - startInstruction: 40
+      endInstruction: 91
+      startSourceChar: 571
+      endSourceChar: 607
+      line: 21
+      lineChar: 44
+      spanCodeSection: "VerticalLayoutGroup>();\r\n    }\r\n    "
+    - startInstruction: 92
+      endInstruction: 91
+      startSourceChar: 607
+      endSourceChar: 623
+      line: 23
       lineChar: 4
       spanCodeSection: public void Log(
-    - startInstruction: 60
-      endInstruction: 67
-      startSourceChar: 516
-      endSourceChar: 534
-      line: 21
+    - startInstruction: 92
+      endInstruction: 99
+      startSourceChar: 623
+      endSourceChar: 641
+      line: 23
       lineChar: 20
       spanCodeSection: "string text)\r\n    "
-    - startInstruction: 68
-      endInstruction: 67
-      startSourceChar: 534
-      endSourceChar: 545
-      line: 22
+    - startInstruction: 100
+      endInstruction: 99
+      startSourceChar: 641
+      endSourceChar: 652
+      line: 24
       lineChar: 4
       spanCodeSection: "{\r\n        "
-    - startInstruction: 68
-      endInstruction: 67
-      startSourceChar: 545
-      endSourceChar: 545
-      line: 23
+    - startInstruction: 100
+      endInstruction: 99
+      startSourceChar: 652
+      endSourceChar: 652
+      line: 25
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 68
-      endInstruction: 67
-      startSourceChar: 545
-      endSourceChar: 545
-      line: 23
+    - startInstruction: 100
+      endInstruction: 99
+      startSourceChar: 652
+      endSourceChar: 652
+      line: 25
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 68
-      endInstruction: 67
-      startSourceChar: 545
-      endSourceChar: 545
-      line: 23
+    - startInstruction: 100
+      endInstruction: 99
+      startSourceChar: 652
+      endSourceChar: 652
+      line: 25
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 68
-      endInstruction: 67
-      startSourceChar: 545
-      endSourceChar: 563
-      line: 23
+    - startInstruction: 100
+      endInstruction: 99
+      startSourceChar: 652
+      endSourceChar: 670
+      line: 25
       lineChar: 8
       spanCodeSection: 'GameObject newLog '
-    - startInstruction: 68
-      endInstruction: 67
-      startSourceChar: 563
-      endSourceChar: 565
-      line: 23
-      lineChar: 26
-      spanCodeSection: '= '
-    - startInstruction: 68
-      endInstruction: 67
-      startSourceChar: 565
-      endSourceChar: 565
-      line: 23
-      lineChar: 28
-      spanCodeSection: 
-    - startInstruction: 68
-      endInstruction: 67
-      startSourceChar: 565
-      endSourceChar: 580
-      line: 23
-      lineChar: 28
-      spanCodeSection: VRCInstantiate(
-    - startInstruction: 68
-      endInstruction: 91
-      startSourceChar: 580
-      endSourceChar: 605
-      line: 23
-      lineChar: 43
-      spanCodeSection: "LogTextPrefab);\r\n        "
-    - startInstruction: 92
-      endInstruction: 91
-      startSourceChar: 605
-      endSourceChar: 605
-      line: 24
-      lineChar: 8
-      spanCodeSection: 
-    - startInstruction: 92
-      endInstruction: 91
-      startSourceChar: 605
-      endSourceChar: 605
-      line: 24
-      lineChar: 8
-      spanCodeSection: 
-    - startInstruction: 92
-      endInstruction: 91
-      startSourceChar: 605
-      endSourceChar: 605
-      line: 24
-      lineChar: 8
-      spanCodeSection: 
-    - startInstruction: 92
-      endInstruction: 91
-      startSourceChar: 605
-      endSourceChar: 621
-      line: 24
-      lineChar: 8
-      spanCodeSection: 'Text newLogText '
-    - startInstruction: 92
-      endInstruction: 91
-      startSourceChar: 621
-      endSourceChar: 623
-      line: 24
-      lineChar: 24
-      spanCodeSection: '= '
-    - startInstruction: 92
-      endInstruction: 91
-      startSourceChar: 623
-      endSourceChar: 623
-      line: 24
-      lineChar: 26
-      spanCodeSection: 
-    - startInstruction: 92
-      endInstruction: 91
-      startSourceChar: 623
-      endSourceChar: 623
-      line: 24
-      lineChar: 26
-      spanCodeSection: 
-    - startInstruction: 92
-      endInstruction: 91
-      startSourceChar: 623
-      endSourceChar: 630
-      line: 24
-      lineChar: 26
-      spanCodeSection: newLog.
-    - startInstruction: 92
-      endInstruction: 91
-      startSourceChar: 630
-      endSourceChar: 642
-      line: 24
-      lineChar: 33
-      spanCodeSection: GetComponent
-    - startInstruction: 92
-      endInstruction: 91
-      startSourceChar: 642
-      endSourceChar: 643
-      line: 24
-      lineChar: 45
-      spanCodeSection: <
-    - startInstruction: 92
-      endInstruction: 147
-      startSourceChar: 643
-      endSourceChar: 661
-      line: 24
-      lineChar: 46
-      spanCodeSection: "Text>();\r\n        "
-    - startInstruction: 148
-      endInstruction: 147
-      startSourceChar: 661
-      endSourceChar: 661
-      line: 25
-      lineChar: 8
-      spanCodeSection: 
-    - startInstruction: 148
-      endInstruction: 147
-      startSourceChar: 661
-      endSourceChar: 661
-      line: 25
-      lineChar: 8
-      spanCodeSection: 
-    - startInstruction: 148
-      endInstruction: 147
-      startSourceChar: 661
-      endSourceChar: 661
-      line: 25
-      lineChar: 8
-      spanCodeSection: 
-    - startInstruction: 148
-      endInstruction: 147
-      startSourceChar: 661
+    - startInstruction: 100
+      endInstruction: 99
+      startSourceChar: 670
       endSourceChar: 672
       line: 25
+      lineChar: 26
+      spanCodeSection: '= '
+    - startInstruction: 100
+      endInstruction: 99
+      startSourceChar: 672
+      endSourceChar: 672
+      line: 25
+      lineChar: 28
+      spanCodeSection: 
+    - startInstruction: 100
+      endInstruction: 99
+      startSourceChar: 672
+      endSourceChar: 687
+      line: 25
+      lineChar: 28
+      spanCodeSection: VRCInstantiate(
+    - startInstruction: 100
+      endInstruction: 123
+      startSourceChar: 687
+      endSourceChar: 712
+      line: 25
+      lineChar: 43
+      spanCodeSection: "LogTextPrefab);\r\n        "
+    - startInstruction: 124
+      endInstruction: 123
+      startSourceChar: 712
+      endSourceChar: 712
+      line: 26
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 124
+      endInstruction: 123
+      startSourceChar: 712
+      endSourceChar: 712
+      line: 26
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 124
+      endInstruction: 123
+      startSourceChar: 712
+      endSourceChar: 712
+      line: 26
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 124
+      endInstruction: 123
+      startSourceChar: 712
+      endSourceChar: 728
+      line: 26
+      lineChar: 8
+      spanCodeSection: 'Text newLogText '
+    - startInstruction: 124
+      endInstruction: 123
+      startSourceChar: 728
+      endSourceChar: 730
+      line: 26
+      lineChar: 24
+      spanCodeSection: '= '
+    - startInstruction: 124
+      endInstruction: 123
+      startSourceChar: 730
+      endSourceChar: 730
+      line: 26
+      lineChar: 26
+      spanCodeSection: 
+    - startInstruction: 124
+      endInstruction: 123
+      startSourceChar: 730
+      endSourceChar: 730
+      line: 26
+      lineChar: 26
+      spanCodeSection: 
+    - startInstruction: 124
+      endInstruction: 123
+      startSourceChar: 730
+      endSourceChar: 737
+      line: 26
+      lineChar: 26
+      spanCodeSection: newLog.
+    - startInstruction: 124
+      endInstruction: 123
+      startSourceChar: 737
+      endSourceChar: 749
+      line: 26
+      lineChar: 33
+      spanCodeSection: GetComponent
+    - startInstruction: 124
+      endInstruction: 123
+      startSourceChar: 749
+      endSourceChar: 750
+      line: 26
+      lineChar: 45
+      spanCodeSection: <
+    - startInstruction: 124
+      endInstruction: 179
+      startSourceChar: 750
+      endSourceChar: 768
+      line: 26
+      lineChar: 46
+      spanCodeSection: "Text>();\r\n        "
+    - startInstruction: 180
+      endInstruction: 179
+      startSourceChar: 768
+      endSourceChar: 768
+      line: 27
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 180
+      endInstruction: 179
+      startSourceChar: 768
+      endSourceChar: 768
+      line: 27
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 180
+      endInstruction: 179
+      startSourceChar: 768
+      endSourceChar: 768
+      line: 27
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 180
+      endInstruction: 179
+      startSourceChar: 768
+      endSourceChar: 779
+      line: 27
       lineChar: 8
       spanCodeSection: newLogText.
-    - startInstruction: 148
-      endInstruction: 147
-      startSourceChar: 672
-      endSourceChar: 679
-      line: 25
+    - startInstruction: 180
+      endInstruction: 179
+      startSourceChar: 779
+      endSourceChar: 786
+      line: 27
       lineChar: 19
       spanCodeSection: 'text = '
-    - startInstruction: 148
-      endInstruction: 147
-      startSourceChar: 679
-      endSourceChar: 679
-      line: 25
+    - startInstruction: 180
+      endInstruction: 179
+      startSourceChar: 786
+      endSourceChar: 786
+      line: 27
       lineChar: 26
       spanCodeSection: 
-    - startInstruction: 148
-      endInstruction: 163
-      startSourceChar: 679
-      endSourceChar: 693
-      line: 25
+    - startInstruction: 180
+      endInstruction: 195
+      startSourceChar: 786
+      endSourceChar: 800
+      line: 27
       lineChar: 26
       spanCodeSection: 'logMetaInfo ? '
-    - startInstruction: 164
-      endInstruction: 163
-      startSourceChar: 693
-      endSourceChar: 695
-      line: 25
+    - startInstruction: 196
+      endInstruction: 195
+      startSourceChar: 800
+      endSourceChar: 802
+      line: 27
       lineChar: 40
       spanCodeSection: $"
-    - startInstruction: 164
-      endInstruction: 163
-      startSourceChar: 695
-      endSourceChar: 696
-      line: 25
+    - startInstruction: 196
+      endInstruction: 195
+      startSourceChar: 802
+      endSourceChar: 803
+      line: 27
       lineChar: 42
       spanCodeSection: '{'
-    - startInstruction: 164
-      endInstruction: 163
-      startSourceChar: 696
-      endSourceChar: 696
-      line: 25
+    - startInstruction: 196
+      endInstruction: 195
+      startSourceChar: 803
+      endSourceChar: 803
+      line: 27
       lineChar: 43
       spanCodeSection: 
-    - startInstruction: 164
-      endInstruction: 163
-      startSourceChar: 696
-      endSourceChar: 696
-      line: 25
+    - startInstruction: 196
+      endInstruction: 195
+      startSourceChar: 803
+      endSourceChar: 803
+      line: 27
       lineChar: 43
       spanCodeSection: 
-    - startInstruction: 164
-      endInstruction: 163
-      startSourceChar: 696
-      endSourceChar: 696
-      line: 25
+    - startInstruction: 196
+      endInstruction: 195
+      startSourceChar: 803
+      endSourceChar: 803
+      line: 27
       lineChar: 43
       spanCodeSection: 
-    - startInstruction: 164
-      endInstruction: 163
-      startSourceChar: 696
-      endSourceChar: 705
-      line: 25
+    - startInstruction: 196
+      endInstruction: 195
+      startSourceChar: 803
+      endSourceChar: 812
+      line: 27
       lineChar: 43
       spanCodeSection: DateTime.
-    - startInstruction: 164
-      endInstruction: 163
-      startSourceChar: 705
-      endSourceChar: 709
-      line: 25
+    - startInstruction: 196
+      endInstruction: 195
+      startSourceChar: 812
+      endSourceChar: 816
+      line: 27
       lineChar: 52
       spanCodeSection: Now.
-    - startInstruction: 164
-      endInstruction: 179
-      startSourceChar: 709
-      endSourceChar: 718
-      line: 25
+    - startInstruction: 196
+      endInstruction: 211
+      startSourceChar: 816
+      endSourceChar: 825
+      line: 27
       lineChar: 56
       spanCodeSection: ToString(
-    - startInstruction: 180
-      endInstruction: 231
-      startSourceChar: 718
-      endSourceChar: 741
-      line: 25
+    - startInstruction: 212
+      endInstruction: 263
+      startSourceChar: 825
+      endSourceChar: 848
+      line: 27
       lineChar: 65
       spanCodeSection: '"MM/dd/yyyy HH:mm:ss")}'
-    - startInstruction: 232
-      endInstruction: 283
-      startSourceChar: 741
-      endSourceChar: 769
-      line: 25
+    - startInstruction: 264
+      endInstruction: 315
+      startSourceChar: 848
+      endSourceChar: 876
+      line: 27
       lineChar: 88
       spanCodeSection: ' <color=white>Log</color> - '
-    - startInstruction: 284
-      endInstruction: 283
-      startSourceChar: 769
-      endSourceChar: 770
-      line: 25
+    - startInstruction: 316
+      endInstruction: 315
+      startSourceChar: 876
+      endSourceChar: 877
+      line: 27
       lineChar: 116
       spanCodeSection: '{'
-    - startInstruction: 284
-      endInstruction: 363
-      startSourceChar: 770
-      endSourceChar: 779
-      line: 25
+    - startInstruction: 316
+      endInstruction: 395
+      startSourceChar: 877
+      endSourceChar: 886
+      line: 27
       lineChar: 117
       spanCodeSection: 'text}" : '
-    - startInstruction: 364
-      endInstruction: 363
-      startSourceChar: 779
-      endSourceChar: 781
-      line: 25
+    - startInstruction: 396
+      endInstruction: 395
+      startSourceChar: 886
+      endSourceChar: 888
+      line: 27
       lineChar: 126
       spanCodeSection: $"
-    - startInstruction: 364
-      endInstruction: 363
-      startSourceChar: 781
-      endSourceChar: 782
-      line: 25
+    - startInstruction: 396
+      endInstruction: 395
+      startSourceChar: 888
+      endSourceChar: 889
+      line: 27
       lineChar: 128
       spanCodeSection: '{'
-    - startInstruction: 364
-      endInstruction: 427
-      startSourceChar: 782
-      endSourceChar: 799
-      line: 25
+    - startInstruction: 396
+      endInstruction: 459
+      startSourceChar: 889
+      endSourceChar: 906
+      line: 27
       lineChar: 129
       spanCodeSection: "text}\";\r\n        "
-    - startInstruction: 428
-      endInstruction: 427
-      startSourceChar: 799
-      endSourceChar: 799
-      line: 26
+    - startInstruction: 460
+      endInstruction: 459
+      startSourceChar: 906
+      endSourceChar: 906
+      line: 28
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 428
-      endInstruction: 427
-      startSourceChar: 799
-      endSourceChar: 799
-      line: 26
+    - startInstruction: 460
+      endInstruction: 459
+      startSourceChar: 906
+      endSourceChar: 906
+      line: 28
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 428
-      endInstruction: 427
-      startSourceChar: 799
-      endSourceChar: 799
-      line: 26
+    - startInstruction: 460
+      endInstruction: 459
+      startSourceChar: 906
+      endSourceChar: 906
+      line: 28
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 428
-      endInstruction: 427
-      startSourceChar: 799
-      endSourceChar: 799
-      line: 26
+    - startInstruction: 460
+      endInstruction: 459
+      startSourceChar: 906
+      endSourceChar: 906
+      line: 28
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 428
-      endInstruction: 427
-      startSourceChar: 799
-      endSourceChar: 806
-      line: 26
+    - startInstruction: 460
+      endInstruction: 459
+      startSourceChar: 906
+      endSourceChar: 913
+      line: 28
       lineChar: 8
       spanCodeSection: newLog.
-    - startInstruction: 428
-      endInstruction: 427
-      startSourceChar: 806
-      endSourceChar: 816
-      line: 26
+    - startInstruction: 460
+      endInstruction: 459
+      startSourceChar: 913
+      endSourceChar: 923
+      line: 28
       lineChar: 15
       spanCodeSection: transform.
-    - startInstruction: 428
-      endInstruction: 451
-      startSourceChar: 816
-      endSourceChar: 826
-      line: 26
+    - startInstruction: 460
+      endInstruction: 483
+      startSourceChar: 923
+      endSourceChar: 933
+      line: 28
       lineChar: 25
       spanCodeSection: SetParent(
-    - startInstruction: 452
-      endInstruction: 451
-      startSourceChar: 826
-      endSourceChar: 844
-      line: 26
+    - startInstruction: 484
+      endInstruction: 483
+      startSourceChar: 933
+      endSourceChar: 951
+      line: 28
       lineChar: 35
       spanCodeSection: 'LogTextContainer, '
-    - startInstruction: 452
-      endInstruction: 483
-      startSourceChar: 844
-      endSourceChar: 861
-      line: 26
+    - startInstruction: 484
+      endInstruction: 515
+      startSourceChar: 951
+      endSourceChar: 968
+      line: 28
       lineChar: 53
       spanCodeSection: "false);\r\n        "
-    - startInstruction: 484
-      endInstruction: 483
-      startSourceChar: 861
-      endSourceChar: 861
-      line: 27
+    - startInstruction: 516
+      endInstruction: 515
+      startSourceChar: 968
+      endSourceChar: 968
+      line: 29
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 484
-      endInstruction: 483
-      startSourceChar: 861
-      endSourceChar: 861
-      line: 27
+    - startInstruction: 516
+      endInstruction: 515
+      startSourceChar: 968
+      endSourceChar: 968
+      line: 29
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 484
-      endInstruction: 535
-      startSourceChar: 861
-      endSourceChar: 895
-      line: 27
+    - startInstruction: 516
+      endInstruction: 567
+      startSourceChar: 968
+      endSourceChar: 1002
+      line: 29
       lineChar: 8
       spanCodeSection: "currentNumberOfLogs++;\r\n\r\n        "
-    - startInstruction: 536
-      endInstruction: 535
-      startSourceChar: 895
-      endSourceChar: 899
-      line: 29
+    - startInstruction: 568
+      endInstruction: 567
+      startSourceChar: 1002
+      endSourceChar: 1006
+      line: 31
       lineChar: 8
       spanCodeSection: if (
-    - startInstruction: 536
-      endInstruction: 535
-      startSourceChar: 899
-      endSourceChar: 899
-      line: 29
+    - startInstruction: 568
+      endInstruction: 567
+      startSourceChar: 1006
+      endSourceChar: 1006
+      line: 31
       lineChar: 12
       spanCodeSection: 
-    - startInstruction: 536
-      endInstruction: 535
-      startSourceChar: 899
-      endSourceChar: 921
-      line: 29
+    - startInstruction: 568
+      endInstruction: 567
+      startSourceChar: 1006
+      endSourceChar: 1028
+      line: 31
       lineChar: 12
       spanCodeSection: 'currentNumberOfLogs > '
-    - startInstruction: 536
-      endInstruction: 583
-      startSourceChar: 921
-      endSourceChar: 939
-      line: 29
+    - startInstruction: 568
+      endInstruction: 615
+      startSourceChar: 1028
+      endSourceChar: 1046
+      line: 31
       lineChar: 34
       spanCodeSection: "maxLogs)\r\n        "
-    - startInstruction: 584
-      endInstruction: 583
-      startSourceChar: 939
-      endSourceChar: 954
-      line: 30
+    - startInstruction: 616
+      endInstruction: 615
+      startSourceChar: 1046
+      endSourceChar: 1061
+      line: 32
       lineChar: 8
       spanCodeSection: "{\r\n            "
-    - startInstruction: 584
-      endInstruction: 583
-      startSourceChar: 954
-      endSourceChar: 954
-      line: 31
+    - startInstruction: 616
+      endInstruction: 615
+      startSourceChar: 1061
+      endSourceChar: 1061
+      line: 33
       lineChar: 12
       spanCodeSection: 
-    - startInstruction: 584
-      endInstruction: 583
-      startSourceChar: 954
-      endSourceChar: 954
-      line: 31
+    - startInstruction: 616
+      endInstruction: 615
+      startSourceChar: 1061
+      endSourceChar: 1061
+      line: 33
       lineChar: 12
       spanCodeSection: 
-    - startInstruction: 584
-      endInstruction: 583
-      startSourceChar: 954
-      endSourceChar: 962
-      line: 31
+    - startInstruction: 616
+      endInstruction: 615
+      startSourceChar: 1061
+      endSourceChar: 1069
+      line: 33
       lineChar: 12
       spanCodeSection: Destroy(
-    - startInstruction: 584
-      endInstruction: 583
-      startSourceChar: 962
-      endSourceChar: 962
-      line: 31
+    - startInstruction: 616
+      endInstruction: 615
+      startSourceChar: 1069
+      endSourceChar: 1069
+      line: 33
       lineChar: 20
       spanCodeSection: 
-    - startInstruction: 584
-      endInstruction: 583
-      startSourceChar: 962
-      endSourceChar: 962
-      line: 31
+    - startInstruction: 616
+      endInstruction: 615
+      startSourceChar: 1069
+      endSourceChar: 1069
+      line: 33
       lineChar: 20
       spanCodeSection: 
-    - startInstruction: 584
-      endInstruction: 583
-      startSourceChar: 962
-      endSourceChar: 962
-      line: 31
+    - startInstruction: 616
+      endInstruction: 615
+      startSourceChar: 1069
+      endSourceChar: 1069
+      line: 33
       lineChar: 20
       spanCodeSection: 
-    - startInstruction: 584
-      endInstruction: 583
-      startSourceChar: 962
-      endSourceChar: 979
-      line: 31
+    - startInstruction: 616
+      endInstruction: 615
+      startSourceChar: 1069
+      endSourceChar: 1086
+      line: 33
       lineChar: 20
       spanCodeSection: LogTextContainer.
-    - startInstruction: 584
-      endInstruction: 583
-      startSourceChar: 979
-      endSourceChar: 988
-      line: 31
+    - startInstruction: 616
+      endInstruction: 615
+      startSourceChar: 1086
+      endSourceChar: 1095
+      line: 33
       lineChar: 37
       spanCodeSection: GetChild(
-    - startInstruction: 584
-      endInstruction: 615
-      startSourceChar: 988
-      endSourceChar: 991
-      line: 31
+    - startInstruction: 616
+      endInstruction: 647
+      startSourceChar: 1095
+      endSourceChar: 1098
+      line: 33
       lineChar: 46
       spanCodeSection: 0).
-    - startInstruction: 616
-      endInstruction: 675
-      startSourceChar: 991
-      endSourceChar: 1029
-      line: 31
+    - startInstruction: 648
+      endInstruction: 707
+      startSourceChar: 1098
+      endSourceChar: 1136
+      line: 33
       lineChar: 49
       spanCodeSection: "gameObject);\r\n        }\r\n    }\r\n\r\n    "
-    - startInstruction: 676
-      endInstruction: 675
-      startSourceChar: 1029
-      endSourceChar: 1052
-      line: 35
+    - startInstruction: 708
+      endInstruction: 707
+      startSourceChar: 1136
+      endSourceChar: 1159
+      line: 37
       lineChar: 4
       spanCodeSection: public void LogWarning(
-    - startInstruction: 676
-      endInstruction: 683
-      startSourceChar: 1052
-      endSourceChar: 1070
-      line: 35
+    - startInstruction: 708
+      endInstruction: 715
+      startSourceChar: 1159
+      endSourceChar: 1177
+      line: 37
       lineChar: 27
       spanCodeSection: "string text)\r\n    "
-    - startInstruction: 684
-      endInstruction: 683
-      startSourceChar: 1070
-      endSourceChar: 1081
-      line: 36
+    - startInstruction: 716
+      endInstruction: 715
+      startSourceChar: 1177
+      endSourceChar: 1188
+      line: 38
       lineChar: 4
       spanCodeSection: "{\r\n        "
-    - startInstruction: 684
-      endInstruction: 683
-      startSourceChar: 1081
-      endSourceChar: 1081
-      line: 37
+    - startInstruction: 716
+      endInstruction: 715
+      startSourceChar: 1188
+      endSourceChar: 1188
+      line: 39
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 684
-      endInstruction: 683
-      startSourceChar: 1081
-      endSourceChar: 1081
-      line: 37
+    - startInstruction: 716
+      endInstruction: 715
+      startSourceChar: 1188
+      endSourceChar: 1188
+      line: 39
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 684
-      endInstruction: 683
-      startSourceChar: 1081
-      endSourceChar: 1081
-      line: 37
+    - startInstruction: 716
+      endInstruction: 715
+      startSourceChar: 1188
+      endSourceChar: 1188
+      line: 39
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 684
-      endInstruction: 683
-      startSourceChar: 1081
-      endSourceChar: 1099
-      line: 37
+    - startInstruction: 716
+      endInstruction: 715
+      startSourceChar: 1188
+      endSourceChar: 1206
+      line: 39
       lineChar: 8
       spanCodeSection: 'GameObject newLog '
-    - startInstruction: 684
-      endInstruction: 683
-      startSourceChar: 1099
-      endSourceChar: 1101
-      line: 37
-      lineChar: 26
-      spanCodeSection: '= '
-    - startInstruction: 684
-      endInstruction: 683
-      startSourceChar: 1101
-      endSourceChar: 1101
-      line: 37
-      lineChar: 28
-      spanCodeSection: 
-    - startInstruction: 684
-      endInstruction: 683
-      startSourceChar: 1101
-      endSourceChar: 1116
-      line: 37
-      lineChar: 28
-      spanCodeSection: VRCInstantiate(
-    - startInstruction: 684
-      endInstruction: 707
-      startSourceChar: 1116
-      endSourceChar: 1141
-      line: 37
-      lineChar: 43
-      spanCodeSection: "LogTextPrefab);\r\n        "
-    - startInstruction: 708
-      endInstruction: 707
-      startSourceChar: 1141
-      endSourceChar: 1141
-      line: 38
-      lineChar: 8
-      spanCodeSection: 
-    - startInstruction: 708
-      endInstruction: 707
-      startSourceChar: 1141
-      endSourceChar: 1141
-      line: 38
-      lineChar: 8
-      spanCodeSection: 
-    - startInstruction: 708
-      endInstruction: 707
-      startSourceChar: 1141
-      endSourceChar: 1141
-      line: 38
-      lineChar: 8
-      spanCodeSection: 
-    - startInstruction: 708
-      endInstruction: 707
-      startSourceChar: 1141
-      endSourceChar: 1157
-      line: 38
-      lineChar: 8
-      spanCodeSection: 'Text newLogText '
-    - startInstruction: 708
-      endInstruction: 707
-      startSourceChar: 1157
-      endSourceChar: 1159
-      line: 38
-      lineChar: 24
-      spanCodeSection: '= '
-    - startInstruction: 708
-      endInstruction: 707
-      startSourceChar: 1159
-      endSourceChar: 1159
-      line: 38
-      lineChar: 26
-      spanCodeSection: 
-    - startInstruction: 708
-      endInstruction: 707
-      startSourceChar: 1159
-      endSourceChar: 1159
-      line: 38
-      lineChar: 26
-      spanCodeSection: 
-    - startInstruction: 708
-      endInstruction: 707
-      startSourceChar: 1159
-      endSourceChar: 1166
-      line: 38
-      lineChar: 26
-      spanCodeSection: newLog.
-    - startInstruction: 708
-      endInstruction: 707
-      startSourceChar: 1166
-      endSourceChar: 1178
-      line: 38
-      lineChar: 33
-      spanCodeSection: GetComponent
-    - startInstruction: 708
-      endInstruction: 707
-      startSourceChar: 1178
-      endSourceChar: 1179
-      line: 38
-      lineChar: 45
-      spanCodeSection: <
-    - startInstruction: 708
-      endInstruction: 763
-      startSourceChar: 1179
-      endSourceChar: 1197
-      line: 38
-      lineChar: 46
-      spanCodeSection: "Text>();\r\n        "
-    - startInstruction: 764
-      endInstruction: 763
-      startSourceChar: 1197
-      endSourceChar: 1197
-      line: 39
-      lineChar: 8
-      spanCodeSection: 
-    - startInstruction: 764
-      endInstruction: 763
-      startSourceChar: 1197
-      endSourceChar: 1197
-      line: 39
-      lineChar: 8
-      spanCodeSection: 
-    - startInstruction: 764
-      endInstruction: 763
-      startSourceChar: 1197
-      endSourceChar: 1197
-      line: 39
-      lineChar: 8
-      spanCodeSection: 
-    - startInstruction: 764
-      endInstruction: 763
-      startSourceChar: 1197
+    - startInstruction: 716
+      endInstruction: 715
+      startSourceChar: 1206
       endSourceChar: 1208
       line: 39
-      lineChar: 8
-      spanCodeSection: newLogText.
-    - startInstruction: 764
-      endInstruction: 763
-      startSourceChar: 1208
-      endSourceChar: 1215
-      line: 39
-      lineChar: 19
-      spanCodeSection: 'text = '
-    - startInstruction: 764
-      endInstruction: 763
-      startSourceChar: 1215
-      endSourceChar: 1215
-      line: 39
-      lineChar: 26
-      spanCodeSection: 
-    - startInstruction: 764
-      endInstruction: 779
-      startSourceChar: 1215
-      endSourceChar: 1229
-      line: 39
-      lineChar: 26
-      spanCodeSection: 'logMetaInfo ? '
-    - startInstruction: 780
-      endInstruction: 779
-      startSourceChar: 1229
-      endSourceChar: 1231
-      line: 39
-      lineChar: 40
-      spanCodeSection: $"
-    - startInstruction: 780
-      endInstruction: 779
-      startSourceChar: 1231
-      endSourceChar: 1232
-      line: 39
-      lineChar: 42
-      spanCodeSection: '{'
-    - startInstruction: 780
-      endInstruction: 779
-      startSourceChar: 1232
-      endSourceChar: 1232
-      line: 39
-      lineChar: 43
-      spanCodeSection: 
-    - startInstruction: 780
-      endInstruction: 779
-      startSourceChar: 1232
-      endSourceChar: 1232
-      line: 39
-      lineChar: 43
-      spanCodeSection: 
-    - startInstruction: 780
-      endInstruction: 779
-      startSourceChar: 1232
-      endSourceChar: 1232
-      line: 39
-      lineChar: 43
-      spanCodeSection: 
-    - startInstruction: 780
-      endInstruction: 779
-      startSourceChar: 1232
-      endSourceChar: 1241
-      line: 39
-      lineChar: 43
-      spanCodeSection: DateTime.
-    - startInstruction: 780
-      endInstruction: 779
-      startSourceChar: 1241
-      endSourceChar: 1245
-      line: 39
-      lineChar: 52
-      spanCodeSection: Now.
-    - startInstruction: 780
-      endInstruction: 795
-      startSourceChar: 1245
-      endSourceChar: 1254
-      line: 39
-      lineChar: 56
-      spanCodeSection: ToString(
-    - startInstruction: 796
-      endInstruction: 847
-      startSourceChar: 1254
-      endSourceChar: 1277
-      line: 39
-      lineChar: 65
-      spanCodeSection: '"MM/dd/yyyy HH:mm:ss")}'
-    - startInstruction: 848
-      endInstruction: 899
-      startSourceChar: 1277
-      endSourceChar: 1310
-      line: 39
-      lineChar: 88
-      spanCodeSection: ' <color=yellow>Warning</color> - '
-    - startInstruction: 900
-      endInstruction: 899
-      startSourceChar: 1310
-      endSourceChar: 1311
-      line: 39
-      lineChar: 121
-      spanCodeSection: '{'
-    - startInstruction: 900
-      endInstruction: 979
-      startSourceChar: 1311
-      endSourceChar: 1320
-      line: 39
-      lineChar: 122
-      spanCodeSection: 'text}" : '
-    - startInstruction: 980
-      endInstruction: 979
-      startSourceChar: 1320
-      endSourceChar: 1322
-      line: 39
-      lineChar: 131
-      spanCodeSection: $"
-    - startInstruction: 980
-      endInstruction: 979
-      startSourceChar: 1322
-      endSourceChar: 1323
-      line: 39
-      lineChar: 133
-      spanCodeSection: '{'
-    - startInstruction: 980
-      endInstruction: 1043
-      startSourceChar: 1323
-      endSourceChar: 1340
-      line: 39
-      lineChar: 134
-      spanCodeSection: "text}\";\r\n        "
-    - startInstruction: 1044
-      endInstruction: 1043
-      startSourceChar: 1340
-      endSourceChar: 1340
-      line: 40
-      lineChar: 8
-      spanCodeSection: 
-    - startInstruction: 1044
-      endInstruction: 1043
-      startSourceChar: 1340
-      endSourceChar: 1340
-      line: 40
-      lineChar: 8
-      spanCodeSection: 
-    - startInstruction: 1044
-      endInstruction: 1043
-      startSourceChar: 1340
-      endSourceChar: 1340
-      line: 40
-      lineChar: 8
-      spanCodeSection: 
-    - startInstruction: 1044
-      endInstruction: 1043
-      startSourceChar: 1340
-      endSourceChar: 1340
-      line: 40
-      lineChar: 8
-      spanCodeSection: 
-    - startInstruction: 1044
-      endInstruction: 1043
-      startSourceChar: 1340
-      endSourceChar: 1347
-      line: 40
-      lineChar: 8
-      spanCodeSection: newLog.
-    - startInstruction: 1044
-      endInstruction: 1043
-      startSourceChar: 1347
-      endSourceChar: 1357
-      line: 40
-      lineChar: 15
-      spanCodeSection: transform.
-    - startInstruction: 1044
-      endInstruction: 1067
-      startSourceChar: 1357
-      endSourceChar: 1367
-      line: 40
-      lineChar: 25
-      spanCodeSection: SetParent(
-    - startInstruction: 1068
-      endInstruction: 1067
-      startSourceChar: 1367
-      endSourceChar: 1385
-      line: 40
-      lineChar: 35
-      spanCodeSection: 'LogTextContainer, '
-    - startInstruction: 1068
-      endInstruction: 1099
-      startSourceChar: 1385
-      endSourceChar: 1402
-      line: 40
-      lineChar: 53
-      spanCodeSection: "false);\r\n        "
-    - startInstruction: 1100
-      endInstruction: 1099
-      startSourceChar: 1402
-      endSourceChar: 1402
-      line: 41
-      lineChar: 8
-      spanCodeSection: 
-    - startInstruction: 1100
-      endInstruction: 1099
-      startSourceChar: 1402
-      endSourceChar: 1402
-      line: 41
-      lineChar: 8
-      spanCodeSection: 
-    - startInstruction: 1100
-      endInstruction: 1151
-      startSourceChar: 1402
-      endSourceChar: 1436
-      line: 41
-      lineChar: 8
-      spanCodeSection: "currentNumberOfLogs++;\r\n\r\n        "
-    - startInstruction: 1152
-      endInstruction: 1151
-      startSourceChar: 1436
-      endSourceChar: 1440
-      line: 43
-      lineChar: 8
-      spanCodeSection: if (
-    - startInstruction: 1152
-      endInstruction: 1151
-      startSourceChar: 1440
-      endSourceChar: 1440
-      line: 43
-      lineChar: 12
-      spanCodeSection: 
-    - startInstruction: 1152
-      endInstruction: 1151
-      startSourceChar: 1440
-      endSourceChar: 1462
-      line: 43
-      lineChar: 12
-      spanCodeSection: 'currentNumberOfLogs > '
-    - startInstruction: 1152
-      endInstruction: 1199
-      startSourceChar: 1462
-      endSourceChar: 1480
-      line: 43
-      lineChar: 34
-      spanCodeSection: "maxLogs)\r\n        "
-    - startInstruction: 1200
-      endInstruction: 1199
-      startSourceChar: 1480
-      endSourceChar: 1495
-      line: 44
-      lineChar: 8
-      spanCodeSection: "{\r\n            "
-    - startInstruction: 1200
-      endInstruction: 1199
-      startSourceChar: 1495
-      endSourceChar: 1495
-      line: 45
-      lineChar: 12
-      spanCodeSection: 
-    - startInstruction: 1200
-      endInstruction: 1199
-      startSourceChar: 1495
-      endSourceChar: 1495
-      line: 45
-      lineChar: 12
-      spanCodeSection: 
-    - startInstruction: 1200
-      endInstruction: 1199
-      startSourceChar: 1495
-      endSourceChar: 1503
-      line: 45
-      lineChar: 12
-      spanCodeSection: Destroy(
-    - startInstruction: 1200
-      endInstruction: 1199
-      startSourceChar: 1503
-      endSourceChar: 1503
-      line: 45
-      lineChar: 20
-      spanCodeSection: 
-    - startInstruction: 1200
-      endInstruction: 1199
-      startSourceChar: 1503
-      endSourceChar: 1503
-      line: 45
-      lineChar: 20
-      spanCodeSection: 
-    - startInstruction: 1200
-      endInstruction: 1199
-      startSourceChar: 1503
-      endSourceChar: 1503
-      line: 45
-      lineChar: 20
-      spanCodeSection: 
-    - startInstruction: 1200
-      endInstruction: 1199
-      startSourceChar: 1503
-      endSourceChar: 1520
-      line: 45
-      lineChar: 20
-      spanCodeSection: LogTextContainer.
-    - startInstruction: 1200
-      endInstruction: 1199
-      startSourceChar: 1520
-      endSourceChar: 1529
-      line: 45
-      lineChar: 37
-      spanCodeSection: GetChild(
-    - startInstruction: 1200
-      endInstruction: 1231
-      startSourceChar: 1529
-      endSourceChar: 1532
-      line: 45
-      lineChar: 46
-      spanCodeSection: 0).
-    - startInstruction: 1232
-      endInstruction: 1291
-      startSourceChar: 1532
-      endSourceChar: 1570
-      line: 45
-      lineChar: 49
-      spanCodeSection: "gameObject);\r\n        }\r\n    }\r\n\r\n    "
-    - startInstruction: 1292
-      endInstruction: 1291
-      startSourceChar: 1570
-      endSourceChar: 1591
-      line: 49
-      lineChar: 4
-      spanCodeSection: public void LogError(
-    - startInstruction: 1292
-      endInstruction: 1299
-      startSourceChar: 1591
-      endSourceChar: 1609
-      line: 49
-      lineChar: 25
-      spanCodeSection: "string text)\r\n    "
-    - startInstruction: 1300
-      endInstruction: 1299
-      startSourceChar: 1609
-      endSourceChar: 1620
-      line: 50
-      lineChar: 4
-      spanCodeSection: "{\r\n        "
-    - startInstruction: 1300
-      endInstruction: 1299
-      startSourceChar: 1620
-      endSourceChar: 1620
-      line: 51
-      lineChar: 8
-      spanCodeSection: 
-    - startInstruction: 1300
-      endInstruction: 1299
-      startSourceChar: 1620
-      endSourceChar: 1620
-      line: 51
-      lineChar: 8
-      spanCodeSection: 
-    - startInstruction: 1300
-      endInstruction: 1299
-      startSourceChar: 1620
-      endSourceChar: 1620
-      line: 51
-      lineChar: 8
-      spanCodeSection: 
-    - startInstruction: 1300
-      endInstruction: 1299
-      startSourceChar: 1620
-      endSourceChar: 1638
-      line: 51
-      lineChar: 8
-      spanCodeSection: 'GameObject newLog '
-    - startInstruction: 1300
-      endInstruction: 1299
-      startSourceChar: 1638
-      endSourceChar: 1640
-      line: 51
       lineChar: 26
       spanCodeSection: '= '
-    - startInstruction: 1300
-      endInstruction: 1299
-      startSourceChar: 1640
-      endSourceChar: 1640
-      line: 51
+    - startInstruction: 716
+      endInstruction: 715
+      startSourceChar: 1208
+      endSourceChar: 1208
+      line: 39
       lineChar: 28
       spanCodeSection: 
-    - startInstruction: 1300
-      endInstruction: 1299
-      startSourceChar: 1640
-      endSourceChar: 1655
-      line: 51
+    - startInstruction: 716
+      endInstruction: 715
+      startSourceChar: 1208
+      endSourceChar: 1223
+      line: 39
       lineChar: 28
       spanCodeSection: VRCInstantiate(
-    - startInstruction: 1300
-      endInstruction: 1323
-      startSourceChar: 1655
-      endSourceChar: 1680
-      line: 51
+    - startInstruction: 716
+      endInstruction: 739
+      startSourceChar: 1223
+      endSourceChar: 1248
+      line: 39
       lineChar: 43
       spanCodeSection: "LogTextPrefab);\r\n        "
-    - startInstruction: 1324
-      endInstruction: 1323
-      startSourceChar: 1680
-      endSourceChar: 1680
-      line: 52
+    - startInstruction: 740
+      endInstruction: 739
+      startSourceChar: 1248
+      endSourceChar: 1248
+      line: 40
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 1324
-      endInstruction: 1323
-      startSourceChar: 1680
-      endSourceChar: 1680
-      line: 52
+    - startInstruction: 740
+      endInstruction: 739
+      startSourceChar: 1248
+      endSourceChar: 1248
+      line: 40
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 1324
-      endInstruction: 1323
-      startSourceChar: 1680
-      endSourceChar: 1680
-      line: 52
+    - startInstruction: 740
+      endInstruction: 739
+      startSourceChar: 1248
+      endSourceChar: 1248
+      line: 40
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 1324
-      endInstruction: 1323
-      startSourceChar: 1680
-      endSourceChar: 1696
-      line: 52
+    - startInstruction: 740
+      endInstruction: 739
+      startSourceChar: 1248
+      endSourceChar: 1264
+      line: 40
       lineChar: 8
       spanCodeSection: 'Text newLogText '
-    - startInstruction: 1324
-      endInstruction: 1323
-      startSourceChar: 1696
-      endSourceChar: 1698
-      line: 52
+    - startInstruction: 740
+      endInstruction: 739
+      startSourceChar: 1264
+      endSourceChar: 1266
+      line: 40
       lineChar: 24
       spanCodeSection: '= '
-    - startInstruction: 1324
-      endInstruction: 1323
-      startSourceChar: 1698
-      endSourceChar: 1698
-      line: 52
+    - startInstruction: 740
+      endInstruction: 739
+      startSourceChar: 1266
+      endSourceChar: 1266
+      line: 40
       lineChar: 26
       spanCodeSection: 
-    - startInstruction: 1324
-      endInstruction: 1323
-      startSourceChar: 1698
-      endSourceChar: 1698
-      line: 52
+    - startInstruction: 740
+      endInstruction: 739
+      startSourceChar: 1266
+      endSourceChar: 1266
+      line: 40
       lineChar: 26
       spanCodeSection: 
-    - startInstruction: 1324
-      endInstruction: 1323
-      startSourceChar: 1698
-      endSourceChar: 1705
-      line: 52
+    - startInstruction: 740
+      endInstruction: 739
+      startSourceChar: 1266
+      endSourceChar: 1273
+      line: 40
       lineChar: 26
       spanCodeSection: newLog.
-    - startInstruction: 1324
-      endInstruction: 1323
-      startSourceChar: 1705
-      endSourceChar: 1717
-      line: 52
+    - startInstruction: 740
+      endInstruction: 739
+      startSourceChar: 1273
+      endSourceChar: 1285
+      line: 40
       lineChar: 33
       spanCodeSection: GetComponent
-    - startInstruction: 1324
-      endInstruction: 1323
-      startSourceChar: 1717
-      endSourceChar: 1718
-      line: 52
+    - startInstruction: 740
+      endInstruction: 739
+      startSourceChar: 1285
+      endSourceChar: 1286
+      line: 40
       lineChar: 45
       spanCodeSection: <
-    - startInstruction: 1324
-      endInstruction: 1379
-      startSourceChar: 1718
-      endSourceChar: 1736
-      line: 52
+    - startInstruction: 740
+      endInstruction: 795
+      startSourceChar: 1286
+      endSourceChar: 1304
+      line: 40
       lineChar: 46
       spanCodeSection: "Text>();\r\n        "
-    - startInstruction: 1380
-      endInstruction: 1379
-      startSourceChar: 1736
-      endSourceChar: 1736
-      line: 53
+    - startInstruction: 796
+      endInstruction: 795
+      startSourceChar: 1304
+      endSourceChar: 1304
+      line: 41
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 1380
-      endInstruction: 1379
-      startSourceChar: 1736
-      endSourceChar: 1736
-      line: 53
+    - startInstruction: 796
+      endInstruction: 795
+      startSourceChar: 1304
+      endSourceChar: 1304
+      line: 41
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 1380
-      endInstruction: 1379
-      startSourceChar: 1736
-      endSourceChar: 1736
-      line: 53
+    - startInstruction: 796
+      endInstruction: 795
+      startSourceChar: 1304
+      endSourceChar: 1304
+      line: 41
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 1380
-      endInstruction: 1379
-      startSourceChar: 1736
-      endSourceChar: 1747
-      line: 53
+    - startInstruction: 796
+      endInstruction: 795
+      startSourceChar: 1304
+      endSourceChar: 1315
+      line: 41
       lineChar: 8
       spanCodeSection: newLogText.
-    - startInstruction: 1380
-      endInstruction: 1379
-      startSourceChar: 1747
-      endSourceChar: 1754
-      line: 53
+    - startInstruction: 796
+      endInstruction: 795
+      startSourceChar: 1315
+      endSourceChar: 1322
+      line: 41
       lineChar: 19
       spanCodeSection: 'text = '
-    - startInstruction: 1380
-      endInstruction: 1379
-      startSourceChar: 1754
-      endSourceChar: 1754
-      line: 53
+    - startInstruction: 796
+      endInstruction: 795
+      startSourceChar: 1322
+      endSourceChar: 1322
+      line: 41
       lineChar: 26
       spanCodeSection: 
-    - startInstruction: 1380
-      endInstruction: 1395
-      startSourceChar: 1754
-      endSourceChar: 1768
-      line: 53
+    - startInstruction: 796
+      endInstruction: 811
+      startSourceChar: 1322
+      endSourceChar: 1336
+      line: 41
       lineChar: 26
       spanCodeSection: 'logMetaInfo ? '
-    - startInstruction: 1396
-      endInstruction: 1395
-      startSourceChar: 1768
-      endSourceChar: 1770
-      line: 53
+    - startInstruction: 812
+      endInstruction: 811
+      startSourceChar: 1336
+      endSourceChar: 1338
+      line: 41
       lineChar: 40
       spanCodeSection: $"
-    - startInstruction: 1396
-      endInstruction: 1395
-      startSourceChar: 1770
-      endSourceChar: 1771
-      line: 53
+    - startInstruction: 812
+      endInstruction: 811
+      startSourceChar: 1338
+      endSourceChar: 1339
+      line: 41
       lineChar: 42
       spanCodeSection: '{'
-    - startInstruction: 1396
-      endInstruction: 1395
-      startSourceChar: 1771
-      endSourceChar: 1771
-      line: 53
+    - startInstruction: 812
+      endInstruction: 811
+      startSourceChar: 1339
+      endSourceChar: 1339
+      line: 41
       lineChar: 43
       spanCodeSection: 
-    - startInstruction: 1396
-      endInstruction: 1395
-      startSourceChar: 1771
-      endSourceChar: 1771
-      line: 53
+    - startInstruction: 812
+      endInstruction: 811
+      startSourceChar: 1339
+      endSourceChar: 1339
+      line: 41
       lineChar: 43
       spanCodeSection: 
-    - startInstruction: 1396
-      endInstruction: 1395
-      startSourceChar: 1771
-      endSourceChar: 1771
-      line: 53
+    - startInstruction: 812
+      endInstruction: 811
+      startSourceChar: 1339
+      endSourceChar: 1339
+      line: 41
       lineChar: 43
       spanCodeSection: 
-    - startInstruction: 1396
-      endInstruction: 1395
-      startSourceChar: 1771
-      endSourceChar: 1780
-      line: 53
+    - startInstruction: 812
+      endInstruction: 811
+      startSourceChar: 1339
+      endSourceChar: 1348
+      line: 41
       lineChar: 43
       spanCodeSection: DateTime.
-    - startInstruction: 1396
-      endInstruction: 1395
-      startSourceChar: 1780
-      endSourceChar: 1784
-      line: 53
+    - startInstruction: 812
+      endInstruction: 811
+      startSourceChar: 1348
+      endSourceChar: 1352
+      line: 41
       lineChar: 52
       spanCodeSection: Now.
-    - startInstruction: 1396
-      endInstruction: 1411
-      startSourceChar: 1784
-      endSourceChar: 1793
-      line: 53
+    - startInstruction: 812
+      endInstruction: 827
+      startSourceChar: 1352
+      endSourceChar: 1361
+      line: 41
       lineChar: 56
       spanCodeSection: ToString(
-    - startInstruction: 1412
-      endInstruction: 1463
-      startSourceChar: 1793
-      endSourceChar: 1816
-      line: 53
+    - startInstruction: 828
+      endInstruction: 879
+      startSourceChar: 1361
+      endSourceChar: 1384
+      line: 41
       lineChar: 65
       spanCodeSection: '"MM/dd/yyyy HH:mm:ss")}'
-    - startInstruction: 1464
-      endInstruction: 1515
-      startSourceChar: 1816
-      endSourceChar: 1844
-      line: 53
+    - startInstruction: 880
+      endInstruction: 931
+      startSourceChar: 1384
+      endSourceChar: 1417
+      line: 41
       lineChar: 88
-      spanCodeSection: ' <color=red>ERROR</color> - '
-    - startInstruction: 1516
-      endInstruction: 1515
-      startSourceChar: 1844
-      endSourceChar: 1845
-      line: 53
-      lineChar: 116
+      spanCodeSection: ' <color=yellow>Warning</color> - '
+    - startInstruction: 932
+      endInstruction: 931
+      startSourceChar: 1417
+      endSourceChar: 1418
+      line: 41
+      lineChar: 121
       spanCodeSection: '{'
-    - startInstruction: 1516
-      endInstruction: 1595
-      startSourceChar: 1845
-      endSourceChar: 1854
-      line: 53
-      lineChar: 117
+    - startInstruction: 932
+      endInstruction: 1011
+      startSourceChar: 1418
+      endSourceChar: 1427
+      line: 41
+      lineChar: 122
       spanCodeSection: 'text}" : '
-    - startInstruction: 1596
-      endInstruction: 1595
-      startSourceChar: 1854
-      endSourceChar: 1856
-      line: 53
-      lineChar: 126
+    - startInstruction: 1012
+      endInstruction: 1011
+      startSourceChar: 1427
+      endSourceChar: 1429
+      line: 41
+      lineChar: 131
       spanCodeSection: $"
-    - startInstruction: 1596
-      endInstruction: 1595
-      startSourceChar: 1856
-      endSourceChar: 1857
-      line: 53
-      lineChar: 128
+    - startInstruction: 1012
+      endInstruction: 1011
+      startSourceChar: 1429
+      endSourceChar: 1430
+      line: 41
+      lineChar: 133
       spanCodeSection: '{'
-    - startInstruction: 1596
-      endInstruction: 1659
-      startSourceChar: 1857
-      endSourceChar: 1874
-      line: 53
-      lineChar: 129
+    - startInstruction: 1012
+      endInstruction: 1075
+      startSourceChar: 1430
+      endSourceChar: 1447
+      line: 41
+      lineChar: 134
       spanCodeSection: "text}\";\r\n        "
-    - startInstruction: 1660
-      endInstruction: 1659
-      startSourceChar: 1874
-      endSourceChar: 1874
-      line: 54
+    - startInstruction: 1076
+      endInstruction: 1075
+      startSourceChar: 1447
+      endSourceChar: 1447
+      line: 42
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 1660
-      endInstruction: 1659
-      startSourceChar: 1874
-      endSourceChar: 1874
-      line: 54
+    - startInstruction: 1076
+      endInstruction: 1075
+      startSourceChar: 1447
+      endSourceChar: 1447
+      line: 42
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 1660
-      endInstruction: 1659
-      startSourceChar: 1874
-      endSourceChar: 1874
-      line: 54
+    - startInstruction: 1076
+      endInstruction: 1075
+      startSourceChar: 1447
+      endSourceChar: 1447
+      line: 42
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 1660
-      endInstruction: 1659
-      startSourceChar: 1874
-      endSourceChar: 1874
-      line: 54
+    - startInstruction: 1076
+      endInstruction: 1075
+      startSourceChar: 1447
+      endSourceChar: 1447
+      line: 42
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 1660
-      endInstruction: 1659
-      startSourceChar: 1874
-      endSourceChar: 1881
-      line: 54
+    - startInstruction: 1076
+      endInstruction: 1075
+      startSourceChar: 1447
+      endSourceChar: 1454
+      line: 42
       lineChar: 8
       spanCodeSection: newLog.
-    - startInstruction: 1660
-      endInstruction: 1659
-      startSourceChar: 1881
-      endSourceChar: 1891
-      line: 54
+    - startInstruction: 1076
+      endInstruction: 1075
+      startSourceChar: 1454
+      endSourceChar: 1464
+      line: 42
       lineChar: 15
       spanCodeSection: transform.
-    - startInstruction: 1660
-      endInstruction: 1683
-      startSourceChar: 1891
-      endSourceChar: 1901
-      line: 54
+    - startInstruction: 1076
+      endInstruction: 1099
+      startSourceChar: 1464
+      endSourceChar: 1474
+      line: 42
       lineChar: 25
       spanCodeSection: SetParent(
-    - startInstruction: 1684
-      endInstruction: 1683
-      startSourceChar: 1901
-      endSourceChar: 1919
-      line: 54
+    - startInstruction: 1100
+      endInstruction: 1099
+      startSourceChar: 1474
+      endSourceChar: 1492
+      line: 42
       lineChar: 35
       spanCodeSection: 'LogTextContainer, '
-    - startInstruction: 1684
-      endInstruction: 1715
-      startSourceChar: 1919
-      endSourceChar: 1936
-      line: 54
+    - startInstruction: 1100
+      endInstruction: 1131
+      startSourceChar: 1492
+      endSourceChar: 1509
+      line: 42
       lineChar: 53
       spanCodeSection: "false);\r\n        "
-    - startInstruction: 1716
-      endInstruction: 1715
-      startSourceChar: 1936
-      endSourceChar: 1936
-      line: 55
+    - startInstruction: 1132
+      endInstruction: 1131
+      startSourceChar: 1509
+      endSourceChar: 1509
+      line: 43
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 1716
-      endInstruction: 1715
-      startSourceChar: 1936
-      endSourceChar: 1936
-      line: 55
+    - startInstruction: 1132
+      endInstruction: 1131
+      startSourceChar: 1509
+      endSourceChar: 1509
+      line: 43
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 1716
-      endInstruction: 1767
-      startSourceChar: 1936
-      endSourceChar: 1970
-      line: 55
+    - startInstruction: 1132
+      endInstruction: 1183
+      startSourceChar: 1509
+      endSourceChar: 1543
+      line: 43
       lineChar: 8
       spanCodeSection: "currentNumberOfLogs++;\r\n\r\n        "
-    - startInstruction: 1768
-      endInstruction: 1767
-      startSourceChar: 1970
-      endSourceChar: 1974
-      line: 57
+    - startInstruction: 1184
+      endInstruction: 1183
+      startSourceChar: 1543
+      endSourceChar: 1547
+      line: 45
       lineChar: 8
       spanCodeSection: if (
-    - startInstruction: 1768
-      endInstruction: 1767
-      startSourceChar: 1974
-      endSourceChar: 1974
-      line: 57
+    - startInstruction: 1184
+      endInstruction: 1183
+      startSourceChar: 1547
+      endSourceChar: 1547
+      line: 45
       lineChar: 12
       spanCodeSection: 
-    - startInstruction: 1768
-      endInstruction: 1767
-      startSourceChar: 1974
-      endSourceChar: 1996
-      line: 57
+    - startInstruction: 1184
+      endInstruction: 1183
+      startSourceChar: 1547
+      endSourceChar: 1569
+      line: 45
       lineChar: 12
       spanCodeSection: 'currentNumberOfLogs > '
-    - startInstruction: 1768
-      endInstruction: 1815
-      startSourceChar: 1996
-      endSourceChar: 2014
-      line: 57
+    - startInstruction: 1184
+      endInstruction: 1231
+      startSourceChar: 1569
+      endSourceChar: 1587
+      line: 45
       lineChar: 34
       spanCodeSection: "maxLogs)\r\n        "
-    - startInstruction: 1816
-      endInstruction: 1815
-      startSourceChar: 2014
-      endSourceChar: 2029
-      line: 58
+    - startInstruction: 1232
+      endInstruction: 1231
+      startSourceChar: 1587
+      endSourceChar: 1602
+      line: 46
       lineChar: 8
       spanCodeSection: "{\r\n            "
-    - startInstruction: 1816
-      endInstruction: 1815
-      startSourceChar: 2029
-      endSourceChar: 2029
-      line: 59
+    - startInstruction: 1232
+      endInstruction: 1231
+      startSourceChar: 1602
+      endSourceChar: 1602
+      line: 47
       lineChar: 12
       spanCodeSection: 
-    - startInstruction: 1816
-      endInstruction: 1815
-      startSourceChar: 2029
-      endSourceChar: 2029
-      line: 59
+    - startInstruction: 1232
+      endInstruction: 1231
+      startSourceChar: 1602
+      endSourceChar: 1602
+      line: 47
       lineChar: 12
       spanCodeSection: 
-    - startInstruction: 1816
-      endInstruction: 1815
-      startSourceChar: 2029
-      endSourceChar: 2037
-      line: 59
+    - startInstruction: 1232
+      endInstruction: 1231
+      startSourceChar: 1602
+      endSourceChar: 1610
+      line: 47
       lineChar: 12
       spanCodeSection: Destroy(
-    - startInstruction: 1816
-      endInstruction: 1815
-      startSourceChar: 2037
-      endSourceChar: 2037
-      line: 59
+    - startInstruction: 1232
+      endInstruction: 1231
+      startSourceChar: 1610
+      endSourceChar: 1610
+      line: 47
       lineChar: 20
       spanCodeSection: 
-    - startInstruction: 1816
-      endInstruction: 1815
-      startSourceChar: 2037
-      endSourceChar: 2037
-      line: 59
+    - startInstruction: 1232
+      endInstruction: 1231
+      startSourceChar: 1610
+      endSourceChar: 1610
+      line: 47
       lineChar: 20
       spanCodeSection: 
-    - startInstruction: 1816
-      endInstruction: 1815
-      startSourceChar: 2037
-      endSourceChar: 2037
-      line: 59
+    - startInstruction: 1232
+      endInstruction: 1231
+      startSourceChar: 1610
+      endSourceChar: 1610
+      line: 47
       lineChar: 20
       spanCodeSection: 
-    - startInstruction: 1816
-      endInstruction: 1815
-      startSourceChar: 2037
-      endSourceChar: 2054
-      line: 59
+    - startInstruction: 1232
+      endInstruction: 1231
+      startSourceChar: 1610
+      endSourceChar: 1627
+      line: 47
       lineChar: 20
       spanCodeSection: LogTextContainer.
-    - startInstruction: 1816
-      endInstruction: 1815
-      startSourceChar: 2054
-      endSourceChar: 2063
-      line: 59
+    - startInstruction: 1232
+      endInstruction: 1231
+      startSourceChar: 1627
+      endSourceChar: 1636
+      line: 47
       lineChar: 37
       spanCodeSection: GetChild(
-    - startInstruction: 1816
-      endInstruction: 1847
-      startSourceChar: 2063
-      endSourceChar: 2066
-      line: 59
+    - startInstruction: 1232
+      endInstruction: 1263
+      startSourceChar: 1636
+      endSourceChar: 1639
+      line: 47
       lineChar: 46
       spanCodeSection: 0).
-    - startInstruction: 1848
-      endInstruction: 1848
-      startSourceChar: 2066
-      endSourceChar: 2066
+    - startInstruction: 1264
+      endInstruction: 1323
+      startSourceChar: 1639
+      endSourceChar: 1677
+      line: 47
+      lineChar: 49
+      spanCodeSection: "gameObject);\r\n        }\r\n    }\r\n\r\n    "
+    - startInstruction: 1324
+      endInstruction: 1323
+      startSourceChar: 1677
+      endSourceChar: 1698
+      line: 51
+      lineChar: 4
+      spanCodeSection: public void LogError(
+    - startInstruction: 1324
+      endInstruction: 1331
+      startSourceChar: 1698
+      endSourceChar: 1716
+      line: 51
+      lineChar: 25
+      spanCodeSection: "string text)\r\n    "
+    - startInstruction: 1332
+      endInstruction: 1331
+      startSourceChar: 1716
+      endSourceChar: 1727
+      line: 52
+      lineChar: 4
+      spanCodeSection: "{\r\n        "
+    - startInstruction: 1332
+      endInstruction: 1331
+      startSourceChar: 1727
+      endSourceChar: 1727
+      line: 53
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 1332
+      endInstruction: 1331
+      startSourceChar: 1727
+      endSourceChar: 1727
+      line: 53
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 1332
+      endInstruction: 1331
+      startSourceChar: 1727
+      endSourceChar: 1727
+      line: 53
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 1332
+      endInstruction: 1331
+      startSourceChar: 1727
+      endSourceChar: 1745
+      line: 53
+      lineChar: 8
+      spanCodeSection: 'GameObject newLog '
+    - startInstruction: 1332
+      endInstruction: 1331
+      startSourceChar: 1745
+      endSourceChar: 1747
+      line: 53
+      lineChar: 26
+      spanCodeSection: '= '
+    - startInstruction: 1332
+      endInstruction: 1331
+      startSourceChar: 1747
+      endSourceChar: 1747
+      line: 53
+      lineChar: 28
+      spanCodeSection: 
+    - startInstruction: 1332
+      endInstruction: 1331
+      startSourceChar: 1747
+      endSourceChar: 1762
+      line: 53
+      lineChar: 28
+      spanCodeSection: VRCInstantiate(
+    - startInstruction: 1332
+      endInstruction: 1355
+      startSourceChar: 1762
+      endSourceChar: 1787
+      line: 53
+      lineChar: 43
+      spanCodeSection: "LogTextPrefab);\r\n        "
+    - startInstruction: 1356
+      endInstruction: 1355
+      startSourceChar: 1787
+      endSourceChar: 1787
+      line: 54
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 1356
+      endInstruction: 1355
+      startSourceChar: 1787
+      endSourceChar: 1787
+      line: 54
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 1356
+      endInstruction: 1355
+      startSourceChar: 1787
+      endSourceChar: 1787
+      line: 54
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 1356
+      endInstruction: 1355
+      startSourceChar: 1787
+      endSourceChar: 1803
+      line: 54
+      lineChar: 8
+      spanCodeSection: 'Text newLogText '
+    - startInstruction: 1356
+      endInstruction: 1355
+      startSourceChar: 1803
+      endSourceChar: 1805
+      line: 54
+      lineChar: 24
+      spanCodeSection: '= '
+    - startInstruction: 1356
+      endInstruction: 1355
+      startSourceChar: 1805
+      endSourceChar: 1805
+      line: 54
+      lineChar: 26
+      spanCodeSection: 
+    - startInstruction: 1356
+      endInstruction: 1355
+      startSourceChar: 1805
+      endSourceChar: 1805
+      line: 54
+      lineChar: 26
+      spanCodeSection: 
+    - startInstruction: 1356
+      endInstruction: 1355
+      startSourceChar: 1805
+      endSourceChar: 1812
+      line: 54
+      lineChar: 26
+      spanCodeSection: newLog.
+    - startInstruction: 1356
+      endInstruction: 1355
+      startSourceChar: 1812
+      endSourceChar: 1824
+      line: 54
+      lineChar: 33
+      spanCodeSection: GetComponent
+    - startInstruction: 1356
+      endInstruction: 1355
+      startSourceChar: 1824
+      endSourceChar: 1825
+      line: 54
+      lineChar: 45
+      spanCodeSection: <
+    - startInstruction: 1356
+      endInstruction: 1411
+      startSourceChar: 1825
+      endSourceChar: 1843
+      line: 54
+      lineChar: 46
+      spanCodeSection: "Text>();\r\n        "
+    - startInstruction: 1412
+      endInstruction: 1411
+      startSourceChar: 1843
+      endSourceChar: 1843
+      line: 55
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 1412
+      endInstruction: 1411
+      startSourceChar: 1843
+      endSourceChar: 1843
+      line: 55
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 1412
+      endInstruction: 1411
+      startSourceChar: 1843
+      endSourceChar: 1843
+      line: 55
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 1412
+      endInstruction: 1411
+      startSourceChar: 1843
+      endSourceChar: 1854
+      line: 55
+      lineChar: 8
+      spanCodeSection: newLogText.
+    - startInstruction: 1412
+      endInstruction: 1411
+      startSourceChar: 1854
+      endSourceChar: 1861
+      line: 55
+      lineChar: 19
+      spanCodeSection: 'text = '
+    - startInstruction: 1412
+      endInstruction: 1411
+      startSourceChar: 1861
+      endSourceChar: 1861
+      line: 55
+      lineChar: 26
+      spanCodeSection: 
+    - startInstruction: 1412
+      endInstruction: 1427
+      startSourceChar: 1861
+      endSourceChar: 1875
+      line: 55
+      lineChar: 26
+      spanCodeSection: 'logMetaInfo ? '
+    - startInstruction: 1428
+      endInstruction: 1427
+      startSourceChar: 1875
+      endSourceChar: 1877
+      line: 55
+      lineChar: 40
+      spanCodeSection: $"
+    - startInstruction: 1428
+      endInstruction: 1427
+      startSourceChar: 1877
+      endSourceChar: 1878
+      line: 55
+      lineChar: 42
+      spanCodeSection: '{'
+    - startInstruction: 1428
+      endInstruction: 1427
+      startSourceChar: 1878
+      endSourceChar: 1878
+      line: 55
+      lineChar: 43
+      spanCodeSection: 
+    - startInstruction: 1428
+      endInstruction: 1427
+      startSourceChar: 1878
+      endSourceChar: 1878
+      line: 55
+      lineChar: 43
+      spanCodeSection: 
+    - startInstruction: 1428
+      endInstruction: 1427
+      startSourceChar: 1878
+      endSourceChar: 1878
+      line: 55
+      lineChar: 43
+      spanCodeSection: 
+    - startInstruction: 1428
+      endInstruction: 1427
+      startSourceChar: 1878
+      endSourceChar: 1887
+      line: 55
+      lineChar: 43
+      spanCodeSection: DateTime.
+    - startInstruction: 1428
+      endInstruction: 1427
+      startSourceChar: 1887
+      endSourceChar: 1891
+      line: 55
+      lineChar: 52
+      spanCodeSection: Now.
+    - startInstruction: 1428
+      endInstruction: 1443
+      startSourceChar: 1891
+      endSourceChar: 1900
+      line: 55
+      lineChar: 56
+      spanCodeSection: ToString(
+    - startInstruction: 1444
+      endInstruction: 1495
+      startSourceChar: 1900
+      endSourceChar: 1923
+      line: 55
+      lineChar: 65
+      spanCodeSection: '"MM/dd/yyyy HH:mm:ss")}'
+    - startInstruction: 1496
+      endInstruction: 1547
+      startSourceChar: 1923
+      endSourceChar: 1951
+      line: 55
+      lineChar: 88
+      spanCodeSection: ' <color=red>ERROR</color> - '
+    - startInstruction: 1548
+      endInstruction: 1547
+      startSourceChar: 1951
+      endSourceChar: 1952
+      line: 55
+      lineChar: 116
+      spanCodeSection: '{'
+    - startInstruction: 1548
+      endInstruction: 1627
+      startSourceChar: 1952
+      endSourceChar: 1961
+      line: 55
+      lineChar: 117
+      spanCodeSection: 'text}" : '
+    - startInstruction: 1628
+      endInstruction: 1627
+      startSourceChar: 1961
+      endSourceChar: 1963
+      line: 55
+      lineChar: 126
+      spanCodeSection: $"
+    - startInstruction: 1628
+      endInstruction: 1627
+      startSourceChar: 1963
+      endSourceChar: 1964
+      line: 55
+      lineChar: 128
+      spanCodeSection: '{'
+    - startInstruction: 1628
+      endInstruction: 1691
+      startSourceChar: 1964
+      endSourceChar: 1981
+      line: 55
+      lineChar: 129
+      spanCodeSection: "text}\";\r\n        "
+    - startInstruction: 1692
+      endInstruction: 1691
+      startSourceChar: 1981
+      endSourceChar: 1981
+      line: 56
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 1692
+      endInstruction: 1691
+      startSourceChar: 1981
+      endSourceChar: 1981
+      line: 56
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 1692
+      endInstruction: 1691
+      startSourceChar: 1981
+      endSourceChar: 1981
+      line: 56
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 1692
+      endInstruction: 1691
+      startSourceChar: 1981
+      endSourceChar: 1981
+      line: 56
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 1692
+      endInstruction: 1691
+      startSourceChar: 1981
+      endSourceChar: 1988
+      line: 56
+      lineChar: 8
+      spanCodeSection: newLog.
+    - startInstruction: 1692
+      endInstruction: 1691
+      startSourceChar: 1988
+      endSourceChar: 1998
+      line: 56
+      lineChar: 15
+      spanCodeSection: transform.
+    - startInstruction: 1692
+      endInstruction: 1715
+      startSourceChar: 1998
+      endSourceChar: 2008
+      line: 56
+      lineChar: 25
+      spanCodeSection: SetParent(
+    - startInstruction: 1716
+      endInstruction: 1715
+      startSourceChar: 2008
+      endSourceChar: 2026
+      line: 56
+      lineChar: 35
+      spanCodeSection: 'LogTextContainer, '
+    - startInstruction: 1716
+      endInstruction: 1747
+      startSourceChar: 2026
+      endSourceChar: 2043
+      line: 56
+      lineChar: 53
+      spanCodeSection: "false);\r\n        "
+    - startInstruction: 1748
+      endInstruction: 1747
+      startSourceChar: 2043
+      endSourceChar: 2043
+      line: 57
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 1748
+      endInstruction: 1747
+      startSourceChar: 2043
+      endSourceChar: 2043
+      line: 57
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 1748
+      endInstruction: 1799
+      startSourceChar: 2043
+      endSourceChar: 2077
+      line: 57
+      lineChar: 8
+      spanCodeSection: "currentNumberOfLogs++;\r\n\r\n        "
+    - startInstruction: 1800
+      endInstruction: 1799
+      startSourceChar: 2077
+      endSourceChar: 2081
       line: 59
+      lineChar: 8
+      spanCodeSection: if (
+    - startInstruction: 1800
+      endInstruction: 1799
+      startSourceChar: 2081
+      endSourceChar: 2081
+      line: 59
+      lineChar: 12
+      spanCodeSection: 
+    - startInstruction: 1800
+      endInstruction: 1799
+      startSourceChar: 2081
+      endSourceChar: 2103
+      line: 59
+      lineChar: 12
+      spanCodeSection: 'currentNumberOfLogs > '
+    - startInstruction: 1800
+      endInstruction: 1847
+      startSourceChar: 2103
+      endSourceChar: 2121
+      line: 59
+      lineChar: 34
+      spanCodeSection: "maxLogs)\r\n        "
+    - startInstruction: 1848
+      endInstruction: 1847
+      startSourceChar: 2121
+      endSourceChar: 2136
+      line: 60
+      lineChar: 8
+      spanCodeSection: "{\r\n            "
+    - startInstruction: 1848
+      endInstruction: 1847
+      startSourceChar: 2136
+      endSourceChar: 2136
+      line: 61
+      lineChar: 12
+      spanCodeSection: 
+    - startInstruction: 1848
+      endInstruction: 1847
+      startSourceChar: 2136
+      endSourceChar: 2136
+      line: 61
+      lineChar: 12
+      spanCodeSection: 
+    - startInstruction: 1848
+      endInstruction: 1847
+      startSourceChar: 2136
+      endSourceChar: 2144
+      line: 61
+      lineChar: 12
+      spanCodeSection: Destroy(
+    - startInstruction: 1848
+      endInstruction: 1847
+      startSourceChar: 2144
+      endSourceChar: 2144
+      line: 61
+      lineChar: 20
+      spanCodeSection: 
+    - startInstruction: 1848
+      endInstruction: 1847
+      startSourceChar: 2144
+      endSourceChar: 2144
+      line: 61
+      lineChar: 20
+      spanCodeSection: 
+    - startInstruction: 1848
+      endInstruction: 1847
+      startSourceChar: 2144
+      endSourceChar: 2144
+      line: 61
+      lineChar: 20
+      spanCodeSection: 
+    - startInstruction: 1848
+      endInstruction: 1847
+      startSourceChar: 2144
+      endSourceChar: 2161
+      line: 61
+      lineChar: 20
+      spanCodeSection: LogTextContainer.
+    - startInstruction: 1848
+      endInstruction: 1847
+      startSourceChar: 2161
+      endSourceChar: 2170
+      line: 61
+      lineChar: 37
+      spanCodeSection: GetChild(
+    - startInstruction: 1848
+      endInstruction: 1879
+      startSourceChar: 2170
+      endSourceChar: 2173
+      line: 61
+      lineChar: 46
+      spanCodeSection: 0).
+    - startInstruction: 1880
+      endInstruction: 1880
+      startSourceChar: 2173
+      endSourceChar: 2173
+      line: 61
       lineChar: 49
       spanCodeSection: 
   hasInteractEvent: 0
@@ -2089,7 +2177,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 5
+      Data: 6
     - Name: 
       Entry: 7
       Data: 
@@ -2381,6 +2469,69 @@ MonoBehaviour:
     - Name: fieldAttributes
       Entry: 7
       Data: 20|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: userBehaviourSource
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: VLG
+    - Name: $v
+      Entry: 7
+      Data: 21|UdonSharp.FieldDefinition, UdonSharp.Editor
+    - Name: fieldSymbol
+      Entry: 7
+      Data: 22|UdonSharp.SymbolDefinition, UdonSharp.Editor
+    - Name: internalType
+      Entry: 7
+      Data: 23|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: UnityEngine.UI.VerticalLayoutGroup, UnityEngine.UI
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: declarationType
+      Entry: 3
+      Data: 2
+    - Name: syncMode
+      Entry: 3
+      Data: 0
+    - Name: symbolResolvedTypeName
+      Entry: 1
+      Data: UnityEngineUIVerticalLayoutGroup
+    - Name: symbolOriginalName
+      Entry: 1
+      Data: VLG
+    - Name: symbolUniqueName
+      Entry: 1
+      Data: VLG
+    - Name: symbolDefaultValue
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: fieldAttributes
+      Entry: 7
+      Data: 24|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
     - Name: 
       Entry: 12
       Data: 0

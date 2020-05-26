@@ -14,10 +14,12 @@ public class THH_CanvasLogManager : UdonSharpBehaviour
 
     private Transform LogTextContainer;
     private int currentNumberOfLogs;
+    private VerticalLayoutGroup VLG;
 
     public void Start()
     {
         LogTextContainer = transform.Find("Scroll View/Viewport/Content/LogTextContainer");
+        VLG = LogTextContainer.GetComponent<VerticalLayoutGroup>();
     }
     public void Log(string text)
     {

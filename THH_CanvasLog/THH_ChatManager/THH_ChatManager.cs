@@ -34,12 +34,18 @@ public class THH_ChatManager : UdonSharpBehaviour
             return;
         }
         SendChatMessage(inputString);
+        inputField.ActivateInputField();
+    }
+
+    void ClearInputField()
+    {
+        inputField.text = string.Empty;
     }
 
     // == API ==================================================================================================//
     public void SendChatMessage(string message)
     {
-        MESSAGE = inputField.text;
+        MESSAGE = message;
         if (ProcessMessage())
         {
             OnMessageSentSuccess();
@@ -52,7 +58,7 @@ public class THH_ChatManager : UdonSharpBehaviour
 
     void OnMessageSentSuccess()
     {
-        inputField.text = string.Empty;
+        ClearInputField();
     }
 
     void OnMessageSentFail()
@@ -67,6 +73,15 @@ public class THH_ChatManager : UdonSharpBehaviour
     }
 
     //==================================================================================================//
+
+    public override void OnPlayerJoined(VRCPlayerApi player)
+    {
+        canvasLogManager.Log($"<color=yellow>[System]: Player <color=lime>{player.displayName}</color> has joined.</color>");
+    }
+    public override void OnPlayerLeft(VRCPlayerApi player)
+    {
+        canvasLogManager.Log($"<color=yellow>[System]: Player <color=lime>{player.displayName}</color> has left.</color>");
+    }
 
     public void Start()
     {
