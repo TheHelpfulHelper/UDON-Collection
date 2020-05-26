@@ -169,7 +169,7 @@ public class THH_ChatManager : UdonSharpBehaviour
         else
         {
             Debug.Log($"<color=green>[THH_ChatManager]</color> ChatManager is currently occupied by someone else, retry later");
-            canvasLogManager.Log($"<color=red>Your message could not be delivered, retry in a bit</color>");
+            canvasLogManager.Log($"<color=red>Your message could not be delivered because someone else is currently using the chat, retry again in a bit</color>");
             return false;
         }
     }
