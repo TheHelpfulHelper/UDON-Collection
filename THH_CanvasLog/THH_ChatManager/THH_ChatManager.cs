@@ -8,6 +8,8 @@ using System;
 
 public class THH_ChatManager : UdonSharpBehaviour
 {
+    public bool TEST;
+
     [HideInInspector, UdonSynced(UdonSyncMode.None)]
     public string CHAT_MESSAGE = "";
     private string last_ChatMessage = "";
@@ -17,11 +19,16 @@ public class THH_ChatManager : UdonSharpBehaviour
     
     private bool wasOwner;
     private bool reclaiming;
-    private float chatDelay = 1f;
+    private float chatDelay = 0.2f;
     private float sendEnd;
     private bool messageSending;
     private bool locked;
     private int messageCounter;
+    private bool autoRetry;
+    private float retryInterval = 0.5f;
+    private float retryTime;
+    private int retryCount;
+    private int maxRetries = 30;
 
     public THH_CanvasLogManager canvasLogManager;
     public InputField inputField;
@@ -42,6 +49,10 @@ public class THH_ChatManager : UdonSharpBehaviour
         inputField.text = string.Empty;
     }
 
+    void SetInputFieldLocked(bool b)
+    {
+        inputField.interactable = !b;
+    }
     // == API ==================================================================================================//
     public void SendChatMessage(string message)
     {
@@ -68,7 +79,6 @@ public class THH_ChatManager : UdonSharpBehaviour
 
     void OnMessageReceived(string message)
     {
-        Debug.Log($"<color=green>[THH_ChatManager]</color> Chat message received: '{message}'");
         canvasLogManager.Log(message);
     }
 
@@ -125,6 +135,23 @@ public class THH_ChatManager : UdonSharpBehaviour
             }
         }
 
+        if (autoRetry)
+        {
+            if (Time.timeSinceLevelLoad > retryTime)
+            {
+                if (ProcessMessage())
+                {
+                    autoRetry = false;
+                    SetInputFieldLocked(false);
+                    ClearInputField();
+                }
+                else
+                {
+                    retryTime = Time.timeSinceLevelLoad + retryInterval;
+                }
+            }
+        }
+
         if (CHAT_MESSAGE != last_ChatMessage && !string.IsNullOrEmpty(CHAT_MESSAGE))
         {
             string[] M = CHAT_MESSAGE.Split('|');
@@ -148,10 +175,10 @@ public class THH_ChatManager : UdonSharpBehaviour
     {
         if (locked)
         {
-            canvasLogManager.Log($"<color=red>You are sending messages too quickly</color>");
+            canvasLogManager.Log($"<i><color=red>You are sending messages too quickly</color></i>");
             return false;
         }
-        if (Networking.GetOwner(gameObject).isMaster)
+        if (Networking.GetOwner(gameObject).isMaster && !TEST)
         {
             if (Networking.IsMaster)
             {
@@ -168,8 +195,23 @@ public class THH_ChatManager : UdonSharpBehaviour
         }
         else
         {
-            Debug.Log($"<color=green>[THH_ChatManager]</color> ChatManager is currently occupied by someone else, retry later");
-            canvasLogManager.Log($"<color=red>Your message could not be delivered, retry in a bit</color>");
+            if (autoRetry)
+            {
+                retryCount++;
+                if (retryCount == maxRetries)
+                {
+                    Debug.LogError($"<color=green>[THH_ChatManager]</color> Message could not be delivered after {retryCount} retries, aborting...");
+                    canvasLogManager.Log($"<i><color=red>Your message could not be delivered</color></i>");
+                    autoRetry = false;
+                    retryCount = 0;
+                    SetInputFieldLocked(false);
+                }
+                return false;
+            }
+            Debug.Log($"<color=green>[THH_ChatManager]</color> The chat manager is currently occupied by someone else, retrying...");
+            autoRetry = true;
+            retryTime = Time.timeSinceLevelLoad + retryInterval;
+            SetInputFieldLocked(true);
             return false;
         }
     }
