@@ -27,7 +27,7 @@ public class THH_PlayerManager : UdonSharpBehaviour
 
     void Start()
     {
-        Debug.Log($"<color=green>[THH_PlayerManager]</color> THH_PlayerManager v2.0 initialized");
+        Debug.Log($"<color=green>[THH_PlayerManager]</color> THH_PlayerManager v2.2 initialized");
         handlers = GetComponentsInChildren<THH_PlayerObjectHandler>();
         foreach (THH_PlayerObjectHandler handler in handlers)
         {
@@ -47,6 +47,7 @@ public class THH_PlayerManager : UdonSharpBehaviour
         }
         else
         {
+            Debug.Log($"<color=green>[THH_PlayerManager]</color> Requesting master handler...");
             SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.Owner, "RequestMasterHandler");
         }
     }
@@ -68,6 +69,7 @@ public class THH_PlayerManager : UdonSharpBehaviour
         // If youre the last player (LateJoinersCount == 0) and you have a handlerAssigned then inform the player that joined that they should check for handler assignment availability
         if (player != Networking.LocalPlayer && handlerAssigned && LateJoinersCount == 0)
         {
+            Debug.Log($"<color=green>[THH_PlayerManager]</color> A new player has joined, after finishing assignment; Broadcasting 'CheckHandlerAssignmentAvailability'");
             SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "CheckHandlerAssignmentAvailability");
         }
         
@@ -103,10 +105,11 @@ public class THH_PlayerManager : UdonSharpBehaviour
                 }
                 else
                 {
-                    Debug.Log($"<color=green>[THH_PlayerManager]</color> Your last ward has left. You became guardian of a new ward: {ward.displayName}");
+                    Debug.Log($"<color=green>[THH_PlayerManager]</color> Your last ward has left. Your new ward is now {ward.displayName}");
                     // If the new ward does not have a handler yet, inform them that they should check for handler assignment availability
                     if (!PlayerHasHandler(ward))
                     {
+                        Debug.Log($"<color=green>[THH_PlayerManager]</color> Your ward did not have a handler assigned yet, broadcasting 'CheckHandlerAssignmentAvailability'");
                         SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "CheckHandlerAssignmentAvailability");
                     }
                 }
@@ -160,9 +163,11 @@ public class THH_PlayerManager : UdonSharpBehaviour
                 {
                     Debug.LogWarning($"<color=green>[THH_PlayerManager]</color> Master handler has not yet been set, delaying handler assignment untill it has been set");
                     assignmentDelayed = true;
-                    return;
                 }
-                FindUnassignedHandler();
+                else
+                {
+                    FindUnassignedHandler();
+                }
             }
             else
             {
@@ -226,13 +231,16 @@ public class THH_PlayerManager : UdonSharpBehaviour
         {
             return null;
         }
+
         VRCPlayerApi _ward = null;
         foreach (VRCPlayerApi lateJoiner in LateJoiners)
         {
+            // ignore all nulls and (if specified) the player that left
             if (lateJoiner == null || lateJoiner == playerWhoLeft)
             {
                 continue;
             }
+            // set first player you find as ward, when ward is null
             if (_ward == null)
             {
                 _ward = lateJoiner;
@@ -252,8 +260,7 @@ public class THH_PlayerManager : UdonSharpBehaviour
         // Go trough all handlers and check if the handlers owner matches the player
         foreach (THH_PlayerObjectHandler handler in handlers)
         {
-            VRCPlayerApi owner = Networking.GetOwner(handler.gameObject);
-            if (owner == player)
+            if (Networking.GetOwner(handler.gameObject) == player)
             {
                 return true;
             }
@@ -263,12 +270,6 @@ public class THH_PlayerManager : UdonSharpBehaviour
 
     void FindUnassignedHandler()
     {
-        if (masterHandler == null)
-        {
-            Debug.LogError($"<color=green>[THH_PlayerManager]</color> Master handler has not yet been set, aborting FindUnassignedHandler");
-            return;
-        }
-
         foreach (THH_PlayerObjectHandler handler in handlers)
         {
             if (Networking.GetOwner(handler.gameObject).isMaster && handler != masterHandler)
@@ -283,7 +284,8 @@ public class THH_PlayerManager : UdonSharpBehaviour
                 return;
             }
         }
+        // Could not find a handler
         assignmentDelayed = false;
-        Debug.LogError($"<color=green>[THH_PlayerManager]</color> No unassigned handler could be found");
+        Debug.LogError($"<color=green>[THH_PlayerManager]</color> No unassigned handler could be found, cannot assign one!");
     }
 }
