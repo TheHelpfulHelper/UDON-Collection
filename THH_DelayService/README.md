@@ -1,4 +1,4 @@
-**DelayService v1.3**
+**DelayService v2.0**
 
 Purpose: Delay events by a chosen amount of time in seconds.<br/>
 Complexity Level: Moderate
