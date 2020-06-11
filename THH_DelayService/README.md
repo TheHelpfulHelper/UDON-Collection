@@ -6,7 +6,7 @@ Complexity Level: Moderate
 *SETUP:* Drag and drop the '[DS_Manager]' prefab from the Prefabs folder into your scene.
 
 Every UdonBehaviour that wants to use the DelayService needs to have a '{DS_Handler}' object as a direct child (also found in the Prefabs folder)
-and a 'public UdonBehaviour DS_Manager' variable (**This variable automatically gets set and does not have to be set by hand**)
+and a 'DelayServiceManager DS_Manager' variable (**This variable automatically gets set and does not have to be set by hand, but can be**)
 
 Look at the Example to better understand how to use it with a script.
 
