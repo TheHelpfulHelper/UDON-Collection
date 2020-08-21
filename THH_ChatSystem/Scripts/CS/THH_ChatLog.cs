@@ -11,12 +11,20 @@ public class THH_ChatLog : UdonSharpBehaviour
 
     public InputField inputField;
 
-    public void LogMessage(VRCPlayerApi player, string message)
+    public void LogChatMessage(VRCPlayerApi player, string message)
     {
         GameObject newChatMessageObject = VRCInstantiate(ChatMessagePrefab);
 
         newChatMessageObject.transform.SetParent(Content, false);
-        newChatMessageObject.transform.GetChild(0).GetComponent<Text>().text = $"<color=green>{player.displayName}</color>: {message}";
+        newChatMessageObject.transform.GetChild(0).GetComponent<Text>().text = $"<color=green><{player.displayName}></color>: {message}";
+    }
+
+    public void LogMessage(string message)
+    {
+        GameObject newChatMessageObject = VRCInstantiate(ChatMessagePrefab);
+
+        newChatMessageObject.transform.SetParent(Content, false);
+        newChatMessageObject.transform.GetChild(0).GetComponent<Text>().text = message;
     }
 
     public void Lock()
@@ -28,5 +36,15 @@ public class THH_ChatLog : UdonSharpBehaviour
     {
         inputField.interactable = true;
         inputField.text = "";
+    }
+
+    public override void OnPlayerJoined(VRCPlayerApi player)
+    {
+        LogMessage($"<color=yellow>{player.displayName} has joined.</color>");
+    }
+
+    public override void OnPlayerLeft(VRCPlayerApi player)
+    {
+        LogMessage($"<color=yellow>{player.displayName} has left.</color>");
     }
 }

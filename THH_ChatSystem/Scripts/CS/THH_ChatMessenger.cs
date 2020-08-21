@@ -46,7 +46,7 @@ public class THH_ChatMessenger : UdonSharpBehaviour
         VRCPlayerApi sender = VRCPlayerApi.GetPlayerById(int.Parse(messageContext[1], System.Globalization.NumberStyles.HexNumber));
         string messageContent = messageContext[2];
 
-        logger.LogMessage(sender, messageContent);
+        logger.LogChatMessage(sender, messageContent);
 
     }
 

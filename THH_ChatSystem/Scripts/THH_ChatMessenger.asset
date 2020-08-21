@@ -178,7 +178,7 @@ MonoBehaviour:
     \       \r\n         # string messageContent = messageContext[2];\r\n        PUSH,
     __0_messageContext_StringArray\r\n        PUSH, __3_const_intnl_SystemInt32\r\n
     \       PUSH, __0_messageContent_String\r\n        EXTERN, \"SystemStringArray.__Get__SystemInt32__SystemString\"\r\n
-    \       \r\n         # logger.LogMessage(sender, messageContent);\r\n        PUSH,
+    \       \r\n         # logger.LogChatMessage(sender, messageContent);\r\n        PUSH,
     logger\r\n        PUSH, __9_const_intnl_SystemString\r\n        PUSH, __0_sender_VRCPlayerApi\r\n
     \       EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid\"\r\n
     \       PUSH, logger\r\n        PUSH, __2_const_intnl_SystemString\r\n        PUSH,
@@ -1608,758 +1608,758 @@ MonoBehaviour:
     - startInstruction: 1080
       endInstruction: 1079
       startSourceChar: 1449
-      endSourceChar: 1460
+      endSourceChar: 1464
       line: 48
       lineChar: 15
-      spanCodeSection: LogMessage(
+      spanCodeSection: LogChatMessage(
     - startInstruction: 1080
       endInstruction: 1079
-      startSourceChar: 1460
-      endSourceChar: 1468
+      startSourceChar: 1464
+      endSourceChar: 1472
       line: 48
-      lineChar: 26
+      lineChar: 30
       spanCodeSection: 'sender, '
     - startInstruction: 1080
       endInstruction: 1187
-      startSourceChar: 1468
-      endSourceChar: 1501
+      startSourceChar: 1472
+      endSourceChar: 1505
       line: 48
-      lineChar: 34
+      lineChar: 38
       spanCodeSection: "messageContent);\r\n\r\n    }\r\n\r\n    "
     - startInstruction: 1188
       endInstruction: 1195
-      startSourceChar: 1501
-      endSourceChar: 1526
+      startSourceChar: 1505
+      endSourceChar: 1530
       line: 52
       lineChar: 4
       spanCodeSection: "public void Start()\r\n    "
     - startInstruction: 1196
       endInstruction: 1195
-      startSourceChar: 1526
-      endSourceChar: 1537
+      startSourceChar: 1530
+      endSourceChar: 1541
       line: 53
       lineChar: 4
       spanCodeSection: "{\r\n        "
     - startInstruction: 1196
       endInstruction: 1195
-      startSourceChar: 1537
-      endSourceChar: 1537
+      startSourceChar: 1541
+      endSourceChar: 1541
       line: 54
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 1196
       endInstruction: 1195
-      startSourceChar: 1537
-      endSourceChar: 1537
+      startSourceChar: 1541
+      endSourceChar: 1541
       line: 54
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 1196
       endInstruction: 1195
-      startSourceChar: 1537
-      endSourceChar: 1547
+      startSourceChar: 1541
+      endSourceChar: 1551
       line: 54
       lineChar: 8
       spanCodeSection: 'isOwner = '
     - startInstruction: 1196
       endInstruction: 1195
-      startSourceChar: 1547
-      endSourceChar: 1547
+      startSourceChar: 1551
+      endSourceChar: 1551
       line: 54
       lineChar: 18
       spanCodeSection: 
     - startInstruction: 1196
       endInstruction: 1195
-      startSourceChar: 1547
-      endSourceChar: 1547
+      startSourceChar: 1551
+      endSourceChar: 1551
       line: 54
       lineChar: 18
       spanCodeSection: 
     - startInstruction: 1196
       endInstruction: 1195
-      startSourceChar: 1547
-      endSourceChar: 1558
+      startSourceChar: 1551
+      endSourceChar: 1562
       line: 54
       lineChar: 18
       spanCodeSection: Networking.
     - startInstruction: 1196
       endInstruction: 1195
-      startSourceChar: 1558
-      endSourceChar: 1566
+      startSourceChar: 1562
+      endSourceChar: 1570
       line: 54
       lineChar: 29
       spanCodeSection: IsOwner(
     - startInstruction: 1196
       endInstruction: 1219
-      startSourceChar: 1566
-      endSourceChar: 1590
+      startSourceChar: 1570
+      endSourceChar: 1594
       line: 54
       lineChar: 37
       spanCodeSection: "gameObject);\r\n\r\n        "
     - startInstruction: 1220
       endInstruction: 1219
-      startSourceChar: 1590
-      endSourceChar: 1594
+      startSourceChar: 1594
+      endSourceChar: 1598
       line: 56
       lineChar: 8
       spanCodeSection: if (
     - startInstruction: 1220
       endInstruction: 1219
-      startSourceChar: 1594
-      endSourceChar: 1594
+      startSourceChar: 1598
+      endSourceChar: 1598
       line: 56
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 1220
       endInstruction: 1219
-      startSourceChar: 1594
-      endSourceChar: 1605
+      startSourceChar: 1598
+      endSourceChar: 1609
       line: 56
       lineChar: 12
       spanCodeSection: Networking.
     - startInstruction: 1220
       endInstruction: 1251
-      startSourceChar: 1605
-      endSourceChar: 1624
+      startSourceChar: 1609
+      endSourceChar: 1628
       line: 56
       lineChar: 23
       spanCodeSection: "IsMaster)\r\n        "
     - startInstruction: 1252
       endInstruction: 1251
-      startSourceChar: 1624
-      endSourceChar: 1639
+      startSourceChar: 1628
+      endSourceChar: 1643
       line: 57
       lineChar: 8
       spanCodeSection: "{\r\n            "
     - startInstruction: 1252
       endInstruction: 1251
-      startSourceChar: 1639
-      endSourceChar: 1639
+      startSourceChar: 1643
+      endSourceChar: 1643
       line: 58
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 1252
       endInstruction: 1251
-      startSourceChar: 1639
-      endSourceChar: 1639
+      startSourceChar: 1643
+      endSourceChar: 1643
       line: 58
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 1252
       endInstruction: 1251
-      startSourceChar: 1639
-      endSourceChar: 1649
+      startSourceChar: 1643
+      endSourceChar: 1653
       line: 58
       lineChar: 12
       spanCodeSection: 'MESSAGE = '
     - startInstruction: 1252
       endInstruction: 1271
-      startSourceChar: 1649
-      endSourceChar: 1672
+      startSourceChar: 1653
+      endSourceChar: 1676
       line: 58
       lineChar: 22
       spanCodeSection: "\"IGNORE\";\r\n            "
     - startInstruction: 1272
       endInstruction: 1271
-      startSourceChar: 1672
-      endSourceChar: 1672
+      startSourceChar: 1676
+      endSourceChar: 1676
       line: 59
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 1272
       endInstruction: 1271
-      startSourceChar: 1672
-      endSourceChar: 1672
+      startSourceChar: 1676
+      endSourceChar: 1676
       line: 59
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 1272
       endInstruction: 1307
-      startSourceChar: 1672
-      endSourceChar: 1718
+      startSourceChar: 1676
+      endSourceChar: 1722
       line: 59
       lineChar: 12
       spanCodeSection: "OnDeserialization();\r\n        }\r\n    }\r\n\r\n    "
     - startInstruction: 1308
       endInstruction: 1315
-      startSourceChar: 1718
-      endSourceChar: 1764
+      startSourceChar: 1722
+      endSourceChar: 1768
       line: 63
       lineChar: 4
       spanCodeSection: "public override void OnDeserialization()\r\n    "
     - startInstruction: 1316
       endInstruction: 1315
-      startSourceChar: 1764
-      endSourceChar: 1775
+      startSourceChar: 1768
+      endSourceChar: 1779
       line: 64
       lineChar: 4
       spanCodeSection: "{\r\n        "
     - startInstruction: 1316
       endInstruction: 1315
-      startSourceChar: 1775
-      endSourceChar: 1779
+      startSourceChar: 1779
+      endSourceChar: 1783
       line: 65
       lineChar: 8
       spanCodeSection: if (
     - startInstruction: 1316
       endInstruction: 1315
-      startSourceChar: 1779
-      endSourceChar: 1779
+      startSourceChar: 1783
+      endSourceChar: 1783
       line: 65
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 1316
       endInstruction: 1315
-      startSourceChar: 1779
-      endSourceChar: 1790
+      startSourceChar: 1783
+      endSourceChar: 1794
       line: 65
       lineChar: 12
       spanCodeSection: 'MESSAGE != '
     - startInstruction: 1316
       endInstruction: 1363
-      startSourceChar: 1790
-      endSourceChar: 1813
+      startSourceChar: 1794
+      endSourceChar: 1817
       line: 65
       lineChar: 23
       spanCodeSection: "last_MESSAGE)\r\n        "
     - startInstruction: 1364
       endInstruction: 1363
-      startSourceChar: 1813
-      endSourceChar: 1828
+      startSourceChar: 1817
+      endSourceChar: 1832
       line: 66
       lineChar: 8
       spanCodeSection: "{\r\n            "
     - startInstruction: 1364
       endInstruction: 1363
-      startSourceChar: 1828
-      endSourceChar: 1828
+      startSourceChar: 1832
+      endSourceChar: 1832
       line: 67
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 1364
       endInstruction: 1363
-      startSourceChar: 1828
-      endSourceChar: 1828
+      startSourceChar: 1832
+      endSourceChar: 1832
       line: 67
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 1364
       endInstruction: 1363
-      startSourceChar: 1828
-      endSourceChar: 1843
+      startSourceChar: 1832
+      endSourceChar: 1847
       line: 67
       lineChar: 12
       spanCodeSection: 'last_MESSAGE = '
     - startInstruction: 1364
       endInstruction: 1383
-      startSourceChar: 1843
-      endSourceChar: 1867
+      startSourceChar: 1847
+      endSourceChar: 1871
       line: 67
       lineChar: 27
       spanCodeSection: "MESSAGE;\r\n\r\n            "
     - startInstruction: 1384
       endInstruction: 1383
-      startSourceChar: 1867
-      endSourceChar: 1871
+      startSourceChar: 1871
+      endSourceChar: 1875
       line: 69
       lineChar: 12
       spanCodeSection: if (
     - startInstruction: 1384
       endInstruction: 1383
-      startSourceChar: 1871
-      endSourceChar: 1871
+      startSourceChar: 1875
+      endSourceChar: 1875
       line: 69
       lineChar: 16
       spanCodeSection: 
     - startInstruction: 1384
       endInstruction: 1383
-      startSourceChar: 1871
-      endSourceChar: 1887
+      startSourceChar: 1875
+      endSourceChar: 1891
       line: 69
       lineChar: 16
       spanCodeSection: 'last_MESSAGE == '
     - startInstruction: 1384
       endInstruction: 1431
-      startSourceChar: 1887
-      endSourceChar: 1897
+      startSourceChar: 1891
+      endSourceChar: 1901
       line: 69
       lineChar: 32
       spanCodeSection: '"IGNORE") '
     - startInstruction: 1432
       endInstruction: 1431
-      startSourceChar: 1897
-      endSourceChar: 1899
+      startSourceChar: 1901
+      endSourceChar: 1903
       line: 69
       lineChar: 42
       spanCodeSection: '{ '
     - startInstruction: 1432
       endInstruction: 1451
-      startSourceChar: 1899
-      endSourceChar: 1924
+      startSourceChar: 1903
+      endSourceChar: 1928
       line: 69
       lineChar: 44
       spanCodeSection: "return; }\r\n\r\n            "
     - startInstruction: 1452
       endInstruction: 1451
-      startSourceChar: 1924
-      endSourceChar: 1924
+      startSourceChar: 1928
+      endSourceChar: 1928
       line: 71
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 1452
       endInstruction: 1451
-      startSourceChar: 1924
-      endSourceChar: 1924
+      startSourceChar: 1928
+      endSourceChar: 1928
       line: 71
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 1452
       endInstruction: 1451
-      startSourceChar: 1924
-      endSourceChar: 1942
+      startSourceChar: 1928
+      endSourceChar: 1946
       line: 71
       lineChar: 12
       spanCodeSection: OnMessageReceived(
     - startInstruction: 1452
       endInstruction: 1527
-      startSourceChar: 1942
-      endSourceChar: 1982
+      startSourceChar: 1946
+      endSourceChar: 1986
       line: 71
       lineChar: 30
       spanCodeSection: "last_MESSAGE);\r\n        }\r\n    }\r\n\r\n    "
     - startInstruction: 1528
       endInstruction: 1527
-      startSourceChar: 1982
-      endSourceChar: 2006
+      startSourceChar: 1986
+      endSourceChar: 2010
       line: 75
       lineChar: 4
       spanCodeSection: public void ChatRequest(
     - startInstruction: 1528
       endInstruction: 1535
-      startSourceChar: 2006
-      endSourceChar: 2036
+      startSourceChar: 2010
+      endSourceChar: 2040
       line: 75
       lineChar: 28
       spanCodeSection: "THH_ChatHandler handler)\r\n    "
     - startInstruction: 1536
       endInstruction: 1535
-      startSourceChar: 2036
-      endSourceChar: 2047
+      startSourceChar: 2040
+      endSourceChar: 2051
       line: 76
       lineChar: 4
       spanCodeSection: "{\r\n        "
     - startInstruction: 1536
       endInstruction: 1535
-      startSourceChar: 2047
-      endSourceChar: 2051
+      startSourceChar: 2051
+      endSourceChar: 2055
       line: 77
       lineChar: 8
       spanCodeSection: if (
     - startInstruction: 1536
       endInstruction: 1535
-      startSourceChar: 2051
-      endSourceChar: 2052
+      startSourceChar: 2055
+      endSourceChar: 2056
       line: 77
       lineChar: 12
       spanCodeSection: '!'
     - startInstruction: 1536
       endInstruction: 1575
-      startSourceChar: 2052
-      endSourceChar: 2084
+      startSourceChar: 2056
+      endSourceChar: 2088
       line: 77
       lineChar: 13
       spanCodeSection: "transferringOwnership)\r\n        "
     - startInstruction: 1576
       endInstruction: 1575
-      startSourceChar: 2084
-      endSourceChar: 2099
+      startSourceChar: 2088
+      endSourceChar: 2103
       line: 78
       lineChar: 8
       spanCodeSection: "{\r\n            "
     - startInstruction: 1576
       endInstruction: 1575
-      startSourceChar: 2099
-      endSourceChar: 2099
+      startSourceChar: 2103
+      endSourceChar: 2103
       line: 79
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 1576
       endInstruction: 1575
-      startSourceChar: 2099
-      endSourceChar: 2099
+      startSourceChar: 2103
+      endSourceChar: 2103
       line: 79
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 1576
       endInstruction: 1575
-      startSourceChar: 2099
-      endSourceChar: 2099
+      startSourceChar: 2103
+      endSourceChar: 2103
       line: 79
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 1576
       endInstruction: 1575
-      startSourceChar: 2099
-      endSourceChar: 2122
+      startSourceChar: 2103
+      endSourceChar: 2126
       line: 79
       lineChar: 12
       spanCodeSection: 'VRCPlayerApi requester '
     - startInstruction: 1576
       endInstruction: 1575
-      startSourceChar: 2122
-      endSourceChar: 2124
+      startSourceChar: 2126
+      endSourceChar: 2128
       line: 79
       lineChar: 35
       spanCodeSection: '= '
     - startInstruction: 1576
       endInstruction: 1575
-      startSourceChar: 2124
-      endSourceChar: 2124
+      startSourceChar: 2128
+      endSourceChar: 2128
       line: 79
       lineChar: 37
       spanCodeSection: 
     - startInstruction: 1576
       endInstruction: 1575
-      startSourceChar: 2124
-      endSourceChar: 2124
+      startSourceChar: 2128
+      endSourceChar: 2128
       line: 79
       lineChar: 37
       spanCodeSection: 
     - startInstruction: 1576
       endInstruction: 1575
-      startSourceChar: 2124
-      endSourceChar: 2135
+      startSourceChar: 2128
+      endSourceChar: 2139
       line: 79
       lineChar: 37
       spanCodeSection: Networking.
     - startInstruction: 1576
       endInstruction: 1575
-      startSourceChar: 2135
-      endSourceChar: 2144
+      startSourceChar: 2139
+      endSourceChar: 2148
       line: 79
       lineChar: 48
       spanCodeSection: GetOwner(
     - startInstruction: 1576
       endInstruction: 1575
-      startSourceChar: 2144
-      endSourceChar: 2144
+      startSourceChar: 2148
+      endSourceChar: 2148
       line: 79
       lineChar: 57
       spanCodeSection: 
     - startInstruction: 1576
       endInstruction: 1575
-      startSourceChar: 2144
-      endSourceChar: 2152
+      startSourceChar: 2148
+      endSourceChar: 2156
       line: 79
       lineChar: 57
       spanCodeSection: handler.
     - startInstruction: 1576
       endInstruction: 1623
-      startSourceChar: 2152
-      endSourceChar: 2178
+      startSourceChar: 2156
+      endSourceChar: 2182
       line: 79
       lineChar: 65
       spanCodeSection: "gameObject);\r\n            "
     - startInstruction: 1624
       endInstruction: 1623
-      startSourceChar: 2178
-      endSourceChar: 2178
+      startSourceChar: 2182
+      endSourceChar: 2182
       line: 80
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 1624
       endInstruction: 1623
-      startSourceChar: 2178
-      endSourceChar: 2178
+      startSourceChar: 2182
+      endSourceChar: 2182
       line: 80
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 1624
       endInstruction: 1623
-      startSourceChar: 2178
-      endSourceChar: 2202
+      startSourceChar: 2182
+      endSourceChar: 2206
       line: 80
       lineChar: 12
       spanCodeSection: 'transferringOwnership = '
     - startInstruction: 1624
       endInstruction: 1643
-      startSourceChar: 2202
-      endSourceChar: 2221
+      startSourceChar: 2206
+      endSourceChar: 2225
       line: 80
       lineChar: 36
       spanCodeSection: "true;\r\n            "
     - startInstruction: 1644
       endInstruction: 1643
-      startSourceChar: 2221
-      endSourceChar: 2221
+      startSourceChar: 2225
+      endSourceChar: 2225
       line: 81
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 1644
       endInstruction: 1643
-      startSourceChar: 2221
-      endSourceChar: 2221
+      startSourceChar: 2225
+      endSourceChar: 2225
       line: 81
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 1644
       endInstruction: 1643
-      startSourceChar: 2221
-      endSourceChar: 2221
+      startSourceChar: 2225
+      endSourceChar: 2225
       line: 81
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 1644
       endInstruction: 1643
-      startSourceChar: 2221
-      endSourceChar: 2232
+      startSourceChar: 2225
+      endSourceChar: 2236
       line: 81
       lineChar: 12
       spanCodeSection: Networking.
     - startInstruction: 1644
       endInstruction: 1643
-      startSourceChar: 2232
-      endSourceChar: 2241
+      startSourceChar: 2236
+      endSourceChar: 2245
       line: 81
       lineChar: 23
       spanCodeSection: SetOwner(
     - startInstruction: 1644
       endInstruction: 1643
-      startSourceChar: 2241
-      endSourceChar: 2252
+      startSourceChar: 2245
+      endSourceChar: 2256
       line: 81
       lineChar: 32
       spanCodeSection: 'requester, '
     - startInstruction: 1644
       endInstruction: 1667
-      startSourceChar: 2252
-      endSourceChar: 2278
+      startSourceChar: 2256
+      endSourceChar: 2282
       line: 81
       lineChar: 43
       spanCodeSection: "gameObject);\r\n            "
     - startInstruction: 1668
       endInstruction: 1667
-      startSourceChar: 2278
-      endSourceChar: 2278
+      startSourceChar: 2282
+      endSourceChar: 2282
       line: 82
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 1668
       endInstruction: 1667
-      startSourceChar: 2278
-      endSourceChar: 2278
+      startSourceChar: 2282
+      endSourceChar: 2282
       line: 82
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 1668
       endInstruction: 1667
-      startSourceChar: 2278
-      endSourceChar: 2278
+      startSourceChar: 2282
+      endSourceChar: 2282
       line: 82
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 1668
       endInstruction: 1667
-      startSourceChar: 2278
-      endSourceChar: 2284
+      startSourceChar: 2282
+      endSourceChar: 2288
       line: 82
       lineChar: 12
       spanCodeSection: Debug.
     - startInstruction: 1668
       endInstruction: 1667
-      startSourceChar: 2284
-      endSourceChar: 2288
+      startSourceChar: 2288
+      endSourceChar: 2292
       line: 82
       lineChar: 18
       spanCodeSection: Log(
     - startInstruction: 1668
       endInstruction: 1667
-      startSourceChar: 2288
-      endSourceChar: 2290
+      startSourceChar: 2292
+      endSourceChar: 2294
       line: 82
       lineChar: 22
       spanCodeSection: $"
     - startInstruction: 1668
       endInstruction: 1687
-      startSourceChar: 2290
-      endSourceChar: 2354
+      startSourceChar: 2294
+      endSourceChar: 2358
       line: 82
       lineChar: 24
       spanCodeSection: '<color=green>[THH_ChatMessenger]</color>: Ownership request
         of '''
     - startInstruction: 1688
       endInstruction: 1687
-      startSourceChar: 2354
-      endSourceChar: 2355
+      startSourceChar: 2358
+      endSourceChar: 2359
       line: 82
       lineChar: 88
       spanCodeSection: '{'
     - startInstruction: 1688
       endInstruction: 1687
-      startSourceChar: 2355
-      endSourceChar: 2355
+      startSourceChar: 2359
+      endSourceChar: 2359
       line: 82
       lineChar: 89
       spanCodeSection: 
     - startInstruction: 1688
       endInstruction: 1687
-      startSourceChar: 2355
-      endSourceChar: 2365
+      startSourceChar: 2359
+      endSourceChar: 2369
       line: 82
       lineChar: 89
       spanCodeSection: requester.
     - startInstruction: 1688
       endInstruction: 1763
-      startSourceChar: 2365
-      endSourceChar: 2377
+      startSourceChar: 2369
+      endSourceChar: 2381
       line: 82
       lineChar: 99
       spanCodeSection: displayName}
     - startInstruction: 1764
       endInstruction: 1839
-      startSourceChar: 2377
-      endSourceChar: 2445
+      startSourceChar: 2381
+      endSourceChar: 2449
       line: 82
       lineChar: 111
       spanCodeSection: "' has been accepted. Transferring ownership.\");\r\n        }\r\n
         \       "
     - startInstruction: 1840
       endInstruction: 1839
-      startSourceChar: 2445
-      endSourceChar: 2459
+      startSourceChar: 2449
+      endSourceChar: 2463
       line: 84
       lineChar: 8
       spanCodeSection: "else\r\n        "
     - startInstruction: 1840
       endInstruction: 1839
-      startSourceChar: 2459
-      endSourceChar: 2474
+      startSourceChar: 2463
+      endSourceChar: 2478
       line: 85
       lineChar: 8
       spanCodeSection: "{\r\n            "
     - startInstruction: 1840
       endInstruction: 1839
-      startSourceChar: 2474
-      endSourceChar: 2474
+      startSourceChar: 2478
+      endSourceChar: 2478
       line: 86
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 1840
       endInstruction: 1839
-      startSourceChar: 2474
-      endSourceChar: 2474
+      startSourceChar: 2478
+      endSourceChar: 2478
       line: 86
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 1840
       endInstruction: 1839
-      startSourceChar: 2474
-      endSourceChar: 2474
+      startSourceChar: 2478
+      endSourceChar: 2478
       line: 86
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 1840
       endInstruction: 1839
-      startSourceChar: 2474
-      endSourceChar: 2482
+      startSourceChar: 2478
+      endSourceChar: 2486
       line: 86
       lineChar: 12
       spanCodeSection: handler.
     - startInstruction: 1840
       endInstruction: 1839
-      startSourceChar: 2482
-      endSourceChar: 2505
+      startSourceChar: 2486
+      endSourceChar: 2509
       line: 86
       lineChar: 20
       spanCodeSection: SendCustomNetworkEvent(
     - startInstruction: 1840
       endInstruction: 1839
-      startSourceChar: 2505
-      endSourceChar: 2505
-      line: 86
-      lineChar: 43
-      spanCodeSection: 
-    - startInstruction: 1840
-      endInstruction: 1839
-      startSourceChar: 2505
-      endSourceChar: 2505
-      line: 86
-      lineChar: 43
-      spanCodeSection: 
-    - startInstruction: 1840
-      endInstruction: 1839
-      startSourceChar: 2505
-      endSourceChar: 2505
-      line: 86
-      lineChar: 43
-      spanCodeSection: 
-    - startInstruction: 1840
-      endInstruction: 1839
-      startSourceChar: 2505
-      endSourceChar: 2505
-      line: 86
-      lineChar: 43
-      spanCodeSection: 
-    - startInstruction: 1840
-      endInstruction: 1839
-      startSourceChar: 2505
-      endSourceChar: 2505
-      line: 86
-      lineChar: 43
-      spanCodeSection: 
-    - startInstruction: 1840
-      endInstruction: 1839
-      startSourceChar: 2505
+      startSourceChar: 2509
       endSourceChar: 2509
+      line: 86
+      lineChar: 43
+      spanCodeSection: 
+    - startInstruction: 1840
+      endInstruction: 1839
+      startSourceChar: 2509
+      endSourceChar: 2509
+      line: 86
+      lineChar: 43
+      spanCodeSection: 
+    - startInstruction: 1840
+      endInstruction: 1839
+      startSourceChar: 2509
+      endSourceChar: 2509
+      line: 86
+      lineChar: 43
+      spanCodeSection: 
+    - startInstruction: 1840
+      endInstruction: 1839
+      startSourceChar: 2509
+      endSourceChar: 2509
+      line: 86
+      lineChar: 43
+      spanCodeSection: 
+    - startInstruction: 1840
+      endInstruction: 1839
+      startSourceChar: 2509
+      endSourceChar: 2509
+      line: 86
+      lineChar: 43
+      spanCodeSection: 
+    - startInstruction: 1840
+      endInstruction: 1839
+      startSourceChar: 2509
+      endSourceChar: 2513
       line: 86
       lineChar: 43
       spanCodeSection: VRC.
     - startInstruction: 1840
       endInstruction: 1839
-      startSourceChar: 2509
-      endSourceChar: 2514
+      startSourceChar: 2513
+      endSourceChar: 2518
       line: 86
       lineChar: 47
       spanCodeSection: Udon.
     - startInstruction: 1840
       endInstruction: 1839
-      startSourceChar: 2514
-      endSourceChar: 2521
+      startSourceChar: 2518
+      endSourceChar: 2525
       line: 86
       lineChar: 52
       spanCodeSection: Common.
     - startInstruction: 1840
       endInstruction: 1839
-      startSourceChar: 2521
-      endSourceChar: 2532
+      startSourceChar: 2525
+      endSourceChar: 2536
       line: 86
       lineChar: 59
       spanCodeSection: Interfaces.
     - startInstruction: 1840
       endInstruction: 1839
-      startSourceChar: 2532
-      endSourceChar: 2551
+      startSourceChar: 2536
+      endSourceChar: 2555
       line: 86
       lineChar: 70
       spanCodeSection: NetworkEventTarget.
     - startInstruction: 1840
       endInstruction: 1839
-      startSourceChar: 2551
-      endSourceChar: 2558
+      startSourceChar: 2555
+      endSourceChar: 2562
       line: 86
       lineChar: 89
       spanCodeSection: 'Owner, '
     - startInstruction: 1840
       endInstruction: 1839
-      startSourceChar: 2558
-      endSourceChar: 2581
+      startSourceChar: 2562
+      endSourceChar: 2585
       line: 86
       lineChar: 96
       spanCodeSection: nameof(THH_ChatHandler.
     - startInstruction: 1840
       endInstruction: 1891
-      startSourceChar: 2581
-      endSourceChar: 3383
+      startSourceChar: 2585
+      endSourceChar: 3387
       line: 86
       lineChar: 119
       spanCodeSection: "RequestDenied));\r\n        }\r\n    }\r\n\r\n    //OnOwnershipTransferred
@@ -2374,472 +2374,472 @@ MonoBehaviour:
         \   }\r\n    //}\r\n\r\n    "
     - startInstruction: 1892
       endInstruction: 1899
-      startSourceChar: 3383
-      endSourceChar: 3409
+      startSourceChar: 3387
+      endSourceChar: 3413
       line: 109
       lineChar: 4
       spanCodeSection: "public void Update()\r\n    "
     - startInstruction: 1900
       endInstruction: 1899
-      startSourceChar: 3409
-      endSourceChar: 3420
+      startSourceChar: 3413
+      endSourceChar: 3424
       line: 110
       lineChar: 4
       spanCodeSection: "{\r\n        "
     - startInstruction: 1900
       endInstruction: 1899
-      startSourceChar: 3420
-      endSourceChar: 3420
+      startSourceChar: 3424
+      endSourceChar: 3424
       line: 111
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 1900
       endInstruction: 1899
-      startSourceChar: 3420
-      endSourceChar: 3420
+      startSourceChar: 3424
+      endSourceChar: 3424
       line: 111
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 1900
       endInstruction: 1935
-      startSourceChar: 3420
-      endSourceChar: 3463
+      startSourceChar: 3424
+      endSourceChar: 3467
       line: 111
       lineChar: 8
       spanCodeSection: "CheckOwnershipTransferred();\r\n    }\r\n\r\n    "
     - startInstruction: 1936
       endInstruction: 1943
-      startSourceChar: 3463
-      endSourceChar: 3508
+      startSourceChar: 3467
+      endSourceChar: 3512
       line: 114
       lineChar: 4
       spanCodeSection: "public void CheckOwnershipTransferred()\r\n    "
     - startInstruction: 1944
       endInstruction: 1943
-      startSourceChar: 3508
-      endSourceChar: 3519
+      startSourceChar: 3512
+      endSourceChar: 3523
       line: 115
       lineChar: 4
       spanCodeSection: "{\r\n        "
     - startInstruction: 1944
       endInstruction: 1943
-      startSourceChar: 3519
-      endSourceChar: 3523
+      startSourceChar: 3523
+      endSourceChar: 3527
       line: 116
       lineChar: 8
       spanCodeSection: if (
     - startInstruction: 1944
       endInstruction: 1943
-      startSourceChar: 3523
-      endSourceChar: 3523
+      startSourceChar: 3527
+      endSourceChar: 3527
       line: 116
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 1944
       endInstruction: 1979
-      startSourceChar: 3523
-      endSourceChar: 3534
+      startSourceChar: 3527
+      endSourceChar: 3538
       line: 116
       lineChar: 12
       spanCodeSection: 'isOwner && '
     - startInstruction: 1980
       endInstruction: 1979
-      startSourceChar: 3534
-      endSourceChar: 3535
+      startSourceChar: 3538
+      endSourceChar: 3539
       line: 116
       lineChar: 23
       spanCodeSection: '!'
     - startInstruction: 1980
       endInstruction: 1979
-      startSourceChar: 3535
-      endSourceChar: 3535
+      startSourceChar: 3539
+      endSourceChar: 3539
       line: 116
       lineChar: 24
       spanCodeSection: 
     - startInstruction: 1980
       endInstruction: 1979
-      startSourceChar: 3535
-      endSourceChar: 3535
+      startSourceChar: 3539
+      endSourceChar: 3539
       line: 116
       lineChar: 24
       spanCodeSection: 
     - startInstruction: 1980
       endInstruction: 1979
-      startSourceChar: 3535
-      endSourceChar: 3546
+      startSourceChar: 3539
+      endSourceChar: 3550
       line: 116
       lineChar: 24
       spanCodeSection: Networking.
     - startInstruction: 1980
       endInstruction: 1979
-      startSourceChar: 3546
-      endSourceChar: 3554
+      startSourceChar: 3550
+      endSourceChar: 3558
       line: 116
       lineChar: 35
       spanCodeSection: IsOwner(
     - startInstruction: 1980
       endInstruction: 2095
-      startSourceChar: 3554
-      endSourceChar: 3576
+      startSourceChar: 3558
+      endSourceChar: 3580
       line: 116
       lineChar: 43
       spanCodeSection: "gameObject))\r\n        "
     - startInstruction: 2096
       endInstruction: 2095
-      startSourceChar: 3576
-      endSourceChar: 3591
+      startSourceChar: 3580
+      endSourceChar: 3595
       line: 117
       lineChar: 8
       spanCodeSection: "{\r\n            "
     - startInstruction: 2096
       endInstruction: 2095
-      startSourceChar: 3591
-      endSourceChar: 3591
+      startSourceChar: 3595
+      endSourceChar: 3595
       line: 118
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 2096
       endInstruction: 2095
-      startSourceChar: 3591
-      endSourceChar: 3591
+      startSourceChar: 3595
+      endSourceChar: 3595
       line: 118
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 2096
       endInstruction: 2095
-      startSourceChar: 3591
-      endSourceChar: 3591
+      startSourceChar: 3595
+      endSourceChar: 3595
       line: 118
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 2096
       endInstruction: 2095
-      startSourceChar: 3591
-      endSourceChar: 3597
+      startSourceChar: 3595
+      endSourceChar: 3601
       line: 118
       lineChar: 12
       spanCodeSection: Debug.
     - startInstruction: 2096
       endInstruction: 2095
-      startSourceChar: 3597
-      endSourceChar: 3601
+      startSourceChar: 3601
+      endSourceChar: 3605
       line: 118
       lineChar: 18
       spanCodeSection: Log(
     - startInstruction: 2096
       endInstruction: 2095
-      startSourceChar: 3601
-      endSourceChar: 3603
+      startSourceChar: 3605
+      endSourceChar: 3607
       line: 118
       lineChar: 22
       spanCodeSection: $"
     - startInstruction: 2096
       endInstruction: 2131
-      startSourceChar: 3603
-      endSourceChar: 3697
+      startSourceChar: 3607
+      endSourceChar: 3701
       line: 118
       lineChar: 24
       spanCodeSection: "<color=green>[THH_ChatHandler]</color>: Lost ownership of
         the chat messenger!\");\r\n            "
     - startInstruction: 2132
       endInstruction: 2131
-      startSourceChar: 3697
-      endSourceChar: 3697
+      startSourceChar: 3701
+      endSourceChar: 3701
       line: 119
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 2132
       endInstruction: 2131
-      startSourceChar: 3697
-      endSourceChar: 3697
+      startSourceChar: 3701
+      endSourceChar: 3701
       line: 119
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 2132
       endInstruction: 2131
-      startSourceChar: 3697
-      endSourceChar: 3707
+      startSourceChar: 3701
+      endSourceChar: 3711
       line: 119
       lineChar: 12
       spanCodeSection: 'isOwner = '
     - startInstruction: 2132
       endInstruction: 2151
-      startSourceChar: 3707
-      endSourceChar: 3729
+      startSourceChar: 3711
+      endSourceChar: 3733
       line: 119
       lineChar: 22
       spanCodeSection: "false;\r\n\r\n            "
     - startInstruction: 2152
       endInstruction: 2151
-      startSourceChar: 3729
-      endSourceChar: 3729
+      startSourceChar: 3733
+      endSourceChar: 3733
       line: 121
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 2152
       endInstruction: 2151
-      startSourceChar: 3729
-      endSourceChar: 3729
+      startSourceChar: 3733
+      endSourceChar: 3733
       line: 121
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 2152
       endInstruction: 2151
-      startSourceChar: 3729
-      endSourceChar: 3753
+      startSourceChar: 3733
+      endSourceChar: 3757
       line: 121
       lineChar: 12
       spanCodeSection: 'transferringOwnership = '
     - startInstruction: 2152
       endInstruction: 2179
-      startSourceChar: 3753
-      endSourceChar: 3780
+      startSourceChar: 3757
+      endSourceChar: 3784
       line: 121
       lineChar: 36
       spanCodeSection: "false;\r\n        }\r\n        "
     - startInstruction: 2180
       endInstruction: 2179
-      startSourceChar: 3780
-      endSourceChar: 3785
+      startSourceChar: 3784
+      endSourceChar: 3789
       line: 123
       lineChar: 8
       spanCodeSection: 'else '
     - startInstruction: 2180
       endInstruction: 2179
-      startSourceChar: 3785
-      endSourceChar: 3789
+      startSourceChar: 3789
+      endSourceChar: 3793
       line: 123
       lineChar: 13
       spanCodeSection: if (
     - startInstruction: 2180
       endInstruction: 2179
-      startSourceChar: 3789
-      endSourceChar: 3789
+      startSourceChar: 3793
+      endSourceChar: 3793
       line: 123
       lineChar: 17
       spanCodeSection: 
     - startInstruction: 2180
       endInstruction: 2179
-      startSourceChar: 3789
-      endSourceChar: 3790
+      startSourceChar: 3793
+      endSourceChar: 3794
       line: 123
       lineChar: 17
       spanCodeSection: '!'
     - startInstruction: 2180
       endInstruction: 2239
-      startSourceChar: 3790
-      endSourceChar: 3801
+      startSourceChar: 3794
+      endSourceChar: 3805
       line: 123
       lineChar: 18
       spanCodeSection: 'isOwner && '
     - startInstruction: 2240
       endInstruction: 2239
-      startSourceChar: 3801
-      endSourceChar: 3801
+      startSourceChar: 3805
+      endSourceChar: 3805
       line: 123
       lineChar: 29
       spanCodeSection: 
     - startInstruction: 2240
       endInstruction: 2239
-      startSourceChar: 3801
-      endSourceChar: 3801
+      startSourceChar: 3805
+      endSourceChar: 3805
       line: 123
       lineChar: 29
       spanCodeSection: 
     - startInstruction: 2240
       endInstruction: 2239
-      startSourceChar: 3801
-      endSourceChar: 3812
+      startSourceChar: 3805
+      endSourceChar: 3816
       line: 123
       lineChar: 29
       spanCodeSection: Networking.
     - startInstruction: 2240
       endInstruction: 2239
-      startSourceChar: 3812
-      endSourceChar: 3820
+      startSourceChar: 3816
+      endSourceChar: 3824
       line: 123
       lineChar: 40
       spanCodeSection: IsOwner(
     - startInstruction: 2240
       endInstruction: 2331
-      startSourceChar: 3820
-      endSourceChar: 3842
+      startSourceChar: 3824
+      endSourceChar: 3846
       line: 123
       lineChar: 48
       spanCodeSection: "gameObject))\r\n        "
     - startInstruction: 2332
       endInstruction: 2331
-      startSourceChar: 3842
-      endSourceChar: 3857
+      startSourceChar: 3846
+      endSourceChar: 3861
       line: 124
       lineChar: 8
       spanCodeSection: "{\r\n            "
     - startInstruction: 2332
       endInstruction: 2331
-      startSourceChar: 3857
-      endSourceChar: 3857
+      startSourceChar: 3861
+      endSourceChar: 3861
       line: 125
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 2332
       endInstruction: 2331
-      startSourceChar: 3857
-      endSourceChar: 3857
+      startSourceChar: 3861
+      endSourceChar: 3861
       line: 125
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 2332
       endInstruction: 2331
-      startSourceChar: 3857
-      endSourceChar: 3857
+      startSourceChar: 3861
+      endSourceChar: 3861
       line: 125
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 2332
       endInstruction: 2331
-      startSourceChar: 3857
-      endSourceChar: 3863
+      startSourceChar: 3861
+      endSourceChar: 3867
       line: 125
       lineChar: 12
       spanCodeSection: Debug.
     - startInstruction: 2332
       endInstruction: 2331
-      startSourceChar: 3863
-      endSourceChar: 3867
+      startSourceChar: 3867
+      endSourceChar: 3871
       line: 125
       lineChar: 18
       spanCodeSection: Log(
     - startInstruction: 2332
       endInstruction: 2331
-      startSourceChar: 3867
-      endSourceChar: 3869
+      startSourceChar: 3871
+      endSourceChar: 3873
       line: 125
       lineChar: 22
       spanCodeSection: $"
     - startInstruction: 2332
       endInstruction: 2351
-      startSourceChar: 3869
-      endSourceChar: 3937
+      startSourceChar: 3873
+      endSourceChar: 3941
       line: 125
       lineChar: 24
       spanCodeSection: '<color=green>[THH_ChatHandler]</color>: Taken ownership of
         handler '''
     - startInstruction: 2352
       endInstruction: 2351
-      startSourceChar: 3937
-      endSourceChar: 3938
+      startSourceChar: 3941
+      endSourceChar: 3942
       line: 125
       lineChar: 92
       spanCodeSection: '{'
     - startInstruction: 2352
       endInstruction: 2427
-      startSourceChar: 3938
-      endSourceChar: 3943
+      startSourceChar: 3942
+      endSourceChar: 3947
       line: 125
       lineChar: 93
       spanCodeSection: name}
     - startInstruction: 2428
       endInstruction: 2495
-      startSourceChar: 3943
-      endSourceChar: 3962
+      startSourceChar: 3947
+      endSourceChar: 3966
       line: 125
       lineChar: 98
       spanCodeSection: "'!\");\r\n            "
     - startInstruction: 2496
       endInstruction: 2495
-      startSourceChar: 3962
-      endSourceChar: 3962
+      startSourceChar: 3966
+      endSourceChar: 3966
       line: 126
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 2496
       endInstruction: 2495
-      startSourceChar: 3962
-      endSourceChar: 3962
+      startSourceChar: 3966
+      endSourceChar: 3966
       line: 126
       lineChar: 12
       spanCodeSection: 
     - startInstruction: 2496
       endInstruction: 2495
-      startSourceChar: 3962
-      endSourceChar: 3972
+      startSourceChar: 3966
+      endSourceChar: 3976
       line: 126
       lineChar: 12
       spanCodeSection: 'isOwner = '
     - startInstruction: 2496
       endInstruction: 2515
-      startSourceChar: 3972
-      endSourceChar: 3993
+      startSourceChar: 3976
+      endSourceChar: 3997
       line: 126
       lineChar: 22
       spanCodeSection: "true;\r\n\r\n            "
     - startInstruction: 2516
       endInstruction: 2515
-      startSourceChar: 3993
-      endSourceChar: 3997
+      startSourceChar: 3997
+      endSourceChar: 4001
       line: 128
       lineChar: 12
       spanCodeSection: if (
     - startInstruction: 2516
       endInstruction: 2515
-      startSourceChar: 3997
-      endSourceChar: 3997
+      startSourceChar: 4001
+      endSourceChar: 4001
       line: 128
       lineChar: 16
       spanCodeSection: 
     - startInstruction: 2516
       endInstruction: 2515
-      startSourceChar: 3997
-      endSourceChar: 4005
+      startSourceChar: 4001
+      endSourceChar: 4009
       line: 128
       lineChar: 16
       spanCodeSection: manager.
     - startInstruction: 2516
       endInstruction: 2587
-      startSourceChar: 4005
-      endSourceChar: 4017
+      startSourceChar: 4009
+      endSourceChar: 4021
       line: 128
       lineChar: 24
       spanCodeSection: 'requesting) '
     - startInstruction: 2588
       endInstruction: 2587
-      startSourceChar: 4017
-      endSourceChar: 4019
+      startSourceChar: 4021
+      endSourceChar: 4023
       line: 128
       lineChar: 36
       spanCodeSection: '{ '
     - startInstruction: 2588
       endInstruction: 2587
-      startSourceChar: 4019
-      endSourceChar: 4019
+      startSourceChar: 4023
+      endSourceChar: 4023
       line: 128
       lineChar: 38
       spanCodeSection: 
     - startInstruction: 2588
       endInstruction: 2587
-      startSourceChar: 4019
-      endSourceChar: 4019
+      startSourceChar: 4023
+      endSourceChar: 4023
       line: 128
       lineChar: 38
       spanCodeSection: 
     - startInstruction: 2588
       endInstruction: 2587
-      startSourceChar: 4019
-      endSourceChar: 4019
+      startSourceChar: 4023
+      endSourceChar: 4023
       line: 128
       lineChar: 38
       spanCodeSection: 
     - startInstruction: 2588
       endInstruction: 2587
-      startSourceChar: 4019
-      endSourceChar: 4027
+      startSourceChar: 4023
+      endSourceChar: 4031
       line: 128
       lineChar: 38
       spanCodeSection: manager.
     - startInstruction: 2588
       endInstruction: 2588
-      startSourceChar: 4027
-      endSourceChar: 4027
+      startSourceChar: 4031
+      endSourceChar: 4031
       line: 128
       lineChar: 46
       spanCodeSection: 
