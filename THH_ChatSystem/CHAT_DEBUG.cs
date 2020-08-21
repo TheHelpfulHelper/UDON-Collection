@@ -37,6 +37,6 @@ public class CHAT_DEBUG : UdonSharpBehaviour
         VRCPlayerApi messengerOwner = Networking.GetOwner(manager.messenger.gameObject);
         MessengerOwner.text = $"Messenger Owner: {messengerOwner.displayName}({messengerOwner.playerId})";
 
-        Message.text = manager.messenger.MESSAGE;
+        Message.text = $"Message: {manager.messenger.MESSAGE}";
     }
 }

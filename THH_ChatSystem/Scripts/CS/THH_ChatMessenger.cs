@@ -1,6 +1,7 @@
 using UdonSharp;
 using UnityEngine;
 using VRC.SDKBase;
+using VRC.Udon.Serialization.OdinSerializer.Utilities;
 
 public class THH_ChatMessenger : UdonSharpBehaviour
 {
@@ -18,7 +19,7 @@ public class THH_ChatMessenger : UdonSharpBehaviour
 
     public void Chat()
     {
-        if (manager.attemptingToTransmitMessage) { return; }
+        if (manager.attemptingToTransmitMessage || string.IsNullOrEmpty(logger.inputField.text)) { return; }
 
         manager.AttemptToSendChatMessage(logger.inputField.text, true, 0);
     }
@@ -56,7 +57,7 @@ public class THH_ChatMessenger : UdonSharpBehaviour
 
         if (Networking.IsMaster)
         {
-            MESSAGE = "IGNORE";
+            MESSAGE = "INITIALIZED";
             OnDeserialization();
         }
     }
@@ -67,7 +68,7 @@ public class THH_ChatMessenger : UdonSharpBehaviour
         {
             last_MESSAGE = MESSAGE;
 
-            if (last_MESSAGE == "IGNORE") { return; }
+            if (!syncStringInitialized) { syncStringInitialized = true; return; }
 
             OnMessageReceived(last_MESSAGE);
         }
