@@ -2,28 +2,31 @@
 using UdonSharp;
 using UnityEngine;
 using VRC.SDKBase;
-using VRC.Udon;
 using UnityEngine.UI;
 
 public class THH_ChatLog : UdonSharpBehaviour
 {
-    public GameObject TextPrefab;
-    public int maxLogs = 50;
-    public Transform TextContainer;
+    public Transform Content;
+    public GameObject ChatMessagePrefab;
 
-    private int currentNumberOfLogs;
+    public InputField inputField;
 
-    public void Log(string _text)
+    public void LogMessage(VRCPlayerApi player, string message)
     {
-        GameObject newLog = VRCInstantiate(TextPrefab);
-        Text newLogText = newLog.transform.GetChild(0).GetComponent<Text>();
-        newLogText.text = _text;
-        newLog.transform.SetParent(TextContainer, false);
-        currentNumberOfLogs++;
+        GameObject newChatMessageObject = VRCInstantiate(ChatMessagePrefab);
 
-        if (currentNumberOfLogs > maxLogs)
-        {
-            Destroy(TextContainer.GetChild(0).gameObject);
-        }
+        newChatMessageObject.transform.SetParent(Content, false);
+        newChatMessageObject.transform.GetChild(0).GetComponent<Text>().text = $"<color=green>{player.displayName}</color>: {message}";
+    }
+
+    public void Lock()
+    {
+        inputField.enabled = false;
+    }
+
+    public void Unlock()
+    {
+        inputField.enabled = true;
+        inputField.text = "";
     }
 }
