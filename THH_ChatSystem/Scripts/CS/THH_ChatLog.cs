@@ -21,12 +21,12 @@ public class THH_ChatLog : UdonSharpBehaviour
 
     public void Lock()
     {
-        inputField.enabled = false;
+        inputField.interactable = false;
     }
 
     public void Unlock()
     {
-        inputField.enabled = true;
+        inputField.interactable = true;
         inputField.text = "";
     }
 }

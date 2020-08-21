@@ -34,12 +34,10 @@ public class THH_ChatManager : UdonSharpBehaviour
     private bool last_autoRetry;
     private int last_retryCount;
 
-    private bool attemptingToTransmitMessage;
+    [System.NonSerialized] public bool attemptingToTransmitMessage;
 
     public void AttemptToSendChatMessage(string message, bool autoRetry, int retryCount)
     {
-        if (attemptingToTransmitMessage) { return; }
-
         last_message = message;
         last_autoRetry = autoRetry;
         last_retryCount = retryCount;

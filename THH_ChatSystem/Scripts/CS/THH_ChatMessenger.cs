@@ -18,6 +18,8 @@ public class THH_ChatMessenger : UdonSharpBehaviour
 
     public void Chat()
     {
+        if (manager.attemptingToTransmitMessage) { return; }
+
         manager.AttemptToSendChatMessage(logger.inputField.text, true, 0);
     }
 
