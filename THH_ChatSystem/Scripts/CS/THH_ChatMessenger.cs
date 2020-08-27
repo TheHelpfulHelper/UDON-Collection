@@ -1,7 +1,6 @@
 using UdonSharp;
 using UnityEngine;
 using VRC.SDKBase;
-using VRC.Udon.Serialization.OdinSerializer.Utilities;
 
 public class THH_ChatMessenger : UdonSharpBehaviour
 {
@@ -12,7 +11,7 @@ public class THH_ChatMessenger : UdonSharpBehaviour
     private bool transferringOwnership;
 
     [System.NonSerialized, UdonSynced(UdonSyncMode.None)] public string MESSAGE = "UNINITIALIZED";
-    private string last_MESSAGE = "UNINITIALIZED";
+    [System.NonSerialized] public string last_MESSAGE = "UNINITIALIZED";
     private bool syncStringInitialized;
 
     private int MessageCounter;
@@ -28,12 +27,10 @@ public class THH_ChatMessenger : UdonSharpBehaviour
     {
         if (!Networking.IsOwner(gameObject)) { return; }
 
-        string PID = Networking.LocalPlayer.playerId.ToString("X");
-        string MID = MessageCounter.ToString();
+        string MID = ((MessageCounter + 1) % 1000000).ToString().PadLeft(6, '0');
+        string PID = Networking.LocalPlayer.playerId.ToString().PadLeft(4, '0');
 
-        MESSAGE = $"{MID}_{PID}_{message}";
-
-        MessageCounter = (MessageCounter + 1) % 10;
+        MESSAGE = $"{MID}{PID}{message}";
 
         OnDeserialization();
     }
@@ -42,10 +39,10 @@ public class THH_ChatMessenger : UdonSharpBehaviour
     {
         Debug.Log($"<color=green>[THH_ChatMessenger]</color>: Received Message.");
 
-        string[] messageContext = message.Split('_');
+        string PID = message.Substring(6, 4);
+        string messageContent = message.Substring(10);
 
-        VRCPlayerApi sender = VRCPlayerApi.GetPlayerById(int.Parse(messageContext[1], System.Globalization.NumberStyles.HexNumber));
-        string messageContent = messageContext[2];
+        VRCPlayerApi sender = VRCPlayerApi.GetPlayerById(int.Parse(PID));
 
         logger.LogChatMessage(sender, messageContent);
 
@@ -66,9 +63,25 @@ public class THH_ChatMessenger : UdonSharpBehaviour
     {
         if (MESSAGE != last_MESSAGE)
         {
-            last_MESSAGE = MESSAGE;
+            if (!syncStringInitialized)
+            {
+                last_MESSAGE = MESSAGE;
+                syncStringInitialized = true;
+                return;
+            }
 
-            if (!syncStringInitialized) { syncStringInitialized = true; return; }
+            string MID = MESSAGE.Substring(0, 6);
+
+            int newMessageCounter = int.Parse(MID);
+
+            int historyValue = newMessageCounter - MessageCounter;
+            bool pass = historyValue > 0 ? historyValue < 2 : historyValue < -2;
+
+            if (!pass) { return; }
+
+            MessageCounter = newMessageCounter;
+
+            last_MESSAGE = MESSAGE;
 
             OnMessageReceived(last_MESSAGE);
         }

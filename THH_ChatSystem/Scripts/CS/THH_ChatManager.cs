@@ -38,6 +38,8 @@ public class THH_ChatManager : UdonSharpBehaviour
 
     public void AttemptToSendChatMessage(string message, bool autoRetry, int retryCount)
     {
+        if (attemptingToTransmitMessage) { return; }
+
         last_message = message;
         last_autoRetry = autoRetry;
         last_retryCount = retryCount;
@@ -63,7 +65,9 @@ public class THH_ChatManager : UdonSharpBehaviour
         
         if (attemptingToTransmitMessage)
         {
-            AttemptToSendChatMessage(last_message, last_autoRetry, last_retryCount);
+            messenger.SendChatMessage(last_message);
+            attemptingToTransmitMessage = false;
+            messenger.logger.Unlock();
         }
     }
 
@@ -80,6 +84,7 @@ public class THH_ChatManager : UdonSharpBehaviour
             }
             else
             {
+                Debug.Log($"<color=green>[THH_ChatHandler]</color>: Auto-retry reached max retry counts, aborting message transmission.");
                 attemptingToTransmitMessage = false;
                 messenger.logger.Unlock();
             }

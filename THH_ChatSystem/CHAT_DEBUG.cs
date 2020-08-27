@@ -21,6 +21,7 @@ public class CHAT_DEBUG : UdonSharpBehaviour
     public Text MessengerOwner;
 
     public Text Message;
+    public Text LastMessage;
 
     public void Update()
     {
@@ -38,5 +39,6 @@ public class CHAT_DEBUG : UdonSharpBehaviour
         MessengerOwner.text = $"Messenger Owner: {messengerOwner.displayName}({messengerOwner.playerId})";
 
         Message.text = $"Message: {manager.messenger.MESSAGE}";
+        LastMessage.text = $"{manager.messenger.last_MESSAGE}";
     }
 }
